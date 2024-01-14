@@ -13,13 +13,13 @@ type Recipient = {
 };
 
 export type EmailProps = {
-  id: string; // Unique identifier
+  id: string;
   from: {
     email: string;
-    name: string; // Sender's name
-    avatar?: string; // Optional avatar URL
+    name: string;
+    avatar?: string;
   };
-  to: Recipient[]; // Array of recipients with email and name
+  to: Recipient[];
   cc?: Recipient[];
   bcc?: Recipient[];
   subject: string;
@@ -27,10 +27,9 @@ export type EmailProps = {
   attachments: EmailAttachment[];
   isHtml?: boolean;
   timestamp?: string;
-  read: boolean; // Indicates if the email has been read
+  read: boolean;
 };
 
-// Helper functions to generate random data
 const randomEmail = (): string => {
   const domain = 'internxt.com';
   return `user${Math.floor(Math.random() * 1000)}@${domain}`;
@@ -53,7 +52,6 @@ const randomName = (): string => {
 };
 
 const randomAvatar = (): string | undefined => {
-  // 50% chance to include an avatar
   return Math.random() < 0.5 ? `https://picsum.photos/seed/${Math.random()}/200` : undefined;
 };
 
@@ -99,7 +97,6 @@ const generateRandomRecipients = (count: number): Recipient[] => {
   }));
 };
 
-// Function to generate mocks
 const generateMocks = (): Record<string, EmailProps[]> => {
   const mocks: Record<string, EmailProps[]> = {
     basicEmails: [],
@@ -119,7 +116,7 @@ const generateMocks = (): Record<string, EmailProps[]> => {
         name: randomName(),
         avatar: randomAvatar(),
       },
-      to: generateRandomRecipients(1), // Single recipient
+      to: generateRandomRecipients(1),
       subject: randomSubject(),
       body: randomBody(),
       attachments: [],
@@ -140,7 +137,7 @@ const generateMocks = (): Record<string, EmailProps[]> => {
         name: randomName(),
         avatar: randomAvatar(),
       },
-      to: generateRandomRecipients(2), // Two recipients
+      to: generateRandomRecipients(2),
       subject: randomSubject(),
       body: randomBody(),
       attachments: [
@@ -165,7 +162,7 @@ const generateMocks = (): Record<string, EmailProps[]> => {
         name: randomName(),
         avatar: randomAvatar(),
       },
-      to: generateRandomRecipients(3), // Three recipients
+      to: generateRandomRecipients(3),
       cc: generateRandomRecipients(3),
       bcc: generateRandomRecipients(1),
       subject: randomSubject(),
@@ -188,7 +185,7 @@ const generateMocks = (): Record<string, EmailProps[]> => {
         name: randomName(),
         avatar: randomAvatar(),
       },
-      to: [], // No recipients
+      to: [],
       subject: '',
       body: '',
       attachments: [],
@@ -249,7 +246,6 @@ const generateMocks = (): Record<string, EmailProps[]> => {
   return mocks;
 };
 
-// Generate and export the mocks
 export const emailMocks = generateMocks();
 
 /**
@@ -271,7 +267,7 @@ export const updateEmailReadStatus = (
       return email;
     }
   }
-  return null; // Email not found
+  return null;
 };
 
 export function formatTimestamp(timestamp: string): string {
@@ -289,14 +285,12 @@ export function formatTimestamp(timestamp: string): string {
     date.getFullYear() === today.getFullYear();
 
   if (isToday) {
-    // If it's today, show only the time
     const options: Intl.DateTimeFormatOptions = {
       hour: '2-digit',
       minute: '2-digit',
     };
     return date.toLocaleTimeString('en-US', options);
   } else if (isYesterday) {
-    // If it's yesterday, show the date and time
     const options: Intl.DateTimeFormatOptions = {
       month: 'short',
       day: 'numeric',
@@ -305,7 +299,6 @@ export function formatTimestamp(timestamp: string): string {
     };
     return date.toLocaleString('en-US', options);
   } else {
-    // If it's older, show only the date
     const options: Intl.DateTimeFormatOptions = {
       month: 'short',
       day: 'numeric',
