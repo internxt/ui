@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { CaretDown, DotsThreeVertical, FunnelSimple } from '@phosphor-icons/react';
 import Checkbox from '../../checkbox/Checkbox';
 import Input from '../../input/Input';
-import { CaretDown, DotsThreeVertical, FunnelSimple } from '@phosphor-icons/react';
 import { Message } from './components/Message';
 import { emailMocks, updateEmailReadStatus } from '../mocks';
 
