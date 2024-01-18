@@ -65,15 +65,14 @@ const MAIL_OPTIONS = [
 
 export const Sidenav = () => {
   const [active, setActive] = useState<number>(0);
-  const [showSubsections, setShowSubsections] = useState(false); // Controls subsection visibility
+  const [showSubsections, setShowSubsections] = useState(false);
 
   const handleClick = (optionId: number, isSubsection: boolean) => {
     if (isSubsection) {
       setActive(optionId);
-      return; // Prevent hiding subsections on click
+      return;
     }
 
-    // Toggle subsection visibility when 'More' is clicked
     if (optionId === 4) {
       setShowSubsections(!showSubsections);
     } else {
@@ -83,7 +82,6 @@ export const Sidenav = () => {
     setActive(optionId);
   };
 
-  // !TODO: Remove max-h
   return (
     <div className="flex flex-col p-2 w-full h-full justify-between max-w-[256px] bg-gray-1">
       <div className="flex flex-col">
