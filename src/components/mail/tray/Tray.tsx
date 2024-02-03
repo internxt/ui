@@ -4,21 +4,16 @@ import Input from '../../input/Input';
 import { Message } from './components/Message';
 import { emailMocks, EmailProps } from '../mocks';
 
-export const Tray = ({
-  mails,
-  handleSelectAll,
-  checked,
-  selectedEmails,
-  activeEmail,
-  onMailSelected,
-}: {
+interface TrayProps {
   mails: EmailProps[];
   selectedEmails: string[];
   checked: boolean;
   activeEmail: string;
   handleSelectAll: () => void;
   onMailSelected: (id: string) => void;
-}) => {
+}
+
+export const Tray = ({ mails, handleSelectAll, checked, selectedEmails, activeEmail, onMailSelected }: TrayProps) => {
   return (
     <div className="flex flex-col w-full max-w-[400px] h-screen border border-gray-5">
       <div className="flex flex-col gap-3 pt-6 pb-3 px-5 w-full">
