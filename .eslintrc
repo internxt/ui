@@ -1,0 +1,14 @@
+{
+  "env": {
+    "jest": true,
+    "browser": true,
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+
+  "extends": ["@internxt/eslint-config-internxt", "plugin:storybook/recommended"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+  },
+}

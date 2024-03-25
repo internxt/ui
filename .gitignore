@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+
+.npmrc
+#storybook build directory
+storybook-static
+*storybook.log
