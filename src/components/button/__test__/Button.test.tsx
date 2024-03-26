@@ -23,13 +23,13 @@ describe('Button component', () => {
     expect(button).toMatchSnapshot();
   });
 
-  it('Tertiary button should render correctly', () => {
-    const button = renderer.create(<Button variant="tertiary">Tertiary</Button>).toJSON();
+  it('Ghost button should render correctly', () => {
+    const button = renderer.create(<Button variant="ghost">Ghost</Button>).toJSON();
     expect(button).toMatchSnapshot();
   });
 
-  it('Accent button should render correctly', () => {
-    const button = renderer.create(<Button variant="accent">Accent</Button>).toJSON();
+  it('Destructive button should render correctly', () => {
+    const button = renderer.create(<Button variant="destructive">Destructive</Button>).toJSON();
     expect(button).toMatchSnapshot();
   });
 
@@ -43,13 +43,13 @@ describe('Button component', () => {
     expect(button).toMatchSnapshot();
   });
 
-  it('Tertiary disabled button should render correctly', () => {
-    const button = renderer.create(<Button variant="tertiary" disabled />).toJSON();
+  it('Ghost disabled button should render correctly', () => {
+    const button = renderer.create(<Button variant="ghost" disabled />).toJSON();
     expect(button).toMatchSnapshot();
   });
 
-  it('Accent disabled button should render correctly', () => {
-    const button = renderer.create(<Button variant="accent" disabled />).toJSON();
+  it('Destructive disabled button should render correctly', () => {
+    const button = renderer.create(<Button variant="destructive" disabled />).toJSON();
     expect(button).toMatchSnapshot();
   });
 

@@ -36,16 +36,16 @@ export const Secondary: Story = {
   },
 };
 
-export const Tertiary: Story = {
+export const Ghost: Story = {
   args: {
-    variant: 'tertiary',
+    variant: 'ghost',
     children: 'Button',
   },
 };
 
-export const Accent: Story = {
+export const Destructive: Story = {
   args: {
-    variant: 'accent',
+    variant: 'destructive',
     children: 'Button',
   },
 };

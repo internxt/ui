@@ -15,7 +15,7 @@ export default function Button({
   buttonDataCy,
   buttonChildrenDataCy,
 }: Readonly<{
-  variant?: 'primary' | 'accent' | 'secondary' | 'tertiary';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
   type?: 'button' | 'submit';
   children?: ReactNode;
   className?: string;
@@ -34,9 +34,9 @@ export default function Button({
     styles = `${loading ? 'bg-primary-dark' : 'bg-primary'} active:bg-primary-dark text-white shadow-sm`;
   } else if (variant === 'primary' && disabled) {
     styles = 'bg-gray-30 text-white shadow-sm';
-  } else if (variant === 'accent' && !disabled) {
+  } else if (variant === 'destructive' && !disabled) {
     styles = `${loading ? 'bg-red-dark' : 'bg-red'} active:bg-red-dark text-white shadow-sm`;
-  } else if (variant === 'accent' && disabled) {
+  } else if (variant === 'destructive' && disabled) {
     styles = 'bg-gray-30 text-white shadow-sm';
   } else if (variant === 'secondary' && !disabled) {
     styles =
@@ -44,9 +44,9 @@ export default function Button({
       ' hover:border-gray-20 active:bg-gray-1 dark:active:bg-gray-10 text-gray-80 shadow-sm';
   } else if (variant === 'secondary' && disabled) {
     styles = 'bg-surface dark:bg-gray-5 text-gray-30 border border-gray-5 shadow-sm';
-  } else if (variant === 'tertiary' && !disabled) {
+  } else if (variant === 'ghost' && !disabled) {
     styles = 'hover:bg-gray-5 active:bg-gray-10 focus-visible:bg-gray-10';
-  } else if (variant === 'tertiary' && disabled) {
+  } else if (variant === 'ghost' && disabled) {
     styles = 'text-gray-30';
   }
   return (
