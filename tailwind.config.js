@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 /* eslint-disable */
 module.exports = {
-  darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 
   options: {},
