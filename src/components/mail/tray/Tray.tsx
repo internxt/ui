@@ -3,17 +3,27 @@ import Checkbox from '../../checkbox/Checkbox';
 import Input from '../../input/Input';
 import { Message } from './components/Message';
 import { emailMocks, EmailProps } from '../mocks';
+import { MessageSkeleton } from './components/MessageSkeleton';
 
 interface TrayProps {
   mails: EmailProps[];
   selectedEmails: string[];
+  loading: boolean;
   checked: boolean;
   activeEmail: string;
   handleSelectAll: () => void;
   onMailSelected: (id: string) => void;
 }
 
-export const Tray = ({ mails, handleSelectAll, checked, selectedEmails, activeEmail, onMailSelected }: TrayProps) => {
+export const Tray = ({
+  mails,
+  loading,
+  checked,
+  selectedEmails,
+  activeEmail,
+  handleSelectAll,
+  onMailSelected,
+}: TrayProps) => {
   return (
     <div className="flex flex-col w-full max-w-[400px] h-screen border border-gray-5">
       <div className="flex flex-col gap-3 pt-6 pb-3 px-5 w-full">
@@ -38,14 +48,28 @@ export const Tray = ({ mails, handleSelectAll, checked, selectedEmails, activeEm
       </div>
       <div className="border w-full px-5 flex border-gray-10" />
       <div className="overflow-y-scroll">
-        {mails.map((email) => (
-          <div key={email.id} className="flex items-center w-full flex-col">
-            <Message email={email} active={checked || activeEmail === email.id} onClick={onMailSelected} />
-            <div className="w-full flex px-5">
-              <div className="border w-full border-gray-10" />
-            </div>
-          </div>
-        ))}
+        {loading ? (
+          <>
+            {Array(8)
+              .fill(0)
+              .map((_, index) => (
+                <div key={index} className="flex flex-col gap-2">
+                  <MessageSkeleton />
+                </div>
+              ))}
+          </>
+        ) : (
+          <>
+            {mails.map((email) => (
+              <div key={email.id} className="flex items-center w-full flex-col">
+                <Message email={email} active={checked || activeEmail === email.id} onClick={onMailSelected} />
+                <div className="w-full flex px-5">
+                  <div className="border w-full border-gray-10" />
+                </div>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
