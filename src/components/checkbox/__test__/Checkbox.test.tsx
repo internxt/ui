@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import Checkbox from '../Checkbox';
 import renderer from 'react-test-renderer';
 
-describe('Button component', () => {
+describe('Checkbox component', () => {
   it('Checkbox disabled and not checked should render correctly', () => {
     const button = renderer.create(<Checkbox disabled={true} checked={false} />).toJSON();
     expect(button).toMatchSnapshot();
@@ -25,12 +25,12 @@ describe('Button component', () => {
   });
 
   it('Checkbox enabled and indetermiante should render correctly', () => {
-    const button = renderer.create(<Checkbox checked="indeterminate" />).toJSON();
+    const button = renderer.create(<Checkbox checked={true} indeterminate={true} />).toJSON();
     expect(button).toMatchSnapshot();
   });
 
   it('Checkbox disabled and indetermiante should render correctly', () => {
-    const button = renderer.create(<Checkbox disabled={true} checked="indeterminate" />).toJSON();
+    const button = renderer.create(<Checkbox disabled={true} checked={true} indeterminate={true} />).toJSON();
     expect(button).toMatchSnapshot();
   });
 });

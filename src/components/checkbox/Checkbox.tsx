@@ -1,60 +1,48 @@
-import * as RadixCheckbox from '@radix-ui/react-checkbox';
-import { CheckIcon, DividerHorizontalIcon } from '@radix-ui/react-icons';
-import { useState } from 'react';
+/// <reference types="vite-plugin-svgr/client" />
+import Check from '../../assets/icons/check.svg?react';
+import { Minus } from '@phosphor-icons/react';
 
 const Checkbox = ({
-  asChild = false,
-  defaultChecked = true,
   checked = true,
+  indeterminate = false,
   disabled = false,
+  onClick,
   required,
-  name,
-  value,
 }: {
-  asChild?: boolean;
-  defaultChecked?: boolean | 'indeterminate';
-  checked?: boolean | 'indeterminate';
+  checked?: boolean;
+  indeterminate?: boolean;
   disabled?: boolean;
+  onClick?: () => void;
   required?: boolean;
-  name?: string;
-  value?: string;
 }): JSX.Element => {
-  const [isChecked, setIsChecked] = useState<boolean | 'indeterminate'>(checked);
-  const [isDefaultChecked, setIsDefaultChecked] = useState<boolean | 'indeterminate'>(defaultChecked);
-  const isIndetermiante = isChecked === 'indeterminate' || isDefaultChecked === 'indeterminate';
-
-  const onCheckedChange = () => {
-    if (isIndetermiante) {
-      setIsChecked(false);
-      setIsDefaultChecked(false);
-    } else {
-      setIsChecked(!isChecked);
-      setIsDefaultChecked(!isChecked);
-    }
-  };
-
   return (
-    <RadixCheckbox.Root
-      className={`h-5 w-5 rounded flex justify-center items-center 
-      ${!disabled && isChecked && 'bg-primary hover:bg-primary-dark'}
-      ${disabled && !isChecked && 'bg-surface border border-gray-10'}
-      ${!disabled && !isChecked && 'bg-surface border border-gray-30'}
-      ${disabled && isChecked && 'bg-gray-20'}
-      `}
-      asChild={asChild}
-      defaultChecked={isDefaultChecked}
-      checked={isChecked}
-      onCheckedChange={onCheckedChange}
-      disabled={disabled}
-      required={required}
-      name={name}
-      value={value}
-    >
-      <RadixCheckbox.Indicator className="">
-        {isChecked === 'indeterminate' && <DividerHorizontalIcon className="text-white" />}
-        {isChecked === true && <CheckIcon className="text-white" />}
-      </RadixCheckbox.Indicator>
-    </RadixCheckbox.Root>
+    <>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          onClick;
+        }}
+        onKeyDown={() => {}}
+        className={`relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white 
+        ${disabled && !checked && 'bg-surface border border-gray-10 cursor-auto'}
+        ${!disabled && !checked && 'bg-surface border border-gray-30 cursor-pointer'}
+        ${!disabled && checked && 'bg-primary focus:bg-primary-dark cursor-pointer'}
+        ${disabled && checked && 'bg-gray-20 cursor-auto'}`}
+      >
+        {indeterminate ? (
+          <Minus className="absolute -inset-px h-5 w-5 px-0.5" />
+        ) : (
+          checked && <Check className="absolute -inset-px" />
+        )}
+      </button>
+      <input
+        checked={checked}
+        type="checkbox"
+        required={required ?? false}
+        readOnly
+        className="base-checkbox h-0 w-0 appearance-none opacity-0"
+      />
+    </>
   );
 };
 
