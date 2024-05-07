@@ -34,7 +34,7 @@ describe('Button component', () => {
     expect(button).toMatchSnapshot();
   });
 
-  it('Input type password enabled render correctly', () => {
+  it('Input type password enabled should render correctly', () => {
     const button = renderer.create(<Input type="password" />).toJSON();
     expect(button).toMatchSnapshot();
   });
