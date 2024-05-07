@@ -1,5 +1,5 @@
-import { EyeNoneIcon, EyeOpenIcon } from '@radix-ui/react-icons';
 import { useState } from 'react';
+import { Eye, EyeSlash } from '@phosphor-icons/react';
 
 const Input = ({
   type = 'text',
@@ -40,14 +40,14 @@ const Input = ({
       {type === 'password' && (
         <button onClick={handleInputType}>
           {intputType === 'text' ? (
-            <EyeNoneIcon
+            <EyeSlash
               className={`absolute h-6 w-6 
                 ${size === 'lg' && 'right-4 top-2'}
                 ${size === 'md' && 'right-3.5 top-1.5'}
             `}
             />
           ) : (
-            <EyeOpenIcon
+            <Eye
               className={`absolute h-6 w-6 
                 ${size === 'lg' && 'right-4 top-2'}
                 ${size === 'md' && 'right-3.5 top-1.5'}
