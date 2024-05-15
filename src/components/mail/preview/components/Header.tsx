@@ -24,7 +24,7 @@ export const Header = ({ from, to, cc, timestamp }: Pick<EmailProps, 'from' | 't
                 >
                   <p className="text-sm font-medium text-gray-60">{email.name.split(' ')[0]}</p>
                   {hoveredIndex === index && (
-                    <div className="absolute top-full z-30 left-0 mt-2">
+                    <div className="absolute top-full z-30 max-w-[240px] left-0 w-screen mt-2">
                       <UserCheap to={[email]} />
                     </div>
                   )}
@@ -44,7 +44,7 @@ export const Header = ({ from, to, cc, timestamp }: Pick<EmailProps, 'from' | 't
                 >
                   <p className="text-sm font-medium text-gray-60">{email.name.split(' ')[0]}</p>
                   {hoveredIndex === index + to.length && (
-                    <div className="absolute top-full z-30 left-0 mt-2">
+                    <div className="absolute top-full w-screen max-w-[240px] z-30 left-0 mt-2">
                       <UserCheap to={[email]} />
                     </div>
                   )}
