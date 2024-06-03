@@ -2,21 +2,30 @@ import { EmailProps } from '../mocks';
 import { ActionBar } from './components/ActionBar';
 import { Header } from './components/Header';
 import { MessageInbox } from './components/MessageInbox';
+import { NewMessages } from './components/states/NewMessages';
 
 interface PreviewProps {
-  email: EmailProps;
+  mailSelected?: EmailProps;
+  newMessagesCount?: number;
 }
 
-export const Preview = ({ email }: PreviewProps) => {
-  const { from, to, cc, timestamp, body, subject } = email;
+export const Preview = ({ mailSelected, newMessagesCount }: PreviewProps) => {
   return (
     <div className="flex flex-col max-w-[640px] p-5 w-full">
       <div className="flex flex-col w-full">
         <ActionBar />
-        <Header from={from} to={to} cc={cc} timestamp={timestamp} />
+        {mailSelected && (
+          <Header
+            from={mailSelected.from}
+            to={mailSelected.to}
+            cc={mailSelected.cc}
+            timestamp={mailSelected.timestamp}
+          />
+        )}
       </div>
       <div className="border w-full border-gray-5" />
-      <MessageInbox body={body} subject={subject} />
+      {!mailSelected && newMessagesCount && newMessagesCount > 0 && <NewMessages newMessagesCount={newMessagesCount} />}
+      {mailSelected && <MessageInbox body={mailSelected.body} subject={mailSelected.subject} />}
     </div>
   );
 };

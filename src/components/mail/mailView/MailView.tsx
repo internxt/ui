@@ -51,7 +51,7 @@ export const MailView = () => {
         selectedEmails={selectedEmails}
         onMailSelected={handleOnMessageClicked}
       />
-      {mailSelected && <Preview email={mailSelected} />}
+      <Preview mailSelected={mailSelected} newMessagesCount={mails.filter((mail) => mail.read).length} />
     </div>
   );
 };
