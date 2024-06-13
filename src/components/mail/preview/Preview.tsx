@@ -3,6 +3,7 @@ import { ActionBar } from './components/ActionBar';
 import { Header } from './components/Header';
 import { MessageInbox } from './components/MessageInbox';
 import { NewMessages } from './components/states/NewMessages';
+import { EmptyMessages } from './components/states/NoMessages';
 
 interface PreviewProps {
   mailSelected?: EmailProps;
@@ -25,6 +26,7 @@ export const Preview = ({ mailSelected, newMessagesCount }: PreviewProps) => {
       </div>
       <div className="border w-full border-gray-5" />
       {!mailSelected && newMessagesCount && newMessagesCount > 0 && <NewMessages newMessagesCount={newMessagesCount} />}
+      {!mailSelected && newMessagesCount && newMessagesCount === 0 && <EmptyMessages />}
       {mailSelected && <MessageInbox body={mailSelected.body} subject={mailSelected.subject} />}
     </div>
   );
