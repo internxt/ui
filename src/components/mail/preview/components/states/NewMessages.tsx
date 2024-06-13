@@ -1,4 +1,8 @@
-export const NewMessages = ({ newMessagesCount }: { newMessagesCount: number }) => {
+interface NewMessagesProps {
+  newMessagesCount: number;
+}
+
+export const NewMessages = ({ newMessagesCount }: NewMessagesProps) => {
   return (
     <div className="flex flex-col items-center w-full h-full justify-center">
       <div className="flex flex-col bg-gray-1 rounded-lg p-10  items-center">
