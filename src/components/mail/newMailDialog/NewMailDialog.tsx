@@ -1,6 +1,8 @@
 import { Paperclip, X } from '@phosphor-icons/react';
 import { Button } from '../../button/Button';
 import Input from '../../input/Input';
+import { ActionBar } from './components/ActionBar';
+import TextArea from '../../textArea/TextArea';
 
 interface NewMailDialogProps {
   isOpen: boolean;
@@ -62,8 +64,9 @@ export const NewMailDialog = ({
             <Input className="w-full" />
           </div>
           <div className="w-full flex border border-gray-5" />
+          <ActionBar />
         </div>
-
+        <TextArea className={'!border-none min-h-[300px]'} />
         <div className="mt-5 flex justify-end space-x-2">
           <Button variant="ghost" onClick={onSecondaryAction} disabled={isLoading}>
             <Paperclip size={24} />
