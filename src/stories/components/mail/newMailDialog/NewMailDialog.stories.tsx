@@ -23,6 +23,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: 'New message',
+    isOpen: true,
   },
   render: (args) => (
     <div className="flex w-full">

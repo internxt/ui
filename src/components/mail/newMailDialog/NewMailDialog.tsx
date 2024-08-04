@@ -10,6 +10,7 @@ interface NewMailDialogProps {
   title: string;
   subtitle: string;
   onPrimaryAction: () => void;
+  onMailChange: () => void;
   onSecondaryAction: () => void;
   isLoading: boolean;
   primaryActionColor?: string;
@@ -21,6 +22,7 @@ export const NewMailDialog = ({
   isLoading,
   primaryActionColor = 'primary',
   onClose,
+  onMailChange,
   onPrimaryAction,
   onSecondaryAction,
 }: NewMailDialogProps) => {
@@ -46,7 +48,6 @@ export const NewMailDialog = ({
       bg-surface p-5
       transition-all
       duration-150
-      z-20
       dark:bg-gray-1
       `}
       >
@@ -66,7 +67,7 @@ export const NewMailDialog = ({
           <div className="w-full flex border border-gray-5" />
           <ActionBar />
         </div>
-        <TextArea className={'!border-none min-h-[300px]'} />
+        <TextArea className={'!border-none !ring-0 pt-4 min-h-[300px]'} onChange={onMailChange} />
         <div className="mt-5 flex justify-end space-x-2">
           <Button variant="ghost" onClick={onSecondaryAction} disabled={isLoading}>
             <Paperclip size={24} />
