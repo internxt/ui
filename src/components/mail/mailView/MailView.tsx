@@ -3,15 +3,18 @@ import { emailMocks, EmailProps, updateEmailReadStatus } from '../mocks';
 import { Preview } from '../preview/Preview';
 import { Sidenav } from '../sidenav/Sidenav';
 import { Tray } from '../tray/Tray';
+import { NewMailDialog } from '../newMailDialog/NewMailDialog';
 
 export const MailView = () => {
   const mockedMails = emailMocks.emailsWithMultipleRecipients;
+  const [openNewMessageDialog, setOpenNewMessageDialog] = useState<boolean>(false);
   const [mails, setMails] = useState<EmailProps[]>([]);
   const [isFetchingMails, setIsFetchingMails] = useState<boolean>(false);
   const [mailSelected, setMailSelected] = useState<EmailProps>();
   const [checked, setChecked] = useState<boolean>(false);
   const [activeEmail, setActiveEmail] = useState<string | undefined>();
   const [selectedEmails, setSelectedEmails] = useState<string[]>([]);
+  const [onNewMailChange, setOnNewMailChange] = useState<unknown>();
 
   useEffect(() => {
     setIsFetchingMails(true);
@@ -41,7 +44,17 @@ export const MailView = () => {
 
   return (
     <div className="flex flex-row h-screen w-screen">
-      <Sidenav />
+      <Sidenav onNewMessageClicked={() => setOpenNewMessageDialog(true)} />
+      {openNewMessageDialog && (
+        <NewMailDialog
+          onPrimaryAction={() => {}}
+          title="New message"
+          isOpen={openNewMessageDialog}
+          onClose={() => setOpenNewMessageDialog(false)}
+          onMailChange={(e) => setOnNewMailChange(e.target.value)}
+          mailValue={onNewMailChange as string}
+        />
+      )}
       <Tray
         mails={mails}
         activeEmail={activeEmail as string}
@@ -51,7 +64,11 @@ export const MailView = () => {
         selectedEmails={selectedEmails}
         onMailSelected={handleOnMessageClicked}
       />
-      <Preview mailSelected={mailSelected} newMessagesCount={mails.filter((mail) => mail.read).length} />
+      <Preview
+        mailSelected={mailSelected}
+        isFetchingMails={isFetchingMails}
+        newMessagesCount={mails.filter((mail) => mail.read).length}
+      />
     </div>
   );
 };

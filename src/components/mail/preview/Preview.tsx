@@ -7,12 +7,13 @@ import { EmptyMessages } from './components/states/NoMessages';
 
 interface PreviewProps {
   mailSelected?: EmailProps;
+  isFetchingMails: boolean;
   newMessagesCount?: number;
 }
 
-export const Preview = ({ mailSelected, newMessagesCount }: PreviewProps) => {
+export const Preview = ({ mailSelected, isFetchingMails, newMessagesCount }: PreviewProps) => {
   return (
-    <div className="flex flex-col max-w-[640px] p-5 w-full">
+    <div className="flex flex-col max-w-[640px] gap-2 p-5 w-full">
       <div className="flex flex-col w-full">
         <ActionBar />
         {mailSelected && (
@@ -25,9 +26,11 @@ export const Preview = ({ mailSelected, newMessagesCount }: PreviewProps) => {
         )}
       </div>
       <div className="border w-full border-gray-5" />
-      {!mailSelected && newMessagesCount && newMessagesCount > 0 && <NewMessages newMessagesCount={newMessagesCount} />}
-      {!mailSelected && newMessagesCount && newMessagesCount === 0 && <EmptyMessages />}
-      {mailSelected && <MessageInbox body={mailSelected.body} subject={mailSelected.subject} />}
+      {!isFetchingMails && !mailSelected && newMessagesCount && newMessagesCount > 0 && (
+        <NewMessages newMessagesCount={newMessagesCount} />
+      )}
+      {!isFetchingMails && !mailSelected && newMessagesCount && newMessagesCount === 0 && <EmptyMessages />}
+      {!isFetchingMails && mailSelected && <MessageInbox body={mailSelected.body} subject={mailSelected.subject} />}
     </div>
   );
 };

@@ -3,16 +3,18 @@ import { Button } from '../../button/Button';
 import Input from '../../input/Input';
 import { ActionBar } from './components/ActionBar';
 import TextArea from '../../textArea/TextArea';
+import { ChangeEvent } from 'react';
 
 interface NewMailDialogProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  subtitle: string;
+  subtitle?: string;
+  mailValue: string;
   onPrimaryAction: () => void;
-  onMailChange: () => void;
-  onSecondaryAction: () => void;
-  isLoading: boolean;
+  onMailChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  onSecondaryAction?: () => void;
+  isLoading?: boolean;
   primaryActionColor?: string;
 }
 
@@ -21,6 +23,7 @@ export const NewMailDialog = ({
   title,
   isLoading,
   primaryActionColor = 'primary',
+  mailValue,
   onClose,
   onMailChange,
   onPrimaryAction,
@@ -67,7 +70,7 @@ export const NewMailDialog = ({
           <div className="w-full flex border border-gray-5" />
           <ActionBar />
         </div>
-        <TextArea className={'!border-none !ring-0 pt-4 min-h-[300px]'} onChange={onMailChange} />
+        <TextArea className={'!border-none !ring-0 pt-4 min-h-[300px]'} onChange={onMailChange} value={mailValue} />
         <div className="mt-5 flex justify-end space-x-2">
           <Button variant="ghost" onClick={onSecondaryAction} disabled={isLoading}>
             <Paperclip size={24} />

@@ -63,7 +63,7 @@ const MAIL_OPTIONS = [
   },
 ];
 
-export const Sidenav = () => {
+export const Sidenav = ({ onNewMessageClicked }: { onNewMessageClicked: () => void }) => {
   const [active, setActive] = useState<number>(0);
   const [showSubsections, setShowSubsections] = useState(false);
 
@@ -95,7 +95,7 @@ export const Sidenav = () => {
           </button>
         </div>
         <div className="flex flex-col gap-4">
-          <Button className="flex flex-row items-center w-full gap-2">
+          <Button className="flex flex-row items-center w-full gap-2" onClick={onNewMessageClicked}>
             <NotePencil size={24} />
             <p>New message</p>
           </Button>
