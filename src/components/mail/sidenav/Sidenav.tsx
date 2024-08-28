@@ -142,7 +142,7 @@ export const Sidenav = ({ onNewMessageClicked }: { onNewMessageClicked: () => vo
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full gap-2">
+      <div className="flex flex-col w-full gap-2.5">
         <div className="flex flex-row w-full justify-between">
           <div className="flex flex-row items-center gap-2">
             <p className="text-gray-60 text-sm font-semibold">2.8 GB</p>
