@@ -6,8 +6,8 @@ import { NewMessages } from './components/states/NewMessages';
 import { EmptyMessages } from './components/states/NoMessages';
 
 interface PreviewProps {
-  mailSelected?: EmailProps;
   isFetchingMails: boolean;
+  mailSelected?: EmailProps;
   newMessagesCount?: number;
 }
 
@@ -15,7 +15,7 @@ export const Preview = ({ mailSelected, isFetchingMails, newMessagesCount }: Pre
   return (
     <div className="flex flex-col max-w-[640px] gap-2 p-5 w-full">
       <div className="flex flex-col w-full">
-        <ActionBar />
+        <ActionBar isLoading={isFetchingMails} />
         {mailSelected && (
           <Header
             from={mailSelected.from}

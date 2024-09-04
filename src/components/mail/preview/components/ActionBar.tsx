@@ -18,7 +18,11 @@ import { Button } from '../../../button/Button';
 import { Avatar } from '../../../avatar/Avatar';
 import Dropdown from '../../../dropdown/Dropdown';
 
-export const ActionBar = () => {
+interface ActionBarProps {
+  isLoading: boolean;
+}
+
+export const ActionBar = ({ isLoading }: ActionBarProps) => {
   const dropdownActions = [
     {
       name: 'Print',
@@ -42,7 +46,7 @@ export const ActionBar = () => {
   ];
 
   return (
-    <div className="flex flex-row w-full items-center justify-between">
+    <div className={`flex ${isLoading && 'opacity-40'} flex-row w-full items-center justify-between`}>
       <div className="flex flex-row items-center gap-5 w-full">
         <Button variant="ghost" className="w-10">
           <EnvelopeSimple size={24} />
