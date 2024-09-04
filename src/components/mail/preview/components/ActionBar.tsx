@@ -90,7 +90,7 @@ export const ActionBar = ({ isLoading }: ActionBarProps) => {
       </div>
       <div className="flex flex-row gap-3 items-center">
         <Gear size={24} />
-        <Avatar fullName="Xavi" diameter={40} />
+        <Avatar fullName="Xavi Abad" diameter={40} />
       </div>
     </div>
   );
