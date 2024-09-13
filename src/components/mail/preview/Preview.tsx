@@ -13,7 +13,7 @@ interface PreviewProps {
 
 export const Preview = ({ mailSelected, isFetchingMails, newMessagesCount }: PreviewProps) => {
   return (
-    <div className="flex flex-col max-w-[640px] gap-2 p-5 w-full">
+    <div className="flex flex-col max-w-[640px] gap-2 p-5 w-full h-full">
       <div className="flex flex-col w-full">
         <ActionBar isLoading={isFetchingMails} />
         {mailSelected && (
