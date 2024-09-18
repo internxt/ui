@@ -2,6 +2,13 @@
   "name": "@internxt/internxtui",
   "version": "0.0.1",
   "description": "Library of Internxt components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/internxt/InternxtUI.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/internxt/InternxtUI#readme",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
