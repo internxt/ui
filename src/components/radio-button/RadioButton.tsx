@@ -16,7 +16,7 @@ export const RadioButton = ({ checked, disabled = false, onClick }: RadioButtonP
         onClick={onClick}
         className={`flex h-5 w-5 items-center justify-center rounded-full border ${checkedStyle} ${borderStyle}`}
       >
-        {<div className={`h-2.5 w-2.5 rounded-full ${checked ? 'bg-white' : 'hover:bg-gray-10'}`}></div>}
+        {<div className={`h-2.5 w-2.5 rounded-full ${checked || disabled ? 'bg-white' : 'hover:bg-gray-10'}`}></div>}
       </button>
       <input type="radio" className="h-0 w-0 appearance-none opacity-0" checked />
     </label>
