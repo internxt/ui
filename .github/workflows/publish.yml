@@ -1,8 +1,11 @@
 name: Publish the UI package in GitHub package registry
 on:
   pull_request:
-    branches: ['feat/automating-and-publishing-the-package']
-  workflow_dispatch:
+    branches:
+      - feat/automating-and-publishing-the-package
+    types:
+      - opened
+  # workflow_dispatch:
 
 jobs:
   build:
