@@ -69,10 +69,11 @@
     "test-watch": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:dev": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
   "dependencies": {
+    "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/themes": "^3.0.0"
   },
   "lint-staged": {

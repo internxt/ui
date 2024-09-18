@@ -10,5 +10,6 @@
   "extends": ["@internxt/eslint-config-internxt", "plugin:storybook/recommended"],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "max-len": "off",
   },
 }
