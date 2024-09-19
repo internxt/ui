@@ -53,6 +53,7 @@ export const Button = ({
   } else if (variant === 'ghost' && disabled) {
     styles = 'text-gray-30';
   }
+
   return (
     <button
       data-cy={buttonDataCy}
