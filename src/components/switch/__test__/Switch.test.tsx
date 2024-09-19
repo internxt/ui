@@ -1,24 +1,32 @@
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { SwitchComponent } from '../Switch';
+import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
+import { SwitchComponent } from '../Switch';
 
 describe('Switch component', () => {
   it('Switch onClick should be called correctly', () => {
     const switchClick = vi.fn();
-    render(<SwitchComponent size="md" />);
-    const switchComponent = screen.getByRole('switch');
+    render(<SwitchComponent size="md" onClick={switchClick} />);
+    const switchComponent = screen.getByTestId('switch');
     switchComponent.click();
     expect(switchClick).toHaveBeenCalledOnce();
   });
 
-  it('Medium switch should has the correct sizes', () => {
-    const switchComponent = renderer.create(<SwitchComponent size="md" />).toJSON();
-    const getSwitch = screen.getByRole('switch');
-    getSwitch.clientWidth;
-    getSwitch.clientHeight;
-    expect(switchComponent).toMatchSnapshot();
+  it('Switch onCheckedChange should be called with the correct value', async () => {
+    const onCheckedChangeMock = vi.fn(); // Crea un mock para onCheckedChange
+    render(<SwitchComponent size="md" onCheckedChange={onCheckedChangeMock} />);
+
+    const switchComponent = screen.getByTestId('switch');
+
+    await userEvent.click(switchComponent);
+
+    expect(onCheckedChangeMock).toHaveBeenCalledWith(true);
+
+    await userEvent.click(switchComponent);
+
+    expect(onCheckedChangeMock).toHaveBeenCalledWith(false);
   });
 
   it('Medium switch should render correctly', () => {

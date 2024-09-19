@@ -33,8 +33,9 @@ export const SwitchComponent = ({ disabled = false, size = 'md', onClick, onChec
   return (
     <Switch.Root
       disabled={disabled}
-      className={`${backgroundColor} ${sizeClasses[size]} rounded-full relative outline-none cursor-default`}
+      className={`${backgroundColor} ${sizeClasses[size]} rounded-full relative outline-none`}
       id="switch"
+      data-testid="switch"
       onCheckedChange={onCheckedChange}
       onClick={onClick}
       style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}
