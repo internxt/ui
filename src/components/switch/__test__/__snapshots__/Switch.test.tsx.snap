@@ -21,7 +21,7 @@ exports[`Switch component > Extra Large switch disabled should render correctly 
     value="on"
   >
     <span
-      className="block bg-white rounded-full transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[26px] will-change-transform w-7 h-7"
+      className="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[25px] will-change-transform w-7 h-7"
       data-disabled=""
       data-state="unchecked"
     />
@@ -66,7 +66,7 @@ exports[`Switch component > Extra Large switch should render correctly 1`] = `
     value="on"
   >
     <span
-      className="block bg-white rounded-full transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[26px] will-change-transform w-7 h-7"
+      className="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[25px] will-change-transform w-7 h-7"
       data-state="unchecked"
     />
   </button>,
@@ -111,7 +111,7 @@ exports[`Switch component > Large switch disabled should render correctly 1`] = 
     value="on"
   >
     <span
-      className="block bg-white rounded-full transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[22px] will-change-transform w-6 h-6"
+      className="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[21px] will-change-transform w-6 h-6"
       data-disabled=""
       data-state="unchecked"
     />
@@ -156,7 +156,7 @@ exports[`Switch component > Large switch should render correctly 1`] = `
     value="on"
   >
     <span
-      className="block bg-white rounded-full transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[22px] will-change-transform w-6 h-6"
+      className="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[21px] will-change-transform w-6 h-6"
       data-state="unchecked"
     />
   </button>,
@@ -201,7 +201,7 @@ exports[`Switch component > Medium switch disabled should render correctly 1`] =
     value="on"
   >
     <span
-      className="block bg-white rounded-full transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[14px] will-change-transform w-4 h-4"
+      className="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[13px] will-change-transform w-4 h-4"
       data-disabled=""
       data-state="unchecked"
     />
@@ -246,7 +246,7 @@ exports[`Switch component > Medium switch should render correctly 1`] = `
     value="on"
   >
     <span
-      className="block bg-white rounded-full transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[14px] will-change-transform w-4 h-4"
+      className="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[13px] will-change-transform w-4 h-4"
       data-state="unchecked"
     />
   </button>,
