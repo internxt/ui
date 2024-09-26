@@ -1,33 +1,37 @@
 import { ReactNode } from 'react';
 import Spinner from '../spinner/Spinner';
 
-export default function Button({
-  variant = 'primary',
-  type = 'button',
-  children,
-  className = '',
-  disabled = false,
-  onClick = () => undefined,
-  size = 'default',
-  loading,
-  dataTest,
-  autofocus,
-  buttonDataCy,
-  buttonChildrenDataCy,
-}: Readonly<{
+interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
   type?: 'button' | 'submit';
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
+  onKeyDown?: () => void;
   size?: 'medium' | 'default';
   loading?: boolean;
   dataTest?: string;
   autofocus?: boolean;
   buttonDataCy?: string;
   buttonChildrenDataCy?: string;
-}>): JSX.Element {
+}
+
+export const Button = ({
+  variant = 'primary',
+  type = 'button',
+  children,
+  className = '',
+  disabled = false,
+  onClick = () => undefined,
+  onKeyDown = () => undefined,
+  size = 'default',
+  loading,
+  dataTest,
+  autofocus,
+  buttonDataCy,
+  buttonChildrenDataCy,
+}: Readonly<ButtonProps>): JSX.Element => {
   let styles = '';
 
   if (variant === 'primary' && !disabled) {
@@ -49,10 +53,12 @@ export default function Button({
   } else if (variant === 'ghost' && disabled) {
     styles = 'text-gray-30';
   }
+
   return (
     <button
       data-cy={buttonDataCy}
       onClick={onClick}
+      onKeyDown={onKeyDown}
       disabled={disabled || loading}
       type={type}
       data-test={dataTest}
@@ -70,4 +76,4 @@ export default function Button({
       </div>
     </button>
   );
-}
+};

@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Radio Button component > Checked Radio Button component should render correctly 1`] = `
+<div
+  className="flex cursor-pointer"
+>
+  <button
+    className="flex h-5 w-5 items-center justify-center rounded-full border border-0 bg-primary active:bg-primary-dark border-gray-40"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <div
+      className="h-2.5 w-2.5 rounded-full bg-white"
+    />
+  </button>
+  <input
+    checked={true}
+    className="h-0 w-0 appearance-none opacity-0"
+    type="radio"
+  />
+</div>
+`;
+
+exports[`Radio Button component > Disabled Radio Button component should render correctly 1`] = `
+<div
+  className="flex cursor-pointer"
+>
+  <button
+    className="flex h-5 w-5 items-center justify-center rounded-full border false border-gray-10"
+    disabled={true}
+    onClick={[Function]}
+  >
+    <div
+      className="h-2.5 w-2.5 rounded-full bg-white"
+    />
+  </button>
+  <input
+    checked={true}
+    className="h-0 w-0 appearance-none opacity-0"
+    type="radio"
+  />
+</div>
+`;
+
+exports[`Radio Button component > Disabled and Checked Radio Button component should render correctly 1`] = `
+<div
+  className="flex cursor-pointer"
+>
+  <button
+    className="flex h-5 w-5 items-center justify-center rounded-full border false border-gray-10"
+    disabled={true}
+    onClick={[Function]}
+  >
+    <div
+      className="h-2.5 w-2.5 rounded-full bg-white"
+    />
+  </button>
+  <input
+    checked={true}
+    className="h-0 w-0 appearance-none opacity-0"
+    type="radio"
+  />
+</div>
+`;
+
+exports[`Radio Button component > Radio Button component should render correctly 1`] = `
+<div
+  className="flex cursor-pointer"
+>
+  <button
+    className="flex h-5 w-5 items-center justify-center rounded-full border false border-gray-40"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <div
+      className="h-2.5 w-2.5 rounded-full hover:bg-gray-10"
+    />
+  </button>
+  <input
+    checked={true}
+    className="h-0 w-0 appearance-none opacity-0"
+    type="radio"
+  />
+</div>
+`;

@@ -1,1 +1,3 @@
-export * from './button';
+export * from './button/Button';
+export * from './switch/Switch';
+export * from './radio-button/RadioButton';
