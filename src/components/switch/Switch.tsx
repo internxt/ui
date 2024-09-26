@@ -25,22 +25,23 @@ export const SwitchComponent = ({ disabled = false, size = 'md', onClick, onChec
   };
 
   const checkedTranslation = {
-    md: 'data-[state=checked]:translate-x-[14px]',
-    lg: 'data-[state=checked]:translate-x-[22px]',
-    xl: 'data-[state=checked]:translate-x-[26px]',
+    md: 'data-[state=checked]:translate-x-[13px]',
+    lg: 'data-[state=checked]:translate-x-[21px]',
+    xl: 'data-[state=checked]:translate-x-[25px]',
   };
 
   return (
     <Switch.Root
       disabled={disabled}
-      className={`${backgroundColor} ${sizeClasses[size]} rounded-full relative outline-none cursor-default`}
+      className={`${backgroundColor} ${sizeClasses[size]} rounded-full relative outline-none`}
       id="switch"
+      data-testid="switch"
       onCheckedChange={onCheckedChange}
       onClick={onClick}
       style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}
     >
       <Switch.Thumb
-        className={`block bg-white rounded-full transition-transform duration-100 translate-x-0.5 ${checkedTranslation[size]} will-change-transform ${thumbSizeClasses[size]}`}
+        className={`block bg-white rounded-full transition-transform duration-100 translate-x-[3px] ${checkedTranslation[size]} will-change-transform ${thumbSizeClasses[size]}`}
       />
     </Switch.Root>
   );
