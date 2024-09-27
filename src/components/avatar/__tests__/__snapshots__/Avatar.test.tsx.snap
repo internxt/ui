@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Avatar component > Avatar with avatar (user image profile) should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 80,
+      "width": 80,
+    }
+  }
+/>
+`;
+
+exports[`Avatar component > Avatar with full name (first letters) should render correctly 1`] = `
+<div
+  className=" flex shrink-0 select-none items-center justify-center rounded-full bg-primary/20 font-medium text-primary dark:bg-primary/75 dark:text-white"
+  style={
+    {
+      "fontSize": 38.095238095238095,
+      "height": 80,
+      "width": 80,
+    }
+  }
+>
+  <p>
+    MI
+  </p>
+</div>
+`;
+
+exports[`Button component > Primary button should render correctly 1`] = `
+<div
+  className=" flex shrink-0 select-none items-center justify-center rounded-full bg-primary/20 font-medium text-primary dark:bg-primary/75 dark:text-white"
+  style={
+    {
+      "fontSize": 38.095238095238095,
+      "height": 80,
+      "width": 80,
+    }
+  }
+>
+  <p>
+    MI
+  </p>
+</div>
+`;
+
+exports[`Button component > Secondary button should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 80,
+      "width": 80,
+    }
+  }
+/>
+`;
