@@ -31,6 +31,90 @@ exports[`Avatar component > Avatar with full name (first letters) should render 
 </div>
 `;
 
+exports[`Avatar component > Base Avatar should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 48,
+      "width": 48,
+    }
+  }
+/>
+`;
+
+exports[`Avatar component > LG Avatar should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 80,
+      "width": 80,
+    }
+  }
+/>
+`;
+
+exports[`Avatar component > SM Avatar should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 40,
+      "width": 40,
+    }
+  }
+/>
+`;
+
+exports[`Avatar component > XL Avatar should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 128,
+      "width": 128,
+    }
+  }
+/>
+`;
+
+exports[`Avatar component > XS Avatar should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 36,
+      "width": 36,
+    }
+  }
+/>
+`;
+
+exports[`Avatar component > XXS Avatar should render correctly 1`] = `
+<img
+  className=" shrink-0 select-none rounded-full object-cover"
+  draggable={false}
+  src="https://internxt.com/favicon.ico"
+  style={
+    {
+      "height": 28,
+      "width": 28,
+    }
+  }
+/>
+`;
+
 exports[`Button component > Primary button should render correctly 1`] = `
 <div
   className=" flex shrink-0 select-none items-center justify-center rounded-full bg-primary/20 font-medium text-primary dark:bg-primary/75 dark:text-white"
