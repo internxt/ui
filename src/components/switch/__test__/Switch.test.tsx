@@ -1,8 +1,7 @@
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import renderer from 'react-test-renderer';
 import { SwitchComponent } from '../Switch';
 
 describe('Switch component', () => {
@@ -15,47 +14,51 @@ describe('Switch component', () => {
   });
 
   it('Switch onCheckedChange should be called with the correct value', async () => {
-    const onCheckedChangeMock = vi.fn(); // Crea un mock para onCheckedChange
+    const onCheckedChangeMock = vi.fn();
     render(<SwitchComponent size="md" onCheckedChange={onCheckedChangeMock} />);
 
     const switchComponent = screen.getByTestId('switch');
 
-    await userEvent.click(switchComponent);
+    await act(async () => {
+      await userEvent.click(switchComponent);
+    });
 
     expect(onCheckedChangeMock).toHaveBeenCalledWith(true);
 
-    await userEvent.click(switchComponent);
+    await act(async () => {
+      await userEvent.click(switchComponent);
+    });
 
     expect(onCheckedChangeMock).toHaveBeenCalledWith(false);
   });
 
   it('Medium switch should render correctly', () => {
-    const switchComponent = renderer.create(<SwitchComponent size="md" />).toJSON();
+    const switchComponent = render(<SwitchComponent size="md" />);
     expect(switchComponent).toMatchSnapshot();
   });
 
   it('Medium switch disabled should render correctly', () => {
-    const switchComponent = renderer.create(<SwitchComponent disabled size="md" />).toJSON();
+    const switchComponent = render(<SwitchComponent disabled size="md" />);
     expect(switchComponent).toMatchSnapshot();
   });
 
   it('Large switch should render correctly', () => {
-    const switchComponent = renderer.create(<SwitchComponent size="lg" />).toJSON();
+    const switchComponent = render(<SwitchComponent size="lg" />);
     expect(switchComponent).toMatchSnapshot();
   });
 
   it('Large switch disabled should render correctly', () => {
-    const switchComponent = renderer.create(<SwitchComponent disabled size="lg" />).toJSON();
+    const switchComponent = render(<SwitchComponent disabled size="lg" />);
     expect(switchComponent).toMatchSnapshot();
   });
 
   it('Extra Large switch should render correctly', () => {
-    const switchComponent = renderer.create(<SwitchComponent size="xl" />).toJSON();
+    const switchComponent = render(<SwitchComponent size="xl" />);
     expect(switchComponent).toMatchSnapshot();
   });
 
   it('Extra Large switch disabled should render correctly', () => {
-    const switchComponent = renderer.create(<SwitchComponent disabled size="xl" />).toJSON();
+    const switchComponent = render(<SwitchComponent disabled size="xl" />);
     expect(switchComponent).toMatchSnapshot();
   });
 });
