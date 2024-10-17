@@ -1,47 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Switch component > Extra Large switch disabled should render correctly 1`] = `
+exports[`Avatar component > Avatar with avatar (user image profile) should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-checked="false"
-        class="bg-gray-5 data-[state=checked]:bg-green/50 w-14 h-8 rounded-full relative outline-none"
-        data-disabled=""
-        data-state="unchecked"
-        data-testid="switch"
-        disabled=""
-        role="switch"
-        type="button"
-        value="on"
-      >
-        <span
-          class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[25px] will-change-transform w-7 h-7"
-          data-disabled=""
-          data-state="unchecked"
-        />
-      </button>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 80px; height: 80px;"
+      />
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-checked="false"
-      class="bg-gray-5 data-[state=checked]:bg-green/50 w-14 h-8 rounded-full relative outline-none"
-      data-disabled=""
-      data-state="unchecked"
-      data-testid="switch"
-      disabled=""
-      role="switch"
-      type="button"
-      value="on"
-    >
-      <span
-        class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[25px] will-change-transform w-7 h-7"
-        data-disabled=""
-        data-state="unchecked"
-      />
-    </button>
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 80px; height: 80px;"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -97,42 +75,30 @@ exports[`Switch component > Extra Large switch disabled should render correctly 
 }
 `;
 
-exports[`Switch component > Extra Large switch should render correctly 1`] = `
+exports[`Avatar component > Avatar with full name (first letters) should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-checked="false"
-        class="bg-gray-10 data-[state=checked]:bg-green w-14 h-8 rounded-full relative outline-none"
-        data-state="unchecked"
-        data-testid="switch"
-        role="switch"
-        type="button"
-        value="on"
+      <div
+        class=" flex shrink-0 select-none items-center justify-center rounded-full bg-primary/20 font-medium text-primary dark:bg-primary/75 dark:text-white"
+        style="width: 80px; height: 80px; font-size: 38.095238095238095px;"
       >
-        <span
-          class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[25px] will-change-transform w-7 h-7"
-          data-state="unchecked"
-        />
-      </button>
+        <p>
+          MI
+        </p>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-checked="false"
-      class="bg-gray-10 data-[state=checked]:bg-green w-14 h-8 rounded-full relative outline-none"
-      data-state="unchecked"
-      data-testid="switch"
-      role="switch"
-      type="button"
-      value="on"
+    <div
+      class=" flex shrink-0 select-none items-center justify-center rounded-full bg-primary/20 font-medium text-primary dark:bg-primary/75 dark:text-white"
+      style="width: 80px; height: 80px; font-size: 38.095238095238095px;"
     >
-      <span
-        class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[25px] will-change-transform w-7 h-7"
-        data-state="unchecked"
-      />
-    </button>
+      <p>
+        MI
+      </p>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -188,48 +154,26 @@ exports[`Switch component > Extra Large switch should render correctly 1`] = `
 }
 `;
 
-exports[`Switch component > Large switch disabled should render correctly 1`] = `
+exports[`Avatar component > Base Avatar should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-checked="false"
-        class="bg-gray-5 data-[state=checked]:bg-green/50 w-12 h-7 rounded-full relative outline-none"
-        data-disabled=""
-        data-state="unchecked"
-        data-testid="switch"
-        disabled=""
-        role="switch"
-        type="button"
-        value="on"
-      >
-        <span
-          class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[21px] will-change-transform w-6 h-6"
-          data-disabled=""
-          data-state="unchecked"
-        />
-      </button>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 48px; height: 48px;"
+      />
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-checked="false"
-      class="bg-gray-5 data-[state=checked]:bg-green/50 w-12 h-7 rounded-full relative outline-none"
-      data-disabled=""
-      data-state="unchecked"
-      data-testid="switch"
-      disabled=""
-      role="switch"
-      type="button"
-      value="on"
-    >
-      <span
-        class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[21px] will-change-transform w-6 h-6"
-        data-disabled=""
-        data-state="unchecked"
-      />
-    </button>
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 48px; height: 48px;"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -285,42 +229,26 @@ exports[`Switch component > Large switch disabled should render correctly 1`] = 
 }
 `;
 
-exports[`Switch component > Large switch should render correctly 1`] = `
+exports[`Avatar component > LG Avatar should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-checked="false"
-        class="bg-gray-10 data-[state=checked]:bg-green w-12 h-7 rounded-full relative outline-none"
-        data-state="unchecked"
-        data-testid="switch"
-        role="switch"
-        type="button"
-        value="on"
-      >
-        <span
-          class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[21px] will-change-transform w-6 h-6"
-          data-state="unchecked"
-        />
-      </button>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 80px; height: 80px;"
+      />
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-checked="false"
-      class="bg-gray-10 data-[state=checked]:bg-green w-12 h-7 rounded-full relative outline-none"
-      data-state="unchecked"
-      data-testid="switch"
-      role="switch"
-      type="button"
-      value="on"
-    >
-      <span
-        class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[21px] will-change-transform w-6 h-6"
-        data-state="unchecked"
-      />
-    </button>
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 80px; height: 80px;"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -376,48 +304,26 @@ exports[`Switch component > Large switch should render correctly 1`] = `
 }
 `;
 
-exports[`Switch component > Medium switch disabled should render correctly 1`] = `
+exports[`Avatar component > SM Avatar should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-checked="false"
-        class="bg-gray-5 data-[state=checked]:bg-green/50 w-8 h-5 rounded-full relative outline-none"
-        data-disabled=""
-        data-state="unchecked"
-        data-testid="switch"
-        disabled=""
-        role="switch"
-        type="button"
-        value="on"
-      >
-        <span
-          class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[13px] will-change-transform w-4 h-4"
-          data-disabled=""
-          data-state="unchecked"
-        />
-      </button>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 40px; height: 40px;"
+      />
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-checked="false"
-      class="bg-gray-5 data-[state=checked]:bg-green/50 w-8 h-5 rounded-full relative outline-none"
-      data-disabled=""
-      data-state="unchecked"
-      data-testid="switch"
-      disabled=""
-      role="switch"
-      type="button"
-      value="on"
-    >
-      <span
-        class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[13px] will-change-transform w-4 h-4"
-        data-disabled=""
-        data-state="unchecked"
-      />
-    </button>
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 40px; height: 40px;"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -473,42 +379,176 @@ exports[`Switch component > Medium switch disabled should render correctly 1`] =
 }
 `;
 
-exports[`Switch component > Medium switch should render correctly 1`] = `
+exports[`Avatar component > XL Avatar should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button
-        aria-checked="false"
-        class="bg-gray-10 data-[state=checked]:bg-green w-8 h-5 rounded-full relative outline-none"
-        data-state="unchecked"
-        data-testid="switch"
-        role="switch"
-        type="button"
-        value="on"
-      >
-        <span
-          class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[13px] will-change-transform w-4 h-4"
-          data-state="unchecked"
-        />
-      </button>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 128px; height: 128px;"
+      />
     </div>
   </body>,
   "container": <div>
-    <button
-      aria-checked="false"
-      class="bg-gray-10 data-[state=checked]:bg-green w-8 h-5 rounded-full relative outline-none"
-      data-state="unchecked"
-      data-testid="switch"
-      role="switch"
-      type="button"
-      value="on"
-    >
-      <span
-        class="block bg-white rounded-full transition-transform duration-100 translate-x-[3px] data-[state=checked]:translate-x-[13px] will-change-transform w-4 h-4"
-        data-state="unchecked"
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 128px; height: 128px;"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component > XS Avatar should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 36px; height: 36px;"
       />
-    </button>
+    </div>
+  </body>,
+  "container": <div>
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 36px; height: 36px;"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component > XXS Avatar should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <img
+        class=" shrink-0 select-none rounded-full object-cover"
+        draggable="false"
+        src="https://internxt.com/favicon.ico"
+        style="width: 28px; height: 28px;"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <img
+      class=" shrink-0 select-none rounded-full object-cover"
+      draggable="false"
+      src="https://internxt.com/favicon.ico"
+      style="width: 28px; height: 28px;"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

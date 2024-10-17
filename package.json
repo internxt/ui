@@ -1,6 +1,10 @@
 {
   "name": "@internxt/internxtui",
+<<<<<<< HEAD
   "version": "0.0.5",
+=======
+  "version": "0.0.4",
+>>>>>>> master
   "description": "Library of Internxt components",
   "repository": {
     "type": "git",

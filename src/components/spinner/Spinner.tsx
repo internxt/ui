@@ -1,4 +1,5 @@
-const Spinner = ({ className = '', size }: { className?: string; size?: number }): JSX.Element => {
+// TODO: Add Spinner to StoryBook
+export const Spinner = ({ className = '', size }: { className?: string; size?: number }): JSX.Element => {
   return (
     <svg
       className={`animate-spin ${className}`}
@@ -18,5 +19,3 @@ const Spinner = ({ className = '', size }: { className?: string; size?: number }
     </svg>
   );
 };
-
-export default Spinner;

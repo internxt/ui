@@ -2,12 +2,21 @@ import * as Switch from '@radix-ui/react-switch';
 
 interface SwitchComponentProps {
   size: 'md' | 'lg' | 'xl';
+  id?: string;
+  dataTestId?: string;
   disabled?: boolean;
   onCheckedChange?: (checked: boolean) => void;
-  onClick?: () => void;
+  onClick?: (e?: unknown) => void;
 }
 
-export const SwitchComponent = ({ disabled = false, size = 'md', onClick, onCheckedChange }: SwitchComponentProps) => {
+export const SwitchComponent = ({
+  disabled = false,
+  id,
+  dataTestId = 'switch',
+  size = 'md',
+  onClick,
+  onCheckedChange,
+}: SwitchComponentProps) => {
   const backgroundColor = disabled
     ? 'bg-gray-5 data-[state=checked]:bg-green/50'
     : 'bg-gray-10 data-[state=checked]:bg-green';
@@ -34,8 +43,8 @@ export const SwitchComponent = ({ disabled = false, size = 'md', onClick, onChec
     <Switch.Root
       disabled={disabled}
       className={`${backgroundColor} ${sizeClasses[size]} rounded-full relative outline-none`}
-      id="switch"
-      data-testid="switch"
+      id={id}
+      data-testid={dataTestId}
       onCheckedChange={onCheckedChange}
       onClick={onClick}
       style={{ WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}
