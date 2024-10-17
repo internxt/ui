@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { Eye, EyeSlash } from '@phosphor-icons/react';
 
+interface InputComponentProps {
+  type?: 'text' | 'password';
+  size?: 'lg' | 'md';
+  disabled?: boolean;
+  accentColor?: 'red' | 'orange' | 'green';
+  placeholder?: string;
+}
+
 const Input = ({
   type = 'text',
   size = 'lg',
   disabled = false,
   accentColor,
   placeholder = '',
-}: {
-  type?: 'text' | 'password';
-  size?: 'lg' | 'md';
-  disabled?: boolean;
-  accentColor?: 'red' | 'orange' | 'green';
-  placeholder?: string;
-}): JSX.Element => {
+}: InputComponentProps): JSX.Element => {
   const [intputType, setInputType] = useState(type);
 
   const handleInputType = () => {

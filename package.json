@@ -1,7 +1,14 @@
 {
   "name": "@internxt/internxtui",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Library of Internxt components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/internxt/InternxtUI.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/internxt/InternxtUI#readme",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -25,9 +32,12 @@
     "@storybook/react": "^8.0.4",
     "@storybook/react-vite": "^8.0.4",
     "@storybook/test": "^8.0.4",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
+    "@testing-library/user-event": "^14.5.2",
     "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "@vitest/coverage-istanbul": "^1.4.0",
@@ -44,7 +54,6 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "react": "^18.2.0",
-    "react-test-renderer": "^18.2.0",
     "sass": "^1.72.0",
     "storybook": "^8.0.4",
     "tailwindcss": "^3.4.1",
@@ -63,14 +72,13 @@
     "test-watch": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:dev": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.1.5"
-  },
-  "resolutions": {
-    "jackspeak": "2.1.1"
+    "@phosphor-icons/react": "^2.1.5",
+    "@radix-ui/react-switch": "^1.1.0",
+    "@radix-ui/themes": "^3.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

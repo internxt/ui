@@ -1,202 +1,1008 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Button component > Destructive button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-red active:bg-red-dark text-white shadow-sm "
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  >
-    Destructive
-  </div>
-</button>
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        >
+          Destructive
+        </div>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-red active:bg-red-dark text-white shadow-sm "
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      >
+        Destructive
+      </div>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Destructive disabled button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-gray-30 text-white shadow-sm "
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+        disabled=""
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-gray-30 text-white shadow-sm "
+      disabled=""
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Ghost button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 hover:bg-gray-5 active:bg-gray-10 focus-visible:bg-gray-10 "
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  >
-    Ghost
-  </div>
-</button>
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        >
+          Ghost
+        </div>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 hover:bg-gray-5 active:bg-gray-10 focus-visible:bg-gray-10 "
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      >
+        Ghost
+      </div>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Ghost disabled button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 text-gray-30 "
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+        disabled=""
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 text-gray-30 "
+      disabled=""
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Primary button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-primary active:bg-primary-dark text-white shadow-sm "
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  >
-    Primary
-  </div>
-</button>
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        >
+          Primary
+        </div>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-primary active:bg-primary-dark text-white shadow-sm "
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      >
+        Primary
+      </div>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Primary disabled button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-gray-30 text-white shadow-sm "
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+        disabled=""
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-gray-30 text-white shadow-sm "
+      disabled=""
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Primary loading button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-primary-dark active:bg-primary-dark text-white shadow-sm "
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <svg
-    className="animate-spin "
-    fill="none"
-    height={18}
-    viewBox="0 0 24 24"
-    width={18}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle
-      className="opacity-25"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
-    />
-    <path
-      className="opacity-75"
-      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824
+        disabled=""
+        type="button"
+      >
+        <svg
+          class="animate-spin "
+          fill="none"
+          height="18"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          />
+          <path
+            class="opacity-75"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824
               3 7.938l3-2.647z"
-      fill="currentColor"
-    />
-  </svg>
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+            fill="currentColor"
+          />
+        </svg>
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-primary-dark active:bg-primary-dark text-white shadow-sm "
+      disabled=""
+      type="button"
+    >
+      <svg
+        class="animate-spin "
+        fill="none"
+        height="18"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        />
+        <path
+          class="opacity-75"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824
+              3 7.938l3-2.647z"
+          fill="currentColor"
+        />
+      </svg>
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Primary medium button should render correctly 1`] = `
-<button
-  className="h-8 px-3.5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-8 px-3.5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-primary active:bg-primary-dark text-white shadow-sm "
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-8 px-3.5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-primary active:bg-primary-dark text-white shadow-sm "
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Primary submit button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-primary active:bg-primary-dark text-white shadow-sm "
-  onClick={[Function]}
-  type="submit"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+        type="submit"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-primary active:bg-primary-dark text-white shadow-sm "
+      type="submit"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Secondary button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-surface dark:bg-gray-5 border border-gray-10 hover:border-gray-20 active:bg-gray-1 dark:active:bg-gray-10 text-gray-80 shadow-sm "
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  >
-    Secondary
-  </div>
-</button>
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        >
+          Secondary
+        </div>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-surface dark:bg-gray-5 border border-gray-10 hover:border-gray-20 active:bg-gray-1 dark:active:bg-gray-10 text-gray-80 shadow-sm "
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      >
+        Secondary
+      </div>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`Button component > Secondary disabled button should render correctly 1`] = `
-<button
-  className="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
       whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 bg-surface dark:bg-gray-5 text-gray-30 border border-gray-5 shadow-sm "
-  disabled={true}
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="flex items-center justify-center space-x-2"
-  />
-</button>
+        disabled=""
+        type="button"
+      >
+        <div
+          class="flex items-center justify-center space-x-2"
+        />
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="h-10 px-5 relative flex shrink-0 select-none flex-row items-center justify-center space-x-2 
+      whitespace-nowrap rounded-lg text-base font-medium outline-none ring-2 ring-primary/0 
+      ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
+      focus-visible:ring-primary/50 bg-surface dark:bg-gray-5 text-gray-30 border border-gray-5 shadow-sm "
+      disabled=""
+      type="button"
+    >
+      <div
+        class="flex items-center justify-center space-x-2"
+      />
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;

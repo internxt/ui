@@ -2,25 +2,27 @@
 import Check from '../../assets/icons/check.svg?react';
 import { Minus } from '@phosphor-icons/react';
 
+interface CheckboxComponentProps {
+  checked?: boolean;
+  indeterminate?: boolean;
+  disabled?: boolean;
+  onClick?: () => void;
+  required?: boolean;
+}
+
 const Checkbox = ({
   checked = true,
   indeterminate = false,
   disabled = false,
   onClick,
   required,
-}: {
-  checked?: boolean;
-  indeterminate?: boolean;
-  disabled?: boolean;
-  onClick?: () => void;
-  required?: boolean;
-}): JSX.Element => {
+}: CheckboxComponentProps): JSX.Element => {
   return (
     <>
       <button
         onClick={(e) => {
           e.preventDefault();
-          onClick;
+          onClick && onClick();
         }}
         onKeyDown={() => {}}
         className={`relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white 
