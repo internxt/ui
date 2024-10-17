@@ -2,7 +2,7 @@ interface RadioButtonProps {
   checked: boolean;
   id?: string;
   disabled?: boolean;
-  onClick: (e: unknown) => void;
+  onClick: (e?: unknown) => void;
 }
 
 export const RadioButton = ({ checked, id, disabled = false, onClick }: RadioButtonProps) => {

@@ -8,8 +8,8 @@ interface ButtonProps {
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
-  onClick?: (e: unknown) => void;
-  onKeyDown?: (e: unknown) => void;
+  onClick?: (e?: unknown) => void;
+  onKeyDown?: (e?: unknown) => void;
   size?: 'medium' | 'default';
   loading?: boolean;
   dataTest?: string;

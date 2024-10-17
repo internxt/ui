@@ -6,7 +6,7 @@ interface SwitchComponentProps {
   dataTestId?: string;
   disabled?: boolean;
   onCheckedChange?: (checked: boolean) => void;
-  onClick?: (e: unknown) => void;
+  onClick?: (e?: unknown) => void;
 }
 
 export const SwitchComponent = ({
