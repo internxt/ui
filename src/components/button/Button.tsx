@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Spinner from '../spinner/Spinner';
+import { Spinner } from '../spinner/Spinner';
 
 interface ButtonProps {
   id?: string;
