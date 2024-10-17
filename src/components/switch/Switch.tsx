@@ -12,7 +12,7 @@ interface SwitchComponentProps {
 export const SwitchComponent = ({
   disabled = false,
   id,
-  dataTestId,
+  dataTestId = 'switch',
   size = 'md',
   onClick,
   onCheckedChange,
