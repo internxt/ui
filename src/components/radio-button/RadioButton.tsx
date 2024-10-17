@@ -1,16 +1,17 @@
 interface RadioButtonProps {
   checked: boolean;
+  id?: string;
   disabled?: boolean;
-  onClick: () => void;
+  onClick: (e: unknown) => void;
 }
 
-export const RadioButton = ({ checked, disabled = false, onClick }: RadioButtonProps) => {
+export const RadioButton = ({ checked, id, disabled = false, onClick }: RadioButtonProps) => {
   const borderStyle = disabled ? 'border-gray-10' : 'border-gray-40';
   const checkedStyle =
     disabled && checked ? 'border-0 bg-gray-20' : checked && 'border-0 bg-primary active:bg-primary-dark';
 
   return (
-    <div className="flex cursor-pointer">
+    <div id={id} className="flex cursor-pointer">
       <button
         disabled={disabled}
         onClick={onClick}
