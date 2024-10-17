@@ -2,7 +2,6 @@ import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Button } from '../Button';
-import renderer from 'react-test-renderer';
 
 describe('Button component', () => {
   it('Button onClick should be called correctly', () => {
@@ -14,57 +13,57 @@ describe('Button component', () => {
   });
 
   it('Primary button should render correctly', () => {
-    const button = renderer.create(<Button variant="primary">Primary</Button>).toJSON();
+    const button = render(<Button variant="primary">Primary</Button>);
     expect(button).toMatchSnapshot();
   });
 
   it('Secondary button should render correctly', () => {
-    const button = renderer.create(<Button variant="secondary">Secondary</Button>).toJSON();
+    const button = render(<Button variant="secondary">Secondary</Button>);
     expect(button).toMatchSnapshot();
   });
 
   it('Ghost button should render correctly', () => {
-    const button = renderer.create(<Button variant="ghost">Ghost</Button>).toJSON();
+    const button = render(<Button variant="ghost">Ghost</Button>);
     expect(button).toMatchSnapshot();
   });
 
   it('Destructive button should render correctly', () => {
-    const button = renderer.create(<Button variant="destructive">Destructive</Button>).toJSON();
+    const button = render(<Button variant="destructive">Destructive</Button>);
     expect(button).toMatchSnapshot();
   });
 
   it('Primary disabled button should render correctly', () => {
-    const button = renderer.create(<Button variant="primary" disabled />).toJSON();
+    const button = render(<Button variant="primary" disabled />);
     expect(button).toMatchSnapshot();
   });
 
   it('Secondary disabled button should render correctly', () => {
-    const button = renderer.create(<Button variant="secondary" disabled />).toJSON();
+    const button = render(<Button variant="secondary" disabled />);
     expect(button).toMatchSnapshot();
   });
 
   it('Ghost disabled button should render correctly', () => {
-    const button = renderer.create(<Button variant="ghost" disabled />).toJSON();
+    const button = render(<Button variant="ghost" disabled />);
     expect(button).toMatchSnapshot();
   });
 
   it('Destructive disabled button should render correctly', () => {
-    const button = renderer.create(<Button variant="destructive" disabled />).toJSON();
+    const button = render(<Button variant="destructive" disabled />);
     expect(button).toMatchSnapshot();
   });
 
   it('Primary medium button should render correctly', () => {
-    const button = renderer.create(<Button variant="primary" size="medium" />).toJSON();
+    const button = render(<Button variant="primary" size="medium" />);
     expect(button).toMatchSnapshot();
   });
 
   it('Primary loading button should render correctly', () => {
-    const button = renderer.create(<Button variant="primary" loading />).toJSON();
+    const button = render(<Button variant="primary" loading />);
     expect(button).toMatchSnapshot();
   });
 
   it('Primary submit button should render correctly', () => {
-    const button = renderer.create(<Button variant="primary" type="submit" />).toJSON();
+    const button = render(<Button variant="primary" type="submit" />);
     expect(button).toMatchSnapshot();
   });
 });
