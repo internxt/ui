@@ -19,13 +19,11 @@ const MAIL_OPTIONS = [
     id: 0,
     title: 'Inbox',
     icon: Tray,
-    notifications: 2,
   },
   {
     id: 1,
     title: 'Drafts',
     icon: File,
-    notifications: 1,
   },
   {
     id: 2,
