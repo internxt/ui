@@ -2,13 +2,14 @@ import { ReactNode } from 'react';
 import Spinner from '../spinner/Spinner';
 
 interface ButtonProps {
+  id?: string;
   variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
   type?: 'button' | 'submit';
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
-  onKeyDown?: () => void;
+  onClick?: (e?: unknown) => void;
+  onKeyDown?: (e?: unknown) => void;
   size?: 'medium' | 'default';
   loading?: boolean;
   dataTest?: string;
@@ -20,6 +21,7 @@ interface ButtonProps {
 export const Button = ({
   variant = 'primary',
   type = 'button',
+  id,
   children,
   className = '',
   disabled = false,
@@ -57,6 +59,7 @@ export const Button = ({
   return (
     <button
       data-cy={buttonDataCy}
+      id={id}
       onClick={onClick}
       onKeyDown={onKeyDown}
       disabled={disabled || loading}
