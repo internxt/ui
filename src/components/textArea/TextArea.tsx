@@ -1,12 +1,20 @@
+interface TextAreaComponentProps {
+  disabled?: boolean;
+  accentColor?: 'red';
+  placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  name?: string;
+}
+
 const TextArea = ({
   disabled = false,
   accentColor,
   placeholder = '',
-}: {
-  disabled?: boolean;
-  accentColor?: 'red';
-  placeholder?: string;
-}): JSX.Element => {
+  value = '',
+  onChange,
+  name
+}: TextAreaComponentProps): JSX.Element => {
   return (
     <textarea
       disabled={disabled}
@@ -17,7 +25,10 @@ const TextArea = ({
         ${!disabled ? 'border-gray-20 text-gray-100' : 'border-gray-5 text-gray-40'}
         ${!accentColor && 'border-gray-20 focus:border-primary focus:ring focus:ring-primary/10'}
         ${accentColor === 'red' && 'border-red focus:ring focus:ring-red/10'}
-  `}
+        `}
+      value={value}
+      onChange={onChange}
+      name={name}
     />
   );
 };

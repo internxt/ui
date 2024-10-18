@@ -7,6 +7,9 @@ interface InputComponentProps {
   disabled?: boolean;
   accentColor?: 'red' | 'orange' | 'green';
   placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
 }
 
 const Input = ({
@@ -15,6 +18,10 @@ const Input = ({
   disabled = false,
   accentColor,
   placeholder = '',
+  value = '',
+  onChange,
+  name
+
 }: InputComponentProps): JSX.Element => {
   const [intputType, setInputType] = useState(type);
 
@@ -37,6 +44,9 @@ const Input = ({
             ${accentColor === 'orange' && 'border-orange focus:ring focus:ring-orange/10'}
             ${accentColor === 'green' && 'border-green focus:ring focus:ring-green/10'}
         `}
+        value={value}
+        onChange={onChange}
+        name={name}
       />
 
       {type === 'password' && (

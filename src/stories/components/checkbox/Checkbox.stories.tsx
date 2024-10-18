@@ -1,5 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import { useArgs } from '@storybook/preview-api';
 import Checkbox from '../../../components/checkbox/Checkbox';
+
+const onClick: Decorator = (Story, context) => {
+  const [{ checked }, setArgs] = useArgs();
+
+  return Story({
+    ...context,
+    args: {
+      ...context.allArgs,
+      onClick: () => setArgs({ ...context.args, checked: !checked }),
+    },
+  });
+};
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
@@ -7,8 +20,11 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [onClick],
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    onClick: { action: 'clicked' },
+  },
 };
 
 export default meta;

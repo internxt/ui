@@ -1,5 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import { useArgs } from '@storybook/preview-api';
 import Input from '../../../components/input/Input';
+
+const onChange: Decorator = (Story, context) => {
+  const [, setArgs] = useArgs();
+
+  return Story({
+    ...context,
+    args: {
+      ...context.allArgs,
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setArgs({ ...context.args, value: e.target.value }),
+    },
+  });
+};
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
@@ -7,9 +20,11 @@ const meta: Meta<typeof Input> = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [onChange],
   tags: ['autodocs'],
-  argTypes: {},
-  args: {},
+  argTypes: {
+    onChange: { action: 'changed' },
+  },
 };
 
 export default meta;

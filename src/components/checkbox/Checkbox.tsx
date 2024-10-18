@@ -6,7 +6,7 @@ interface CheckboxComponentProps {
   checked?: boolean;
   indeterminate?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: unknown) => void;
   required?: boolean;
 }
 
@@ -20,10 +20,7 @@ const Checkbox = ({
   return (
     <>
       <button
-        onClick={(e) => {
-          e.preventDefault();
-          onClick && onClick();
-        }}
+        onClick={onClick}
         onKeyDown={() => {}}
         className={`relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white 
         ${disabled && !checked && 'bg-surface border border-gray-10 cursor-auto'}
