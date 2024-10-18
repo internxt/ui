@@ -20,6 +20,7 @@ exports[`Button component > Input type password enabled should render correctly 
         "
           placeholder=""
           type="password"
+          value=""
         />
         <button>
           <svg
@@ -57,6 +58,7 @@ exports[`Button component > Input type password enabled should render correctly 
         "
         placeholder=""
         type="password"
+        value=""
       />
       <button>
         <svg
@@ -152,6 +154,7 @@ exports[`Button component > Input type text disabled render correctly 1`] = `
           disabled=""
           placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -173,6 +176,7 @@ exports[`Button component > Input type text disabled render correctly 1`] = `
         disabled=""
         placeholder=""
         type="text"
+        value=""
       />
     </div>
   </div>,
@@ -250,6 +254,7 @@ exports[`Button component > Input type text enabled should render correctly 1`] 
         "
           placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -270,6 +275,7 @@ exports[`Button component > Input type text enabled should render correctly 1`] 
         "
         placeholder=""
         type="text"
+        value=""
       />
     </div>
   </div>,
@@ -347,6 +353,7 @@ exports[`Button component > Input type text enabled with accent color green shou
         "
           placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -367,6 +374,7 @@ exports[`Button component > Input type text enabled with accent color green shou
         "
         placeholder=""
         type="text"
+        value=""
       />
     </div>
   </div>,
@@ -444,6 +452,7 @@ exports[`Button component > Input type text enabled with accent color orange sho
         "
           placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -464,6 +473,7 @@ exports[`Button component > Input type text enabled with accent color orange sho
         "
         placeholder=""
         type="text"
+        value=""
       />
     </div>
   </div>,
@@ -541,6 +551,7 @@ exports[`Button component > Input type text enabled with accent color red should
         "
           placeholder=""
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -561,6 +572,7 @@ exports[`Button component > Input type text enabled with accent color red should
         "
         placeholder=""
         type="text"
+        value=""
       />
     </div>
   </div>,
@@ -638,6 +650,7 @@ exports[`Button component > Input type text enabled with placeholder should rend
         "
           placeholder="Placeholder"
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -658,6 +671,7 @@ exports[`Button component > Input type text enabled with placeholder should rend
         "
         placeholder="Placeholder"
         type="text"
+        value=""
       />
     </div>
   </div>,
