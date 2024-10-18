@@ -21,7 +21,7 @@ const Checkbox = ({
     <>
       <button
         onClick={onClick}
-        onKeyDown={() => {}}
+        onKeyDown={onClick}
         className={`relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white 
         ${disabled && !checked && 'bg-surface border border-gray-10 cursor-auto'}
         ${!disabled && !checked && 'bg-surface border border-gray-30 cursor-pointer'}
