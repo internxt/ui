@@ -45,6 +45,14 @@ const meta: Meta<typeof RangeSlider> = {
       description: 'The steps of the slider',
       control: { type: 'number' },
     },
+    percentageForProgressSliderBar: {
+      description: 'The custom percentage of the slider',
+      control: { type: 'number' },
+    },
+    ariaLabel: {
+      description: 'Label of the component',
+      control: { type: 'text' },
+    },
     onChange: {
       description: 'Function to handle value change',
       action: 'onInput',
@@ -60,6 +68,5 @@ export const RangeSliderComponent: Story = {
     min: 0,
     max: 100,
     value: 50,
-    step: 1,
   },
 };
