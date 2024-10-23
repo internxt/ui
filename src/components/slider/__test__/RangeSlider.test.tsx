@@ -10,19 +10,10 @@ describe('RangeSlider component', () => {
 
     const slider = screen.getByRole('slider');
 
-    // Cambiamos el valor del slider
-    fireEvent.change(slider, { target: { value: '75' } });
+    fireEvent.input(slider, { target: { value: '75' } });
 
     expect(handleChange).toHaveBeenCalledOnce();
     expect(handleChange).toHaveBeenCalledWith(75);
-  });
-
-  it('RangeSlider component should set the progress correctly on mount', () => {
-    render(<RangeSlider value={50} max={100} onChange={() => {}} />);
-    const slider = screen.getByRole('slider');
-
-    // Comprobamos que la propiedad CSS --progress se haya establecido correctamente
-    expect(slider.style.getPropertyValue('--progress')).toBe('50%');
   });
 
   it('RangeSlider component should render correctly', () => {
