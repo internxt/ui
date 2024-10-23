@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RangeSlider component > RangeSlider component should render correctly 1`] = `
+<div>
+  <div
+    class="w-96"
+  >
+    <input
+      class="custom-range-slider"
+      max="100"
+      min="0"
+      style="--progress: 50%;"
+      type="range"
+      value="50"
+    />
+  </div>
+</div>
+`;
