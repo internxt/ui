@@ -6,3 +6,4 @@ export * from './switch/Switch';
 export * from './radio-button/RadioButton';
 export * from './avatar/Avatar';
 export * from './spinner/Spinner';
+export * from './slider/RangeSlider';

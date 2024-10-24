@@ -3,6 +3,7 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import svgr from 'vite-plugin-svgr';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import { configDefaults } from 'vitest/config';
 import { peerDependencies } from './package.json';
 
@@ -31,5 +32,5 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [dts(), svgr()],
+  plugins: [dts(), svgr(), cssInjectedByJsPlugin()],
 });
