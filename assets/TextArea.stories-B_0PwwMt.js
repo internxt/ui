@@ -1,0 +1,11 @@
+import{j as f}from"./jsx-runtime-DEdD30eg.js";import"./index-RYns6xqu.js";const p=({disabled:r=!1,accentColor:e,placeholder:n="",value:s="",onChange:m,name:g})=>f.jsx("textarea",{disabled:r,placeholder:n,className:`
+        w-full h-full py-4 px-3.5 bg-transparent border rounded-md outline-none text-lg font-regular resize-none
+        placeholder:text-gray-30
+        ${r?"border-gray-5 text-gray-40":"border-gray-20 text-gray-100"}
+        ${!e&&"border-gray-20 focus:border-primary focus:ring focus:ring-primary/10"}
+        ${e==="red"&&"border-red focus:ring focus:ring-red/10"}
+        `,value:s,onChange:m,name:g});p.__docgenInfo={description:"",methods:[],displayName:"TextArea",props:{disabled:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}},accentColor:{required:!1,tsType:{name:"literal",value:"'red'"},description:""},placeholder:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},value:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},onChange:{required:!1,tsType:{name:"signature",type:"function",raw:"(e: React.ChangeEvent<HTMLTextAreaElement>) => void",signature:{arguments:[{type:{name:"ReactChangeEvent",raw:"React.ChangeEvent<HTMLTextAreaElement>",elements:[{name:"HTMLTextAreaElement"}]},name:"e"}],return:{name:"void"}}},description:""},name:{required:!1,tsType:{name:"string"},description:""}}};const{useArgs:y}=__STORYBOOK_MODULE_PREVIEW_API__,T=(r,e)=>{const[,n]=y();return r({...e,args:{...e.allArgs,onChange:s=>n({...e.args,value:s.target.value})}})},C={title:"Components/TextArea",component:p,parameters:{layout:"centered"},decorators:[T],tags:["autodocs"],argTypes:{onChange:{action:"changed"}}},a={},t={args:{accentColor:"red"}};var o,c,l;a.parameters={...a.parameters,docs:{...(o=a.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(l=(c=a.parameters)==null?void 0:c.docs)==null?void 0:l.source}}};var d,u,i;t.parameters={...t.parameters,docs:{...(d=t.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  args: {
+    accentColor: 'red'
+  }
+}`,...(i=(u=t.parameters)==null?void 0:u.docs)==null?void 0:i.source}}};const h=["AccentColorDefault","AccentColorRed"];export{a as AccentColorDefault,t as AccentColorRed,h as __namedExportsOrder,C as default};
