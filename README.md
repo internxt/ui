@@ -69,3 +69,7 @@ Runs UI tests.
 ### `yarn coverage`
 
 Generates test coverage reports.
+
+### `yarn deploy`
+
+Deploy Storybook to GitHub Pages. This is the url: https://internxt.github.io/ui
