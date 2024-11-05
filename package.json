@@ -88,7 +88,8 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.1.5",
     "@radix-ui/react-switch": "^1.1.0",
-    "@radix-ui/themes": "^3.0.0"
+    "@radix-ui/themes": "^3.0.0",
+    "@headlessui/react": "1.7.5"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
