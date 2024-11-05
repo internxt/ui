@@ -1,0 +1,83 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Table > renders table with default className 1`] = `
+<table
+  class="w-full"
+>
+  <thead
+    class="bg-gray-1 border-b border-gray-10 text-gray-100 font-semibold"
+  >
+    <tr
+      class="hover:bg-gray-1 border-b border-gray-10 last:border-none text-sm"
+    >
+      <th
+        class="p-4 text-left font-medium"
+      >
+        Example 1
+      </th>
+      <th
+        class="p-4 text-left font-medium"
+      >
+        Example 2
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="hover:bg-gray-1 border-b border-gray-10 last:border-none text-sm"
+    >
+      <td
+        class="p-4 "
+      >
+        Cell 1
+      </td>
+      <td
+        class="p-4 "
+      >
+        Cell 2
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`TableCell > renders cell with default className 1`] = `
+<td
+  class="p-4 "
+>
+  Example
+</td>
+`;
+
+exports[`TableHeader > renders header with default className 1`] = `
+<thead
+  class="bg-gray-1 border-b border-gray-10 text-gray-100 font-semibold"
+>
+  <tr
+    class="hover:bg-gray-1 border-b border-gray-10 last:border-none text-sm"
+  >
+    <th
+      class="p-4 text-left font-medium"
+    >
+      Example 1
+    </th>
+    <th
+      class="p-4 text-left font-medium"
+    >
+      Example 2
+    </th>
+  </tr>
+</thead>
+`;
+
+exports[`TableRow > renders row with default className 1`] = `
+<tr
+  class="hover:bg-gray-1 border-b border-gray-10 last:border-none text-sm"
+>
+  <td
+    class="p-4 "
+  >
+    Example
+  </td>
+</tr>
+`;
