@@ -63,10 +63,10 @@ describe('Modal Component', () => {
   it('should call onClose when press escape if preventClosing is false', () => {
     renderModal();
 
-    const dialog = screen.getByRole('dialog');
-    expect(dialog).toBeInTheDocument();
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toBeInTheDocument();
 
-    fireEvent.keyDown(dialog, { key: 'Escape', code: 'Escape' });
+    fireEvent.keyDown(modalContent, { key: 'Escape', code: 'Escape' });
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
   });
@@ -81,10 +81,39 @@ describe('Modal Component', () => {
       </Modal>,
     );
 
-    const dialog = screen.getByRole('dialog');
-    expect(dialog).toBeInTheDocument();
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toBeInTheDocument();
 
-    fireEvent.keyDown(dialog, { key: 'Escape', code: 'Escape' });
+    fireEvent.keyDown(modalContent, { key: 'Escape', code: 'Escape' });
+
+    expect(onCloseMock).not.toHaveBeenCalled();
+  });
+
+  it('should call onClose when click outside if preventClosing is false', () => {
+    renderModal();
+
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toBeInTheDocument();
+
+    fireEvent.mouseDown(document.body);
+
+    expect(onCloseMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not call onClose when click outside if preventClosing is true', () => {
+    render(
+      <Modal isOpen={true} onClose={onCloseMock} preventClosing={true}>
+        <div>
+          Modal Content
+          <button>Button</button>
+        </div>
+      </Modal>,
+    );
+
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toBeInTheDocument();
+
+    fireEvent.mouseDown(modalContent);
 
     expect(onCloseMock).not.toHaveBeenCalled();
   });
@@ -97,16 +126,16 @@ describe('Modal Component', () => {
       </Modal>,
     );
 
-    const dialogPanel = screen.getByTestId('dialog-panel');
-    expect(dialogPanel).toHaveClass('custom-class');
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toHaveClass('custom-class');
   });
 
   it('should use default width and maxWidth if not provided', () => {
     renderModal();
 
-    const dialogPanel = screen.getByTestId('dialog-panel');
-    expect(dialogPanel).toHaveClass('w-full');
-    expect(dialogPanel).toHaveClass('max-w-lg');
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toHaveClass('w-full');
+    expect(modalContent).toHaveClass('max-w-lg');
   });
 
   it('should apply provided width and maxWidth', () => {
@@ -117,8 +146,8 @@ describe('Modal Component', () => {
       </Modal>,
     );
 
-    const dialogPanel = screen.getByTestId('dialog-panel');
-    expect(dialogPanel).toHaveClass('w-1/2');
-    expect(dialogPanel).toHaveClass('max-w-xl');
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toHaveClass('w-1/2');
+    expect(modalContent).toHaveClass('max-w-xl');
   });
 });

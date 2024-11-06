@@ -1,5 +1,4 @@
-import { Fragment, ReactNode } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 /**
  * Modal component for displaying content in an overlay dialog.
@@ -12,6 +11,16 @@ import { Dialog, Transition } from '@headlessui/react';
  * @param preventClosing - Prevents closing the modal when clicking outside.
  */
 
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  maxWidth?: string;
+  className?: string;
+  width?: string;
+  preventClosing?: boolean;
+}
+
 export default function Modal({
   isOpen,
   onClose,
@@ -20,52 +29,121 @@ export default function Modal({
   className,
   width,
   preventClosing = false,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  children: ReactNode;
-  maxWidth?: string;
-  width?: string;
-  className?: string;
-  preventClosing?: boolean;
-}): JSX.Element {
+}: ModalProps): JSX.Element | null {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const [showContent, setShowContent] = useState(isOpen);
+  const [transitionOpacity, setTransitionOpacity] = useState<string>('opacity-0');
+  const [transitionScale, setTransitionScale] = useState<string>('scale-95');
+
+  useEffect(() => {
+    if (isOpen) {
+      const timeout = setTimeout(() => {
+        setTransitionOpacity('opacity-100');
+        setTransitionScale('scale-100');
+      }, 10);
+      setShowContent(true);
+      return () => clearTimeout(timeout);
+    } else {
+      setTransitionOpacity('opacity-0');
+      setTransitionScale('scale-95');
+      const timeout = setTimeout(() => {
+        setShowContent(false);
+      }, 150);
+      return () => clearTimeout(timeout);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node) && !preventClosing) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose, preventClosing]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !preventClosing) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose, preventClosing]);
+
   return (
-    <Transition show={isOpen} as={Fragment}>
-      <Dialog onClose={() => (preventClosing ? null : onClose())} static={preventClosing}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-150"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-100"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 z-50 bg-highlight/40" />
-        </Transition.Child>
-        <div className="fixed inset-0 z-50">
-          <div className="flex min-h-full items-center justify-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-150"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-100"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+    <>
+      {showContent && (
+        <>
+          <div
+            className={`
+              fixed
+              inset-0
+              z-50
+              bg-highlight/40
+              transition-opacity
+              duration-150
+              ease-out
+              ${transitionOpacity}
+              pointer-events-none'}              
+            `}
+          />
+          <div
+            className={`
+              fixed
+              inset-0
+              z-50
+              flex
+              min-h-full
+              items-center
+              justify-center
+              transition-opacity
+              duration-150
+              ease-out
+              ${transitionOpacity}
+              ${transitionScale}
+              pointer-events-none
+            `}
+          >
+            <section
+              data-testid={'ModalContent'}
+              ref={modalRef}
+              className={`
+                ${width ?? 'w-full'}
+                ${maxWidth ?? 'max-w-lg'}
+                ${className ?? 'p-5'}
+                text-gray-100
+                rounded-2xl
+                bg-surface
+                shadow-subtle-hard
+                transform
+                transition-all
+                duration-150
+                ease-out
+                ${transitionOpacity}
+                ${transitionScale}
+                pointer-events-none
+              `}
             >
-              <Dialog.Panel
-                data-testid="dialog-panel"
-                className={` ${width ?? 'w-full'} text-gray-100 ${maxWidth ?? 'max-w-lg'} ${
-                  className ?? 'p-5'
-                } rounded-2xl bg-surface shadow-subtle-hard transition-all duration-100 ease-out`}
-              >
-                {children}
-              </Dialog.Panel>
-            </Transition.Child>
+              {children}
+            </section>
           </div>
-        </div>
-      </Dialog>
-    </Transition>
+        </>
+      )}
+    </>
   );
 }
