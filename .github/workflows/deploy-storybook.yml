@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Configure npm for GitHub Packages
+        run: echo "registry=https://registry.yarnpkg.com/" > .npmrc
+        run: echo "@internxt:registry=https://npm.pkg.github.com" >> .npmrc
+        run: echo //npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }} >> .npmrc
+        run: echo "always-auth=true" >> .npmrc
+
       - name: Install dependencies
         run: yarn install
 
