@@ -1,5 +1,5 @@
 export const MessageSkeleton = () => (
-  <button className={'flex flex-col text-left gap-2 w-full py-3 px-5'}>
+  <div className={'flex flex-col text-left gap-2 w-full py-3 px-5'}>
     <div className="flex flex-row w-full gap-2">
       <div className="flex flex-col h-8 w-8 rounded-full animate-pulse bg-gray-10" />
       <div className="flex flex-col gap-1 w-full">
@@ -11,5 +11,5 @@ export const MessageSkeleton = () => (
         <div className="flex rounded-md w-full h-3 bg-gray-10 animate-pulse" />
       </div>
     </div>
-  </button>
+  </div>
 );

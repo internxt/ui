@@ -3,8 +3,8 @@ import { EmailProps, formatTimestamp } from '../../mocks';
 
 interface MessageProps {
   email: Pick<EmailProps, 'read' | 'id' | 'from' | 'subject' | 'timestamp' | 'body'>;
-  onClick: (id: string) => void;
   active?: boolean;
+  onClick: (id: string) => void;
 }
 
 export const Message = ({ email, active, onClick }: MessageProps) => (
