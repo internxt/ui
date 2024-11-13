@@ -54,7 +54,7 @@ export const ModalExample: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Un modal con configuraciones predeterminadas y estilo general.',
+        story: 'A modal with default settings and general styling.',
       },
     },
   },
