@@ -7,7 +7,7 @@ interface SkeletonLoaderProps {
   skeleton: Array<SkeletonLoaderItemProps>;
 }
 
-export function SkeletonLoaderItem({ skeletonItem, columns }: SkeletonLoaderItemProps): React.ReactElement {
+export const SkeletonLoaderItem = ({ skeletonItem, columns }: SkeletonLoaderItemProps): React.ReactElement => {
   return (
     <div
       data-testid="skeleton-loader-item"
@@ -23,7 +23,7 @@ export function SkeletonLoaderItem({ skeletonItem, columns }: SkeletonLoaderItem
       ))}
     </div>
   );
-}
+};
 
 /**
  * SkeletonLoader component to display loading placeholders in list layouts.
@@ -34,7 +34,7 @@ export function SkeletonLoaderItem({ skeletonItem, columns }: SkeletonLoaderItem
  *                            - columns: - An array of CSS class names for each column, defining their layout and style.
  *
  */
-export default function SkeletonLoader({ skeleton }: SkeletonLoaderProps): React.ReactElement {
+const SkeletonLoader = ({ skeleton }: SkeletonLoaderProps): React.ReactElement => {
   return (
     <>
       {new Array(skeleton.length).fill(0).map((_col, i) => (
@@ -46,4 +46,6 @@ export default function SkeletonLoader({ skeleton }: SkeletonLoaderProps): React
       ))}
     </>
   );
-}
+};
+
+export default SkeletonLoader;

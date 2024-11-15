@@ -70,7 +70,7 @@ export interface ContextMenuProps<T> {
  * - Function to close the context menu. Called after an action is executed or when pressing Enter in the menu.
  */
 
-export default function ContextMenu<T>({
+const ContextMenu = <T,>({
   item,
   menuItemsRef,
   menu,
@@ -80,7 +80,7 @@ export default function ContextMenu<T>({
   isContextMenuCutOff,
   genericEnterKey,
   handleMenuClose,
-}: ContextMenuProps<T>) {
+}: ContextMenuProps<T>): JSX.Element => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const handleMouseEnter = (index: number) => {
@@ -212,4 +212,6 @@ export default function ContextMenu<T>({
       ))}
     </div>
   );
-}
+};
+
+export default ContextMenu;
