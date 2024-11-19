@@ -60,7 +60,7 @@ export interface ListProps<T, F> {
  *
  * This component has no state in it. The state must be kept by an smarter component (higher in the herarchy)
  */
-const List = <T extends { id: string }, F extends keyof T>({
+const List = <T extends { id: number }, F extends keyof T>({
   header,
   checkboxDataCy,
   items,
@@ -94,7 +94,7 @@ const List = <T extends { id: string }, F extends keyof T>({
   const container = document.getElementById('scrollableList');
   const isVerticalScrollbarVisible = container && container.scrollHeight > container.clientHeight;
   const isEmptyState = !hasMoreItems && items.length === 0 && !isLoading;
-  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<string | null>(null);
+  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<number | null>(null);
 
   const skeletonData = new Array(25).fill(0).map(() => ({
     skeletonItem: skinSkeleton,

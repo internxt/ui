@@ -25,7 +25,7 @@ interface ListItemProps<T> {
 }
 const TOP_MIN_HEIGHT = 500;
 
-const ListItem = <T extends { id: string }>({
+const ListItem = <T extends { id: number }>({
   item,
   listIndex,
   itemComposition,
@@ -194,7 +194,7 @@ const ListItem = <T extends { id: string }>({
           {itemComposition[0](item)}
         </div>
       ) : (
-        new Array(itemComposition.length).fill(0).map((col, i) => (
+        new Array(itemComposition.length).fill(0).map((_col, i) => (
           <div
             key={i}
             className={`relative flex h-full shrink-0 flex-row items-center border-b ${

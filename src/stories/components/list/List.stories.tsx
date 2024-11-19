@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { MenuType } from '../../../components';
 
 type DriveItemData = {
-  id: string;
+  id: number;
   name: string;
   power: number;
   type: string;
@@ -50,15 +50,17 @@ const ListWrapper = (props: ListWrapperProps) => {
   };
 
   return (
-    <List
-      {...args}
-      selectedItems={selectedItems}
-      onSelectedItemsChanged={handleSelectedItems}
-      items={sortedItems}
-      orderBy={orderBy}
-      onOrderByChanged={handleOrderByChanged}
-      menu={menu}
-    />
+    <div className="flex justify-center">
+      <List
+        {...args}
+        selectedItems={selectedItems}
+        onSelectedItemsChanged={handleSelectedItems}
+        items={sortedItems}
+        orderBy={orderBy}
+        onOrderByChanged={handleOrderByChanged}
+        menu={menu}
+      />
+    </div>
   );
 };
 
@@ -66,7 +68,7 @@ const meta: Meta<typeof List<DriveItemData, 'name' | 'power' | 'type'>> = {
   title: 'Components/List',
   component: List,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
 };
@@ -79,21 +81,21 @@ export const ListLayout: Story = {
     header: [
       {
         label: 'Name',
-        width: 'flex grow items-center min-w-driveNameHeader',
+        width: 'flex grow min-w-driveNameHeader',
         name: 'name',
         orderable: true,
         defaultDirection: 'ASC',
       },
       {
         label: 'Power',
-        width: 'flex grow items-center min-w-driveNameHeader',
+        width: 'flex grow min-w-driveNameHeader',
         name: 'power',
         orderable: true,
         defaultDirection: 'ASC',
       },
       {
         label: 'Type',
-        width: 'flex grow items-center w-size',
+        width: 'flex grow w-size',
         name: 'type',
         orderable: true,
         defaultDirection: 'ASC',
@@ -101,20 +103,20 @@ export const ListLayout: Story = {
     ],
     disableKeyboardShortcuts: true,
     items: [
-      { id: '1', name: 'Son Goku', power: 1500000, type: 'Saiyan' },
-      { id: '2', name: 'Vegeta', power: 1000000, type: 'Saiyan' },
-      { id: '3', name: 'Piccolo', power: 800000, type: 'Namekian' },
-      { id: '4', name: 'Son Gohan', power: 1000000, type: 'Saiyan' },
-      { id: '5', name: 'Krillin', power: 150000, type: 'Human' },
-      { id: '6', name: 'Trunks', power: 600000, type: 'Saiyan' },
-      { id: '7', name: 'Frieza', power: 1200000, type: 'Alien' },
-      { id: '8', name: 'Cell', power: 950000, type: 'Android' },
-      { id: '9', name: 'Majin Buu', power: 950000, type: 'Majin' },
-      { id: '12', name: 'Bulma', power: 5, type: 'Human' },
-      { id: '13', name: 'Yamcha', power: 50000, type: 'Human' },
-      { id: '14', name: 'Tien Shinhan', power: 180000, type: 'Human' },
-      { id: '15', name: 'Android 18', power: 900000, type: 'Android' },
-      { id: '16', name: 'Master Roshi', power: 10000, type: 'Human' },
+      { id: 1, name: 'Son Goku', power: 1500000, type: 'Saiyan' },
+      { id: 2, name: 'Vegeta', power: 1000000, type: 'Saiyan' },
+      { id: 3, name: 'Piccolo', power: 800000, type: 'Namekian' },
+      { id: 4, name: 'Son Gohan', power: 1000000, type: 'Saiyan' },
+      { id: 5, name: 'Krillin', power: 150000, type: 'Human' },
+      { id: 6, name: 'Trunks', power: 600000, type: 'Saiyan' },
+      { id: 7, name: 'Frieza', power: 1200000, type: 'Alien' },
+      { id: 8, name: 'Cell', power: 950000, type: 'Android' },
+      { id: 9, name: 'Majin Buu', power: 950000, type: 'Majin' },
+      { id: 12, name: 'Bulma', power: 5, type: 'Human' },
+      { id: 13, name: 'Yamcha', power: 50000, type: 'Human' },
+      { id: 14, name: 'Tien Shinhan', power: 180000, type: 'Human' },
+      { id: 15, name: 'Android 18', power: 900000, type: 'Android' },
+      { id: 16, name: 'Master Roshi', power: 10000, type: 'Human' },
     ],
     itemComposition: [
       (props) => (
@@ -139,5 +141,5 @@ export const ListLayout: Story = {
       (props) => <div style={{}}>{props.type}</div>,
     ],
   },
-  render: (args) => <ListWrapper {...args} />,
+  render: (args) => <ListWrapper {...args} className="max-h-[500px] overflow-y-auto" />,
 };

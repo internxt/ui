@@ -10,3 +10,4 @@ export * from './slider/RangeSlider';
 export * from './modal/Modal';
 export * from './infiniteScroll/InfiniteScroll';
 export * from './contextMenu/ContextMenu';
+export * from './list/List';

@@ -22,11 +22,11 @@ const header: HeaderProps<Item, keyof Item>[] = [
 ];
 
 const items = [
-  { id: '1', name: 'Item 1', age: 25 },
-  { id: '2', name: 'Item 2', age: 30 },
+  { id: 1, name: 'Item 1', age: 25 },
+  { id: 2, name: 'Item 2', age: 30 },
 ];
 
-const selectedItems = [{ id: '1', name: 'Item 1', age: 25 }];
+const selectedItems = [{ id: 1, name: 'Item 1', age: 25 }];
 const itemComposition = [(props: { name: string }) => <div>{props.name}</div>];
 
 const emptyState = <div>No items to display</div>;
@@ -54,7 +54,7 @@ const selectedAllItemsMock = [
   {
     props: {
       age: 25,
-      id: '1',
+      id: 1,
       name: 'Item 1',
     },
     value: true,
@@ -62,7 +62,7 @@ const selectedAllItemsMock = [
   {
     props: {
       age: 30,
-      id: '2',
+      id: 2,
       name: 'Item 2',
     },
     value: true,
@@ -73,7 +73,7 @@ const unSelectedAllItemsMock = [
   {
     props: {
       age: 25,
-      id: '1',
+      id: 1,
       name: 'Item 1',
     },
     value: false,
@@ -81,7 +81,7 @@ const unSelectedAllItemsMock = [
   {
     props: {
       age: 30,
-      id: '2',
+      id: 2,
       name: 'Item 2',
     },
     value: false,
