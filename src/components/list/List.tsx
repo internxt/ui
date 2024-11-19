@@ -7,7 +7,7 @@ import useHotkeys from '../../hooks/useHotKeys';
 import SkeletonLoader from '../skeletonLoader/SkeletonLoader';
 import InfiniteScroll from '../infiniteScroll/InfiniteScroll';
 
-interface ListProps<T, F> {
+export interface ListProps<T, F> {
   header: HeaderProps<T, F>[];
   checkboxDataCy?: string;
   items: T[];

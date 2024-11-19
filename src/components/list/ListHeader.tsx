@@ -51,7 +51,13 @@ const ListHeader = <T, F extends keyof T>({
 
         {header.map((column) => (
           <button
-            onClick={column.orderable ? () => onOrderableColumnClicked(column) : undefined}
+            onClick={
+              column.orderable
+                ? () => {
+                    onOrderableColumnClicked(column);
+                  }
+                : undefined
+            }
             key={column.name.toString()}
             data-cy={'buttonDataCy' in column && column?.buttonDataCy}
             className={`flex h-full shrink-0  flex-row items-center space-x-1.5 text-base font-medium text-gray-60  ${
