@@ -7,4 +7,5 @@ export * from './radio-button/RadioButton';
 export * from './avatar/Avatar';
 export * from './spinner/Spinner';
 export * from './slider/RangeSlider';
+export * from './dialog/Dialog';
 export * from './modal/Modal';
