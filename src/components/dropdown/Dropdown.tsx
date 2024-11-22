@@ -2,7 +2,7 @@ import { useState, ReactNode } from 'react';
 import { MenuType } from '../contextMenu/ContextMenu';
 import useHotkeys from '../../hooks/useHotKeys';
 
-type DropdownProps<T> = {
+export type DropdownProps<T> = {
   children: ReactNode | ((obj: { open: boolean }) => JSX.Element);
   options?: { text: string; onClick: () => void }[];
   classButton?: string;

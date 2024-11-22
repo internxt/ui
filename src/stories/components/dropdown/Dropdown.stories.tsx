@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Dropdown from '../../../components/dropdown/Dropdown';
+import Dropdown, { DropdownProps } from '../../../components/dropdown/Dropdown';
 import { DotsThree } from '@phosphor-icons/react';
 
 const meta: Meta<typeof Dropdown> = {
@@ -14,7 +14,7 @@ const meta: Meta<typeof Dropdown> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultArgs = {
+const defaultArgs: DropdownProps<unknown> = {
   children: <DotsThree size={24} className="text-gray-800 dark:text-white" weight="bold" />,
   classMenuItems: 'mt-1 w-max rounded-md border border-gray-10 bg-surface dark:bg-gray-5 py-1.5',
   options: [
@@ -29,6 +29,7 @@ const defaultArgs = {
     { name: 'Action 3', action: () => alert('Launched action 3') },
   ],
   item: 'Item',
+  openDirection: 'left',
 };
 
 export const RightAlign: Story = {
