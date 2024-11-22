@@ -21,7 +21,7 @@ interface ModalProps {
   preventClosing?: boolean;
 }
 
-export default function Modal({
+const Modal = ({
   isOpen,
   onClose,
   children,
@@ -29,7 +29,7 @@ export default function Modal({
   className,
   width,
   preventClosing = false,
-}: ModalProps): JSX.Element | null {
+}: ModalProps): JSX.Element | null => {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [showContent, setShowContent] = useState(isOpen);
   const [transitionOpacity, setTransitionOpacity] = useState<string>('opacity-0');
@@ -146,4 +146,6 @@ export default function Modal({
       )}
     </>
   );
-}
+};
+
+export default Modal;

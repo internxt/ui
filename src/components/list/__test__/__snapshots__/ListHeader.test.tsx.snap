@@ -1,0 +1,158 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ListHeader > should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex h-12 shrink-0 flex-row px-5"
+      >
+        <div
+          class="flex h-full min-w-full flex-row items-center border-b border-gray-10"
+        >
+          <div
+            class="flex h-full flex-row items-center justify-between pr-4"
+          >
+            <label
+              class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+            >
+              <div
+                class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+              />
+              <input
+                class="base-checkbox h-0 w-0 appearance-none opacity-0"
+                readonly=""
+                type="checkbox"
+              />
+            </label>
+          </div>
+          <button
+            class="flex h-full shrink-0  flex-row items-center space-x-1.5 text-base font-medium text-gray-60  100px cursor-pointer hover:text-gray-80"
+            data-cy="false"
+          >
+            <span
+              data-cy="false"
+            >
+              Column 1
+            </span>
+          </button>
+          <button
+            class="flex h-full shrink-0  flex-row items-center space-x-1.5 text-base font-medium text-gray-60  200px "
+            data-cy="false"
+          >
+            <span
+              data-cy="false"
+            >
+              Column 2
+            </span>
+          </button>
+          <div
+            class="mr-15px"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex h-12 shrink-0 flex-row px-5"
+    >
+      <div
+        class="flex h-full min-w-full flex-row items-center border-b border-gray-10"
+      >
+        <div
+          class="flex h-full flex-row items-center justify-between pr-4"
+        >
+          <label
+            class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+          >
+            <div
+              class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+            />
+            <input
+              class="base-checkbox h-0 w-0 appearance-none opacity-0"
+              readonly=""
+              type="checkbox"
+            />
+          </label>
+        </div>
+        <button
+          class="flex h-full shrink-0  flex-row items-center space-x-1.5 text-base font-medium text-gray-60  100px cursor-pointer hover:text-gray-80"
+          data-cy="false"
+        >
+          <span
+            data-cy="false"
+          >
+            Column 1
+          </span>
+        </button>
+        <button
+          class="flex h-full shrink-0  flex-row items-center space-x-1.5 text-base font-medium text-gray-60  200px "
+          data-cy="false"
+        >
+          <span
+            data-cy="false"
+          >
+            Column 2
+          </span>
+        </button>
+        <div
+          class="mr-15px"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
