@@ -9,3 +9,4 @@ export declare const Disabled: Story;
 export declare const Checked: Story;
 export declare const CheckedAndDisabled: Story;
 export declare const Indeterminate: Story;
+export declare const IndeterminateDisabled: Story;

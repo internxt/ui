@@ -1,0 +1,7 @@
+import{j as o}from"./jsx-runtime-DEdD30eg.js";const l=({disabled:e=!1,accentColor:r,placeholder:a="",value:t="",onChange:n,name:s})=>o.jsx("textarea",{disabled:e,placeholder:a,className:`
+        w-full h-full py-4 px-3.5 bg-transparent border rounded-md outline-none text-lg font-regular resize-none
+        placeholder:text-gray-30
+        ${e?"border-gray-5 text-gray-40":"border-gray-20 text-gray-100"}
+        ${!r&&"border-gray-20 focus:border-primary focus:ring focus:ring-primary/10"}
+        ${r==="red"&&"border-red focus:ring focus:ring-red/10"}
+        `,value:t,onChange:n,name:s});l.__docgenInfo={description:"",methods:[],displayName:"TextArea",props:{disabled:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}},accentColor:{required:!1,tsType:{name:"literal",value:"'red'"},description:""},placeholder:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},value:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},onChange:{required:!1,tsType:{name:"signature",type:"function",raw:"(e: React.ChangeEvent<HTMLTextAreaElement>) => void",signature:{arguments:[{type:{name:"ReactChangeEvent",raw:"React.ChangeEvent<HTMLTextAreaElement>",elements:[{name:"HTMLTextAreaElement"}]},name:"e"}],return:{name:"void"}}},description:""},name:{required:!1,tsType:{name:"string"},description:""}}};export{l as T};

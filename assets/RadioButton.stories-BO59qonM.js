@@ -1,0 +1,3 @@
+import{R as d}from"./RadioButton-D0I2JMte.js";import"./jsx-runtime-DEdD30eg.js";import"./index-RYns6xqu.js";const{useArgs:i}=__STORYBOOK_MODULE_PREVIEW_API__,m=(a,e)=>{const[{checked:c},n]=i();return a({...e,args:{...e.allArgs,onClick:()=>n({...e.args,checked:!c})}})},_={title:"Components/Radio Button",component:d,parameters:{layout:"centered"},decorators:[m],tags:["autodocs"],argTypes:{onClick:{action:"clicked"}}},o={};var t,r,s;o.parameters={...o.parameters,docs:{...(t=o.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  //
+}`,...(s=(r=o.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};const g=["RadioButtonChecked"];export{o as RadioButtonChecked,g as __namedExportsOrder,_ as default};
