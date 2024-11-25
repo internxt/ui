@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react';
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
-import ContextMenu, { MenuType } from '../../../components/contextMenu/ContextMenu';
+import ContextMenu from '../../../components/contextMenu/ContextMenu';
 import { Button } from '../../../components';
+import { MenuItemsType } from '../../../components/menu/Menu';
 
 const Notification = ({ message, onClose }: { message: string; onClose: () => void }) => (
   <div
@@ -22,7 +23,7 @@ const ContextMenuWithNotifications = () => {
 
   const handleNotificationClose = () => setNotification(null);
 
-  const sampleMenu: MenuType<unknown> = [
+  const sampleMenu: MenuItemsType<unknown> = [
     { name: 'Title', action: () => {}, isTitle: () => true },
     { name: 'Option 1', action: (item) => setNotification(`Selected Option 1 for ${item}`) },
     { name: 'Option 2', action: (item) => setNotification(`Selected Option 2 for ${item}`), disabled: () => true },

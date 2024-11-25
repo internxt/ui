@@ -1,8 +1,9 @@
 import { LegacyRef, useEffect, useRef, useState } from 'react';
 import { DotsThree } from '@phosphor-icons/react';
-import ContextMenu, { MenuType } from '../contextMenu/ContextMenu';
+import ContextMenu from '../contextMenu/ContextMenu';
 import useHotkeys from '../../hooks/useHotKeys';
 import Checkbox from '../checkbox/Checkbox';
+import { MenuItemsType } from '../menu/Menu';
 
 interface ListItemProps<T> {
   item: T;
@@ -17,7 +18,7 @@ interface ListItemProps<T> {
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
   onClickContextMenu?: (e: React.MouseEvent<HTMLDivElement>) => void;
   onThreeDotsButtonPressed?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  menu?: MenuType<T>;
+  menu?: MenuItemsType<T>;
   disableItemCompositionStyles?: boolean;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;

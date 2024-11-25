@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUp } from '@phosphor-icons/react';
 import Checkbox from '../checkbox/Checkbox';
-import { MenuType } from '../contextMenu/ContextMenu';
+import { MenuItemsType } from '../menu/Menu';
 
 export type HeaderProps<T, F> = {
   label: string;
@@ -16,7 +16,7 @@ interface ListHeaderProps<T, F> {
   header: HeaderProps<T, F>[];
   isVerticalScrollbarVisible: boolean | null;
   orderBy?: { field: F; direction: 'ASC' | 'DESC' };
-  menu?: MenuType<T>;
+  menu?: MenuItemsType<T>;
   displayMenuDiv?: boolean;
   checkboxDataCy?: string;
   onTopSelectionCheckboxClick: () => void;
