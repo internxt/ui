@@ -37,7 +37,7 @@ describe('Dropdown component', () => {
     vi.clearAllMocks();
   });
 
-  it('should match snapshot when isOpen is true', () => {
+  it('should match snapshot', () => {
     const { container } = renderDropdown();
     expect(container).toMatchSnapshot();
   });
@@ -118,11 +118,10 @@ describe('Dropdown component', () => {
     const { getByRole, getByText } = renderDropdown();
 
     fireEvent.click(getByRole('button'));
-
     fireEvent.keyDown(window, { key: 'ArrowDown' });
 
-    const firstOption = getByText('Option 1');
-    const secondOption = getByText('Option 2');
+    const firstOption = getByText('Option 1').parentElement?.parentElement;
+    const secondOption = getByText('Option 2').parentElement?.parentElement;
 
     expect(firstOption).toHaveClass('bg-gray-5 text-gray-100');
     expect(secondOption).not.toHaveClass('bg-gray-5 text-gray-100');

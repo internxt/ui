@@ -66,7 +66,6 @@ describe('Dialog', () => {
   it('disables buttons when isLoading is true', () => {
     const { getAllByRole } = renderDialog({ isLoading: true });
     const elements = getAllByRole('button');
-    screen.debug();
     expect(elements[0]).toBeDisabled();
     expect(elements[1]).toBeDisabled();
   });
