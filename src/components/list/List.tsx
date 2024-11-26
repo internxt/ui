@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import ListItem from './ListItem';
-import { MenuType } from '../contextMenu/ContextMenu';
 import ListHeader, { HeaderProps } from './ListHeader';
 import useHotkeys from '../../hooks/useHotKeys';
 import SkeletonLoader from '../skeletonLoader/SkeletonLoader';
 import InfiniteScroll from '../infiniteScroll/InfiniteScroll';
+import { MenuItemsType } from '../menu/Menu';
 
 export interface ListProps<T, F> {
   header: HeaderProps<T, F>[];
@@ -25,7 +25,7 @@ export interface ListProps<T, F> {
   onOrderByChanged?: (value: { field: F; direction: 'ASC' | 'DESC' }) => void;
   orderBy?: { field: F; direction: 'ASC' | 'DESC' };
   hasMoreItems?: boolean;
-  menu?: MenuType<T>;
+  menu?: MenuItemsType<T>;
   displayMenuDiv?: boolean;
   className?: string;
   keyboardShortcuts?: Array<'selectAll' | 'unselectAll' | 'multiselect' | Array<'delete' & (() => void)>>;

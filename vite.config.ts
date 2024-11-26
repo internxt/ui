@@ -19,6 +19,7 @@ export default defineConfig({
         '.storybook/**',
         'tailwind.config.js',
         'storybook-static/**',
+        '**/__test__/**',
       ],
     },
     globals: true,
