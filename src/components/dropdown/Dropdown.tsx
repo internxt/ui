@@ -9,7 +9,7 @@ export type DropdownProps<T> = {
   classMenuItems: string;
   openDirection: 'left' | 'right';
   dropdownActionsContext?: MenuItemsType<T>;
-  item: T;
+  item?: T;
 };
 
 const Dropdown = <T,>({

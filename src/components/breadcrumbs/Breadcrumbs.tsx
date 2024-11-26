@@ -1,11 +1,11 @@
-import { CaretRight /*, DotsThree*/ } from '@phosphor-icons/react';
+import { CaretRight, DotsThree } from '@phosphor-icons/react';
 import { forwardRef, FunctionComponent, ReactNode, SVGProps } from 'react';
 import { Dispatch } from 'redux';
-//import Dropdown from '../Dropdown';
+import Dropdown from '../dropdown/Dropdown';
 import { DropTargetMonitor } from 'react-dnd';
 import BreadcrumbsItem, { BreadcrumbItemData, BreadcrumbsMenuProps } from './BreadcrumbsItem';
 
-interface BreadcrumbsProps<T extends Dispatch> {
+export interface BreadcrumbsProps<T extends Dispatch> {
   items: BreadcrumbItemData[];
   rootBreadcrumbItemDataCy?: string;
   menu?: (props: BreadcrumbsMenuProps) => JSX.Element;
@@ -34,10 +34,13 @@ interface BreadcrumbsProps<T extends Dispatch> {
 }
 
 const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): JSX.Element => {
-  const MenuItem = forwardRef(({ children }: { children: ReactNode }) => {
+  const MenuItem = forwardRef<HTMLDivElement, { children: ReactNode }>((props, ref) => {
     return (
-      <div className="flex cursor-pointer items-center hover:bg-gray-5 hover:text-gray-80 dark:hover:bg-gray-10">
-        {children}
+      <div
+        ref={ref}
+        className="flex cursor-pointer items-center hover:bg-gray-5 hover:text-gray-80 dark:hover:bg-gray-10"
+      >
+        {props.children}
       </div>
     );
   });
@@ -49,7 +52,7 @@ const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): 
     const breadcrumbSeparator = (key: React.Key) => {
       return (
         <div key={key} className="text-dgray-50 flex items-center">
-          <CaretRight weight="bold" className="h-4 w-4" />
+          <CaretRight weight="bold" className="h-4 w-4" data-testid="caret-right" />
         </div>
       );
     };
@@ -105,7 +108,7 @@ const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): 
       }
     }
 
-    /*if (hiddenItemsList.length > 0) {
+    if (hiddenItemsList.length > 0) {
       const menu = (
         <Dropdown
           key="breadcrumbDropdownItems"
@@ -129,7 +132,7 @@ const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): 
         </Dropdown>
       );
       itemsList.splice(2, 0, menu);
-    }*/
+    }
 
     return itemsList;
   };
