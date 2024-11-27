@@ -19,6 +19,52 @@ export interface BreadcrumbsMenuProps {
   onItemClicked: (item: BreadcrumbItemData) => void;
 }
 
+/**
+ * BreadcrumbsItem component
+ *
+ * @property {BreadcrumbItemData} item
+ * - Data representing a single breadcrumb item, including label, icon, and other properties.
+ *
+ * @property {number} totalBreadcrumbsLength
+ * - The total number of breadcrumb items, used for styling the first item and determining when to apply certain styles.
+ *
+ * @property {boolean} [isHiddenInList]
+ * - If true, the breadcrumb is hidden in the list and only shown in a dropdown menu.
+ *
+ * @property {BreadcrumbItemData[]} items
+ * - Array of all breadcrumb items, used for rendering all the breadcrumbs and their separators.
+ *
+ * @property {string} [breadcrumbButtonDataCy]
+ * - Custom `data-cy` attribute applied to the breadcrumb button element.
+ *
+ * @property {FunctionComponent<BreadcrumbsMenuProps>} [menu]
+ * - A custom menu component that can be shown for the breadcrumb item when it's not active or dialog-based.
+ *
+ * @property {Object[]} namePath
+ * - Array of objects representing the path and UUID of the breadcrumb item.
+ *
+ * @property {boolean} isSomeItemSelected
+ * - If true, indicates that at least one breadcrumb item is selected, affecting styling or behavior.
+ *
+ * @property {any[]} selectedItems
+ * - Array of selected breadcrumb items, used to manage selected states and actions.
+ *
+ * @property {Function} onItemDropped
+ * - Callback function that is triggered when a breadcrumb item is dropped.
+ *
+ * @property {Function} canItemDrop
+ * - Determines if a breadcrumb item can be dropped. Used for validation during drag-and-drop operations.
+ *
+ * @property {FunctionComponent<SVGProps<SVGSVGElement>>} [itemComponent]
+ * - Optional custom component for rendering an icon or other visual elements within the breadcrumb item.
+ *
+ * @property {string[]} acceptedTypes
+ * - List of accepted drag-and-drop types for the breadcrumb item.
+ *
+ * @property {Dispatch} dispatch
+ * - The Redux dispatch function for dispatching actions related to the breadcrumb item.
+ */
+
 export interface BreadcrumbsItemProps<T extends Dispatch> {
   item: BreadcrumbItemData;
   totalBreadcrumbsLength: number;
