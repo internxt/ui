@@ -84,7 +84,7 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
                     
                     
                     
-                    text-gray-80
+                    
                   "
                     >
                       <div
@@ -251,7 +251,7 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
                     
                     
                     
-                    text-gray-80
+                    
                   "
                   >
                     <div

@@ -22,7 +22,7 @@ export type MenuItemType<T> =
 export type MenuItemsType<T> = Array<MenuItemType<T>>;
 
 export interface MenuProps<T> {
-  item: T;
+  item?: T;
   menu?: MenuItemsType<T>;
   handleMenuClose: () => void;
   genericEnterKey?: () => void;
@@ -36,7 +36,7 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
   };
 
   const isUnClickableItem = (menuItem: MenuItemType<T>) =>
-    menuItem?.separator || menuItem?.disabled?.(item) || menuItem?.isTitle?.(item);
+    menuItem?.separator || (item && menuItem?.disabled?.(item)) || (item && menuItem?.isTitle?.(item));
 
   const handleArrowDown = () => {
     menu &&
@@ -84,7 +84,7 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
     setSelectedIndex((prevIndex) => {
       if (prevIndex !== null) {
         const menuItem = menu ? menu[prevIndex] : undefined;
-        if (menuItem && 'action' in menuItem && menuItem.action) menuItem.action(item);
+        if (item && menuItem && 'action' in menuItem && menuItem.action) menuItem.action(item);
       } else if (genericEnterKey) genericEnterKey();
       setEnterPressed(true);
       return null;
@@ -122,7 +122,7 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
                 onClick={(e) => {
                   if (!isUnClickableItem(option)) {
                     e.stopPropagation();
-                    option.action?.(item);
+                    item && option.action?.(item);
                     option.onClick && option.onClick();
                     handleMenuClose();
                   }
@@ -131,10 +131,10 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
               >
                 <div
                   className={`flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    ${option.disabled?.(item) ? 'font-medium text-gray-50' : ''}
-                    ${option.isTitle?.(item) && !option.disabled?.(item) ? 'font-medium text-gray-100' : ''}
-                    ${selectedIndex === i && !option.disabled?.(item) ? 'bg-gray-5 text-gray-100 dark:bg-gray-10' : ''}
-                    ${!option.disabled?.(item) && !option.isTitle?.(item) && selectedIndex !== i ? 'text-gray-80' : ''}
+                    ${item && option.disabled?.(item) ? 'font-medium text-gray-50' : ''}
+                    ${item && option.isTitle?.(item) && !option.disabled?.(item) ? 'font-medium text-gray-100' : ''}
+                    ${selectedIndex === i && item && !option.disabled?.(item) ? 'bg-gray-5 text-gray-100 dark:bg-gray-10' : ''}
+                    ${item && !option.disabled?.(item) && !option.isTitle?.(item) && selectedIndex !== i ? 'text-gray-80' : ''}
                   `}
                 >
                   {option.node ? (
