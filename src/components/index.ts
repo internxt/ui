@@ -8,6 +8,7 @@ export * from './avatar/Avatar';
 export * from './spinner/Spinner';
 export * from './slider/RangeSlider';
 export * from './dialog/Dialog';
+export * from './card/Card';
 export * from './modal/Modal';
 export * from './infiniteScroll/InfiniteScroll';
 export * from './contextMenu/ContextMenu';
