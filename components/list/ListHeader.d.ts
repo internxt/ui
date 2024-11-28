@@ -1,4 +1,4 @@
-import { MenuType } from '../contextMenu/ContextMenu';
+import { MenuItemsType } from '../menu/Menu';
 
 export type HeaderProps<T, F> = {
     label: string;
@@ -22,7 +22,7 @@ interface ListHeaderProps<T, F> {
         field: F;
         direction: 'ASC' | 'DESC';
     };
-    menu?: MenuType<T>;
+    menu?: MenuItemsType<T>;
     displayMenuDiv?: boolean;
     checkboxDataCy?: string;
     onTopSelectionCheckboxClick: () => void;

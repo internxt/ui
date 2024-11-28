@@ -1,4 +1,4 @@
-import { MenuType } from '../contextMenu/ContextMenu';
+import { MenuItemsType } from '../menu/Menu';
 
 interface ListItemProps<T> {
     item: T;
@@ -13,7 +13,7 @@ interface ListItemProps<T> {
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onClickContextMenu?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onThreeDotsButtonPressed?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-    menu?: MenuType<T>;
+    menu?: MenuItemsType<T>;
     disableItemCompositionStyles?: boolean;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;

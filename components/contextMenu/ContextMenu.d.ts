@@ -1,26 +1,9 @@
-export type MenuItemType<T> = {
-    separator: true;
-} | {
-    separator?: false;
-    name: string;
-    icon?: React.ForwardRefExoticComponent<{
-        size?: number | string;
-    }>;
-    keyboardShortcutOptions?: {
-        keyboardShortcutIcon?: React.ForwardRefExoticComponent<{
-            size?: number | string;
-        }>;
-        keyboardShortcutText?: string;
-    };
-    action: (target: T) => void | Promise<void>;
-    disabled?: (target: T) => boolean;
-    isTitle?: (target: T) => boolean;
-};
-export type MenuType<T> = Array<MenuItemType<T>>;
+import { MenuItemsType } from '../menu/Menu';
+
 export interface ContextMenuProps<T> {
     item: T;
     menuItemsRef: React.MutableRefObject<HTMLDivElement | null>;
-    menu?: MenuType<T>;
+    menu?: MenuItemsType<T>;
     openedFromRightClick: boolean;
     posX: number;
     posY: number;

@@ -1,6 +1,6 @@
 import { ReactNode } from '../../../node_modules/react';
-import { MenuType } from '../contextMenu/ContextMenu';
 import { HeaderProps } from './ListHeader';
+import { MenuItemsType } from '../menu/Menu';
 
 export interface ListProps<T, F> {
     header: HeaderProps<T, F>[];
@@ -29,7 +29,7 @@ export interface ListProps<T, F> {
         direction: 'ASC' | 'DESC';
     };
     hasMoreItems?: boolean;
-    menu?: MenuType<T>;
+    menu?: MenuItemsType<T>;
     displayMenuDiv?: boolean;
     className?: string;
     keyboardShortcuts?: Array<'selectAll' | 'unselectAll' | 'multiselect' | Array<'delete' & (() => void)>>;
