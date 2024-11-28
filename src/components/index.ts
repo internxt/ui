@@ -15,3 +15,4 @@ export * from './list/List';
 export * from './dropdown/Dropdown';
 export * from './menu/Menu';
 export * from './breadcrumbs/Breadcrumbs';
+export * from './baseDialog/BaseDialog';

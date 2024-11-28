@@ -39,4 +39,7 @@ jobs:
         run: yarn build
 
       - name: Deploy Storybook to GitHub Pages
-        run: npx gh-pages -d storybook-static -b storybook-ui
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gh-pages -d storybook-static -b storybook-ui -r https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
