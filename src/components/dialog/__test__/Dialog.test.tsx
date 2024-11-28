@@ -1,6 +1,6 @@
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, vi, expect, afterEach } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import Dialog from '../Dialog';
 
 describe('Dialog', () => {
