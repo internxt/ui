@@ -10,7 +10,7 @@ interface CheckboxComponentProps {
   required?: boolean;
 }
 
-const Checkbox = ({
+export const Checkbox = ({
   checked = true,
   indeterminate = false,
   disabled = false,
@@ -44,5 +44,3 @@ const Checkbox = ({
     </>
   );
 };
-
-export default Checkbox;

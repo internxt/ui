@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, expect, it } from 'vitest';
-import Checkbox from '../Checkbox';
+import { Checkbox } from '../Checkbox';
 import { render } from '@testing-library/react';
 
 describe('Checkbox component', () => {

@@ -1,56 +1,61 @@
 import React from 'react';
 
-interface TableProps {
+interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TableHeaderProps {
+interface TableHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TableRowProps {
+interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: React.ReactNode;
   className?: string;
-  onClick?: (e: unknown) => void;
 }
 
-interface TableCellProps {
+interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+  children: React.ReactNode;
+  className?: string;
+}
+
+interface TableCellProps extends React.HTMLAttributes<HTMLTableCellElement> {
   children: React.ReactNode;
   className?: string;
   isHeader?: boolean;
-  onClick?: (e: unknown) => void;
 }
 
-export const Table: React.FC<TableProps> = ({
-  children,
-  className = 'min-w-full border border-gray-10 rounded-lg overflow-hidden',
-}) => (
+export const Table: React.FC<TableProps> = ({ children, className, ...props }) => (
   <div className={className}>
-    <table className="w-full">{children}</table>
+    <table className="w-full" {...props}>
+      {children}
+    </table>
   </div>
 );
 
-export const TableHeader: React.FC<TableHeaderProps> = ({
-  children,
-  className = 'bg-gray-1 border-b border-gray-10 text-gray-100 font-semibold',
-}) => <thead className={className}>{children}</thead>;
+export const TableHeader: React.FC<TableHeaderProps> = ({ children, className, ...props }) => (
+  <thead className={className} {...props}>
+    {children}
+  </thead>
+);
 
-export const TableRow: React.FC<TableRowProps> = ({
-  children,
-  className = 'hover:bg-gray-1 border-b border-gray-10 last:border-none text-sm',
-  onClick,
-}) => (
-  <tr onClick={onClick} className={className}>
+export const TableBody: React.FC<TableBodyProps> = ({ children, className, ...props }) => (
+  <tbody className={className} {...props}>
+    {children}
+  </tbody>
+);
+
+export const TableRow: React.FC<TableRowProps> = ({ children, className, onClick, ...props }) => (
+  <tr onClick={onClick} className={className} {...props}>
     {children}
   </tr>
 );
 
-export const TableCell: React.FC<TableCellProps> = ({ children, className = 'p-4', isHeader = false, onClick }) => {
+export const TableCell: React.FC<TableCellProps> = ({ children, className, isHeader = false, onClick, ...props }) => {
   const Component = isHeader ? 'th' : 'td';
   return (
-    <Component onClick={onClick} className={`${className} ${isHeader ? 'text-left font-medium' : ''}`}>
+    <Component onClick={onClick} className={className} {...props}>
       {children}
     </Component>
   );

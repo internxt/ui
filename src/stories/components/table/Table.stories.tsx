@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Table, TableHeader, TableRow, TableCell } from '../../../components/table/Table';
+import { Table, TableHeader, TableRow, TableCell, TableBody } from '../../../components/table/Table';
 
 interface ActivityRow {
   date: string;
@@ -72,7 +72,7 @@ export const Default: Story = {
           </TableCell>
         </TableRow>
       </TableHeader>
-      <tbody>
+      <TableBody>
         {mockData.map((item, index) => (
           <TableRow key={index}>
             <TableCell isHeader>{item.date}</TableCell>
@@ -86,7 +86,7 @@ export const Default: Story = {
             <TableCell className="pl-10">{item.access}</TableCell>
           </TableRow>
         ))}
-      </tbody>
+      </TableBody>
     </Table>
   ),
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Table, TableHeader, TableRow, TableCell } from '../Table';
+import { Table, TableHeader, TableRow, TableCell, TableBody } from '../Table';
 
 describe('Table', () => {
   it('renders table with default className', () => {
@@ -13,12 +13,12 @@ describe('Table', () => {
             <TableCell isHeader>Example 2</TableCell>
           </TableRow>
         </TableHeader>
-        <tbody>
+        <TableBody>
           <TableRow>
             <TableCell>Cell 1</TableCell>
             <TableCell>Cell 2</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
@@ -68,11 +68,11 @@ describe('TableRow', () => {
   it('renders row with default className', () => {
     render(
       <Table>
-        <tbody>
+        <TableBody>
           <TableRow>
             <TableCell>Example</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
@@ -85,11 +85,11 @@ describe('TableRow', () => {
   it('renders row with custom className', () => {
     render(
       <Table>
-        <tbody>
+        <TableBody>
           <TableRow className="custom-row-class">
             <TableCell>Example</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
@@ -101,11 +101,11 @@ describe('TableRow', () => {
     const handleClick = vi.fn();
     render(
       <Table>
-        <tbody>
+        <TableBody>
           <TableRow onClick={handleClick}>
             <TableCell>Example</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
@@ -119,11 +119,11 @@ describe('TableCell', () => {
   it('renders cell with default className', () => {
     render(
       <Table>
-        <tbody>
+        <TableBody>
           <TableRow>
             <TableCell>Example</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
@@ -153,11 +153,11 @@ describe('TableCell', () => {
   it('renders regular cell with custom className', () => {
     render(
       <Table>
-        <tbody>
+        <TableBody>
           <TableRow>
             <TableCell className="custom-cell-class">Example</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
@@ -169,11 +169,11 @@ describe('TableCell', () => {
     const handleClick = vi.fn();
     render(
       <Table>
-        <tbody>
+        <TableBody>
           <TableRow>
             <TableCell onClick={handleClick}>Example</TableCell>
           </TableRow>
-        </tbody>
+        </TableBody>
       </Table>,
     );
 
