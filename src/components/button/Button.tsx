@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Spinner } from '../spinner/Spinner';
+import Loader from '../loader/Loader';
 
 interface ButtonProps {
   id?: string;
@@ -73,7 +73,7 @@ export const Button = ({
       ring-offset-2 ring-offset-transparent transition-all duration-100 ease-in-out 
       focus-visible:ring-primary/50 ${styles} ${className}`}
     >
-      {loading && <Spinner size={18} />}
+      {loading && <Loader size={18} />}
       <div className="flex items-center justify-center space-x-2" data-cy={buttonChildrenDataCy}>
         {children}
       </div>
