@@ -9,6 +9,7 @@ export * from './avatar/Avatar';
 export * from './slider/RangeSlider';
 export * from './dialog/Dialog';
 export * from './modal/Modal';
+export * from './popover/Popover';
 export * from './infiniteScroll/InfiniteScroll';
 export * from './contextMenu/ContextMenu';
 export * from './list/List';
