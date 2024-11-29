@@ -1,7 +1,8 @@
-import { render, fireEvent, screen } from '@testing-library/react';
-import ContextMenu, { ContextMenuProps, MenuItemType } from '../ContextMenu';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import ContextMenu, { ContextMenuProps } from '../ContextMenu';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { MenuItemType } from '../../menu/Menu';
 
 interface TestItem {
   name: string;
@@ -29,7 +30,9 @@ describe('ContextMenu Component', () => {
     return render(<ContextMenu {...props} />);
   };
 
-  beforeEach(() => {});
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
 
   it('should match snapshot', () => {
     const contextMenu = renderContextMenu();

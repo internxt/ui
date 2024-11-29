@@ -43,3 +43,11 @@ export const Destructive: Story = {
     children: 'Button',
   },
 };
+
+export const Loading: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Button',
+    loading: true,
+  },
+};
