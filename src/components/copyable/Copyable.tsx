@@ -29,13 +29,13 @@ interface CopyableProps {
  * - The text to display in the tooltip when the content can be copied to the clipboard.
  */
 
-export default function Copyable({
+const Copyable = ({
   className = '',
   classText = 'select-text text-gray-80',
   text,
   copiedText = 'Copied!',
   copyToClipboardText = 'Copy to clipboard',
-}: CopyableProps): JSX.Element {
+}: CopyableProps): JSX.Element => {
   const [justCopied, setJustCopied] = useState(false);
 
   async function onCopy() {
@@ -61,4 +61,6 @@ export default function Copyable({
       </Tooltip>
     </div>
   );
-}
+};
+
+export default Copyable;
