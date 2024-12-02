@@ -8,6 +8,7 @@ export * from './radio-button/RadioButton';
 export * from './avatar/Avatar';
 export * from './slider/RangeSlider';
 export * from './dialog/Dialog';
+export * from './card/Card';
 export * from './empty/Empty';
 export * from './modal/Modal';
 export * from './popover/Popover';
