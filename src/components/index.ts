@@ -15,5 +15,6 @@ export * from './contextMenu/ContextMenu';
 export * from './list/List';
 export * from './dropdown/Dropdown';
 export * from './menu/Menu';
+export * from './tooltip/Tooltip';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './baseDialog/BaseDialog';
