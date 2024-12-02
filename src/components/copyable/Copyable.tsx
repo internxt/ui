@@ -16,7 +16,7 @@ interface CopyableProps {
  * @property {string} [className]
  * - Custom classes for the outer container.
  *
- *  * @property {string} [classText]
+ * @property {string} [classText]
  * - Custom classes for the selected text.
  *
  * @property {string} text
