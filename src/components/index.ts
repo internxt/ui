@@ -20,3 +20,4 @@ export * from './menu/Menu';
 export * from './tooltip/Tooltip';
 export * from './breadcrumbs/Breadcrumbs';
 export * from './baseDialog/BaseDialog';
+export * from './copyable/Copyable';
