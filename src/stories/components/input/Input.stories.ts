@@ -1,15 +1,23 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
+import { useState } from '@storybook/preview-api';
 import Input from '../../../components/input/Input';
 
 const onChange: Decorator = (Story, context) => {
-  const [, setArgs] = useArgs();
+  const [localValue, setLocalValue] = useState(context.args.value);
+
+  const handleChange = (newValue: string) => {
+    if (localValue !== newValue) {
+      setLocalValue(newValue);
+      context.updateArgs?.({ value: newValue });
+    }
+  };
 
   return Story({
     ...context,
     args: {
-      ...context.allArgs,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setArgs({ ...context.args, value: e.target.value }),
+      ...context.args,
+      value: localValue,
+      onChange: handleChange,
     },
   });
 };
@@ -30,30 +38,60 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const TextLarge: Story = {
+export const Text: Story = {
   args: {
-    type: 'text',
-    size: 'lg',
+    label: 'Text Input',
+    variant: 'default',
+    value: '',
+    placeholder: 'Type something...',
+    maxLength: 20,
   },
 };
 
-export const TextMedium: Story = {
+export const Search: Story = {
   args: {
-    type: 'text',
-    size: 'md',
+    label: 'Search Input',
+    variant: 'search',
+    value: '',
+    placeholder: 'Search...',
   },
 };
 
-export const PasswordLarge: Story = {
+export const Password: Story = {
   args: {
-    type: 'password',
-    size: 'lg',
+    label: 'Password Input',
+    variant: 'password',
+    value: '',
+    placeholder: 'Enter password...',
   },
 };
 
-export const PasswordMedium: Story = {
+export const SuccessMessage: Story = {
   args: {
-    type: 'password',
-    size: 'md',
+    label: 'Input with Success Message',
+    variant: 'default',
+    value: '',
+    message: 'Your input is correct!',
+    accent: 'success',
+  },
+};
+
+export const ErrorMessage: Story = {
+  args: {
+    label: 'Input with Error Message',
+    variant: 'default',
+    value: '',
+    message: 'There was an error!',
+    accent: 'error',
+  },
+};
+
+export const WarningMessage: Story = {
+  args: {
+    label: 'Input with Warning Message',
+    variant: 'default',
+    value: '',
+    message: 'This is a warning!',
+    accent: 'warning',
   },
 };
