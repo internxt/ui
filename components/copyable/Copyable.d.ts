@@ -23,5 +23,5 @@ interface CopyableProps {
  * @property {string} copyToClipboardText
  * - The text to display in the tooltip when the content can be copied to the clipboard.
  */
-export default function Copyable({ className, classText, text, copiedText, copyToClipboardText, }: CopyableProps): JSX.Element;
-export {};
+declare const Copyable: ({ className, classText, text, copiedText, copyToClipboardText, }: CopyableProps) => JSX.Element;
+export default Copyable;
