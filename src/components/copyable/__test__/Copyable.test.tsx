@@ -1,5 +1,5 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Copyable from '../Copyable';
+import { Copyable } from '../';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 

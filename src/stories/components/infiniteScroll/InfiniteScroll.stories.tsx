@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import InfiniteScroll from '../../../components/infiniteScroll/InfiniteScroll';
+import { InfiniteScroll } from '@/components/infiniteScroll';
 import { useState } from 'react';
 
 const meta: Meta<typeof InfiniteScroll> = {

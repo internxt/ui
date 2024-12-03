@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import ContextMenu, { ContextMenuProps } from '../ContextMenu';
+import { ContextMenu, ContextMenuProps } from '../';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { MenuItemType } from '../../menu/Menu';
 

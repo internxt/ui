@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Dropdown, { DropdownProps } from '../../../components/dropdown/Dropdown';
+import { Dropdown, DropdownProps } from '@/components/dropdown';
 import { DotsThree } from '@phosphor-icons/react';
 
 const meta: Meta<typeof Dropdown> = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Upload } from '@phosphor-icons/react';
-import Empty from '../Empty';
+import { Empty } from '../';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 describe('Empty component', () => {

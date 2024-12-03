@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import Dialog from '../Dialog';
+import { Dialog } from '../';
 
 describe('Dialog', () => {
   const defaultProps = {
