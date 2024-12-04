@@ -1,5 +1,5 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import { RangeSlider } from '../../../components/slider/RangeSlider';
+import { RangeSlider } from '@/components/slider';
 import { useArgs } from '@storybook/preview-api';
 
 const onChangeDecorator: Decorator = (Story, context) => {

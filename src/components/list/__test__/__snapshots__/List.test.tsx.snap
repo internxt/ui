@@ -192,6 +192,7 @@ exports[`List component > should match snapshot 1`] = `
           </div>
           <div
             class="h-full w-full py-6"
+            data-testid="outside-click-element"
           />
         </div>
       </div>
@@ -385,6 +386,7 @@ exports[`List component > should match snapshot 1`] = `
         </div>
         <div
           class="h-full w-full py-6"
+          data-testid="outside-click-element"
         />
       </div>
     </div>

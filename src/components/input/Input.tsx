@@ -1,7 +1,7 @@
 import { CheckCircle, Eye, EyeSlash, MagnifyingGlass, Warning, WarningOctagon, X } from '@phosphor-icons/react';
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 
-interface InputProps {
+export interface InputProps {
   className?: string;
   label?: string;
   variant?: 'default' | 'search' | 'password' | 'email';

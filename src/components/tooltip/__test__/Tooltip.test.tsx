@@ -1,8 +1,7 @@
+import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Tooltip, { TooltipProps } from '../Tooltip';
-import { expect } from 'chai';
-import React, { Children } from 'react';
-import { describe, afterEach, vi, it } from 'vitest';
+import { Tooltip, TooltipProps } from '../';
+import { expect, describe, afterEach, vi, it } from 'vitest';
 
 describe('Tooltip', () => {
   const defaultProps: TooltipProps = {
@@ -16,6 +15,7 @@ describe('Tooltip', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    vi.clearAllTimers();
   });
 
   it('should match snapshot', () => {

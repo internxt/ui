@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, afterEach, expect, vi } from 'vitest';
-import Modal from '../Modal';
+import { Modal } from '../';
 import { afterAll, beforeAll } from 'vitest';
 
 describe('Modal Component', () => {
@@ -32,6 +32,7 @@ describe('Modal Component', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    vi.restoreAllMocks();
   });
 
   afterAll(() => {
@@ -149,5 +150,40 @@ describe('Modal Component', () => {
     const modalContent = screen.getByTestId('ModalContent');
     expect(modalContent).toHaveClass('w-1/2');
     expect(modalContent).toHaveClass('max-w-xl');
+  });
+
+  it('should update transition classes after timeout when isOpen is true', async () => {
+    renderModal();
+
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toHaveClass('opacity-0');
+    expect(modalContent).toHaveClass('scale-95');
+
+    await waitFor(() => {
+      expect(modalContent).toHaveClass('opacity-100');
+      expect(modalContent).toHaveClass('scale-100');
+    });
+  });
+
+  it('should reset transition classes when isOpen changes to false and closes the modal', async () => {
+    const { rerender } = renderModal();
+
+    const modalContent = screen.getByTestId('ModalContent');
+    await waitFor(() => {
+      expect(modalContent).toHaveClass('opacity-100');
+      expect(modalContent).toHaveClass('scale-100');
+    });
+
+    rerender(
+      <Modal isOpen={false} onClose={onCloseMock}>
+        <div>Modal Content</div>
+      </Modal>,
+    );
+
+    await waitFor(() => {
+      expect(modalContent).toHaveClass('opacity-0');
+      expect(modalContent).toHaveClass('scale-95');
+      expect(screen.queryByText('Modal Content')).not.toBeInTheDocument();
+    });
   });
 });

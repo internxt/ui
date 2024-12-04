@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/Loader.css';
 
-interface LoaderProps {
+export interface LoaderProps {
   classNameContainer?: string;
   classNameLoader?: string;
   classNameText?: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Popover, { PopoverProps } from '../Popover';
+import { Popover, PopoverProps } from '../';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 
 describe('Popover', () => {

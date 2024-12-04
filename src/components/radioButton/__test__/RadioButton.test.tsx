@@ -1,7 +1,7 @@
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { RadioButton } from '../RadioButton';
+import { RadioButton } from '../';
 
 describe('Radio Button component', () => {
   it('Radio button onClick should work correctly', () => {
@@ -29,7 +29,7 @@ describe('Radio Button component', () => {
   });
 
   it('Disabled and Checked Radio Button component should render correctly', () => {
-    const radioButton = render(<RadioButton disabled checked={false} onClick={() => undefined} />);
+    const radioButton = render(<RadioButton disabled checked={true} onClick={() => undefined} />);
     expect(radioButton).toMatchSnapshot();
   });
 });

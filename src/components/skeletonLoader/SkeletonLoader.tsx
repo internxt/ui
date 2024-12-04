@@ -1,9 +1,9 @@
-interface SkeletonLoaderItemProps {
+export interface SkeletonLoaderItemProps {
   skeletonItem: Array<React.ReactElement> | undefined;
   columns: Array<string>;
 }
 
-interface SkeletonLoaderProps {
+export interface SkeletonLoaderProps {
   skeleton: Array<SkeletonLoaderItemProps>;
 }
 

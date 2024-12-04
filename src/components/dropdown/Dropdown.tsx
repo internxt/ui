@@ -1,5 +1,5 @@
 import { useState, ReactNode } from 'react';
-import Menu, { MenuItemsType } from '../menu/Menu';
+import { Menu, MenuItemType } from '../';
 
 export type DropdownProps<T> = {
   children: ReactNode | ((obj: { open: boolean }) => JSX.Element);
@@ -8,7 +8,7 @@ export type DropdownProps<T> = {
   menuItems?: ReactNode[];
   classMenuItems: string;
   openDirection: 'left' | 'right';
-  dropdownActionsContext?: MenuItemsType<T>;
+  dropdownActionsContext?: Array<MenuItemType<T>>;
   item?: T;
 };
 
@@ -35,7 +35,7 @@ export type DropdownProps<T> = {
  * @property {'left' | 'right'} openDirection
  * - The direction in which the dropdown menu opens. It can be 'left' or 'right'.
  *
- * @property {MenuItemsType<T>} [dropdownActionsContext]
+ * @property { Array<MenuItemType<T>>} [dropdownActionsContext]
  * - Additional actions that can be passed to the dropdown menu.
  * Used for extending the menu with more options or functionalities.
  *
@@ -57,20 +57,20 @@ const Dropdown = <T,>({
   const [isOpen, setIsOpen] = useState(false);
   const direction = openDirection === 'left' ? 'origin-top-left' : 'origin-top-right';
 
-  const group1: MenuItemsType<T> = options
+  const group1: Array<MenuItemType<T>> = options
     ? options.map((option) => ({
         name: option.text,
         action: () => option.onClick(),
       }))
     : [];
 
-  const group2: MenuItemsType<T> = menuItems
+  const group2: Array<MenuItemType<T>> = menuItems
     ? menuItems.map((menuItem) => ({
         node: menuItem,
       }))
     : [];
 
-  const group3: MenuItemsType<T> = dropdownActionsContext || [];
+  const group3: Array<MenuItemType<T>> = dropdownActionsContext || [];
 
   const allItems = [...group1, ...group2, ...group3];
 

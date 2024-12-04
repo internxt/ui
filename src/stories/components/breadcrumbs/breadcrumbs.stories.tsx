@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Breadcrumbs, { BreadcrumbsProps } from '../../../components/breadcrumbs/Breadcrumbs';
-import { BreadcrumbItemData, BreadcrumbsMenuProps } from '../../../components/breadcrumbs/BreadcrumbsItem';
+import { Breadcrumbs, BreadcrumbsProps } from '@/components/breadcrumbs';
+import { BreadcrumbItemData, BreadcrumbsMenuProps } from '@/components/breadcrumbs/BreadcrumbsItem';
 import { Dispatch } from 'redux';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import React, { useEffect, useRef, useState } from 'react';
 import { CaretDown } from '@phosphor-icons/react';
-import Menu from '../../../components/menu/Menu';
+import { Menu } from '@/components/menu';
 
 const breadcrumbItems: BreadcrumbItemData[] = [
   { uuid: '1', label: 'Home', icon: null, active: true },

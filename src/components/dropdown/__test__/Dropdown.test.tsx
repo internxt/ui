@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import Dropdown from '../Dropdown';
+import { Dropdown } from '../';
 
 describe('Dropdown component', () => {
   const handleClick1 = vi.fn();

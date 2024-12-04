@@ -1,8 +1,8 @@
 import { Upload } from '@phosphor-icons/react';
 import { ReactNode } from 'react';
-import { Button } from '../button/Button';
+import { Button } from '../button';
 
-interface EmptyProps {
+export interface EmptyProps {
   icon: JSX.Element;
   title: string;
   subtitle: string;

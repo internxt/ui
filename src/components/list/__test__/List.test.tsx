@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
-import List from '../List';
+import { List } from '../';
 import { HeaderProps } from '../ListHeader';
 
 const mockOnClick = vi.fn();
@@ -9,6 +9,8 @@ const mockOnDoubleClick = vi.fn();
 const mockOnSelectedItemsChanged = vi.fn();
 const mockOnNextPage = vi.fn();
 const mockOnOrderByChanged = vi.fn();
+const mockOnEnterPressed = vi.fn();
+const mockKeyBoardShortcutActions = { onRKeyPressed: vi.fn(), onBackspaceKeyPressed: vi.fn() };
 
 type Item = {
   id: string;
@@ -48,6 +50,8 @@ const defaultProps = {
   onDoubleClick: mockOnDoubleClick,
   onNextPage: mockOnNextPage,
   onOrderByChanged: mockOnOrderByChanged,
+  onEnterPressed: mockOnEnterPressed,
+  keyBoardShortcutActions: mockKeyBoardShortcutActions,
 };
 
 const selectedAllItemsMock = [
@@ -194,6 +198,15 @@ describe('List component', () => {
     expect(mockOnOrderByChanged).toHaveBeenCalled();
   });
 
+  it('calls onOrderByChanged when a sortable column header is clicked and was selected previously', () => {
+    const { getByText } = renderList({ orderBy: { field: 'name', name: 'name', direction: 'ASC' } });
+
+    const nameHeader = getByText('Name');
+    fireEvent.click(nameHeader);
+
+    expect(mockOnOrderByChanged).toHaveBeenCalled();
+  });
+
   it('selects all items when select all checkbox is clicked', () => {
     const { getAllByRole } = renderList();
 
@@ -237,5 +250,109 @@ describe('List component', () => {
     fireEvent.keyDown(container, { key: 'a', ctrlKey: true });
 
     expect(mockOnSelectedItemsChanged).not.toHaveBeenCalled();
+  });
+
+  it('handles keyboard shortcuts for select all (Meta+A)', () => {
+    const { container } = renderList({ disableKeyboardShortcuts: false });
+
+    fireEvent.keyDown(container, { key: 'a', metaKey: true });
+
+    expect(mockOnSelectedItemsChanged).toBeCalledWith(selectedAllItemsMock);
+  });
+
+  it('handles keyboard shortcuts for unselect all (escape key)', () => {
+    const { container } = renderList({ disableKeyboardShortcuts: false });
+
+    fireEvent.keyDown(container, { key: 'esc', code: 'esc' });
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalled();
+  });
+
+  it('handles keyboard shortcuts for R key', () => {
+    const { container } = renderList({ disableKeyboardShortcuts: false });
+
+    fireEvent.keyDown(container, { key: 'r', code: 'r' });
+
+    expect(mockKeyBoardShortcutActions.onRKeyPressed).toHaveBeenCalled();
+  });
+
+  it('handles keyboard shortcuts for bakspace', () => {
+    const { container } = renderList({ disableKeyboardShortcuts: false });
+
+    fireEvent.keyDown(container, { key: 'Backspace', code: 'Backspace' });
+
+    expect(mockKeyBoardShortcutActions.onBackspaceKeyPressed).toHaveBeenCalled();
+  });
+
+  it('handles keyboard shortcuts for delete', () => {
+    const { container } = renderList({ disableKeyboardShortcuts: false });
+
+    fireEvent.keyDown(container, { key: 'delete', code: 'delete' });
+
+    expect(mockKeyBoardShortcutActions.onBackspaceKeyPressed).toHaveBeenCalled();
+  });
+
+  it('click outside contextMenu should prevent default and call unselectAllItems', () => {
+    const { getByTestId } = renderList();
+
+    const element = getByTestId('outside-click-element');
+
+    const contextMenuEvent = new MouseEvent('contextmenu', { bubbles: true });
+    const preventDefaultSpy = vi.spyOn(contextMenuEvent, 'preventDefault');
+
+    fireEvent(element, contextMenuEvent);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalled();
+  });
+
+  it('should toggle selection when Ctrl or Meta key is pressed', () => {
+    const { getByText } = renderList();
+
+    const itemElement = getByText('Item 2');
+    fireEvent.click(itemElement, { ctrlKey: true });
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalledWith([{ props: items[1], value: true }]);
+  });
+
+  it('should call onClick if item is not selected and no Ctrl/Meta key is pressed', () => {
+    const { getByText } = renderList();
+
+    const itemElement = getByText('Item 2');
+    fireEvent.click(itemElement);
+
+    expect(mockOnClick).toHaveBeenCalledWith(items[1]);
+  });
+
+  it('should change selection if item is not selected when right button clicked', () => {
+    const { getByText } = renderList();
+    const itemElement = getByText('Item 2');
+
+    fireEvent.contextMenu(itemElement);
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalledWith([
+      { props: items[0], value: false },
+      { props: items[1], value: true },
+    ]);
+  });
+
+  it('should change selection if item is not selected when three dots button clicked', () => {
+    const { getAllByRole } = renderList();
+    const dotsButton = getAllByRole('button');
+
+    fireEvent.click(dotsButton[3]);
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalledWith([
+      { props: items[0], value: false },
+      { props: items[1], value: true },
+    ]);
+  });
+
+  it('should excute generic enter key if item is selected', () => {
+    const { container } = renderList();
+
+    fireEvent.keyDown(container, { key: 'Enter', code: 'Enter' });
+
+    expect(mockOnEnterPressed).toHaveBeenCalledWith(items[0]);
   });
 });

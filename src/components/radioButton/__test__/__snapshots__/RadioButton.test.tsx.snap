@@ -18,6 +18,7 @@ exports[`Radio Button component > Checked Radio Button component should render c
         <input
           checked=""
           class="h-0 w-0 appearance-none opacity-0"
+          readonly=""
           type="radio"
         />
       </div>
@@ -37,6 +38,7 @@ exports[`Radio Button component > Checked Radio Button component should render c
       <input
         checked=""
         class="h-0 w-0 appearance-none opacity-0"
+        readonly=""
         type="radio"
       />
     </div>
@@ -114,6 +116,7 @@ exports[`Radio Button component > Disabled Radio Button component should render 
         <input
           checked=""
           class="h-0 w-0 appearance-none opacity-0"
+          readonly=""
           type="radio"
         />
       </div>
@@ -134,6 +137,7 @@ exports[`Radio Button component > Disabled Radio Button component should render 
       <input
         checked=""
         class="h-0 w-0 appearance-none opacity-0"
+        readonly=""
         type="radio"
       />
     </div>
@@ -201,7 +205,7 @@ exports[`Radio Button component > Disabled and Checked Radio Button component sh
         class="flex cursor-pointer"
       >
         <button
-          class="flex h-5 w-5 items-center justify-center rounded-full border false border-gray-10"
+          class="flex h-5 w-5 items-center justify-center rounded-full border border-0 bg-gray-20 border-gray-10"
           disabled=""
         >
           <div
@@ -211,6 +215,7 @@ exports[`Radio Button component > Disabled and Checked Radio Button component sh
         <input
           checked=""
           class="h-0 w-0 appearance-none opacity-0"
+          readonly=""
           type="radio"
         />
       </div>
@@ -221,7 +226,7 @@ exports[`Radio Button component > Disabled and Checked Radio Button component sh
       class="flex cursor-pointer"
     >
       <button
-        class="flex h-5 w-5 items-center justify-center rounded-full border false border-gray-10"
+        class="flex h-5 w-5 items-center justify-center rounded-full border border-0 bg-gray-20 border-gray-10"
         disabled=""
       >
         <div
@@ -231,6 +236,7 @@ exports[`Radio Button component > Disabled and Checked Radio Button component sh
       <input
         checked=""
         class="h-0 w-0 appearance-none opacity-0"
+        readonly=""
         type="radio"
       />
     </div>
@@ -307,6 +313,7 @@ exports[`Radio Button component > Radio Button component should render correctly
         <input
           checked=""
           class="h-0 w-0 appearance-none opacity-0"
+          readonly=""
           type="radio"
         />
       </div>
@@ -326,6 +333,7 @@ exports[`Radio Button component > Radio Button component should render correctly
       <input
         checked=""
         class="h-0 w-0 appearance-none opacity-0"
+        readonly=""
         type="radio"
       />
     </div>

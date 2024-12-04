@@ -1,6 +1,6 @@
+import { BaseDialog, BaseDialogProps } from '@/components/baseDialog';
+import { Button } from '@/components/button';
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import BaseDialog, { BaseDialogProps } from '../../../components/baseDialog/BaseDialog';
-import { Button } from '../../../components';
 
 const overlay: Decorator = (Story) => (
   <div style={{ minHeight: '300px', minWidth: '600px' }}>

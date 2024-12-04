@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '../../../components/skeletonLoader/';
 import { expect, describe, it } from 'vitest';
 
 describe('SkeletonLoader', () => {

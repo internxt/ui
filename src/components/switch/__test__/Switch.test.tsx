@@ -1,15 +1,15 @@
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
-import { act, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { SwitchComponent } from '../Switch';
+import { SwitchComponent } from '../';
 
 describe('Switch component', () => {
   it('Switch onClick should be called correctly', () => {
     const switchClick = vi.fn();
     render(<SwitchComponent size="md" onClick={switchClick} />);
     const switchComponent = screen.getByTestId('switch');
-    switchComponent.click();
+    fireEvent.click(switchComponent);
     expect(switchClick).toHaveBeenCalledOnce();
   });
 
@@ -19,17 +19,18 @@ describe('Switch component', () => {
 
     const switchComponent = screen.getByTestId('switch');
 
-    await act(async () => {
-      await userEvent.click(switchComponent);
-    });
+    await userEvent.click(switchComponent);
 
     expect(onCheckedChangeMock).toHaveBeenCalledWith(true);
 
-    await act(async () => {
-      await userEvent.click(switchComponent);
-    });
+    await userEvent.click(switchComponent);
 
     expect(onCheckedChangeMock).toHaveBeenCalledWith(false);
+  });
+
+  it('Medium switch should render correctly by default size', () => {
+    const switchComponent = render(<SwitchComponent />);
+    expect(switchComponent).toMatchSnapshot();
   });
 
   it('Medium switch should render correctly', () => {

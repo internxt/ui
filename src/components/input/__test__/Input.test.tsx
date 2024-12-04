@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import Input from '../Input';
+import { Input } from '../';
 import React from 'react';
 
 describe('Input component', () => {

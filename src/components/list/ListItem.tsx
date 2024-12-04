@@ -70,12 +70,12 @@ const ListItem = <T extends { id: number }>({
   useEffect(() => {
     if (!openedFromRightClick) handleOpenPosition();
 
-    if (!open) {
+    if (!isOpen) {
       setOpenedFromRightClick(false);
       setPosX(0);
       setPosY(0);
     }
-  }, [open]);
+  }, [isOpen]);
 
   function handleOpenPosition() {
     const element = menuButtonRef.current;

@@ -1,7 +1,6 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
-import TextArea from '../../../components/textArea/TextArea';
-
+import { TextArea } from '@/components/textArea';
 
 const onChange: Decorator = (Story, context) => {
   const [, setArgs] = useArgs();
@@ -14,8 +13,6 @@ const onChange: Decorator = (Story, context) => {
     },
   });
 };
-
-
 
 const meta: Meta<typeof TextArea> = {
   title: 'Components/TextArea',

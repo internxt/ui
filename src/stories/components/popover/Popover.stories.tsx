@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Popover from '../../../components/popover/Popover';
-import { Button } from '../../../components';
+import { Popover } from '@/components/popover';
+import { Button } from '@/components/button';
 import { UserCircle } from '@phosphor-icons/react';
 
 const meta: Meta<typeof Popover> = {

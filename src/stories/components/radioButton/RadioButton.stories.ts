@@ -1,6 +1,6 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
-import { RadioButton } from '../../../components/radio-button/RadioButton';
+import { RadioButton } from '@/components/radioButton';
 
 // Simulating onClick event for Radio Button (check or uncheck the button)
 const onClick: Decorator = (Story, context) => {
@@ -32,5 +32,7 @@ export default meta;
 type Story = StoryObj<typeof RadioButton>;
 
 export const RadioButtonChecked: Story = {
-  //
+  args: {
+    checked: true,
+  },
 };
