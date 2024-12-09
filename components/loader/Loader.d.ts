@@ -1,6 +1,6 @@
 import { default as React } from '../../../node_modules/react';
 
-interface LoaderProps {
+export interface LoaderProps {
     classNameContainer?: string;
     classNameLoader?: string;
     classNameText?: string;

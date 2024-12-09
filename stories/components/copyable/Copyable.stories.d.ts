@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Copyable } from '../../../components/copyable/Copyable';
+import { Copyable } from '../../../components/copyable';
 
 declare const meta: Meta<typeof Copyable>;
 export default meta;

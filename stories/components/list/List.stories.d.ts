@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as List } from '../../../components/list/List';
+import { List } from '../../../components/list';
 
 type DriveItemData = {
     id: number;

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as SkeletonLoader } from '../../../components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '../../../components/skeletonLoader';
 
 declare const meta: Meta<typeof SkeletonLoader>;
 export default meta;

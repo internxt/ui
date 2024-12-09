@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Tooltip } from '../../../components/tooltip/Tooltip';
+import { Tooltip } from '../../../components/tooltip';
 
 declare const meta: Meta<typeof Tooltip>;
 export default meta;

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Dropdown } from '../../../components/dropdown/Dropdown';
+import { Dropdown } from '../../../components/dropdown';
 
 declare const meta: Meta<typeof Dropdown>;
 export default meta;

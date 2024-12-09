@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Breadcrumbs } from '../../../components/breadcrumbs/Breadcrumbs';
+import { Breadcrumbs } from '../../../components/breadcrumbs';
 
 declare const meta: Meta<typeof Breadcrumbs>;
 export default meta;

@@ -1,5 +1,5 @@
 import { ReactNode } from '../../../node_modules/react';
-import { MenuItemsType } from '../menu/Menu';
+import { MenuItemType } from '../';
 
 export type DropdownProps<T> = {
     children: ReactNode | ((obj: {
@@ -13,7 +13,7 @@ export type DropdownProps<T> = {
     menuItems?: ReactNode[];
     classMenuItems: string;
     openDirection: 'left' | 'right';
-    dropdownActionsContext?: MenuItemsType<T>;
+    dropdownActionsContext?: Array<MenuItemType<T>>;
     item?: T;
 };
 /**
@@ -39,7 +39,7 @@ export type DropdownProps<T> = {
  * @property {'left' | 'right'} openDirection
  * - The direction in which the dropdown menu opens. It can be 'left' or 'right'.
  *
- * @property {MenuItemsType<T>} [dropdownActionsContext]
+ * @property { Array<MenuItemType<T>>} [dropdownActionsContext]
  * - Additional actions that can be passed to the dropdown menu.
  * Used for extending the menu with more options or functionalities.
  *

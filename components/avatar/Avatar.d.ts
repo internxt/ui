@@ -18,7 +18,7 @@ type SIZE_KEYS = 'xxs' | 'xs' | 'sm' | 'base' | 'lg' | 'xl';
  * @param {Object} [props.style={}] - Additional inline styles to apply to the avatar component.
  * @returns {JSX.Element} The rendered avatar component.
  */
-export declare const Avatar: ({ src, diameter, size, className, fullName, style, }: {
+declare const Avatar: ({ src, diameter, size, className, fullName, style, }: {
     fullName: string;
     diameter?: number;
     size?: SIZE_KEYS;
@@ -26,4 +26,4 @@ export declare const Avatar: ({ src, diameter, size, className, fullName, style,
     className?: string;
     style?: Record<string, string | number>;
 }) => JSX.Element;
-export {};
+export default Avatar;

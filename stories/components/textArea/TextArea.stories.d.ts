@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as TextArea } from '../../../components/textArea/TextArea';
+import { TextArea } from '../../../components/textArea';
 
 declare const meta: Meta<typeof TextArea>;
 export default meta;

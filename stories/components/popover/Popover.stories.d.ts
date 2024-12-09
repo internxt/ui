@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Popover } from '../../../components/popover/Popover';
+import { Popover } from '../../../components/popover';
 
 declare const meta: Meta<typeof Popover>;
 export default meta;

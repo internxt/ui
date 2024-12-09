@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Empty } from '../../../components/empty/Empty';
+import { Empty } from '../../../components/empty';
 
 declare const meta: Meta<typeof Empty>;
 export default meta;

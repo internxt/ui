@@ -1,6 +1,6 @@
 import { KeyboardEvent } from '../../../node_modules/react';
 
-interface InputProps {
+export interface InputProps {
     className?: string;
     label?: string;
     variant?: 'default' | 'search' | 'password' | 'email';

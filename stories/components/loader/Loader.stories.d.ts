@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Loader } from '../../../components/loader/Loader';
+import { Loader } from '../../../components/loader';
 
 declare const meta: Meta<typeof Loader>;
 export default meta;

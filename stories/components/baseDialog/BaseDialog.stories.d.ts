@@ -1,5 +1,5 @@
+import { BaseDialog } from '../../../components/baseDialog';
 import { Meta, StoryObj } from '@storybook/react';
-import { default as BaseDialog } from '../../../components/baseDialog/BaseDialog';
 
 declare const meta: Meta<typeof BaseDialog>;
 export default meta;

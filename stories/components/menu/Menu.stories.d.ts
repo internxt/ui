@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { default as Menu, MenuProps } from '../../../components/menu/Menu';
+import { Menu, MenuProps } from '../../../components/menu';
 
 declare const meta: Meta<typeof Menu>;
 export default meta;

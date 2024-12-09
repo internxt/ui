@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button } from '../../../components/button/Button';
+import { Button } from '../../../components/button';
 
 declare const meta: Meta<typeof Button>;
 export default meta;

@@ -1,4 +1,4 @@
-interface CopyableProps {
+export interface CopyableProps {
     className?: string;
     classText?: string;
     text: string;
