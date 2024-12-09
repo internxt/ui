@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Copyable from '../../../components/copyable/Copyable';
+import { Copyable } from '@/components/copyable';
 
 const meta: Meta<typeof Copyable> = {
   title: 'Components/Copyable',

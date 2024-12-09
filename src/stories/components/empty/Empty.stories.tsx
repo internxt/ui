@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Upload } from '@phosphor-icons/react';
-import Empty from '../../../components/empty/Empty';
+import { Empty } from '@/components/empty';
 
 const meta: Meta<typeof Empty> = {
   title: 'Components/Empty',

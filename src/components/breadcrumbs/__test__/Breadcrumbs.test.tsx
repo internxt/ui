@@ -2,7 +2,7 @@ import React, { act } from 'react';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Breadcrumbs, { BreadcrumbsProps } from '../Breadcrumbs';
+import { Breadcrumbs, BreadcrumbsProps } from '../';
 import { Dispatch, AnyAction } from 'redux';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';

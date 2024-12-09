@@ -1,6 +1,7 @@
+import React from 'react';
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
-import { Avatar } from '../Avatar';
+import { Avatar } from '../';
 
 const FULL_NAME = 'My Internxt';
 const IMAGE_SRC = 'https://internxt.com/favicon.ico';

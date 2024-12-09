@@ -1,7 +1,7 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
-import Modal from '../../../components/modal/Modal';
-import { Button } from '../../../components';
+import { Modal } from '@/components/modal';
+import { Button } from '@/components/button';
 
 const onCloseDecorator: Decorator = (Story, context) => {
   const [{ isOpen }, setArgs] = useArgs();

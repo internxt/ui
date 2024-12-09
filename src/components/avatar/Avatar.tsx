@@ -31,7 +31,8 @@ const SIZES: Record<SIZE_KEYS, number> = {
  * @param {Object} [props.style={}] - Additional inline styles to apply to the avatar component.
  * @returns {JSX.Element} The rendered avatar component.
  */
-export const Avatar = ({
+
+const Avatar = ({
   src,
   diameter = 80,
   size,
@@ -54,3 +55,5 @@ export const Avatar = ({
     <DefaultAvatar diameter={diameterValue} className={className} fullName={fullName} />
   );
 };
+
+export default Avatar;

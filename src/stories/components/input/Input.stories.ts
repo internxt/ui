@@ -1,6 +1,6 @@
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import { useState } from '@storybook/preview-api';
-import Input from '../../../components/input/Input';
+import { Input } from '@/components/input';
 
 const onChange: Decorator = (Story, context) => {
   const [localValue, setLocalValue] = useState(context.args.value);

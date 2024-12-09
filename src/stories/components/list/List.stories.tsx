@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import List, { ListProps } from '../../../components/list/List';
+import { List, ListProps } from '@/components/list';
 import { useState } from 'react';
-import { MenuItemsType } from '../../../components/menu/Menu';
+import { MenuItemType } from '@/components/menu';
 
 type DriveItemData = {
   id: number;
@@ -19,7 +19,7 @@ type ListWrapperProps = Omit<
   items: DriveItemData[];
 };
 
-const menu: MenuItemsType<unknown> = [
+const menu: Array<MenuItemType<unknown>> = [
   { name: 'Techniques', action: () => {} },
   { name: 'Training', action: () => {} },
   { separator: true },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Card from '../Card';
+import { Card } from '../';
 import { describe, expect, it } from 'vitest';
 
 describe('Card Component', () => {
