@@ -318,7 +318,7 @@ const List = <T extends { id: number }, F extends keyof T>({
           <InfiniteScroll
             handleNextPage={handleNextPage}
             hasMoreItems={!!hasMoreItems}
-            loader={<></>}
+            loader={loader}
             scrollableTarget="scrollableList"
           >
             {items.map((item, index) => (
