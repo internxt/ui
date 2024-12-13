@@ -10,7 +10,7 @@ const withCloseHandler: Decorator = (Story, context) => {
     ...context,
     args: {
       ...context.allArgs,
-      handleMenuClose: () => setArgs({ ...context.args, isOpen: false }),
+      handleMenuClose: () => setArgs({ ...context.args, isOpen: true }),
     },
   });
 };
@@ -59,6 +59,7 @@ const ExampleIconGreen = React.forwardRef<SVGSVGElement, { size?: number | strin
 export const Default: Story = {
   args: {
     item: { id: 1, name: 'Sample Item' },
+    isOpen: true,
     menu: [
       { name: 'Title', isTitle: () => true },
       { separator: true },
@@ -76,6 +77,7 @@ export const Default: Story = {
 export const WithIcons: Story = {
   args: {
     item: { id: 1, name: 'Sample Item' },
+    isOpen: true,
     menu: [
       { name: 'Title', isTitle: () => true },
       { separator: true },

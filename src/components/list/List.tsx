@@ -225,6 +225,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   };
 
   const onOrderableColumnClicked = (field: HeaderProps<T, F>) => {
+    onCloseContextMenu();
     if (!field.orderable || !onOrderByChanged) return;
 
     const columnWasAlreadySelected = orderBy?.field === field.name;
@@ -307,6 +308,7 @@ const List = <T extends { id: number }, F extends keyof T>({
           displayMenuDiv={displayMenuDiv}
           isVerticalScrollbarVisible={isVerticalScrollbarVisible}
           checkboxDataCy={checkboxDataCy}
+          onClose={onCloseContextMenu}
         />
       ) : null}
 

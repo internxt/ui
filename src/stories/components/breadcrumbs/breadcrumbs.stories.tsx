@@ -63,6 +63,7 @@ const menuBreadcrumbs = (props: BreadcrumbsMenuProps): JSX.Element => {
           <Menu
             item={{ id: 1, name: 'Sample Item' }}
             handleMenuClose={handleClick}
+            isOpen={false}
             menu={[
               { name: 'Title', isTitle: () => true },
               { separator: true },

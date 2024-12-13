@@ -163,6 +163,7 @@ const ListItem = <T extends { id: number }>({
           menu={menu}
           menuItemsRef={menuItemsRef}
           openedFromRightClick={openedFromRightClick}
+          isOpen={isOpen}
           posX={posX}
           posY={posY}
           isContextMenuCutOff={isContextMenuCutOff}

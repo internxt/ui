@@ -113,7 +113,7 @@ const Dropdown = <T,>({
         data-testid="menu-dropdown"
       >
         <div className={`absolute ${classMenuItems}`}>
-          <Menu item={item} handleMenuClose={closeMenu} menu={allItems} />
+          <Menu item={item} isOpen={isOpen} handleMenuClose={closeMenu} menu={allItems} />
         </div>
       </div>
     </div>
