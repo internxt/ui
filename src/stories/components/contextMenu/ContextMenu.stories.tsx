@@ -62,6 +62,7 @@ const ContextMenuWithNotifications = () => {
           isContextMenuCutOff={false}
           genericEnterKey={() => {}}
           handleMenuClose={() => {}}
+          isOpen={true}
         />
       </div>
     </div>

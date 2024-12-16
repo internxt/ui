@@ -21,6 +21,7 @@ interface ListHeaderProps<T, F> {
   checkboxDataCy?: string;
   onTopSelectionCheckboxClick: () => void;
   onOrderableColumnClicked: (column: HeaderProps<T, F>) => void;
+  onClose?: () => void;
 }
 
 const ListHeader = <T, F extends keyof T>({
@@ -34,9 +35,10 @@ const ListHeader = <T, F extends keyof T>({
   displayMenuDiv,
   isVerticalScrollbarVisible,
   checkboxDataCy,
+  onClose,
 }: ListHeaderProps<T, F>) => {
   return (
-    <div className="flex h-12 shrink-0 flex-row px-5">
+    <div onClick={onClose} onContextMenu={onClose} className="flex h-12 shrink-0 flex-row px-5">
       {/* COLUMN */}
       <div className="flex h-full min-w-full flex-row items-center border-b border-gray-10">
         {/* SELECTION CHECKBOX */}

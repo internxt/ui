@@ -29,6 +29,7 @@ describe('Menu Component', () => {
   const defaultProps: MenuProps<{ id: number; name: string }> = {
     item: { id: 1, name: 'Sample Item' },
     menu: menuItems,
+    isOpen: true,
     handleMenuClose,
     genericEnterKey,
   };

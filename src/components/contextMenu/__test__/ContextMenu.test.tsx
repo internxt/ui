@@ -22,6 +22,7 @@ describe('ContextMenu Component', () => {
     posX: 100,
     posY: 100,
     isContextMenuCutOff: false,
+    isOpen: true,
     genericEnterKey: vi.fn(),
     handleMenuClose: vi.fn(),
   };

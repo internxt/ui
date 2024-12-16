@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { isValidElement, ReactNode, useEffect, useState } from 'react';
 import useHotkeys from '../../hooks/useHotKeys';
 
 export type MenuItemType<T> =
@@ -23,6 +23,7 @@ export type MenuItemsType<T> = Array<MenuItemType<T>>;
 
 export interface MenuProps<T> {
   item?: T;
+  isOpen: boolean;
   menu?: MenuItemsType<T>;
   handleMenuClose: () => void;
   genericEnterKey?: () => void;
@@ -36,6 +37,9 @@ export interface MenuProps<T> {
  *
  * @property {T} [item]
  * - Optional item that may be used in menu actions (e.g., data passed for actions).
+ *
+ * @property {boolean} [isOpen]
+ * - To know is Menu is visible.
  *
  * @property {MenuItemsType<T>} [menu]
  * - Optional array of menu items. Each item can define a separator, title, icon, action, etc.
@@ -58,7 +62,7 @@ export interface MenuProps<T> {
  * It features a dynamic index for item selection, with keyboard and mouse-based navigation.
  */
 
-const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>): JSX.Element => {
+const Menu = <T,>({ item, menu, isOpen, genericEnterKey, handleMenuClose }: MenuProps<T>): JSX.Element => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [enterPressed, setEnterPressed] = useState<boolean>(false);
   const handleMouseEnter = (index: number) => {
@@ -70,6 +74,7 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
 
   const handleArrowDown = () => {
     menu &&
+      isOpen &&
       setSelectedIndex((prevIndex) => {
         const getNextEnabledIndex = (startIndex: number): number => {
           let newIndex = startIndex;
@@ -91,6 +96,7 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
 
   const handleArrowUp = () => {
     menu &&
+      isOpen &&
       setSelectedIndex((prevIndex) => {
         const getPreviousEnabledIndex = (startIndex: number): number => {
           let newIndex = startIndex;
@@ -111,14 +117,20 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
   };
 
   const handleEnterKey = () => {
-    setSelectedIndex((prevIndex) => {
-      if (prevIndex !== null) {
-        const menuItem = menu ? menu[prevIndex] : undefined;
-        if (item && menuItem && 'action' in menuItem && menuItem.action) menuItem.action(item);
-      } else if (genericEnterKey) genericEnterKey();
-      setEnterPressed(true);
-      return null;
-    });
+    menu &&
+      isOpen &&
+      setSelectedIndex((prevIndex) => {
+        if (prevIndex !== null) {
+          const menuItem = menu ? menu[prevIndex] : undefined;
+          if (item && menuItem && 'action' in menuItem && menuItem.action) menuItem.action(item);
+          if (item && menuItem && 'node' in menuItem && menuItem.node && isValidElement(menuItem.node)) {
+            const onClick = menuItem.node.props.onClick;
+            onClick && onClick();
+          }
+        } else if (genericEnterKey) genericEnterKey();
+        setEnterPressed(true);
+        return null;
+      });
   };
 
   useEffect(() => {
@@ -134,7 +146,7 @@ const Menu = <T,>({ item, menu, genericEnterKey, handleMenuClose }: MenuProps<T>
       arrowup: handleArrowUp,
       enter: handleEnterKey,
     },
-    [],
+    [isOpen],
   );
 
   return (

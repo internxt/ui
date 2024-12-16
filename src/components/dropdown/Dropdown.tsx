@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useEffect, useRef } from 'react';
 import { Menu, MenuItemType } from '../';
 
 export type DropdownProps<T> = {
@@ -56,6 +56,23 @@ const Dropdown = <T,>({
 }: DropdownProps<T>): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const direction = openDirection === 'left' ? 'origin-top-left' : 'origin-top-right';
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('contextmenu', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('contextmenu', handleClickOutside);
+    };
+  }, []);
 
   const group1: Array<MenuItemType<T>> = options
     ? options.map((option) => ({
@@ -78,7 +95,7 @@ const Dropdown = <T,>({
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <div className="relative outline-none">
+    <div className="relative outline-none" ref={containerRef}>
       <button
         className={`cursor-pointer outline-none ${classButton}`}
         onClick={toggleMenu}
@@ -96,7 +113,7 @@ const Dropdown = <T,>({
         data-testid="menu-dropdown"
       >
         <div className={`absolute ${classMenuItems}`}>
-          <Menu item={item} handleMenuClose={closeMenu} menu={allItems} />
+          <Menu item={item} isOpen={isOpen} handleMenuClose={closeMenu} menu={allItems} />
         </div>
       </div>
     </div>
