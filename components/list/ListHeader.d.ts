@@ -27,6 +27,7 @@ interface ListHeaderProps<T, F> {
     checkboxDataCy?: string;
     onTopSelectionCheckboxClick: () => void;
     onOrderableColumnClicked: (column: HeaderProps<T, F>) => void;
+    onClose?: () => void;
 }
-declare const ListHeader: <T, F extends keyof T>({ selectedItems, onTopSelectionCheckboxClick, items, header, orderBy, onOrderableColumnClicked, menu, displayMenuDiv, isVerticalScrollbarVisible, checkboxDataCy, }: ListHeaderProps<T, F>) => import("react/jsx-runtime").JSX.Element;
+declare const ListHeader: <T, F extends keyof T>({ selectedItems, onTopSelectionCheckboxClick, items, header, orderBy, onOrderableColumnClicked, menu, displayMenuDiv, isVerticalScrollbarVisible, checkboxDataCy, onClose, }: ListHeaderProps<T, F>) => import("react/jsx-runtime").JSX.Element;
 export default ListHeader;

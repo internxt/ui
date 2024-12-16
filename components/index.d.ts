@@ -18,6 +18,7 @@ export * from './modal';
 export * from './popover';
 export * from './radioButton';
 export * from './slider';
+export * from './skeletonLoader';
 export * from './switch';
 export * from './textArea';
 export * from './tooltip';

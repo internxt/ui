@@ -5,6 +5,7 @@ export interface ContextMenuProps<T> {
     menuItemsRef: React.MutableRefObject<HTMLDivElement | null>;
     menu?: MenuItemsType<T>;
     openedFromRightClick: boolean;
+    isOpen: boolean;
     posX: number;
     posY: number;
     isContextMenuCutOff: boolean;
@@ -31,6 +32,9 @@ export interface ContextMenuProps<T> {
  * - Indicates whether the context menu was opened via a right-click (`true`).
  * Determines whether the menu's position is set based on the click location or a predefined position.
  *
+ * @property {boolean} [isOpen]
+ * - To know is Menu is visible.
+ *
  * @property {number} posX
  * - X-coordinate for the menu's position, used if `openedFromRightClick` is `true`.
  *
@@ -48,5 +52,5 @@ export interface ContextMenuProps<T> {
  * @property {() => void} handleMenuClose
  * - Function to close the context menu. Called after an action is executed or when pressing Enter in the menu.
  */
-declare const ContextMenu: <T>({ item, menuItemsRef, menu, openedFromRightClick, posX, posY, isContextMenuCutOff, genericEnterKey, handleMenuClose, }: ContextMenuProps<T>) => JSX.Element;
+declare const ContextMenu: <T>({ item, menuItemsRef, menu, openedFromRightClick, posX, posY, isContextMenuCutOff, isOpen, genericEnterKey, handleMenuClose, }: ContextMenuProps<T>) => JSX.Element;
 export default ContextMenu;
