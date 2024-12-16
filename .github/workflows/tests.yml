@@ -20,14 +20,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
-          scope: "@internxt"
-
-      - name: Verify token
-        run: |
-          if [[ -z "${{ secrets.PERSONAL_ACCESS_TOKEN }}" ]]; then
-            echo "Error: PERSONAL_ACCESS_TOKEN is not set!"
-            exit 1
-          fi
 
       - run: echo "registry=https://registry.yarnpkg.com/" > .npmrc
       - run: echo "@internxt:registry=https://npm.pkg.github.com" >> .npmrc
@@ -35,9 +27,6 @@ jobs:
       # You have to use a PAT instead https://github.com/actions/setup-node/issues/49
       - run: echo //npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }} >> .npmrc
       - run: echo "always-auth=true" >> .npmrc
-
-      - name: Clear Yarn cache
-        run: yarn cache clean
 
       - name: Install dependencies
         run: yarn
