@@ -36,6 +36,9 @@ jobs:
       - run: echo //npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }} >> .npmrc
       - run: echo "always-auth=true" >> .npmrc
 
+      - name: Clear Yarn cache
+        run: yarn cache clean
+
       - name: Install dependencies
         run: yarn
 
