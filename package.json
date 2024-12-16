@@ -4,11 +4,11 @@
   "description": "Library of Internxt components",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/internxt/InternxtUI.git"
+    "url": "git+https://github.com/internxt/ui.git"
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/internxt/InternxtUI#readme",
+  "homepage": "https://github.com/internxt/ui#readme",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
