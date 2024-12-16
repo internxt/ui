@@ -19,6 +19,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+          scope: "@internxt"
+
+      - name: Verify token
+        run: |
+          if [[ -z "${{ secrets.PERSONAL_ACCESS_TOKEN }}" ]]; then
+            echo "Error: PERSONAL_ACCESS_TOKEN is not set!"
+            exit 1
+          fi
 
       - run: echo "registry=https://registry.yarnpkg.com/" > .npmrc
       - run: echo "@internxt:registry=https://npm.pkg.github.com" >> .npmrc
