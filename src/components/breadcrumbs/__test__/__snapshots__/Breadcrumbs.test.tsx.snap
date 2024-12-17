@@ -81,10 +81,10 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
                   >
                     <div
                       class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    
-                    
-                    
-                    
+                    undefined
+                    undefined
+                    false
+                    undefined
                   "
                     >
                       <div
@@ -102,9 +102,6 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
                           </span>
                         </div>
                       </div>
-                      <span
-                        class="ml-5 flex grow items-center justify-end text-sm text-gray-40"
-                      />
                     </div>
                   </div>
                 </div>
@@ -248,10 +245,10 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
                 >
                   <div
                     class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    
-                    
-                    
-                    
+                    undefined
+                    undefined
+                    false
+                    undefined
                   "
                   >
                     <div
@@ -269,9 +266,6 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
                         </span>
                       </div>
                     </div>
-                    <span
-                      class="ml-5 flex grow items-center justify-end text-sm text-gray-40"
-                    />
                   </div>
                 </div>
               </div>

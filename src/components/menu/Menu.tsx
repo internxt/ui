@@ -27,6 +27,8 @@ export interface MenuProps<T> {
   menu?: MenuItemsType<T>;
   handleMenuClose: () => void;
   genericEnterKey?: () => void;
+  paddingX?: string;
+  paddingY?: string;
 }
 
 /**
@@ -50,6 +52,12 @@ export interface MenuProps<T> {
  * @property {() => void} [genericEnterKey]
  * - Optional callback for when the Enter key is pressed without selecting a menu item.
  *
+ * @property {string} [paddingX='px-4']
+ * - Optional padding for the X axis (horizontal) of each menu item. Defaults to `px-4`.
+ *
+ * @property {string} [paddingY='py-1.5']
+ * - Optional padding for the Y axis (vertical) of each menu item. Defaults to `py-1.5`.
+ *
  * @returns {JSX.Element}
  * - The rendered Menu component.
  *
@@ -62,7 +70,15 @@ export interface MenuProps<T> {
  * It features a dynamic index for item selection, with keyboard and mouse-based navigation.
  */
 
-const Menu = <T,>({ item, menu, isOpen, genericEnterKey, handleMenuClose }: MenuProps<T>): JSX.Element => {
+const Menu = <T,>({
+  item,
+  menu,
+  isOpen,
+  genericEnterKey,
+  handleMenuClose,
+  paddingX = 'px-4',
+  paddingY = 'py-1.5',
+}: MenuProps<T>): JSX.Element => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [enterPressed, setEnterPressed] = useState<boolean>(false);
   const handleMouseEnter = (index: number) => {
@@ -150,7 +166,9 @@ const Menu = <T,>({ item, menu, isOpen, genericEnterKey, handleMenuClose }: Menu
   );
 
   return (
-    <div className="z-20 mt-0 flex flex-col rounded-lg bg-surface py-1.5 shadow-subtle-hard outline-none dark:bg-gray-5">
+    <div
+      className={`z-20 mt-0 flex flex-col rounded-lg bg-surface ${paddingY} shadow-subtle-hard outline-none dark:bg-gray-5`}
+    >
       {menu?.map((option, i) => (
         <div key={i}>
           {option && option.separator ? (
@@ -172,11 +190,11 @@ const Menu = <T,>({ item, menu, isOpen, genericEnterKey, handleMenuClose }: Menu
                 onMouseEnter={() => handleMouseEnter(i)}
               >
                 <div
-                  className={`flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    ${item && option.disabled?.(item) ? 'font-medium text-gray-50' : ''}
-                    ${item && option.isTitle?.(item) && !option.disabled?.(item) ? 'font-medium text-gray-100' : ''}
-                    ${selectedIndex === i && item && !option.disabled?.(item) ? 'bg-gray-5 text-gray-100 dark:bg-gray-10' : ''}
-                    ${item && !option.disabled?.(item) && !option.isTitle?.(item) && selectedIndex !== i ? 'text-gray-80' : ''}
+                  className={`flex cursor-pointer flex-row whitespace-nowrap ${paddingX} ${paddingY} text-base
+                    ${item && option.disabled?.(item) && 'font-medium text-gray-50'}
+                    ${item && option.isTitle?.(item) && !option.disabled?.(item) && 'font-medium text-gray-100'}
+                    ${selectedIndex === i && item && !option.disabled?.(item) && 'bg-gray-5 text-gray-100 dark:bg-gray-10'}
+                    ${item && !option.disabled?.(item) && !option.isTitle?.(item) && selectedIndex !== i && 'text-gray-80'}
                   `}
                 >
                   {option.node ? (
@@ -187,12 +205,14 @@ const Menu = <T,>({ item, menu, isOpen, genericEnterKey, handleMenuClose }: Menu
                       <span>{option.name}</span>
                     </div>
                   )}
-                  <span className="ml-5 flex grow items-center justify-end text-sm text-gray-40">
-                    {option.keyboardShortcutOptions?.keyboardShortcutIcon && (
-                      <option.keyboardShortcutOptions.keyboardShortcutIcon size={14} />
-                    )}
-                    {option.keyboardShortcutOptions?.keyboardShortcutText ?? ''}
-                  </span>
+                  {option.keyboardShortcutOptions && (
+                    <span className="ml-5 flex grow items-center justify-end text-sm text-gray-40">
+                      {option.keyboardShortcutOptions?.keyboardShortcutIcon && (
+                        <option.keyboardShortcutOptions.keyboardShortcutIcon size={14} />
+                      )}
+                      {option.keyboardShortcutOptions?.keyboardShortcutText ?? ''}
+                    </span>
+                  )}
                 </div>
               </div>
             )
