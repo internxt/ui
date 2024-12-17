@@ -44,6 +44,16 @@ export type DropdownProps<T> = {
  * allowing customization of the dropdown's logic.
  */
 
+const extractPaddingValues = (className: string) => {
+  const pxMatch = className.match(/px-(\d+(\.\d+)?)/);
+  const pyMatch = className.match(/py-(\d+(\.\d+)?)/);
+
+  const px = pxMatch ? pxMatch[1] : undefined;
+  const py = pyMatch ? pyMatch[1] : undefined;
+
+  return { px, py };
+};
+
 const Dropdown = <T,>({
   children,
   options,
@@ -94,6 +104,8 @@ const Dropdown = <T,>({
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  const { px, py } = extractPaddingValues(classMenuItems);
+
   return (
     <div className="relative outline-none" ref={containerRef}>
       <button
@@ -113,7 +125,7 @@ const Dropdown = <T,>({
         data-testid="menu-dropdown"
       >
         <div className={`absolute ${classMenuItems}`}>
-          <Menu item={item} isOpen={isOpen} handleMenuClose={closeMenu} menu={allItems} />
+          <Menu item={item} isOpen={isOpen} handleMenuClose={closeMenu} menu={allItems} paddingX={px} paddingY={py} />
         </div>
       </div>
     </div>

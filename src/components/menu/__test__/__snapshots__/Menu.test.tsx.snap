@@ -11,9 +11,9 @@ exports[`Menu Component > should match snapshot 1`] = `
       >
         <div
           class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    
-                    
-                    
+                    undefined
+                    undefined
+                    false
                     text-gray-80
                   "
         >
@@ -24,9 +24,6 @@ exports[`Menu Component > should match snapshot 1`] = `
               Option 1
             </span>
           </div>
-          <span
-            class="ml-5 flex grow items-center justify-end text-sm text-gray-40"
-          />
         </div>
       </div>
     </div>
@@ -46,9 +43,9 @@ exports[`Menu Component > should match snapshot 1`] = `
         <div
           class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
                     font-medium text-gray-50
-                    
-                    
-                    
+                    undefined
+                    false
+                    false
                   "
         >
           <div
@@ -58,9 +55,6 @@ exports[`Menu Component > should match snapshot 1`] = `
               Option 2
             </span>
           </div>
-          <span
-            class="ml-5 flex grow items-center justify-end text-sm text-gray-40"
-          />
         </div>
       </div>
     </div>
@@ -70,10 +64,10 @@ exports[`Menu Component > should match snapshot 1`] = `
       >
         <div
           class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    
+                    undefined
                     font-medium text-gray-100
-                    
-                    
+                    false
+                    false
                   "
         >
           <div
@@ -83,9 +77,6 @@ exports[`Menu Component > should match snapshot 1`] = `
               Option 3
             </span>
           </div>
-          <span
-            class="ml-5 flex grow items-center justify-end text-sm text-gray-40"
-          />
         </div>
       </div>
     </div>
@@ -95,9 +86,9 @@ exports[`Menu Component > should match snapshot 1`] = `
       >
         <div
           class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
-                    
-                    
-                    
+                    undefined
+                    undefined
+                    false
                     text-gray-80
                   "
         >
