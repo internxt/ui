@@ -27,6 +27,8 @@ export interface MenuProps<T> {
     menu?: MenuItemsType<T>;
     handleMenuClose: () => void;
     genericEnterKey?: () => void;
+    paddingX?: string;
+    paddingY?: string;
 }
 /**
  * Menu component
@@ -49,6 +51,12 @@ export interface MenuProps<T> {
  * @property {() => void} [genericEnterKey]
  * - Optional callback for when the Enter key is pressed without selecting a menu item.
  *
+ * @property {string} [paddingX='px-4']
+ * - Optional padding for the X axis (horizontal) of each menu item. Defaults to `px-4`.
+ *
+ * @property {string} [paddingY='py-1.5']
+ * - Optional padding for the Y axis (vertical) of each menu item. Defaults to `py-1.5`.
+ *
  * @returns {JSX.Element}
  * - The rendered Menu component.
  *
@@ -60,5 +68,5 @@ export interface MenuProps<T> {
  *
  * It features a dynamic index for item selection, with keyboard and mouse-based navigation.
  */
-declare const Menu: <T>({ item, menu, isOpen, genericEnterKey, handleMenuClose }: MenuProps<T>) => JSX.Element;
+declare const Menu: <T>({ item, menu, isOpen, genericEnterKey, handleMenuClose, paddingX, paddingY, }: MenuProps<T>) => JSX.Element;
 export default Menu;

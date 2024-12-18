@@ -22,3 +22,4 @@ export * from './skeletonLoader';
 export * from './switch';
 export * from './textArea';
 export * from './tooltip';
+export * from './table/Table';
