@@ -48,7 +48,7 @@ export interface CheckboxProps {
  *   - Defaults to false.
  */
 
-export const Checkbox = ({
+const Checkbox = ({
   id,
   checked = true,
   indeterminate = false,
@@ -92,3 +92,5 @@ export const Checkbox = ({
     </label>
   );
 };
+
+export default Checkbox;
