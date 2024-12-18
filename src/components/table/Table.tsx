@@ -1,26 +1,26 @@
 import React from 'react';
 
-interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
+export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TableHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+export interface TableHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+export interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+export interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-interface TableCellProps extends React.HTMLAttributes<HTMLTableCellElement> {
+export interface TableCellProps extends React.HTMLAttributes<HTMLTableCellElement> {
   children: React.ReactNode;
   className?: string;
   isHeader?: boolean;
