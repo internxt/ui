@@ -23,5 +23,6 @@
         "ignoreRegExpLiterals": true,
       },
     ],
+    "linebreak-style": "off"
   },
 }

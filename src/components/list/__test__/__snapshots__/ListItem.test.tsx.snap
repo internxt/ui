@@ -1,0 +1,158 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ListItem > should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="group relative flex h-14 flex-row items-center pl-14 pr-5 focus-within:bg-gray-1 hover:bg-gray-1"
+      >
+        <div
+          class="absolute left-5 top-0 flex h-full w-0 flex-row items-center justify-start p-0 opacity-0 focus-within:opacity-100 group-hover:opacity-100 false"
+        >
+          <label
+            class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+          >
+            <div
+              class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+              data-cy="driveListItemCheckbox0"
+            />
+            <input
+              class="base-checkbox h-0 w-0 appearance-none opacity-0"
+              readonly=""
+              type="checkbox"
+            />
+          </label>
+        </div>
+        <div
+          class="relative flex h-full shrink-0 flex-row items-center border-b border-gray-5 w-1/2"
+        >
+          <div>
+            1
+          </div>
+        </div>
+        <div
+          class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+        >
+          <button
+            class="flex h-10 w-10 flex-col items-center justify-center rounded-md opacity-0 outline-none focus-visible:opacity-100 group-hover:opacity-100 text-gray-60 hover:bg-gray-10 focus-visible:bg-gray-10"
+          >
+            <svg
+              fill="currentColor"
+              height="24"
+              viewBox="0 0 256 256"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm136,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="group relative flex h-14 flex-row items-center pl-14 pr-5 focus-within:bg-gray-1 hover:bg-gray-1"
+    >
+      <div
+        class="absolute left-5 top-0 flex h-full w-0 flex-row items-center justify-start p-0 opacity-0 focus-within:opacity-100 group-hover:opacity-100 false"
+      >
+        <label
+          class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+        >
+          <div
+            class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+            data-cy="driveListItemCheckbox0"
+          />
+          <input
+            class="base-checkbox h-0 w-0 appearance-none opacity-0"
+            readonly=""
+            type="checkbox"
+          />
+        </label>
+      </div>
+      <div
+        class="relative flex h-full shrink-0 flex-row items-center border-b border-gray-5 w-1/2"
+      >
+        <div>
+          1
+        </div>
+      </div>
+      <div
+        class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+      >
+        <button
+          class="flex h-10 w-10 flex-col items-center justify-center rounded-md opacity-0 outline-none focus-visible:opacity-100 group-hover:opacity-100 text-gray-60 hover:bg-gray-10 focus-visible:bg-gray-10"
+        >
+          <svg
+            fill="currentColor"
+            height="24"
+            viewBox="0 0 256 256"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm136,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

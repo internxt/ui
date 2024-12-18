@@ -6,6 +6,7 @@ import svgr from 'vite-plugin-svgr';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import { configDefaults } from 'vitest/config';
 import { peerDependencies } from './package.json';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   test: {
@@ -13,7 +14,14 @@ export default defineConfig({
       provider: 'istanbul',
       reporter: ['text', 'json', 'html'],
       enabled: true,
-      exclude: [...configDefaults.exclude, 'src/stories/**', '.storybook/**', 'tailwind.config.js'],
+      exclude: [
+        ...configDefaults.exclude,
+        'src/stories/**',
+        '.storybook/**',
+        'tailwind.config.js',
+        'storybook-static/**',
+        '**/__test__/**',
+      ],
     },
     globals: true,
     environment: 'jsdom',
@@ -32,5 +40,5 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [dts(), svgr(), cssInjectedByJsPlugin()],
+  plugins: [dts(), svgr(), cssInjectedByJsPlugin(), tsconfigPaths()],
 });

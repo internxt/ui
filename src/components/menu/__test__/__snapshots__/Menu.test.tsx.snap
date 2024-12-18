@@ -1,0 +1,116 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Menu Component > should match snapshot 1`] = `
+<div>
+  <div
+    class="z-20 mt-0 flex flex-col rounded-lg bg-surface py-1.5 shadow-subtle-hard outline-none dark:bg-gray-5"
+  >
+    <div>
+      <div
+        class=""
+      >
+        <div
+          class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
+                    undefined
+                    undefined
+                    false
+                    text-gray-80
+                  "
+        >
+          <div
+            class="flex flex-row items-center space-x-2"
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="my-0.5 flex w-full flex-row px-4"
+      >
+        <div
+          class="h-px w-full bg-gray-10"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        class="pointer-events-none"
+      >
+        <div
+          class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
+                    font-medium text-gray-50
+                    undefined
+                    false
+                    false
+                  "
+        >
+          <div
+            class="flex flex-row items-center space-x-2"
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="pointer-events-none"
+      >
+        <div
+          class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
+                    undefined
+                    font-medium text-gray-100
+                    false
+                    false
+                  "
+        >
+          <div
+            class="flex flex-row items-center space-x-2"
+          >
+            <span>
+              Option 3
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class=""
+      >
+        <div
+          class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
+                    undefined
+                    undefined
+                    false
+                    text-gray-80
+                  "
+        >
+          <div
+            class="flex flex-row items-center space-x-2"
+          >
+            <div
+              data-testid="mock-icon"
+              style="width: 20px; height: 20px;"
+            />
+            <span>
+              Option 4
+            </span>
+          </div>
+          <span
+            class="ml-5 flex grow items-center justify-end text-sm text-gray-40"
+          >
+            Ctrl+O
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

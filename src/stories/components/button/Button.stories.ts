@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '../../../components/button/Button';
+import { Button } from '@/components/button';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -41,5 +41,13 @@ export const Destructive: Story = {
   args: {
     variant: 'destructive',
     children: 'Button',
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Button',
+    loading: true,
   },
 };

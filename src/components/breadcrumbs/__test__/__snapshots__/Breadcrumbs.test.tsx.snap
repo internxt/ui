@@ -1,0 +1,386 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Breadcrumbs Component > should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex w-full items-center"
+      >
+        <div
+          class="flex max-w-fit min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+          data-cy="breadcrumb-root"
+        >
+          <span
+            class="max-w-sm flex-1 cursor-pointer truncate undefined"
+            title="Home"
+          >
+            Home
+          </span>
+        </div>
+        <div
+          class="text-dgray-50 flex items-center"
+        >
+          <svg
+            class="h-4 w-4"
+            data-testid="caret-right"
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="relative outline-none"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="menu"
+            class="cursor-pointer outline-none undefined"
+          >
+            <div
+              class="flex h-8 w-8 items-center justify-center
+                rounded-full text-gray-60 transition-all duration-75 ease-in-out hover:bg-gray-5 hover:text-gray-80 "
+            >
+              <svg
+                class="h-5 w-5"
+                fill="currentColor"
+                height="1em"
+                viewBox="0 0 256 256"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm136,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112Z"
+                />
+              </svg>
+            </div>
+          </button>
+          <div
+            class="absolute left-0 
+          transform shadow-subtle-hard transition-all duration-100 ease-in-out pointer-events-none scale-95 opacity-0"
+            data-testid="menu-dropdown"
+          >
+            <div
+              class="absolute left-0 top-1 w-max max-h-80 overflow-y-auto
+          rounded-md border border-gray-10 bg-surface dark:bg-gray-5 shadow-subtle-hard z-10"
+            >
+              <div
+                class="z-20 mt-0 flex flex-col rounded-lg bg-surface py-1.5 shadow-subtle-hard outline-none dark:bg-gray-5"
+              >
+                <div>
+                  <div
+                    class=""
+                  >
+                    <div
+                      class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
+                    undefined
+                    undefined
+                    false
+                    undefined
+                  "
+                    >
+                      <div
+                        class="flex cursor-pointer items-center hover:bg-gray-5 hover:text-gray-80 dark:hover:bg-gray-10"
+                      >
+                        <div
+                          class="flex w-full min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+                        >
+                          <span
+                            class="max-w-sm flex-1 cursor-pointer truncate pl-3 text-base"
+                            title="Category"
+                          >
+                            Category
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-dgray-50 flex items-center"
+        >
+          <svg
+            class="h-4 w-4"
+            data-testid="caret-right"
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex max-w-fit min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+        >
+          <span
+            class="max-w-sm flex-1 cursor-pointer truncate undefined"
+            title="Subcategory"
+          >
+            Subcategory
+          </span>
+        </div>
+        <div
+          class="text-dgray-50 flex items-center"
+        >
+          <svg
+            class="h-4 w-4"
+            data-testid="caret-right"
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 256 256"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex max-w-fit min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+        >
+          <span
+            class="max-w-sm flex-1 cursor-pointer truncate undefined"
+            title="Product"
+          >
+            Product
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex w-full items-center"
+    >
+      <div
+        class="flex max-w-fit min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+        data-cy="breadcrumb-root"
+      >
+        <span
+          class="max-w-sm flex-1 cursor-pointer truncate undefined"
+          title="Home"
+        >
+          Home
+        </span>
+      </div>
+      <div
+        class="text-dgray-50 flex items-center"
+      >
+        <svg
+          class="h-4 w-4"
+          data-testid="caret-right"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="relative outline-none"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="cursor-pointer outline-none undefined"
+        >
+          <div
+            class="flex h-8 w-8 items-center justify-center
+                rounded-full text-gray-60 transition-all duration-75 ease-in-out hover:bg-gray-5 hover:text-gray-80 "
+          >
+            <svg
+              class="h-5 w-5"
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 256 256"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm136,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112Z"
+              />
+            </svg>
+          </div>
+        </button>
+        <div
+          class="absolute left-0 
+          transform shadow-subtle-hard transition-all duration-100 ease-in-out pointer-events-none scale-95 opacity-0"
+          data-testid="menu-dropdown"
+        >
+          <div
+            class="absolute left-0 top-1 w-max max-h-80 overflow-y-auto
+          rounded-md border border-gray-10 bg-surface dark:bg-gray-5 shadow-subtle-hard z-10"
+          >
+            <div
+              class="z-20 mt-0 flex flex-col rounded-lg bg-surface py-1.5 shadow-subtle-hard outline-none dark:bg-gray-5"
+            >
+              <div>
+                <div
+                  class=""
+                >
+                  <div
+                    class="flex cursor-pointer flex-row whitespace-nowrap px-4 py-1.5 text-base
+                    undefined
+                    undefined
+                    false
+                    undefined
+                  "
+                  >
+                    <div
+                      class="flex cursor-pointer items-center hover:bg-gray-5 hover:text-gray-80 dark:hover:bg-gray-10"
+                    >
+                      <div
+                        class="flex w-full min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+                      >
+                        <span
+                          class="max-w-sm flex-1 cursor-pointer truncate pl-3 text-base"
+                          title="Category"
+                        >
+                          Category
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-dgray-50 flex items-center"
+      >
+        <svg
+          class="h-4 w-4"
+          data-testid="caret-right"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="flex max-w-fit min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+      >
+        <span
+          class="max-w-sm flex-1 cursor-pointer truncate undefined"
+          title="Subcategory"
+        >
+          Subcategory
+        </span>
+      </div>
+      <div
+        class="text-dgray-50 flex items-center"
+      >
+        <svg
+          class="h-4 w-4"
+          data-testid="caret-right"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 256 256"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"
+          />
+        </svg>
+      </div>
+      <div
+        class="flex max-w-fit min-w-breadcrumb flex-1 px-1.5 py-1.5 cursor-pointer flex-row items-center truncate font-medium 
+        text-gray-80"
+      >
+        <span
+          class="max-w-sm flex-1 cursor-pointer truncate undefined"
+          title="Product"
+        >
+          Product
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

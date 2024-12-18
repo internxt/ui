@@ -13,10 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to GitHub Packages
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
+      - run: |
+          echo "@internxt:registry=https://npm.pkg.github.com/" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> .npmrc
       # Install all necessary dependencies
       - run: yarn
         env:
