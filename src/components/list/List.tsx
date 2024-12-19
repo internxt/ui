@@ -347,7 +347,7 @@ const List = <T extends { id: number }, F extends keyof T>({
             ))}
           </InfiniteScroll>
         ) : (
-          <>{loader}</>
+          <div>{loader}</div>
         )}
 
         {/* Click outside of the list to unselect all items */}
