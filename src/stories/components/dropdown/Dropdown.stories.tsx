@@ -29,7 +29,6 @@ const defaultArgs: DropdownProps<unknown> = {
     {
       name: 'Action 1',
       action: () => {
-        console.log('llamada');
         alert('Launched action 1');
       },
     },
