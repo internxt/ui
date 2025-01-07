@@ -1,0 +1,11 @@
+import{j as r}from"./jsx-runtime-DEdD30eg.js";import{a as c}from"./Breadcrumbs-4_sYHX77.js";import{D as d}from"./List-Cnz44mPL.js";import"./index-RYns6xqu.js";import"./IconBase-C0B5zwrg.js";import"./Avatar-Dqkp6atG.js";import"./BaseDialog-CO_0DwbN.js";import"./X-B91Cd-JX.js";import"./Button-UUIrlFY4.js";import"./Loader-BkvXvL7i.js";import"./Card-KI_ytpPC.js";import"./Checkbox-nMqsM2bW.js";import"./ContextMenu-D35dIR6F.js";import"./Menu-KY-HMnSV.js";import"./Copyable-IAl0oZTn.js";import"./Tooltip-CSJfASjJ.js";import"./Empty-BA-FNOEK.js";import"./InfiniteScroll-Bckbvu9a.js";import"./Input-BVGHFgkn.js";import"./Modal-BZOag5Dm.js";import"./Popover-D3jXCPSB.js";import"./RadioButton-CdUGs_6A.js";import"./RangeSlider-P4jgt9i4.js";import"./SkeletonLoader-CMPmhq88.js";import"./Switch-B_5fUSNe.js";import"./TextArea-D8l4yB63.js";import"./Table-D-RhmYWn.js";const F={title:"Components/Dropdown",component:c,parameters:{layout:"centered"},tags:["autodocs"]},p={children:r.jsx(d,{size:24,className:"text-gray-800 dark:text-white",weight:"bold"}),classMenuItems:"mt-1 w-max rounded-md border border-gray-10 bg-surface dark:bg-gray-5 py-1.5",options:[{text:"Option 1",onClick:()=>alert("Option 1 selected")},{text:"Option 2",onClick:()=>alert("Option 2 selected")}],menuItems:[r.jsx("div",{onClick:()=>alert("Item 1 selected"),children:"Item 1"}),r.jsx("div",{onClick:()=>alert("Item 2 selected"),children:"Item 2"})],dropdownActionsContext:[{name:"Action 1",action:()=>{alert("Launched action 1")}},{name:"Action 2",action:()=>alert("Launched action 2")},{separator:!0},{name:"Action 3",action:()=>alert("Launched action 3")}],item:"Item",openDirection:"left"},t={args:{...p,openDirection:"right"}},e={args:{...p,openDirection:"left"}};var o,i,n;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  args: {
+    ...defaultArgs,
+    openDirection: 'right'
+  }
+}`,...(n=(i=t.parameters)==null?void 0:i.docs)==null?void 0:n.source}}};var a,m,s;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  args: {
+    ...defaultArgs,
+    openDirection: 'left'
+  }
+}`,...(s=(m=e.parameters)==null?void 0:m.docs)==null?void 0:s.source}}};const G=["RightAlign","LeftAlign"];export{e as LeftAlign,t as RightAlign,G as __namedExportsOrder,F as default};
