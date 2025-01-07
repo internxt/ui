@@ -166,9 +166,7 @@ const Menu = <T,>({
   );
 
   return (
-    <div
-      className={`z-20 mt-0 flex flex-col rounded-lg bg-surface ${paddingY} shadow-subtle-hard outline-none dark:bg-gray-5`}
-    >
+    <div className={`z-20 mt-0 flex flex-col rounded-lg bg-surface ${paddingY} outline-none dark:bg-gray-5`}>
       {menu?.map((option, i) => (
         <div key={i}>
           {option && option.separator ? (
