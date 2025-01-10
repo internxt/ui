@@ -18,7 +18,9 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@phosphor-icons/react": "^2.1.5"
+    "@phosphor-icons/react": "^2.1.5",
+    "react-dnd": "14.0.5",
+    "react-dnd-html5-backend": "^14.0.0"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

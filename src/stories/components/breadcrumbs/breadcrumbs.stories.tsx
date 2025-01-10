@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Breadcrumbs, BreadcrumbsProps } from '@/components/breadcrumbs';
 import { BreadcrumbItemData, BreadcrumbsMenuProps } from '@/components/breadcrumbs/BreadcrumbsItem';
 import { Dispatch } from 'redux';
-import { DndProvider } from 'react-dnd';
+import { DndProvider, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import React, { useEffect, useRef, useState } from 'react';
 import { CaretDown } from '@phosphor-icons/react';
@@ -97,6 +97,7 @@ const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch> = {
   acceptedTypes: ['breadcrumb'],
   dispatch: {} as Dispatch,
   itemComponent: () => <ExampleIconBlue />,
+  useDrop: useDrop,
 };
 
 const meta: Meta<typeof Breadcrumbs> = {
