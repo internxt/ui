@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Breadcrumbs, BreadcrumbsProps } from '../';
 import { Dispatch, AnyAction } from 'redux';
-import { DndProvider } from 'react-dnd';
+import { DndProvider, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 describe('Breadcrumbs Component', () => {
@@ -48,6 +48,7 @@ describe('Breadcrumbs Component', () => {
     itemComponent: undefined,
     acceptedTypes: ['type1', 'type2'],
     dispatch: vi.fn(),
+    useDrop,
   };
 
   afterEach(() => {

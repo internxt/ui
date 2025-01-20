@@ -2,8 +2,8 @@ import { CaretRight, DotsThree } from '@phosphor-icons/react';
 import { forwardRef, FunctionComponent, ReactNode, SVGProps } from 'react';
 import { Dispatch } from 'redux';
 import Dropdown from '../dropdown/Dropdown';
-import { DropTargetMonitor } from 'react-dnd';
 import BreadcrumbsItem, { BreadcrumbItemData, BreadcrumbsMenuProps } from './BreadcrumbsItem';
+import { useDrop } from 'react-dnd';
 
 export interface BreadcrumbsProps<T extends Dispatch> {
   items: BreadcrumbItemData[];
@@ -24,13 +24,12 @@ export interface BreadcrumbsProps<T extends Dispatch> {
     isSomeItemSelected: boolean,
     selectedItems: [],
     dispatch: T,
-  ) => (draggedItem: unknown, monitor: DropTargetMonitor) => Promise<void>;
-  canItemDrop: (
-    item: BreadcrumbItemData,
-  ) => (draggedItem: unknown, monitor: DropTargetMonitor<unknown, unknown>) => boolean;
+  ) => (draggedItem: unknown, monitor: unknown) => Promise<void>;
+  canItemDrop: (item: BreadcrumbItemData) => (draggedItem: unknown, monitor: unknown) => boolean;
   itemComponent?: FunctionComponent<SVGProps<SVGSVGElement>>;
   acceptedTypes: string[];
   dispatch: T;
+  useDrop: typeof useDrop;
 }
 
 /**
@@ -70,6 +69,9 @@ export interface BreadcrumbsProps<T extends Dispatch> {
  *
  * @property {Dispatch} dispatch
  * - The Redux dispatch function for dispatching actions related to the breadcrumb items.
+ *
+ * @property {Functiodn} useDrop
+ * - Hook for dnd.
  */
 
 const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): JSX.Element => {
@@ -120,6 +122,7 @@ const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): 
               itemComponent={props.itemComponent}
               acceptedTypes={props.acceptedTypes}
               dispatch={props.dispatch}
+              useDrop={props.useDrop}
             />
           </MenuItem>,
         );
@@ -139,6 +142,7 @@ const Breadcrumbs = <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>): 
             canItemDrop={props.canItemDrop}
             acceptedTypes={props.acceptedTypes}
             dispatch={props.dispatch}
+            useDrop={props.useDrop}
           />,
         );
         if (i < items.length - 1) {
