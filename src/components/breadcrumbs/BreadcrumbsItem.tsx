@@ -63,6 +63,8 @@ export interface BreadcrumbsMenuProps {
  *
  * @property {Dispatch} dispatch
  * - The Redux dispatch function for dispatching actions related to the breadcrumb item.
+ * @property {Functiodn} useDrop
+ * - Hook for dnd.
  */
 
 export interface BreadcrumbsItemProps<T extends Dispatch> {
@@ -94,10 +96,11 @@ export interface BreadcrumbsItemProps<T extends Dispatch> {
   itemComponent?: FunctionComponent<SVGProps<SVGSVGElement>>;
   acceptedTypes: string[];
   dispatch: T;
+  useDrop: typeof useDrop;
 }
 
 const BreadcrumbsItem = <T extends Dispatch>(props: BreadcrumbsItemProps<T>): JSX.Element => {
-  const [{ isOver, canDrop }, drop] = useDrop(
+  const [{ isOver, canDrop }, drop] = props.useDrop(
     () => ({
       accept: props.acceptedTypes,
       collect: (monitor) => ({
