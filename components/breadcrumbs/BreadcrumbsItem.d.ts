@@ -1,4 +1,4 @@
-import { DropTargetMonitor } from 'react-dnd';
+import { DropTargetMonitor, useDrop } from 'react-dnd';
 import { Dispatch } from 'redux';
 import { FunctionComponent, SVGProps } from '../../../node_modules/react';
 
@@ -61,6 +61,8 @@ export interface BreadcrumbsMenuProps {
  *
  * @property {Dispatch} dispatch
  * - The Redux dispatch function for dispatching actions related to the breadcrumb item.
+ * @property {Functiodn} useDrop
+ * - Hook for dnd.
  */
 export interface BreadcrumbsItemProps<T extends Dispatch> {
     item: BreadcrumbItemData;
@@ -83,6 +85,7 @@ export interface BreadcrumbsItemProps<T extends Dispatch> {
     itemComponent?: FunctionComponent<SVGProps<SVGSVGElement>>;
     acceptedTypes: string[];
     dispatch: T;
+    useDrop: typeof useDrop;
 }
 declare const BreadcrumbsItem: <T extends Dispatch>(props: BreadcrumbsItemProps<T>) => JSX.Element;
 export default BreadcrumbsItem;
