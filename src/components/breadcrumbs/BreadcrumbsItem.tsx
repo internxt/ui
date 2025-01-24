@@ -67,7 +67,7 @@ export interface BreadcrumbsMenuProps {
  * - Hook for dnd.
  */
 
-export interface BreadcrumbsItemProps<T extends Dispatch> {
+export interface BreadcrumbsItemProps<T extends Dispatch, U> {
   item: BreadcrumbItemData;
   totalBreadcrumbsLength: number;
   isHiddenInList?: boolean;
@@ -79,7 +79,7 @@ export interface BreadcrumbsItemProps<T extends Dispatch> {
     uuid: string;
   }[];
   isSomeItemSelected: boolean;
-  selectedItems: [];
+  selectedItems: U[];
   onItemDropped: (
     item: BreadcrumbItemData,
     namePath: {
@@ -87,19 +87,17 @@ export interface BreadcrumbsItemProps<T extends Dispatch> {
       uuid: string;
     }[],
     isSomeItemSelected: boolean,
-    selectedItems: [],
+    selectedItems: U[],
     dispatch: T,
-  ) => (draggedItem: unknown, monitor: DropTargetMonitor) => Promise<void>;
-  canItemDrop: (
-    item: BreadcrumbItemData,
-  ) => (draggedItem: unknown, monitor: DropTargetMonitor<unknown, unknown>) => boolean;
+  ) => (draggedItem: U, monitor: DropTargetMonitor) => Promise<void>;
+  canItemDrop: (item: BreadcrumbItemData) => (draggedItem: U, monitor: DropTargetMonitor<unknown, unknown>) => boolean;
   itemComponent?: FunctionComponent<SVGProps<SVGSVGElement>>;
   acceptedTypes: string[];
   dispatch: T;
   useDrop: typeof useDrop;
 }
 
-const BreadcrumbsItem = <T extends Dispatch>(props: BreadcrumbsItemProps<T>): JSX.Element => {
+const BreadcrumbsItem = <T extends Dispatch, U>(props: BreadcrumbsItemProps<T, U>): JSX.Element => {
   const [{ isOver, canDrop }, drop] = props.useDrop(
     () => ({
       accept: props.acceptedTypes,
