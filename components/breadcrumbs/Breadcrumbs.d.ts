@@ -1,9 +1,9 @@
 import { FunctionComponent, SVGProps } from '../../../node_modules/react';
 import { Dispatch } from 'redux';
 import { BreadcrumbItemData, BreadcrumbsMenuProps } from './BreadcrumbsItem';
-import { useDrop } from 'react-dnd';
+import { DropTargetMonitor, useDrop } from 'react-dnd';
 
-export interface BreadcrumbsProps<T extends Dispatch> {
+export interface BreadcrumbsProps<T extends Dispatch, U> {
     items: BreadcrumbItemData[];
     rootBreadcrumbItemDataCy?: string;
     menu?: (props: BreadcrumbsMenuProps) => JSX.Element;
@@ -12,12 +12,12 @@ export interface BreadcrumbsProps<T extends Dispatch> {
         uuid: string;
     }[];
     isSomeItemSelected: boolean;
-    selectedItems: [];
+    selectedItems: U[];
     onItemDropped: (item: BreadcrumbItemData, namePath: {
         name: string;
         uuid: string;
-    }[], isSomeItemSelected: boolean, selectedItems: [], dispatch: T) => (draggedItem: unknown, monitor: unknown) => Promise<void>;
-    canItemDrop: (item: BreadcrumbItemData) => (draggedItem: unknown, monitor: unknown) => boolean;
+    }[], isSomeItemSelected: boolean, selectedItems: U[], dispatch: T) => (draggedItem: U, monitor: DropTargetMonitor) => Promise<void>;
+    canItemDrop: (item: BreadcrumbItemData) => (draggedItem: U, monitor: DropTargetMonitor) => boolean;
     itemComponent?: FunctionComponent<SVGProps<SVGSVGElement>>;
     acceptedTypes: string[];
     dispatch: T;
@@ -64,5 +64,5 @@ export interface BreadcrumbsProps<T extends Dispatch> {
  * @property {Functiodn} useDrop
  * - Hook for dnd.
  */
-declare const Breadcrumbs: <T extends Dispatch>(props: Readonly<BreadcrumbsProps<T>>) => JSX.Element;
+declare const Breadcrumbs: <T extends Dispatch, U>(props: Readonly<BreadcrumbsProps<T, U>>) => JSX.Element;
 export default Breadcrumbs;
