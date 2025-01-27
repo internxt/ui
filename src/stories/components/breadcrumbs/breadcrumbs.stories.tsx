@@ -83,7 +83,7 @@ const menuBreadcrumbs = (props: BreadcrumbsMenuProps): JSX.Element => {
   );
 };
 
-const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch> = {
+const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch, unknown> = {
   items: breadcrumbItems,
   namePath: [
     { name: 'Home', uuid: '1' },
