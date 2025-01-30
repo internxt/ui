@@ -3,7 +3,7 @@
 exports[`Dropdown component > should match snapshot 1`] = `
 <div>
   <div
-    class="relative outline-none"
+    class="relative outline-none min-w-breadcrumb"
   >
     <button
       aria-expanded="false"

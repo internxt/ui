@@ -38,7 +38,7 @@ const ListHeader = <T, F extends keyof T>({
   onClose,
 }: ListHeaderProps<T, F>) => {
   return (
-    <div onClick={onClose} onContextMenu={onClose} className="flex h-12 shrink-0 flex-row px-5">
+    <div onClick={onClose} onContextMenu={onClose} className="flex min-w-max h-12 shrink-0 flex-row px-5">
       {/* COLUMN */}
       <div className="flex h-full min-w-full flex-row items-center border-b border-gray-10">
         {/* SELECTION CHECKBOX */}

@@ -38,7 +38,7 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="relative outline-none"
+          class="relative outline-none min-w-breadcrumb"
         >
           <button
             aria-expanded="false"
@@ -202,7 +202,7 @@ exports[`Breadcrumbs Component > should match snapshot 1`] = `
         </svg>
       </div>
       <div
-        class="relative outline-none"
+        class="relative outline-none min-w-breadcrumb"
       >
         <button
           aria-expanded="false"

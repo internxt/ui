@@ -6,11 +6,11 @@ exports[`List component > should match snapshot 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="relative flex h-full flex-col overflow-x-hidden overflow-y-hidden undefined"
+        class="relative flex h-full flex-col overflow-x-auto overflow-y-hidden undefined"
         id="generic-list-component"
       >
         <div
-          class="flex h-12 shrink-0 flex-row px-5"
+          class="flex min-w-max h-12 shrink-0 flex-row px-5"
         >
           <div
             class="flex h-full min-w-full flex-row items-center border-b border-gray-10"
@@ -76,7 +76,7 @@ exports[`List component > should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex h-full flex-col overflow-x-auto overflow-y-auto"
+          class="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto"
           id="scrollableList"
         >
           <div>
@@ -200,11 +200,11 @@ exports[`List component > should match snapshot 1`] = `
   </body>,
   "container": <div>
     <div
-      class="relative flex h-full flex-col overflow-x-hidden overflow-y-hidden undefined"
+      class="relative flex h-full flex-col overflow-x-auto overflow-y-hidden undefined"
       id="generic-list-component"
     >
       <div
-        class="flex h-12 shrink-0 flex-row px-5"
+        class="flex min-w-max h-12 shrink-0 flex-row px-5"
       >
         <div
           class="flex h-full min-w-full flex-row items-center border-b border-gray-10"
@@ -270,7 +270,7 @@ exports[`List component > should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="flex h-full flex-col overflow-x-auto overflow-y-auto"
+        class="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto"
         id="scrollableList"
       >
         <div>

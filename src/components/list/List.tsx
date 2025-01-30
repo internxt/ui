@@ -293,7 +293,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   return (
     <div
       id="generic-list-component"
-      className={`relative flex h-full flex-col overflow-x-hidden overflow-y-hidden ${className}`}
+      className={`relative flex h-full flex-col overflow-x-auto overflow-y-hidden ${className}`}
       ref={containerRef}
     >
       {!isEmptyState ? (
@@ -313,7 +313,7 @@ const List = <T extends { id: number }, F extends keyof T>({
       ) : null}
 
       {/* BODY */}
-      <div id="scrollableList" className="flex h-full flex-col overflow-x-auto overflow-y-auto">
+      <div id="scrollableList" className="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto">
         {isEmptyState ? (
           emptyState
         ) : items.length > 0 && !forceLoading ? (

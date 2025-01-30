@@ -107,7 +107,7 @@ const Dropdown = <T,>({
   const { px, py } = extractPaddingValues(classMenuItems);
 
   return (
-    <div className="relative outline-none" ref={containerRef}>
+    <div className="relative outline-none min-w-breadcrumb" ref={containerRef}>
       <button
         className={`cursor-pointer outline-none ${classButton}`}
         onClick={toggleMenu}
