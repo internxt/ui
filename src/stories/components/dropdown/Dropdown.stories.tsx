@@ -36,7 +36,6 @@ const defaultArgs: DropdownProps<unknown> = {
     { separator: true },
     { name: 'Action 3', action: () => alert('Launched action 3') },
   ],
-  item: 'Item',
   openDirection: 'left',
 };
 

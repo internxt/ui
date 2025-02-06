@@ -62,7 +62,7 @@ const Dropdown = <T,>({
   classMenuItems,
   openDirection,
   dropdownActionsContext,
-  item,
+  item = {} as T,
 }: DropdownProps<T>): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const direction = openDirection === 'left' ? 'origin-top-left' : 'origin-top-right';
