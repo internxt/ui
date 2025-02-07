@@ -6,10 +6,10 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-
   "extends": ["@internxt/eslint-config-internxt", "plugin:storybook/recommended"],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
     "max-len": [
       "error",
       {
@@ -23,6 +23,6 @@
         "ignoreRegExpLiterals": true,
       },
     ],
-    "linebreak-style": "off"
+    "linebreak-style": "off",
   },
 }

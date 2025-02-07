@@ -3,7 +3,7 @@ import Loader from '../loader/Loader';
 
 export interface ButtonProps {
   id?: string;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive' | 'tertiary';
   type?: 'button' | 'submit';
   children?: ReactNode;
   className?: string;
@@ -110,6 +110,11 @@ const Button = ({
     styles = 'hover:bg-gray-5 active:bg-gray-10 focus-visible:bg-gray-10';
   } else if (variant === 'ghost' && disabled) {
     styles = 'text-gray-30';
+  } else if (variant === 'tertiary' && !disabled) {
+    styles = `${loading ? 'bg-white/45' : 'bg-white/15'} active:bg-white/25 text-white shadow-sm border border-white/20 active:border-white hover:border-white/40 active:border-white 
+    transition-all duration-200`;
+  } else if (variant === 'tertiary' && disabled) {
+    styles = 'bg-white/45 text-white shadow-sm border border-white/20';
   }
 
   return (
