@@ -1,6 +1,6 @@
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
 import { Button } from '../';
 
 describe('Button component', () => {
@@ -72,6 +72,26 @@ describe('Button component', () => {
 
   it('Primary submit button should render correctly', () => {
     const button = render(<Button variant="primary" type="submit" />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary button should render correctly', () => {
+    const button = render(<Button variant="tertiary">Tertiary</Button>);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary disabled button should render correctly', () => {
+    const button = render(<Button variant="tertiary" disabled />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary loading button should render correctly', () => {
+    const button = render(<Button variant="tertiary" loading />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary medium button should render correctly', () => {
+    const button = render(<Button variant="tertiary" size="medium" />);
     expect(button).toMatchSnapshot();
   });
 });
