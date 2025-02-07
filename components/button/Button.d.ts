@@ -2,7 +2,7 @@ import { ReactNode } from '../../../node_modules/react';
 
 export interface ButtonProps {
     id?: string;
-    variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
+    variant?: 'primary' | 'secondary' | 'ghost' | 'destructive' | 'tertiary';
     type?: 'button' | 'submit';
     children?: ReactNode;
     className?: string;
