@@ -1,6 +1,6 @@
+import { Button } from '@/components/button';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '@/components/button';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -30,10 +30,30 @@ export const Secondary: Story = {
   },
 };
 
+export const Tertiary: Story = {
+  args: {
+    variant: 'tertiary',
+    children: 'Button',
+    disabled: false,
+  },
+  parameters: {
+    backgrounds: {
+      default: 'blue',
+      values: [{ name: 'blue', value: '#1E293B' }],
+    },
+  },
+};
+
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
     children: 'Button',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'blue',
+      values: [{ name: 'blue', value: '#1E293B' }],
+    },
   },
 };
 
