@@ -19,8 +19,8 @@ exports[`Input component > should match snapshot 1`] = `
           >
             <input
               autocomplete="on"
-              class="inxt-input h-10 w-full rounded-md border bg-transparent text-lg font-normal text-gray-80 outline-none ring-opacity-10 focus:ring-3 disabled:text-gray-40 disabled:placeholder-gray-20 dark:ring-opacity-20 
-          border-gray-20 disabled:border-gray-10 hover:border-gray-30 focus:border-primary ring-primary placeholder-gray-30 px-4"
+              class="inxt-input h-10 w-full border bg-transparent text-lg font-normal text-gray-80 outline-none ring-opacity-10 focus:ring-3 disabled:text-gray-40 disabled:placeholder-gray-20 dark:ring-opacity-20 
+          border-gray-20 disabled:border-gray-10 hover:border-gray-30 focus:border-primary ring-primary placeholder-gray-30 px-4 rounded-md "
               placeholder="Enter text"
               type="text"
               value=""
@@ -45,8 +45,8 @@ exports[`Input component > should match snapshot 1`] = `
         >
           <input
             autocomplete="on"
-            class="inxt-input h-10 w-full rounded-md border bg-transparent text-lg font-normal text-gray-80 outline-none ring-opacity-10 focus:ring-3 disabled:text-gray-40 disabled:placeholder-gray-20 dark:ring-opacity-20 
-          border-gray-20 disabled:border-gray-10 hover:border-gray-30 focus:border-primary ring-primary placeholder-gray-30 px-4"
+            class="inxt-input h-10 w-full border bg-transparent text-lg font-normal text-gray-80 outline-none ring-opacity-10 focus:ring-3 disabled:text-gray-40 disabled:placeholder-gray-20 dark:ring-opacity-20 
+          border-gray-20 disabled:border-gray-10 hover:border-gray-30 focus:border-primary ring-primary placeholder-gray-30 px-4 rounded-md "
             placeholder="Enter text"
             type="text"
             value=""
