@@ -129,7 +129,7 @@ const Modal = ({
               duration-150
               ease-out
               ${transitionOpacity}
-              pointer-events-none'}              
+              pointer-events-none           
             `}
           />
           <div
@@ -144,9 +144,9 @@ const Modal = ({
               transition-opacity
               duration-150
               ease-out
+              overflow-y-auto
               ${transitionOpacity}
               ${transitionScale}
-              pointer-events-none
             `}
           >
             <section
@@ -166,7 +166,6 @@ const Modal = ({
                 ease-out
                 ${transitionOpacity}
                 ${transitionScale}
-                pointer-events-none
               `}
             >
               {children}
