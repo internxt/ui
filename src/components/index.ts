@@ -2,6 +2,7 @@ export * from './avatar';
 export * from './baseDialog';
 export * from './breadcrumbs';
 export * from './button';
+export * from './buttonCircle';
 export * from './card';
 export * from './checkbox';
 export * from './contextMenu';
