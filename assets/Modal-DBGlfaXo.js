@@ -7,7 +7,7 @@ import{j as n}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBf
               duration-150
               ease-out
               ${r}
-              pointer-events-none'}              
+              pointer-events-none           
             `}),n.jsx("div",{className:`
               fixed
               inset-0
@@ -19,9 +19,9 @@ import{j as n}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBf
               transition-opacity
               duration-150
               ease-out
+              overflow-y-auto
               ${r}
               ${p}
-              pointer-events-none
             `,children:n.jsx("section",{"data-testid":"ModalContent",ref:a,className:`
                 ${y??"w-full"}
                 ${f??"max-w-lg"}
@@ -36,7 +36,6 @@ import{j as n}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBf
                 ease-out
                 ${r}
                 ${p}
-                pointer-events-none
               `,children:m})})]})})};w.__docgenInfo={description:`Modal component
 
 @param {ModalProps} props - Properties of the Modal component.

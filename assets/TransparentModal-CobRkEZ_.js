@@ -1,0 +1,32 @@
+import{j as a}from"./jsx-runtime-CkxqCPlQ.js";import{r as t}from"./index-DJO9vBfz.js";const T=({isOpen:n,onClose:o,children:d,className:m,disableBackdrop:r=!1})=>{const s=t.useRef(null),[p,i]=t.useState(n),[u,c]=t.useState("opacity-0"),[f,l]=t.useState("scale-95");return t.useEffect(()=>{if(n){i(!0);const e=setTimeout(()=>{c("opacity-100"),l("scale-100")},10);return()=>clearTimeout(e)}else{c("opacity-0"),l("scale-95");const e=setTimeout(()=>{i(!1)},150);return()=>clearTimeout(e)}},[n]),t.useEffect(()=>{const e=y=>{s.current&&!s.current.contains(y.target)&&o()};return n&&!r&&document.addEventListener("mousedown",e),()=>{document.removeEventListener("mousedown",e)}},[n,o,r]),p?a.jsxs("div",{className:`
+      fixed 
+      inset-0 
+      z-50 
+      flex 
+      items-center 
+      justify-center
+      ${r?"pointer-events-none":""}
+    `,children:[!r&&a.jsx("div",{className:`
+            fixed 
+            inset-0 
+            bg-black/50 
+            backdrop-blur-sm 
+            transition-opacity 
+            duration-200
+            ${u}
+          `}),a.jsx("div",{ref:s,className:`
+          relative
+          flex
+          bg-black/15
+          border
+          border-white/15
+          rounded-[20px]
+          backdrop-blur
+          shadow-lg
+          transition-all
+          duration-200
+          pointer-events-auto
+          ${u}
+          ${f}
+          ${m}
+        `,children:d})]}):null};T.__docgenInfo={description:"",methods:[],displayName:"TransparentModal",props:{isOpen:{required:!0,tsType:{name:"boolean"},description:""},onClose:{required:!0,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""},children:{required:!0,tsType:{name:"ReactNode"},description:""},className:{required:!1,tsType:{name:"string"},description:""},disableBackdrop:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}}}};export{T};

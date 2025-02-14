@@ -22,6 +22,9 @@ export interface InputProps {
     labelDataCy?: string;
     inputDataCy?: string;
     onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
+    inputClassName?: string;
+    borderRadius?: string;
+    fontClasses?: string;
 }
 /**
  * Input component
@@ -93,8 +96,20 @@ export interface InputProps {
  * @property {string} [inputDataCy]
  * - Optional data attribute for targeting the input element itself in tests.
  *
+ * @property {string} [inputClassName]
+ * - Optional custom class name to be applied directly to the input element.
+ * - These classes will be added after the default classes and can override them.
+ *
+ * @property {string} [borderRadius='rounded-md']
+ * - Optional Tailwind class to control the border radius of the input.
+ * - Defaults to 'rounded-md' if not specified.
+ *
+ * @property {string} [fontClasses='text-lg font-normal']
+ * - Optional Tailwind class to control the font size and font weight of the input.
+ * - Defaults to 'text-lg font-normal' if not specified.
+ *
  * @property {(e: KeyboardEvent<HTMLInputElement>) => void} [onKeyDown]
  * - Callback function for handling keydown events in the input field.
  */
-declare const Input: ({ className, label, variant, accent, disabled, placeholder, value, maxLength, onChange, onClear, message, onFocus, onBlur, autofocus, autoComplete, dataTest, name, required, labelDataCy, inputDataCy, onKeyDown, }: InputProps) => JSX.Element;
+declare const Input: ({ className, label, variant, accent, disabled, placeholder, value, maxLength, onChange, onClear, message, onFocus, onBlur, autofocus, autoComplete, dataTest, name, required, labelDataCy, inputDataCy, onKeyDown, inputClassName, borderRadius, fontClasses, }: InputProps) => JSX.Element;
 export default Input;
