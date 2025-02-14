@@ -16,6 +16,7 @@ export * from './list';
 export * from './loader';
 export * from './menu';
 export * from './modal';
+export * from './modalTransparent';
 export * from './popover';
 export * from './radioButton';
 export * from './skeletonLoader';
