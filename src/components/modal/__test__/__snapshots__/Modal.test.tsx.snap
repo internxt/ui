@@ -12,7 +12,7 @@ exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
               duration-150
               ease-out
               opacity-0
-              pointer-events-none'}              
+              pointer-events-none           
             "
   />
   <div
@@ -27,9 +27,9 @@ exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
               transition-opacity
               duration-150
               ease-out
+              overflow-y-auto
               opacity-0
               scale-95
-              pointer-events-none
             "
   >
     <section
@@ -47,7 +47,6 @@ exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
                 ease-out
                 opacity-0
                 scale-95
-                pointer-events-none
               "
       data-testid="ModalContent"
     >
