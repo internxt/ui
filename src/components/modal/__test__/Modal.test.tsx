@@ -186,4 +186,25 @@ describe('Modal Component', () => {
       expect(screen.queryByText('Modal Content')).not.toBeInTheDocument();
     });
   });
+
+  it('closeLastOpenModal should close only the last opened modal', () => {
+    const onClose1 = vi.fn();
+    const onClose2 = vi.fn();
+
+    render(
+      <>
+        <Modal isOpen={true} onClose={onClose1}>
+          <div data-testid="modal-1">Modal 1</div>
+        </Modal>
+        <Modal isOpen={true} onClose={onClose2}>
+          <div data-testid="modal-2">Modal 2</div>
+        </Modal>
+      </>,
+    );
+
+    fireEvent.mouseDown(document.body);
+
+    expect(onClose1).not.toHaveBeenCalled();
+    expect(onClose2).toHaveBeenCalled();
+  });
 });
