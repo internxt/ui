@@ -65,6 +65,14 @@ const Modal = ({
   const [transitionOpacity, setTransitionOpacity] = useState<string>('opacity-0');
   const [transitionScale, setTransitionScale] = useState<string>('scale-95');
 
+  const closeLastOpenModal = () => {
+    const openModals = document.querySelectorAll('[data-modal]');
+    const lastModal = openModals[openModals.length - 1];
+    if (modalRef.current === lastModal) {
+      onClose();
+    }
+  };
+
   useEffect(() => {
     if (isOpen) {
       const timeout = setTimeout(() => {
@@ -86,7 +94,8 @@ const Modal = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node) && !preventClosing) {
-        onClose();
+        event.preventDefault();
+        closeLastOpenModal();
       }
     };
 
@@ -102,7 +111,8 @@ const Modal = ({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && !preventClosing) {
-        onClose();
+        event.preventDefault();
+        closeLastOpenModal();
       }
     };
 
@@ -116,14 +126,15 @@ const Modal = ({
   }, [isOpen, onClose, preventClosing]);
 
   return (
-    <>
+    <div className="m-0">
       {showContent && (
         <>
           <div
             className={`
               fixed
+              min-h-full
               inset-0
-              z-50
+              z-[9999]
               bg-highlight/40
               transition-opacity
               duration-150
@@ -136,7 +147,7 @@ const Modal = ({
             className={`
               fixed
               inset-0
-              z-50
+              z-[9999]
               flex
               min-h-full
               items-center
@@ -152,6 +163,7 @@ const Modal = ({
             <section
               data-testid={'ModalContent'}
               ref={modalRef}
+              data-modal
               className={`
                 ${width ?? 'w-full'}
                 ${maxWidth ?? 'max-w-lg'}
@@ -173,7 +185,7 @@ const Modal = ({
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
