@@ -6,7 +6,7 @@ exports[`CircleButton component > should not render dropdown toggle for cancel v
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="cancel"
       >
         <button
@@ -24,7 +24,7 @@ exports[`CircleButton component > should not render dropdown toggle for cancel v
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="cancel"
     >
       <button
@@ -99,7 +99,7 @@ exports[`CircleButton component > should not render dropdown toggle for warning 
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="warning"
       >
         <button
@@ -117,7 +117,7 @@ exports[`CircleButton component > should not render dropdown toggle for warning 
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="warning"
     >
       <button
@@ -192,7 +192,7 @@ exports[`CircleButton component > should render active default button correctly 
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="default"
       >
         <button
@@ -210,7 +210,7 @@ exports[`CircleButton component > should render active default button correctly 
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="default"
     >
       <button
@@ -285,7 +285,7 @@ exports[`CircleButton component > should render active warning button correctly 
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="warning"
       >
         <button
@@ -303,7 +303,7 @@ exports[`CircleButton component > should render active warning button correctly 
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="warning"
     >
       <button
@@ -378,7 +378,7 @@ exports[`CircleButton component > should render button with children correctly 1
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="default"
       >
         <button
@@ -400,7 +400,7 @@ exports[`CircleButton component > should render button with children correctly 1
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="default"
     >
       <button
@@ -479,7 +479,7 @@ exports[`CircleButton component > should render button with custom className cor
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="default"
       >
         <button
@@ -497,7 +497,7 @@ exports[`CircleButton component > should render button with custom className cor
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="default"
     >
       <button
@@ -572,7 +572,7 @@ exports[`CircleButton component > should render button with custom indicator cor
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="default"
       >
         <button
@@ -605,7 +605,7 @@ exports[`CircleButton component > should render button with custom indicator cor
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="default"
     >
       <button
@@ -695,7 +695,7 @@ exports[`CircleButton component > should render button with dropdown correctly 1
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="default"
       >
         <button
@@ -728,7 +728,7 @@ exports[`CircleButton component > should render button with dropdown correctly 1
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="default"
     >
       <button
@@ -818,7 +818,7 @@ exports[`CircleButton component > should render button with warning indicator co
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="warning"
       >
         <button
@@ -851,7 +851,7 @@ exports[`CircleButton component > should render button with warning indicator co
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="warning"
     >
       <button
@@ -941,7 +941,7 @@ exports[`CircleButton component > should render cancel button correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="cancel"
       >
         <button
@@ -959,7 +959,7 @@ exports[`CircleButton component > should render cancel button correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="cancel"
     >
       <button
@@ -1034,7 +1034,7 @@ exports[`CircleButton component > should render default button correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="default"
       >
         <button
@@ -1052,7 +1052,7 @@ exports[`CircleButton component > should render default button correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="default"
     >
       <button
@@ -1127,7 +1127,7 @@ exports[`CircleButton component > should render warning button correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="relative w-12 h-12"
+        class="relative w-11 h-11"
         data-circle-button="warning"
       >
         <button
@@ -1145,7 +1145,7 @@ exports[`CircleButton component > should render warning button correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="relative w-12 h-12"
+      class="relative w-11 h-11"
       data-circle-button="warning"
     >
       <button
