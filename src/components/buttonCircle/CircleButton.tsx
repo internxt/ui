@@ -103,7 +103,7 @@ const CircleButton = ({
   };
 
   return (
-    <div className="relative w-12 h-12" data-circle-button={variant}>
+    <div className="relative w-11 h-11" data-circle-button={variant}>
       <button
         onClick={handleMainClick}
         className={`
