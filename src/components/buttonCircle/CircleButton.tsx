@@ -1,5 +1,5 @@
 import { CaretUp, Warning } from '@phosphor-icons/react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 type ButtonVariant = 'default' | 'warning' | 'cancel';
 
@@ -15,6 +15,9 @@ export interface CircleButtonProps {
     icon?: JSX.Element;
     className?: string;
   };
+  isOpen?: boolean;
+  handleOpen?: () => void;
+  handleClose?: () => void;
 }
 
 const CircleButton = ({
@@ -26,16 +29,17 @@ const CircleButton = ({
   className = '',
   dropdown,
   indicator,
+  isOpen = false,
+  handleOpen = () => {},
+  handleClose = () => {},
 }: CircleButtonProps): JSX.Element => {
-  const [isOpen, setIsOpen] = useState(false);
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (isOpen) {
         const target = event.target as HTMLElement;
         const circleButton = document.querySelector(`[data-circle-button="${variant}"]`);
         if (circleButton && !circleButton.contains(target)) {
-          setIsOpen(false);
+          handleClose();
         }
       }
     };
@@ -50,7 +54,7 @@ const CircleButton = ({
     e.stopPropagation();
     if (dropdown) {
       onClickToggleButton?.();
-      setIsOpen(!isOpen);
+      isOpen ? handleClose() : handleOpen();
     }
   };
 
