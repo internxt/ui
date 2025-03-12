@@ -1,6 +1,6 @@
 import { CaretUp } from '@phosphor-icons/react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import CircleButton from '../CircleButton';
 
@@ -82,16 +82,36 @@ describe('CircleButton component', () => {
   });
 
   it('should show dropdown content when toggle is clicked', () => {
-    const dropdown = <div>Dropdown Content</div>;
-    render(<CircleButton dropdown={dropdown} />);
+    const TestComponent = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <CircleButton
+          dropdown={<div>Dropdown Content</div>}
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)}
+          handleOpen={() => setIsOpen(true)}
+        />
+      );
+    };
+    render(<TestComponent />);
     const toggleButton = screen.getAllByRole('button')[1];
     fireEvent.click(toggleButton);
     expect(screen.getByText('Dropdown Content')).toBeInTheDocument();
   });
 
   it('should handle dropdown visibility correctly', () => {
-    const dropdown = <div>Dropdown Content</div>;
-    render(<CircleButton dropdown={dropdown} />);
+    const TestComponent = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <CircleButton
+          dropdown={<div>Dropdown Content</div>}
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)}
+          handleOpen={() => setIsOpen(true)}
+        />
+      );
+    };
+    render(<TestComponent />);
     const toggleButton = screen.getAllByRole('button')[1];
 
     // Open dropdown
