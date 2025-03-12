@@ -11,6 +11,9 @@ export interface CircleButtonProps {
         icon?: JSX.Element;
         className?: string;
     };
+    isOpen?: boolean;
+    handleOpen?: () => void;
+    handleClose?: () => void;
 }
-declare const CircleButton: ({ children, variant, active, onClick, onClickToggleButton, className, dropdown, indicator, }: CircleButtonProps) => JSX.Element;
+declare const CircleButton: ({ children, variant, active, onClick, onClickToggleButton, className, dropdown, indicator, isOpen, handleOpen, handleClose, }: CircleButtonProps) => JSX.Element;
 export default CircleButton;

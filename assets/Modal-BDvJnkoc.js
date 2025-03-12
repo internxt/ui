@@ -1,17 +1,18 @@
-import{j as n}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBfz.js";const w=({isOpen:t,onClose:s,children:m,maxWidth:f,className:h,width:y,preventClosing:i=!1})=>{const a=o.useRef(null),[g,l]=o.useState(t),[r,c]=o.useState("opacity-0"),[p,u]=o.useState("scale-95");return o.useEffect(()=>{if(t){const e=setTimeout(()=>{c("opacity-100"),u("scale-100")},10);return l(!0),()=>clearTimeout(e)}else{c("opacity-0"),u("scale-95");const e=setTimeout(()=>{l(!1)},150);return()=>clearTimeout(e)}},[t]),o.useEffect(()=>{const e=d=>{a.current&&!a.current.contains(d.target)&&!i&&s()};return t&&document.addEventListener("mousedown",e),()=>{document.removeEventListener("mousedown",e)}},[t,s,i]),o.useEffect(()=>{const e=d=>{d.key==="Escape"&&!i&&s()};return t&&window.addEventListener("keydown",e),()=>{window.removeEventListener("keydown",e)}},[t,s,i]),n.jsx(n.Fragment,{children:g&&n.jsxs(n.Fragment,{children:[n.jsx("div",{className:`
+import{j as s}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBfz.js";const v=({isOpen:t,onClose:r,children:f,maxWidth:h,className:y,width:g,preventClosing:a=!1})=>{const i=o.useRef(null),[w,d]=o.useState(t),[l,c]=o.useState("opacity-0"),[p,u]=o.useState("scale-95"),m=()=>{const e=document.querySelectorAll("[data-modal]"),n=e[e.length-1];i.current===n&&r()};return o.useEffect(()=>{if(t){const e=setTimeout(()=>{c("opacity-100"),u("scale-100")},10);return d(!0),()=>clearTimeout(e)}else{c("opacity-0"),u("scale-95");const e=setTimeout(()=>{d(!1)},150);return()=>clearTimeout(e)}},[t]),o.useEffect(()=>{const e=n=>{i.current&&!i.current.contains(n.target)&&!a&&(n.preventDefault(),m())};return t&&document.addEventListener("mousedown",e),()=>{document.removeEventListener("mousedown",e)}},[t,r,a]),o.useEffect(()=>{const e=n=>{n.key==="Escape"&&!a&&(n.preventDefault(),m())};return t&&window.addEventListener("keydown",e),()=>{window.removeEventListener("keydown",e)}},[t,r,a]),s.jsx("div",{className:"m-0",children:w&&s.jsxs(s.Fragment,{children:[s.jsx("div",{className:`
               fixed
+              min-h-full
               inset-0
-              z-50
+              z-[9999]
               bg-highlight/40
               transition-opacity
               duration-150
               ease-out
-              ${r}
+              ${l}
               pointer-events-none           
-            `}),n.jsx("div",{className:`
+            `}),s.jsx("div",{className:`
               fixed
               inset-0
-              z-50
+              z-[9999]
               flex
               min-h-full
               items-center
@@ -20,12 +21,12 @@ import{j as n}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBf
               duration-150
               ease-out
               overflow-y-auto
-              ${r}
+              ${l}
               ${p}
-            `,children:n.jsx("section",{"data-testid":"ModalContent",ref:a,className:`
-                ${y??"w-full"}
-                ${f??"max-w-lg"}
-                ${h??"p-5"}
+            `,children:s.jsx("section",{"data-testid":"ModalContent",ref:i,"data-modal":!0,className:`
+                ${g??"w-full"}
+                ${h??"max-w-lg"}
+                ${y??"p-5"}
                 text-gray-100
                 rounded-2xl
                 bg-surface
@@ -34,9 +35,9 @@ import{j as n}from"./jsx-runtime-CkxqCPlQ.js";import{r as o}from"./index-DJO9vBf
                 transition-all
                 duration-150
                 ease-out
-                ${r}
+                ${l}
                 ${p}
-              `,children:m})})]})})};w.__docgenInfo={description:`Modal component
+              `,children:f})})]})})};v.__docgenInfo={description:`Modal component
 
 @param {ModalProps} props - Properties of the Modal component.
 
@@ -73,4 +74,4 @@ and prevents interaction with the modal's background during the transitions.
 The \`preventClosing\` prop ensures the modal stays open when interacting outside of the modal or pressing 'Escape'.
 
 The modal is displayed with a fixed position in the center of the screen, with a backdrop overlay.
-The content of the modal is rendered inside a flex container with transition effects to animate its appearance.`,methods:[],displayName:"Modal",props:{isOpen:{required:!0,tsType:{name:"boolean"},description:""},onClose:{required:!0,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""},children:{required:!0,tsType:{name:"ReactNode"},description:""},maxWidth:{required:!1,tsType:{name:"string"},description:""},className:{required:!1,tsType:{name:"string"},description:""},width:{required:!1,tsType:{name:"string"},description:""},preventClosing:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}}}};export{w as M};
+The content of the modal is rendered inside a flex container with transition effects to animate its appearance.`,methods:[],displayName:"Modal",props:{isOpen:{required:!0,tsType:{name:"boolean"},description:""},onClose:{required:!0,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""},children:{required:!0,tsType:{name:"ReactNode"},description:""},maxWidth:{required:!1,tsType:{name:"string"},description:""},className:{required:!1,tsType:{name:"string"},description:""},width:{required:!1,tsType:{name:"string"},description:""},preventClosing:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}}}};export{v as M};
