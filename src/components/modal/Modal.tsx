@@ -126,9 +126,9 @@ const Modal = ({
   }, [isOpen, onClose, preventClosing]);
 
   return (
-    <div className="m-0">
+    <>
       {showContent && (
-        <>
+        <div className="m-0">
           <div
             className={`
               fixed
@@ -183,9 +183,9 @@ const Modal = ({
               {children}
             </section>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
