@@ -20,7 +20,16 @@ export default function DefaultAvatar({
 }
 
 function nameToInitials(fullName: string) {
-  const namesArray = fullName.trim().split(' ');
+  if (!fullName) {
+    return '';
+  }
+
+  const trimmedName = fullName?.trim();
+
+  if (!trimmedName) {
+    return '';
+  }
+  const namesArray = trimmedName.split(' ');
   if (namesArray.length === 1) return `${namesArray[0].charAt(0)}`;
   else {
     const first = namesArray[0].charAt(0);
