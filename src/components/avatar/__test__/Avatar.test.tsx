@@ -1,6 +1,5 @@
-import React from 'react';
-import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 import { Avatar } from '../';
 
 const FULL_NAME = 'My Internxt';
@@ -9,6 +8,11 @@ const IMAGE_SRC = 'https://internxt.com/favicon.ico';
 describe('Avatar component', () => {
   it('Avatar with full name (first letters) should render correctly', () => {
     const avatarComponent = render(<Avatar diameter={80} fullName={FULL_NAME} />);
+    expect(avatarComponent).toMatchSnapshot();
+  });
+
+  it('Avatar with fullname as null should render correctly with empty letters', () => {
+    const avatarComponent = render(<Avatar diameter={80} fullName={null as any} />);
     expect(avatarComponent).toMatchSnapshot();
   });
 
