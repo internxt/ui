@@ -64,5 +64,5 @@ export const DialogExample: Story = {
       },
     },
   },
-  render: (args) => <Dialog {...args} />,
+  render: (args: any) => <Dialog {...args} />,
 };
