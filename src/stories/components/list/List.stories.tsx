@@ -119,7 +119,7 @@ export const ListLayout: Story = {
       { id: 16, name: 'Master Roshi', power: 10000, type: 'Human' },
     ],
     itemComposition: [
-      (props) => (
+      (props: any) => (
         <div
           style={{
             textAlign: 'left',
@@ -129,7 +129,7 @@ export const ListLayout: Story = {
           {props.name}
         </div>
       ),
-      (props) => (
+      (props: any) => (
         <div
           style={{
             color: 'darkblue',
@@ -138,8 +138,8 @@ export const ListLayout: Story = {
           {props.power}
         </div>
       ),
-      (props) => <div style={{}}>{props.type}</div>,
+      (props: any) => <div style={{}}>{props.type}</div>,
     ],
   },
-  render: (args) => <ListWrapper {...args} className="max-h-[500px] overflow-y-auto" />,
+  render: (args: any) => <ListWrapper {...args} className="max-h-[500px] overflow-y-auto" />,
 };

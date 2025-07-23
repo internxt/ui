@@ -58,7 +58,7 @@ export const ModalExample: Story = {
       },
     },
   },
-  render: (args) => (
+  render: (args: any) => (
     <Modal {...args}>
       <div className="text-center">
         <h2 className="text-lg font-semibold">Title</h2>

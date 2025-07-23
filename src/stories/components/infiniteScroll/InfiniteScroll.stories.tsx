@@ -65,12 +65,12 @@ export const Default: Story = {
   args: {
     hasMoreItems: true,
   },
-  render: (args) => <InfiniteScrollWrapper {...args} />,
+  render: (args: any) => <InfiniteScrollWrapper {...args} />,
 };
 
 export const NoMoreItems: Story = {
   args: {
     hasMoreItems: false,
   },
-  render: (args) => <InfiniteScrollWrapper {...args} />,
+  render: (args: any) => <InfiniteScrollWrapper {...args} />,
 };
