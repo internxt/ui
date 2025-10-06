@@ -4,6 +4,7 @@ exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
 <div>
   <div
     class="m-0"
+    role="modal"
   >
     <div
       class="
