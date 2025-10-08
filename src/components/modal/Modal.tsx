@@ -78,6 +78,12 @@ const Modal = ({
     }
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (stopMouseDownPropagation) {
+      e.stopPropagation();
+    }
+  };
+
   useEffect(() => {
     if (isOpen) {
       const timeout = setTimeout(() => {
@@ -133,7 +139,7 @@ const Modal = ({
   return (
     <>
       {showContent && (
-        <div className="m-0" onMouseDown={(e) => stopMouseDownPropagation && e.stopPropagation()} role='modal'>
+        <div className="m-0" onMouseDown={handleMouseDown} role="dialog" aria-modal="true">
           <div
             className={`
               fixed

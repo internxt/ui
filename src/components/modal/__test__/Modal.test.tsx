@@ -218,7 +218,7 @@ describe('Modal Component', () => {
       </div>,
     );
 
-    const modalWrapper = container.querySelector('[role="modal"]');
+    const modalWrapper = container.querySelector('[role="dialog"]');
     expect(modalWrapper).toBeInTheDocument();
 
     fireEvent.mouseDown(modalWrapper!);
@@ -236,7 +236,7 @@ describe('Modal Component', () => {
       </div>,
     );
 
-    const modalWrapper = container.querySelector('[role="modal"]');
+    const modalWrapper = container.querySelector('[role="dialog"]');
     expect(modalWrapper).toBeInTheDocument();
 
     fireEvent.mouseDown(modalWrapper!);
