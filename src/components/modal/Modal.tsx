@@ -8,6 +8,7 @@ export interface ModalProps {
   className?: string;
   width?: string;
   preventClosing?: boolean;
+  stopMouseDownPropagation?: boolean;
 }
 
 /**
@@ -38,6 +39,9 @@ export interface ModalProps {
  * @property {boolean} [preventClosing=false]
  * - Optional flag to prevent the modal from closing when clicking outside or pressing the 'Escape' key.
  *
+ * @property {boolean} [stopMouseDownPropagation=false]
+ * - Optional flag to stop event propagation on mousedown events.
+ *
  * @returns {JSX.Element | null}
  * - The rendered Modal component, or `null` if `isOpen` is `false`.
  *
@@ -59,6 +63,7 @@ const Modal = ({
   className,
   width,
   preventClosing = false,
+  stopMouseDownPropagation = false,
 }: ModalProps): JSX.Element | null => {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [showContent, setShowContent] = useState(isOpen);
@@ -70,6 +75,12 @@ const Modal = ({
     const lastModal = openModals[openModals.length - 1];
     if (modalRef.current === lastModal) {
       onClose();
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (stopMouseDownPropagation) {
+      e.stopPropagation();
     }
   };
 
@@ -128,7 +139,7 @@ const Modal = ({
   return (
     <>
       {showContent && (
-        <div className="m-0">
+        <div className="m-0" onMouseDown={handleMouseDown} role="dialog" aria-modal="true">
           <div
             className={`
               fixed
