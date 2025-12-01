@@ -77,34 +77,19 @@ const Popover = ({ childrenButton, panel, className, classButton }: PopoverProps
     <div style={{ lineHeight: 0 }} className={`relative ${className}`}>
       <button
         onClick={togglePopover}
-        onMouseDown={(e) => e.stopPropagation()}
         className={`cursor-pointer outline-none ${classButton}`}
         aria-expanded={isOpen}
+        data-testid="popover-button"
       >
         {childrenButton}
       </button>
       {showContent && (
         <div
           ref={panelRef}
-          className={`
-            absolute
-            right-0
-            z-50
-            mt-1
-            origin-top-right
-            transform
-            rounded-md
-            border
-            border-gray-10
-            bg-surface
-            py-1.5 
-            shadow-subtle
-            duration-100
-            ease-out
-            dark:bg-gray-5 
-            ${transitionOpacity}
-            ${transitionScale}
-          `}
+          className={
+            'absolute right-0 z-50 mt-1 origin-top-right transform rounded-md border border-gray-10 ' +
+            `bg-surface py-1.5 shadow-subtle duration-100 ease-out dark:bg-gray-5 ${transitionOpacity} ${transitionScale}`
+          }
         >
           {panel(closePopover)}
         </div>
