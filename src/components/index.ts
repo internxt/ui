@@ -22,6 +22,7 @@ export * from './popover';
 export * from './radioButton';
 export * from './skeletonLoader';
 export * from './slider';
+export * from './suiteLauncher';
 export * from './switch';
 export * from './table/Table';
 export * from './textArea';
