@@ -207,4 +207,40 @@ describe('Modal Component', () => {
     expect(onClose1).not.toHaveBeenCalled();
     expect(onClose2).toHaveBeenCalled();
   });
+
+  it('should stop propagation when stopMouseDownPropagation is true', () => {
+    const parentHandler = vi.fn();
+    const { container } = render(
+      <div onMouseDown={parentHandler}>
+        <Modal isOpen={true} onClose={onCloseMock} stopMouseDownPropagation={true}>
+          <div>Modal Content</div>
+        </Modal>
+      </div>,
+    );
+
+    const modalWrapper = container.querySelector('[role="dialog"]');
+    expect(modalWrapper).toBeInTheDocument();
+
+    fireEvent.mouseDown(modalWrapper!);
+
+    expect(parentHandler).not.toHaveBeenCalled();
+  });
+
+  it('should not stop propagation when stopMouseDownPropagation is false', () => {
+    const parentHandler = vi.fn();
+    const { container } = render(
+      <div onMouseDown={parentHandler}>
+        <Modal isOpen={true} onClose={onCloseMock} stopMouseDownPropagation={false}>
+          <div>Modal Content</div>
+        </Modal>
+      </div>,
+    );
+
+    const modalWrapper = container.querySelector('[role="dialog"]');
+    expect(modalWrapper).toBeInTheDocument();
+
+    fireEvent.mouseDown(modalWrapper!);
+
+    expect(parentHandler).toHaveBeenCalled();
+  });
 });

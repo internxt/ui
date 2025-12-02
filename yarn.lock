@@ -487,13 +487,12 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
-"@internxt/css-config@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@internxt/css-config/-/css-config-1.0.3.tgz#16ca5d1559218173aa1befc78d6c0fe66481f309"
-  integrity sha512-Yc8gmShT6OJ537uE0IywUHVHzbGxeFtYcYKwcyUT8teoXZZcdZlcmqHahwNitST8Isc+cqeJ5HuWqtitsW3vGg==
+"@internxt/css-config@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@internxt/css-config/-/css-config-1.0.5.tgz#ac320cb7c06c90a41b105e010040227a8747f54c"
+  integrity sha512-xA7sG+/OQiTq8Xf4KvBbazNwKsqThj8cBMQc1DslzjvhZl1H9BVXghyZGFIHTQ5rDRzE0GuZFu+IqO69heWyyQ==
   dependencies:
     tailwindcss "^3.4.14"
-    typescript "^5.6.3"
 
 "@internxt/eslint-config-internxt@2.0.0":
   version "2.0.0"
@@ -3990,9 +3989,9 @@ js-tokens@^9.0.1:
   integrity sha512-mxa9E9ITFOt0ban3j6L5MpjwegGz6lBQmM1IJkWeBZGcMxto50+eWdjC/52xDbS2vy0k7vIMK0Fe2wfL9OQSpQ==
 
 js-yaml@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
-  integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.1.tgz#854c292467705b699476e1a2decc0c8a3458806b"
+  integrity sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==
   dependencies:
     argparse "^2.0.1"
 
@@ -5611,7 +5610,7 @@ typescript@5.8.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.2.tgz#8170b3702f74b79db2e5a96207c15e65807999e4"
   integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
 
-typescript@^5.6.3, typescript@^5.8.3:
+typescript@^5.8.3:
   version "5.8.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==

@@ -3,7 +3,9 @@
 exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
 <div>
   <div
+    aria-modal="true"
     class="m-0"
+    role="dialog"
   >
     <div
       class="
