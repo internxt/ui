@@ -1,6 +1,6 @@
 import React from 'react';
-import type { Meta, StoryObj, Decorator } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
+import type { Meta, StoryObj, Decorator } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
 import { Menu, MenuProps } from '@/components/menu';
 
 const withCloseHandler: Decorator = (Story, context) => {

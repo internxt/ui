@@ -1,6 +1,6 @@
 import { Button } from '@/components/button';
 import { Header } from '@/components/header';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 const IMAGE_SRC = 'https://internxt.com/favicon.ico';
 
 const meta: Meta<typeof Header> = {

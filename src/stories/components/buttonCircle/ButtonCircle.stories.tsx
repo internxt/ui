@@ -1,6 +1,6 @@
 import { CircleButton } from '@/components/buttonCircle';
 import { Camera, ExclamationMark, Microphone, User, X } from '@phosphor-icons/react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 const meta = {

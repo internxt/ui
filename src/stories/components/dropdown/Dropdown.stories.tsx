@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Dropdown, DropdownProps } from '@/components/dropdown';
 import { DotsThree } from '@phosphor-icons/react';
 

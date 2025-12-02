@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Breadcrumbs, BreadcrumbsProps } from '@/components/breadcrumbs';
 import { BreadcrumbItemData, BreadcrumbsMenuProps } from '@/components/breadcrumbs/BreadcrumbsItem';
 import { Dispatch } from 'redux';

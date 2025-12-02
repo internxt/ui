@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Popover } from '@/components/popover';
 import { Button } from '@/components/button';
 import { UserCircle } from '@phosphor-icons/react';

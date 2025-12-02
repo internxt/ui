@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { InfiniteScroll } from '@/components/infiniteScroll';
 import { useState } from 'react';
 
