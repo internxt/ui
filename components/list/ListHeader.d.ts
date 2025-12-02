@@ -1,5 +1,4 @@
 import { MenuItemsType } from '../menu/Menu';
-
 export type HeaderProps<T, F> = {
     label: string;
     width: string;

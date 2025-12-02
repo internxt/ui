@@ -1,5 +1,4 @@
 import { MenuItemsType } from '../menu/Menu';
-
 interface ListItemProps<T> {
     item: T;
     listIndex: number;

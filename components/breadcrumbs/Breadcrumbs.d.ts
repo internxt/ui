@@ -2,7 +2,6 @@ import { FunctionComponent, SVGProps } from '../../../node_modules/react';
 import { Dispatch } from 'redux';
 import { BreadcrumbItemData, BreadcrumbsMenuProps } from './BreadcrumbsItem';
 import { DropTargetMonitor, useDrop } from 'react-dnd';
-
 export interface BreadcrumbsProps<T extends Dispatch, U> {
     items: BreadcrumbItemData[];
     rootBreadcrumbItemDataCy?: string;

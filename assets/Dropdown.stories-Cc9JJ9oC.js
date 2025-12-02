@@ -1,0 +1,11 @@
+import{j as o}from"./jsx-runtime-o9qq2xiW.js";import{a as i}from"./Breadcrumbs-vR1Z03Hy.js";import{n}from"./List-CgDImlYD.js";import"./iframe-C1-GEPpH.js";import"./preload-helper-PPVm8Dsz.js";import"./IconBase.es-DWuuYLqk.js";import"./Avatar-CRrgkm52.js";import"./BaseDialog-Bn_Q31tf.js";import"./X.es-D67TZzyf.js";import"./Button-CWqAKjnC.js";import"./Loader-DE4tniYN.js";import"./CircleButton-Bl3R5yod.js";import"./Warning.es-N6yblQxM.js";import"./Card-BGdD2_Cd.js";import"./Checkbox-DhuBjC8k.js";import"./ContextMenu-B9lnddGp.js";import"./Menu-DFe5yjEM.js";import"./Copyable-NLwpI5p2.js";import"./Tooltip--5UIkFVa.js";import"./Empty-BksxYAIY.js";import"./Header-PJR7LpZJ.js";import"./InfiniteScroll-RoMnOfRJ.js";import"./Input-xa1UM22n.js";import"./Modal-DMcWQhHg.js";import"./TransparentModal-C90ojgH4.js";import"./Popover-BLEQeUt0.js";import"./RadioButton-5pTwHk1n.js";import"./SkeletonLoader-DCUECBVL.js";import"./RangeSlider-BDNltDB-.js";import"./Switch-DNQpQNVg.js";import"./Table-D6i7mFAi.js";import"./TextArea-C6NpNPjY.js";const B={title:"Components/Dropdown",component:i,parameters:{layout:"centered"},tags:["autodocs"]},e={children:o.jsx(n,{size:24,className:"text-gray-800 dark:text-white",weight:"bold"}),classMenuItems:"mt-1 w-max rounded-md border border-gray-10 bg-surface dark:bg-gray-5 py-1.5",options:[{text:"Option 1",onClick:()=>alert("Option 1 selected")},{text:"Option 2",onClick:()=>alert("Option 2 selected")}],menuItems:[o.jsx("div",{onClick:()=>alert("Item 1 selected"),children:"Item 1"}),o.jsx("div",{onClick:()=>alert("Item 2 selected"),children:"Item 2"})],dropdownActionsContext:[{name:"Action 1",action:()=>{alert("Launched action 1")}},{name:"Action 2",action:()=>alert("Launched action 2")},{separator:!0},{name:"Action 3",action:()=>alert("Launched action 3")}],openDirection:"left"},t={args:{...e,openDirection:"right"}},r={args:{...e,openDirection:"left"}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  args: {
+    ...defaultArgs,
+    openDirection: 'right'
+  }
+}`,...t.parameters?.docs?.source}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  args: {
+    ...defaultArgs,
+    openDirection: 'left'
+  }
+}`,...r.parameters?.docs?.source}}};const F=["RightAlign","LeftAlign"];export{r as LeftAlign,t as RightAlign,F as __namedExportsOrder,B as default};

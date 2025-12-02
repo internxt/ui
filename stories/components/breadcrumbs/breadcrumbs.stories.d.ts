@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Breadcrumbs } from '../../../components/breadcrumbs';
-
 declare const meta: Meta<typeof Breadcrumbs>;
 export default meta;
 type Story = StoryObj<typeof meta>;

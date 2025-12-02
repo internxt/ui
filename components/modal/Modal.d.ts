@@ -1,5 +1,4 @@
 import { ReactNode } from '../../../node_modules/react';
-
 export interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -8,6 +7,7 @@ export interface ModalProps {
     className?: string;
     width?: string;
     preventClosing?: boolean;
+    stopMouseDownPropagation?: boolean;
 }
 /**
  * Modal component
@@ -37,6 +37,9 @@ export interface ModalProps {
  * @property {boolean} [preventClosing=false]
  * - Optional flag to prevent the modal from closing when clicking outside or pressing the 'Escape' key.
  *
+ * @property {boolean} [stopMouseDownPropagation=false]
+ * - Optional flag to stop event propagation on mousedown events.
+ *
  * @returns {JSX.Element | null}
  * - The rendered Modal component, or `null` if `isOpen` is `false`.
  *
@@ -49,5 +52,5 @@ export interface ModalProps {
  * The modal is displayed with a fixed position in the center of the screen, with a backdrop overlay.
  * The content of the modal is rendered inside a flex container with transition effects to animate its appearance.
  */
-declare const Modal: ({ isOpen, onClose, children, maxWidth, className, width, preventClosing, }: ModalProps) => JSX.Element | null;
+declare const Modal: ({ isOpen, onClose, children, maxWidth, className, width, preventClosing, stopMouseDownPropagation, }: ModalProps) => JSX.Element | null;
 export default Modal;

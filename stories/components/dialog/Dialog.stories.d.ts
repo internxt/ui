@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Dialog } from '../../../components/dialog';
-
 declare const meta: Meta<typeof Dialog>;
 export default meta;
 type Story = StoryObj<typeof meta>;

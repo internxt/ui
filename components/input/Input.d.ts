@@ -1,5 +1,4 @@
 import { KeyboardEvent } from '../../../node_modules/react';
-
 export interface InputProps {
     className?: string;
     label?: string;

@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Loader } from '../../../components/loader';
-
 declare const meta: Meta<typeof Loader>;
 export default meta;
 type Story = StoryObj<typeof meta>;

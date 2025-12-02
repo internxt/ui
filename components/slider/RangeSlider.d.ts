@@ -1,4 +1,3 @@
-
 export interface RangeSliderProps {
     value: number;
     min?: number;

@@ -1,7 +1,6 @@
 import { ReactNode } from '../../../node_modules/react';
 import { HeaderProps } from './ListHeader';
 import { MenuItemsType } from '../menu/Menu';
-
 export interface ListProps<T, F> {
     header: HeaderProps<T, F>[];
     checkboxDataCy?: string;

@@ -1,5 +1,4 @@
 import { ReactNode } from '../../../node_modules/react';
-
 export interface PopoverProps {
     childrenButton: ReactNode;
     panel: (closePopover: () => void) => ReactNode;

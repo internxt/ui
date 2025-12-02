@@ -1,5 +1,4 @@
 import { ReactNode } from '../../../node_modules/react';
-
 export interface ButtonProps {
     id?: string;
     variant?: 'primary' | 'secondary' | 'ghost' | 'destructive' | 'tertiary';

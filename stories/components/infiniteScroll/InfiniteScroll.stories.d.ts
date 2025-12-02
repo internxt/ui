@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { InfiniteScroll } from '../../../components/infiniteScroll';
-
 declare const meta: Meta<typeof InfiniteScroll>;
 export default meta;
 type Story = StoryObj<typeof meta>;

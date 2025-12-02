@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { SkeletonLoader } from '../../../components/skeletonLoader';
-
 declare const meta: Meta<typeof SkeletonLoader>;
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,7 +1,6 @@
 import { DropTargetMonitor, useDrop } from 'react-dnd';
 import { Dispatch } from 'redux';
 import { FunctionComponent, SVGProps } from '../../../node_modules/react';
-
 export interface BreadcrumbItemData {
     uuid: string;
     label: string;

@@ -1,5 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
-
+import { Meta, StoryObj } from '@storybook/react-vite';
 declare const ContextMenuWithNotifications: () => import("react/jsx-runtime").JSX.Element;
 declare const meta: Meta<typeof ContextMenuWithNotifications>;
 export default meta;

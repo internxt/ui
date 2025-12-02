@@ -1,6 +1,5 @@
 import { ReactNode } from '../../../node_modules/react';
 import { MenuItemType } from '../';
-
 export type DropdownProps<T> = {
     children: ReactNode | ((obj: {
         open: boolean;

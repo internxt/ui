@@ -1,5 +1,4 @@
 import { MenuItemsType } from '../menu/Menu';
-
 export interface ContextMenuProps<T> {
     item: T;
     menuItemsRef: React.MutableRefObject<HTMLDivElement | null>;

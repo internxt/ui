@@ -1,5 +1,4 @@
 import { default as React, ReactNode } from '../../../node_modules/react';
-
 export interface InfiniteScrollProps {
     children: ReactNode;
     handleNextPage: () => void;

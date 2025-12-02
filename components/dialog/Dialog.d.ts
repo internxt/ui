@@ -5,10 +5,11 @@ export interface DialogProps {
     onSecondaryAction: () => void;
     title: string;
     subtitle: string;
-    primaryAction: string;
-    secondaryAction: string;
+    primaryAction: string | JSX.Element;
+    secondaryAction: string | JSX.Element;
     primaryActionColor: 'primary' | 'danger';
     isLoading?: boolean;
+    maxWidth?: 'sm' | 'md' | 'lg';
 }
 /**
  * Dialog component
@@ -31,11 +32,11 @@ export interface DialogProps {
  * @property {string} subtitle
  * - A subtitle for the dialog, displayed below the title.
  *
- * @property {string} primaryAction
- * - The label for the primary action button.
+ * @property {string | JSX.Element} primaryAction
+ * - The label or content for the primary action button.
  *
  * @property {string} secondaryAction
- * - The label for the secondary action button.
+ * - The label or content for the secondary action button.
  *
  * @property {('primary' | 'danger')} primaryActionColor
  * - Defines the color of the primary action button. Can either be 'primary' or 'danger'.
@@ -43,8 +44,11 @@ export interface DialogProps {
  * @property {boolean} [isLoading]
  * - Optional flag to indicate if the buttons should show a loading state. Defaults to false.
  *
+ * @property {'sm' | 'md' | 'lg'} [maxWidth]
+ * - Optional maximum width for the dialog. Can be 'sm', 'md', or 'lg'.
+ *
  * @returns {JSX.Element}
  * - The rendered dialog component.
  */
-declare const Dialog: ({ isOpen, onClose, onPrimaryAction, onSecondaryAction, title, subtitle, primaryAction, secondaryAction, primaryActionColor, isLoading, }: DialogProps) => JSX.Element;
+declare const Dialog: ({ isOpen, onClose, onPrimaryAction, onSecondaryAction, title, subtitle, primaryAction, secondaryAction, primaryActionColor, isLoading, maxWidth, }: DialogProps) => JSX.Element;
 export default Dialog;

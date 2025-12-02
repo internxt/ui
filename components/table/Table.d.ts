@@ -1,5 +1,4 @@
 import { default as React } from '../../../node_modules/react';
-
 export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
     children: React.ReactNode;
     className?: string;

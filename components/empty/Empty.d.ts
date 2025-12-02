@@ -1,5 +1,4 @@
 import { Upload } from '@phosphor-icons/react';
-
 export interface EmptyProps {
     icon: JSX.Element;
     title: string;
