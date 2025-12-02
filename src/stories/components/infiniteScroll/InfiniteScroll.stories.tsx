@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { InfiniteScroll } from '@/components/infiniteScroll';
 import { useState } from 'react';
 
@@ -65,12 +65,12 @@ export const Default: Story = {
   args: {
     hasMoreItems: true,
   },
-  render: (args) => <InfiniteScrollWrapper {...args} />,
+  render: (args: any) => <InfiniteScrollWrapper {...args} />,
 };
 
 export const NoMoreItems: Story = {
   args: {
     hasMoreItems: false,
   },
-  render: (args) => <InfiniteScrollWrapper {...args} />,
+  render: (args: any) => <InfiniteScrollWrapper {...args} />,
 };

@@ -1,7 +1,7 @@
 import { Button } from '@/components/button';
 import { TransparentModal } from '@/components/modalTransparent';
-import { useArgs } from '@storybook/preview-api';
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import { useArgs } from 'storybook/preview-api';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
 
 const onCloseDecorator: Decorator = (Story, context) => {
   const [{ isOpen }, setArgs] = useArgs();

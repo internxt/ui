@@ -1,5 +1,5 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
 import { RadioButton } from '@/components/radioButton';
 
 // Simulating onClick event for Radio Button (check or uncheck the button)

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Upload } from '@phosphor-icons/react';
 import { Empty } from '@/components/empty';
 

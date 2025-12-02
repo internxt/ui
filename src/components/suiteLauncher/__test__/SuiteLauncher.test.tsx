@@ -3,6 +3,11 @@ import SuiteLauncher from '../SuiteLauncher';
 import { describe, it, expect, vi } from 'vitest';
 
 describe('SuiteLauncher', () => {
+  it('should match snapshot', () => {
+    const suiteLauncher = render(<SuiteLauncher suiteArray={[]} />);;
+    expect(suiteLauncher).toMatchSnapshot();
+  });
+
   it('renders Popover button and panel', () => {
     render(<SuiteLauncher suiteArray={[]} />);
     expect(screen.getByTestId('popover-button')).toBeInTheDocument();

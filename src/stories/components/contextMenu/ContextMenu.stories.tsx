@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
 import { ContextMenu } from '@/components/contextMenu';
 import { MenuItemType } from '@/components/menu';
 import { Button } from '@/components/button';

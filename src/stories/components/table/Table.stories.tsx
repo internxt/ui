@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Table, TableHeader, TableRow, TableCell, TableBody } from '../../../components/table/Table';
 
 interface ActivityRow {

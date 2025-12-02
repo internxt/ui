@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SkeletonLoader } from '@/components/skeletonLoader';
 
 const meta: Meta<typeof SkeletonLoader> = {
@@ -29,5 +29,5 @@ export const ListLayout: Story = {
   args: {
     skeleton: skeletonData,
   },
-  render: (args) => <SkeletonLoader {...args} />,
+  render: (args: any) => <SkeletonLoader {...args} />,
 };

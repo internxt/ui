@@ -1,4 +1,4 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
 import { Loader } from '@/components/loader';
 
 const overlay: Decorator = (Story) => (
