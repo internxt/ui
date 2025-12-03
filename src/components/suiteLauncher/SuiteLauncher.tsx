@@ -62,7 +62,7 @@ export default function SuiteLauncher({
           >
             <div className="flex flex-col items-center w-full rounded-md">
               {suiteApp.isLocked ? (
-                <Lock size={26} weight="regular" data-testid="suite-launcher-lock-icon" />
+                <Lock size={26} weight="regular" className='opacity-50 filter grayscale' data-testid="suite-launcher-lock-icon" />
               ) : isValidElement(suiteApp.icon as JSX.Element) ? (
                 cloneElement(suiteApp.icon as JSX.Element, {
                   size: 26,
