@@ -37,7 +37,7 @@ describe('HeadlessPopover', () => {
   });
 
   it('applies custom styling classes', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <HeadlessPopover
         childrenButton={<span>Toggle</span>}
         panel={<div>Content</div>}
@@ -47,7 +47,8 @@ describe('HeadlessPopover', () => {
     );
 
     expect(container.firstChild).toHaveClass('custom-container');
-    expect(getByText('Toggle')).toHaveClass('custom-button');
+    const button = container.querySelector('button');
+    expect(button).toHaveClass('custom-button');
   });
 
   it('works with custom children function', () => {
