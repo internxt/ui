@@ -9,68 +9,93 @@ export interface HeadlessPopoverRenderProps {
 }
 
 interface HeadlessPopoverProps {
-  childrenButton?: ReactNode;
+  trigger?: ReactNode;
   panel?: ReactNode | ((close: () => void) => ReactNode);
   className?: string;
-  classButton?: string;
-  classPanel?: string;
+  buttonClassName?: string;
+  panelClassName?: string;
   panelStyle?: React.CSSProperties;
   buttonAs?: React.ElementType;
-  shouldUseTransition?: boolean;
-  shouldAlwaysShow?: boolean;
+  isAnimated?: boolean;
+  isStatic?: boolean;
   children?: (props: HeadlessPopoverRenderProps) => ReactNode;
 }
 
 const DEFAULT_PANEL_CLASS = 'absolute right-0 z-50 mt-1 rounded-md border border-gray-10 bg-surface py-1.5 shadow-subtle dark:bg-gray-5';
 
+const BUTTON_CONTAINER_STYLE = { lineHeight: 0 } as const;
+
 /**
- * HeadlessPopover component
+ * HeadlessPopover component - A flexible popover wrapper around HeadlessUI.
  *
- * @property {ReactNode} childrenButton
+ * ## Two usage modes:
+ *
+ * ### 1. Simple Mode (use trigger + panel props):
+ * ```tsx
+ * <HeadlessPopover
+ *   trigger={<button>Click me</button>}
+ *   panel={<div>Content</div>}
+ * />
+ * ```
+ *
+ * ### 2. Render Props Mode (use children for full control):
+ * ```tsx
+ * <HeadlessPopover>
+ *   {({ open, close, Button, Panel }) => (
+ *     <>
+ *       <Button>Custom Button</Button>
+ *       <Panel>Custom Panel</Panel>
+ *     </>
+ *   )}
+ * </HeadlessPopover>
+ * ```
+ *
+ * **Note:** If `children` prop is provided, all other props (trigger, panel, etc.) are ignored.
+ *
+ * @property {ReactNode} [trigger]
  * - The content to be displayed inside the trigger button.
  *
- * @property {ReactNode | ((close: () => void) => ReactNode)} panel
+ * @property {ReactNode | ((close: () => void) => ReactNode)} [panel]
  * - The content to be displayed inside the popover panel.
  * Can be a ReactNode or a function that receives a `close` function as a parameter.
  *
  * @property {string} [className]
  * - Additional custom classes for the outermost container of the popover.
- * Can be used for positioning or adding custom styles.
  *
- * @property {string} [classButton]
+ * @property {string} [buttonClassName]
  * - Custom classes for the trigger button.
  *
- * @property {string} [classPanel]
+ * @property {string} [panelClassName]
  * - Custom classes for the panel container.
  *
  * @property {React.CSSProperties} [panelStyle]
  * - Inline styles for the panel.
  *
  * @property {React.ElementType} [buttonAs]
- * - Custom element type for the button.
+ * - Custom element type for the button (e.g., 'div', CustomComponent).
  *
- * @property {boolean} [shouldUseTransition=true]
- * - Whether to use transition animations.
+ * @property {boolean} [isAnimated=true]
+ * - Whether to use transition animations when opening/closing.
  *
- * @property {boolean} [shouldAlwaysShow=false]
- * - Whether to always show the panel (static mode).
+ * @property {boolean} [isStatic=false]
+ * - Whether to keep the panel mounted in the DOM even when closed (static mode).
  *
  * @property {(props: HeadlessPopoverRenderProps) => ReactNode} [children]
- * - Render prop function for advanced customization.
+ * - Render prop function for advanced customization. When provided, overrides all other props.
  *
  * @returns {JSX.Element}
  * - The rendered HeadlessPopover component.
  */
 export default function HeadlessPopover({
-  childrenButton,
+  trigger,
   panel,
   className = '',
-  classButton = '',
-  classPanel,
+  buttonClassName = '',
+  panelClassName,
   panelStyle,
   buttonAs,
-  shouldUseTransition = true,
-  shouldAlwaysShow = false,
+  isAnimated = true,
+  isStatic = false,
   children,
 }: Readonly<HeadlessPopoverProps>): JSX.Element {
   if (children) {
@@ -81,27 +106,35 @@ export default function HeadlessPopover({
     );
   }
 
-  const PanelContent = ({ close }: { close: () => void }) => (
-    <>{typeof panel === 'function' ? panel(close) : panel}</>
-  );
-
-  const Panel = (
+  const panelElement = (
     <HPopover.Panel
-      className={classPanel || DEFAULT_PANEL_CLASS}
+      className={panelClassName || DEFAULT_PANEL_CLASS}
       style={panelStyle}
-      static={shouldAlwaysShow}
+      static={isStatic}
     >
-      {({ close }: { close: () => void }) => <PanelContent close={close} />}
+      {({ close }: { close: () => void }) => (
+        <>{typeof panel === 'function' ? panel(close) : panel}</>
+      )}
     </HPopover.Panel>
   );
 
+  const containerClassName = `relative ${className}`;
+  const defaultButtonClassName = [
+    'cursor-pointer',
+    'outline-none',
+    'focus-visible:outline-2',
+    'focus-visible:outline-offset-2',
+    'focus-visible:outline-primary'
+  ].join(' ');
+  const finalButtonClassName = `${defaultButtonClassName} ${buttonClassName}`;
+
   return (
-    <HPopover style={{ lineHeight: 0 }} className={`relative ${className}`}>
-      <HPopover.Button as={buttonAs} className={`cursor-pointer outline-none ${classButton}`}>
-        {childrenButton}
+    <HPopover style={BUTTON_CONTAINER_STYLE} className={containerClassName}>
+      <HPopover.Button as={buttonAs} className={finalButtonClassName}>
+        {trigger}
       </HPopover.Button>
 
-      {shouldUseTransition ? (
+      {isAnimated ? (
         <Transition
           enter="transition duration-100 ease-out"
           enterFrom="scale-95 opacity-0"
@@ -111,10 +144,10 @@ export default function HeadlessPopover({
           leaveTo="scale-95 opacity-0"
           className="z-50"
         >
-          {Panel}
+          {panelElement}
         </Transition>
       ) : (
-        Panel
+        panelElement
       )}
     </HPopover>
   );

@@ -7,7 +7,7 @@ describe('HeadlessPopover', () => {
   it('shows and hides panel when button is clicked', () => {
     const { getByText, queryByText } = render(
       <HeadlessPopover
-        childrenButton={<span>Toggle</span>}
+        trigger={<span>Toggle</span>}
         panel={(close) => <div>Panel Content</div>}
       />
     );
@@ -24,7 +24,7 @@ describe('HeadlessPopover', () => {
   it('closes when close button inside panel is clicked', () => {
     const { getByText, queryByText } = render(
       <HeadlessPopover
-        childrenButton={<span>Toggle</span>}
+        trigger={<span>Toggle</span>}
         panel={(close) => <button onClick={close}>Close</button>}
       />
     );
@@ -39,10 +39,10 @@ describe('HeadlessPopover', () => {
   it('applies custom styling classes', () => {
     const { container } = render(
       <HeadlessPopover
-        childrenButton={<span>Toggle</span>}
+        trigger={<span>Toggle</span>}
         panel={<div>Content</div>}
         className="custom-container"
-        classButton="custom-button"
+        buttonClassName="custom-button"
       />
     );
 
