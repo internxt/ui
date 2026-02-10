@@ -296,24 +296,23 @@ const List = <T extends { id: number }, F extends keyof T>({
       className={`relative flex h-full flex-col overflow-x-auto overflow-y-hidden ${className}`}
       ref={containerRef}
     >
-      {!isEmptyState ? (
-        <ListHeader
-          selectedItems={selectedItems}
-          onTopSelectionCheckboxClick={onTopSelectionCheckboxClick}
-          items={items}
-          header={header}
-          orderBy={orderBy}
-          onOrderableColumnClicked={onOrderableColumnClicked}
-          menu={menu}
-          displayMenuDiv={displayMenuDiv}
-          isVerticalScrollbarVisible={isVerticalScrollbarVisible}
-          checkboxDataCy={checkboxDataCy}
-          onClose={onCloseContextMenu}
-        />
-      ) : null}
-
       {/* BODY */}
       <div id="scrollableList" className="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto">
+        {!isEmptyState ? (
+          <ListHeader
+            selectedItems={selectedItems}
+            onTopSelectionCheckboxClick={onTopSelectionCheckboxClick}
+            items={items}
+            header={header}
+            orderBy={orderBy}
+            onOrderableColumnClicked={onOrderableColumnClicked}
+            menu={menu}
+            displayMenuDiv={displayMenuDiv}
+            isVerticalScrollbarVisible={isVerticalScrollbarVisible}
+            checkboxDataCy={checkboxDataCy}
+            onClose={onCloseContextMenu}
+          />
+        ) : null}
         {isEmptyState ? (
           emptyState
         ) : items.length > 0 && !forceLoading ? (

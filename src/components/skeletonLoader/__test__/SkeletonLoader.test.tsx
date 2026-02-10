@@ -37,9 +37,9 @@ describe('SkeletonLoader', () => {
 
     const items = screen.getAllByTestId('skeleton-loader-item')[0].querySelectorAll('div');
 
-    const column1 = items[0];
-    const column2 = items[4];
-    const column3 = items[6];
+    const column1 = items[1];
+    const column2 = items[5];
+    const column3 = items[7];
     expect(column1).toHaveClass('flex');
     expect(column2).toHaveClass('w-date');
     expect(column3).toHaveClass('w-size');
