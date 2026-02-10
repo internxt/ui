@@ -6,9 +6,12 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5"
+        class="group relative flex h-14 animate-pulse flex-row items-center px-5"
         data-testid="skeleton-loader-item"
       >
+        <div
+          class="w-9 shrink-0"
+        />
         <div
           class="relative flex h-full shrink-0 flex-row items-center overflow-hidden whitespace-nowrap border-b border-gray-5 flex grow items-center min-w-driveNameHeader"
         >
@@ -37,11 +40,17 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
             class="ml-3 h-4 w-24 rounded bg-gray-5"
           />
         </div>
+        <div
+          class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+        />
       </div>
       <div
-        class="group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5"
+        class="group relative flex h-14 animate-pulse flex-row items-center px-5"
         data-testid="skeleton-loader-item"
       >
+        <div
+          class="w-9 shrink-0"
+        />
         <div
           class="relative flex h-full shrink-0 flex-row items-center overflow-hidden whitespace-nowrap border-b border-gray-5 flex grow items-center min-w-driveNameHeader"
         >
@@ -70,11 +79,17 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
             class="ml-3 h-4 w-24 rounded bg-gray-5"
           />
         </div>
+        <div
+          class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+        />
       </div>
       <div
-        class="group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5"
+        class="group relative flex h-14 animate-pulse flex-row items-center px-5"
         data-testid="skeleton-loader-item"
       >
+        <div
+          class="w-9 shrink-0"
+        />
         <div
           class="relative flex h-full shrink-0 flex-row items-center overflow-hidden whitespace-nowrap border-b border-gray-5 flex grow items-center min-w-driveNameHeader"
         >
@@ -103,14 +118,20 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
             class="ml-3 h-4 w-24 rounded bg-gray-5"
           />
         </div>
+        <div
+          class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+        />
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5"
+      class="group relative flex h-14 animate-pulse flex-row items-center px-5"
       data-testid="skeleton-loader-item"
     >
+      <div
+        class="w-9 shrink-0"
+      />
       <div
         class="relative flex h-full shrink-0 flex-row items-center overflow-hidden whitespace-nowrap border-b border-gray-5 flex grow items-center min-w-driveNameHeader"
       >
@@ -139,11 +160,17 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
           class="ml-3 h-4 w-24 rounded bg-gray-5"
         />
       </div>
+      <div
+        class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+      />
     </div>
     <div
-      class="group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5"
+      class="group relative flex h-14 animate-pulse flex-row items-center px-5"
       data-testid="skeleton-loader-item"
     >
+      <div
+        class="w-9 shrink-0"
+      />
       <div
         class="relative flex h-full shrink-0 flex-row items-center overflow-hidden whitespace-nowrap border-b border-gray-5 flex grow items-center min-w-driveNameHeader"
       >
@@ -172,11 +199,17 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
           class="ml-3 h-4 w-24 rounded bg-gray-5"
         />
       </div>
+      <div
+        class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+      />
     </div>
     <div
-      class="group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5"
+      class="group relative flex h-14 animate-pulse flex-row items-center px-5"
       data-testid="skeleton-loader-item"
     >
+      <div
+        class="w-9 shrink-0"
+      />
       <div
         class="relative flex h-full shrink-0 flex-row items-center overflow-hidden whitespace-nowrap border-b border-gray-5 flex grow items-center min-w-driveNameHeader"
       >
@@ -205,6 +238,9 @@ exports[`SkeletonLoader > should match snapshot 1`] = `
           class="ml-3 h-4 w-24 rounded bg-gray-5"
         />
       </div>
+      <div
+        class="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5"
+      />
     </div>
   </div>,
   "debug": [Function],
