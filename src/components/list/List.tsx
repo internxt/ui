@@ -33,6 +33,7 @@ export interface ListProps<T, F> {
   disableItemCompositionStyles?: boolean;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  headerBackgroundColor?: string;
   keyBoardShortcutActions?: {
     onShiftFKeysPressed?: () => void;
     onRKeyPressed?: () => void;
@@ -118,6 +119,9 @@ export interface ListProps<T, F> {
  * @property {() => void} [onMouseLeave]
  * - Optional callback triggered when the mouse leaves the list.
  *
+ * @property {string} [headerBackgroundColor]
+ * - Optional background color for the header.
+ *
  * @property {
  *              { onShiftFKeysPressed?: () => void; onRKeyPressed?: () => void; onBackspaceKeyPressed?: () => void }
  *           } [keyBoardShortcutActions]
@@ -151,6 +155,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   disableItemCompositionStyles,
   onMouseEnter,
   onMouseLeave,
+  headerBackgroundColor = 'bg-surface',
   keyBoardShortcutActions,
   disableKeyboardShortcuts,
 }: ListProps<T, F>): JSX.Element => {
@@ -298,21 +303,23 @@ const List = <T extends { id: number }, F extends keyof T>({
     >
       {/* BODY */}
       <div id="scrollableList" className="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto">
-        {!isEmptyState ? (
-          <ListHeader
-            selectedItems={selectedItems}
-            onTopSelectionCheckboxClick={onTopSelectionCheckboxClick}
-            items={items}
-            header={header}
-            orderBy={orderBy}
-            onOrderableColumnClicked={onOrderableColumnClicked}
-            menu={menu}
-            displayMenuDiv={displayMenuDiv}
-            isVerticalScrollbarVisible={isVerticalScrollbarVisible}
-            checkboxDataCy={checkboxDataCy}
-            onClose={onCloseContextMenu}
-          />
-        ) : null}
+        <div className={`sticky top-0 z-10 ${headerBackgroundColor}`}>
+          {!isEmptyState ? (
+            <ListHeader
+              selectedItems={selectedItems}
+              onTopSelectionCheckboxClick={onTopSelectionCheckboxClick}
+              items={items}
+              header={header}
+              orderBy={orderBy}
+              onOrderableColumnClicked={onOrderableColumnClicked}
+              menu={menu}
+              displayMenuDiv={displayMenuDiv}
+              isVerticalScrollbarVisible={isVerticalScrollbarVisible}
+              checkboxDataCy={checkboxDataCy}
+              onClose={onCloseContextMenu}
+            />
+          ) : null}
+        </div>
         {isEmptyState ? (
           emptyState
         ) : items.length > 0 && !forceLoading ? (
