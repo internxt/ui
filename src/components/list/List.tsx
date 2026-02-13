@@ -298,12 +298,12 @@ const List = <T extends { id: number }, F extends keyof T>({
   return (
     <div
       id="generic-list-component"
-      className={`relative flex h-full flex-col overflow-x-auto overflow-y-hidden ${className}`}
+      className={`relative isolate flex h-full flex-col overflow-x-auto overflow-y-hidden ${className}`}
       ref={containerRef}
     >
       {/* BODY */}
       <div id="scrollableList" className="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto">
-        <div className={`sticky top-0 z-10 ${headerBackgroundColor}`}>
+        <div className={`sticky top-0 z-50 ${headerBackgroundColor}`}>
           {!isEmptyState ? (
             <ListHeader
               selectedItems={selectedItems}
