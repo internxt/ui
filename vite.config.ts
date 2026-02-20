@@ -35,7 +35,7 @@ export default defineConfig({
       formats: ['cjs', 'es'],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
+      external: [...Object.keys(peerDependencies), /^react\/.*/, /^react-dom\/.*/],
     },
     sourcemap: true,
     emptyOutDir: true,
