@@ -1,7 +1,7 @@
 import { CheckCircle, Eye, EyeSlash, MagnifyingGlass, Warning, WarningOctagon, X } from '@phosphor-icons/react';
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 
-interface InputProps {
+export interface InputProps {
   className?: string;
   label?: string;
   variant?: 'default' | 'search' | 'password' | 'email';
@@ -23,6 +23,9 @@ interface InputProps {
   labelDataCy?: string;
   inputDataCy?: string;
   onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
+  inputClassName?: string;
+  borderRadius?: string;
+  fontClasses?: string;
 }
 
 /**
@@ -95,6 +98,18 @@ interface InputProps {
  * @property {string} [inputDataCy]
  * - Optional data attribute for targeting the input element itself in tests.
  *
+ * @property {string} [inputClassName]
+ * - Optional custom class name to be applied directly to the input element.
+ * - These classes will be added after the default classes and can override them.
+ *
+ * @property {string} [borderRadius='rounded-md']
+ * - Optional Tailwind class to control the border radius of the input.
+ * - Defaults to 'rounded-md' if not specified.
+ *
+ * @property {string} [fontClasses='text-lg font-normal']
+ * - Optional Tailwind class to control the font size and font weight of the input.
+ * - Defaults to 'text-lg font-normal' if not specified.
+ *
  * @property {(e: KeyboardEvent<HTMLInputElement>) => void} [onKeyDown]
  * - Callback function for handling keydown events in the input field.
  */
@@ -121,6 +136,9 @@ const Input = ({
   labelDataCy,
   inputDataCy,
   onKeyDown,
+  inputClassName = '',
+  borderRadius = 'rounded-md',
+  fontClasses = 'text-lg font-normal',
 }: InputProps): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -172,8 +190,8 @@ const Input = ({
       <input
         ref={inputRef}
         disabled={disabled}
-        className={`inxt-input h-10 w-full rounded-md border bg-transparent text-lg font-normal text-gray-80 outline-none ring-opacity-10 focus:ring-3 disabled:text-gray-40 disabled:placeholder-gray-20 dark:ring-opacity-20 
-          ${borderColor} ${focusColor} ${placeholderColor} ${padding}`}
+        className={`inxt-input h-10 w-full border bg-transparent ${fontClasses} text-gray-80 outline-none ring-opacity-10 focus:ring-3 disabled:text-gray-40 disabled:placeholder-gray-20 dark:ring-opacity-20 
+          ${borderColor} ${focusColor} ${placeholderColor} ${padding} ${borderRadius} ${inputClassName}`}
         type={variant === 'password' && !showPassword ? 'password' : variant === 'email' ? 'email' : 'text'}
         placeholder={placeholder}
         onChange={(e) => onChange && onChange(e.target.value)}

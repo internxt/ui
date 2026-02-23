@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import Menu, { MenuProps, MenuItemsType } from '../Menu';
+import { Menu, MenuProps, MenuItemType } from '../';
 
 const MockIcon = React.forwardRef<HTMLDivElement, { size?: number | string }>(({ size = 20 }, ref) => (
   <div ref={ref} data-testid="mock-icon" style={{ width: size, height: size }} />
@@ -11,7 +11,7 @@ describe('Menu Component', () => {
   const handleMenuClose = vi.fn();
   const genericEnterKey = vi.fn();
 
-  const menuItems: MenuItemsType<{ id: number; name: string }> = [
+  const menuItems: Array<MenuItemType<{ id: number; name: string }>> = [
     { name: 'Option 1', action: vi.fn() },
     { separator: true },
     { name: 'Option 2', disabled: () => true, action: vi.fn() },
@@ -29,6 +29,7 @@ describe('Menu Component', () => {
   const defaultProps: MenuProps<{ id: number; name: string }> = {
     item: { id: 1, name: 'Sample Item' },
     menu: menuItems,
+    isOpen: true,
     handleMenuClose,
     genericEnterKey,
   };
@@ -115,5 +116,14 @@ describe('Menu Component', () => {
     renderMenu();
     fireEvent.keyDown(document, { key: 'Enter' });
     expect(genericEnterKey).toHaveBeenCalled();
+  });
+
+  it('updates selectedIndex on mouse enter', () => {
+    const { getByText } = renderMenu();
+    const option1 = getByText('Option 1').parentElement?.parentElement;
+
+    fireEvent.mouseEnter(option1!);
+
+    expect(option1).toHaveClass('bg-gray-5');
   });
 });

@@ -70,12 +70,12 @@ const ListItem = <T extends { id: number }>({
   useEffect(() => {
     if (!openedFromRightClick) handleOpenPosition();
 
-    if (!open) {
+    if (!isOpen) {
       setOpenedFromRightClick(false);
       setPosX(0);
       setPosY(0);
     }
-  }, [open]);
+  }, [isOpen]);
 
   function handleOpenPosition() {
     const element = menuButtonRef.current;
@@ -153,7 +153,7 @@ const ListItem = <T extends { id: number }>({
       ref={rootWrapperRef}
       className={`group relative flex h-14 flex-row items-center pl-14 pr-5 ${
         selected ? 'bg-primary/10 text-gray-100 dark:bg-primary/20' : 'focus-within:bg-gray-1 hover:bg-gray-1'
-      }`}
+      } ${isOpen ? 'z-40' : ''}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -163,6 +163,7 @@ const ListItem = <T extends { id: number }>({
           menu={menu}
           menuItemsRef={menuItemsRef}
           openedFromRightClick={openedFromRightClick}
+          isOpen={isOpen}
           posX={posX}
           posY={posY}
           isContextMenuCutOff={isContextMenuCutOff}

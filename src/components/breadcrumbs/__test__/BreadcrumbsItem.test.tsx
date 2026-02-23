@@ -35,6 +35,7 @@ describe('BreadcrumbsItem Component', () => {
     onItemDropped: onItemDroppedMock,
     dispatch: dispatchMock,
     acceptedTypes: ['ITEM_TYPE'],
+    useDrop: mockedUseDrop,
   };
 
   const renderBreadcrumbsItem = (props = {}) => render(<BreadcrumbsItem {...defaultProps} {...props} />);

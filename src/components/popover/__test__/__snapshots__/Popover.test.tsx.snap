@@ -12,6 +12,7 @@ exports[`Popover > should match snapshot 1`] = `
         <button
           aria-expanded="false"
           class="cursor-pointer outline-none undefined"
+          data-testid="popover-button"
         >
           <span>
             Open Popover
@@ -28,6 +29,7 @@ exports[`Popover > should match snapshot 1`] = `
       <button
         aria-expanded="false"
         class="cursor-pointer outline-none undefined"
+        data-testid="popover-button"
       >
         <span>
           Open Popover

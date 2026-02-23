@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { expect } from 'chai';
-import { afterEach, describe, it, vi } from 'vitest';
-import Loader from '../Loader';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { Loader } from '../';
 
 describe('Loader Component', () => {
   const renderLoader = (props = {}) => {

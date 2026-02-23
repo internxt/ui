@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import Loader from '../loader/Loader';
 
-interface ButtonProps {
+export interface ButtonProps {
   id?: string;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive' | 'tertiary';
   type?: 'button' | 'submit';
   children?: ReactNode;
   className?: string;
@@ -18,7 +18,63 @@ interface ButtonProps {
   buttonChildrenDataCy?: string;
 }
 
-export const Button = ({
+/**
+ * Button component
+ *
+ * @property {string} [id]
+ * - Optional ID for the button element, useful for accessibility and styling.
+ *
+ * @property {'primary' | 'secondary' | 'ghost' | 'destructive'} [variant]
+ * - Defines the button's style variant. Options are:
+ *   - 'primary': Standard button style with primary color.
+ *   - 'secondary': Button with border and subtle background color.
+ *   - 'ghost': Button with transparent background, suitable for icons or light use.
+ *   - 'destructive': Button for destructive actions.
+ *
+ * @property {'button' | 'submit'} [type]
+ * - Specifies the type of the button. Defaults to 'button'.
+ *   - 'button': Standard button behavior.
+ *   - 'submit': Button submits a form when used inside a form element.
+ *
+ * @property {ReactNode} [children]
+ * - The content inside the button, such as text or icons.
+ *   - Can be a single element or an array of elements.
+ *
+ * @property {string} [className]
+ * - Custom CSS classes for additional styling of the button.
+ *
+ * @property {boolean} [disabled]
+ * - Disables the button, preventing user interaction and applying a disabled style.
+ *   - Defaults to false.
+ *
+ * @property {(e?: unknown) => void} [onClick]
+ * - Function called when the button is clicked. Accepts an optional event object.
+ *
+ * @property {(e?: unknown) => void} [onKeyDown]
+ * - Function called when a key is pressed while the button is focused. Accepts an optional event object.
+ *
+ * @property {'medium' | 'default'} [size]
+ * - Specifies the button size. Options are:
+ *   - 'default': Standard size.
+ *   - 'medium': Slightly smaller size for compact use.
+ *
+ * @property {boolean} [loading]
+ * - If true, shows a loading spinner inside the button.
+ *
+ * @property {string} [dataTest]
+ * - Custom data attribute used for test automation or tracking purposes.
+ *
+ * @property {boolean} [autofocus]
+ * - If true, the button will be focused automatically when the page loads.
+ *
+ * @property {string} [buttonDataCy]
+ * - Custom data attribute for the button element.
+ *
+ * @property {string} [buttonChildrenDataCy]
+ * - Custom data attribute for the children of the button.
+ */
+
+const Button = ({
   variant = 'primary',
   type = 'button',
   id,
@@ -54,6 +110,11 @@ export const Button = ({
     styles = 'hover:bg-gray-5 active:bg-gray-10 focus-visible:bg-gray-10';
   } else if (variant === 'ghost' && disabled) {
     styles = 'text-gray-30';
+  } else if (variant === 'tertiary' && !disabled) {
+    styles = `${loading ? 'bg-white/45' : 'bg-white/15'} active:bg-white/25 text-white shadow-sm border border-white/20 active:border-white hover:border-white/40 active:border-white 
+    transition-all duration-200`;
+  } else if (variant === 'tertiary' && disabled) {
+    styles = 'bg-white/45 text-white shadow-sm border border-white/20';
   }
 
   return (
@@ -80,3 +141,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;

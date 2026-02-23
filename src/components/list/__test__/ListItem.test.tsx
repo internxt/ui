@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
 import ListItem from '../ListItem';
 
-const defaultItem = { id: 'item1' };
+const defaultItem = { id: 1 };
 const mockOnSelectedChanged = vi.fn();
 const mockOnDoubleClick = vi.fn();
 const mockGenericEnterKey = vi.fn();
@@ -41,12 +41,12 @@ describe('ListItem', () => {
 
   it('renders the item correctly', () => {
     renderListItem();
-    expect(screen.getByText('item1')).toBeInTheDocument();
+    expect(screen.getByText('1')).toBeInTheDocument();
   });
 
   it('calls onDoubleClick when double-clicked', () => {
     renderListItem();
-    const listItem = screen.getByText('item1').closest('div');
+    const listItem = screen.getByText('1').closest('div');
     fireEvent.doubleClick(listItem!);
     expect(mockOnDoubleClick).toHaveBeenCalledTimes(1);
   });
@@ -60,7 +60,7 @@ describe('ListItem', () => {
 
   it('calls mockOnClickContextMenu on right-click', () => {
     renderListItem({ isOpen: true, selected: true });
-    const listItem = screen.getByText('item1').closest('div');
+    const listItem = screen.getByText('1').closest('div');
     fireEvent.contextMenu(listItem!);
 
     expect(mockOnClickContextMenu).toHaveBeenCalled();
@@ -70,5 +70,40 @@ describe('ListItem', () => {
     renderListItem({ isOpen: true });
     mockOnClose();
     expect(mockOnClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle contextMenuDotsButton', () => {
+    const mockOnThreeDotsButtonPressed = vi.fn();
+    const { getByRole } = renderListItem({ isOpen: true, onThreeDotsButtonPressed: mockOnThreeDotsButtonPressed });
+    const dotsButton = getByRole('button');
+    fireEvent.click(dotsButton);
+    expect(mockOnThreeDotsButtonPressed).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call genericEnterKey when isOpen is false', () => {
+    const genericEnterKeyMock = vi.fn();
+    const { container } = renderListItem({ isOpen: false, genericEnterKey: genericEnterKeyMock });
+
+    fireEvent.keyDown(container, { key: 'Enter', code: 'Enter' });
+
+    expect(genericEnterKeyMock).toHaveBeenCalled();
+  });
+
+  it('should not call genericEnterKey when isOpen is true', () => {
+    const genericEnterKeyMock = vi.fn();
+    const { container } = renderListItem({ isOpen: true, genericEnterKey: genericEnterKeyMock });
+
+    fireEvent.keyDown(container, { key: 'Enter', code: 'Enter' });
+
+    expect(genericEnterKeyMock).not.toHaveBeenCalled();
+  });
+
+  it('should call onClose when handleMenuClose is called', () => {
+    const onCloseMock = vi.fn();
+    const { container } = renderListItem({ isOpen: true, onClose: onCloseMock });
+
+    fireEvent.keyDown(container, { key: 'r', code: 'r' });
+
+    expect(onCloseMock).toHaveBeenCalled();
   });
 });

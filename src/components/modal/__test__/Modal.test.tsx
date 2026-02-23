@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, afterEach, expect, vi } from 'vitest';
-import Modal from '../Modal';
+import { Modal } from '../';
 import { afterAll, beforeAll } from 'vitest';
 
 describe('Modal Component', () => {
@@ -32,6 +32,7 @@ describe('Modal Component', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    vi.restoreAllMocks();
   });
 
   afterAll(() => {
@@ -149,5 +150,97 @@ describe('Modal Component', () => {
     const modalContent = screen.getByTestId('ModalContent');
     expect(modalContent).toHaveClass('w-1/2');
     expect(modalContent).toHaveClass('max-w-xl');
+  });
+
+  it('should update transition classes after timeout when isOpen is true', async () => {
+    renderModal();
+
+    const modalContent = screen.getByTestId('ModalContent');
+    expect(modalContent).toHaveClass('opacity-0');
+    expect(modalContent).toHaveClass('scale-95');
+
+    await waitFor(() => {
+      expect(modalContent).toHaveClass('opacity-100');
+      expect(modalContent).toHaveClass('scale-100');
+    });
+  });
+
+  it('should reset transition classes when isOpen changes to false and closes the modal', async () => {
+    const { rerender } = renderModal();
+
+    const modalContent = screen.getByTestId('ModalContent');
+    await waitFor(() => {
+      expect(modalContent).toHaveClass('opacity-100');
+      expect(modalContent).toHaveClass('scale-100');
+    });
+
+    rerender(
+      <Modal isOpen={false} onClose={onCloseMock}>
+        <div>Modal Content</div>
+      </Modal>,
+    );
+
+    await waitFor(() => {
+      expect(modalContent).toHaveClass('opacity-0');
+      expect(modalContent).toHaveClass('scale-95');
+      expect(screen.queryByText('Modal Content')).not.toBeInTheDocument();
+    });
+  });
+
+  it('closeLastOpenModal should close only the last opened modal', () => {
+    const onClose1 = vi.fn();
+    const onClose2 = vi.fn();
+
+    render(
+      <>
+        <Modal isOpen={true} onClose={onClose1}>
+          <div data-testid="modal-1">Modal 1</div>
+        </Modal>
+        <Modal isOpen={true} onClose={onClose2}>
+          <div data-testid="modal-2">Modal 2</div>
+        </Modal>
+      </>,
+    );
+
+    fireEvent.mouseDown(document.body);
+
+    expect(onClose1).not.toHaveBeenCalled();
+    expect(onClose2).toHaveBeenCalled();
+  });
+
+  it('should stop propagation when stopMouseDownPropagation is true', () => {
+    const parentHandler = vi.fn();
+    const { container } = render(
+      <div onMouseDown={parentHandler}>
+        <Modal isOpen={true} onClose={onCloseMock} stopMouseDownPropagation={true}>
+          <div>Modal Content</div>
+        </Modal>
+      </div>,
+    );
+
+    const modalWrapper = container.querySelector('[role="dialog"]');
+    expect(modalWrapper).toBeInTheDocument();
+
+    fireEvent.mouseDown(modalWrapper!);
+
+    expect(parentHandler).not.toHaveBeenCalled();
+  });
+
+  it('should not stop propagation when stopMouseDownPropagation is false', () => {
+    const parentHandler = vi.fn();
+    const { container } = render(
+      <div onMouseDown={parentHandler}>
+        <Modal isOpen={true} onClose={onCloseMock} stopMouseDownPropagation={false}>
+          <div>Modal Content</div>
+        </Modal>
+      </div>,
+    );
+
+    const modalWrapper = container.querySelector('[role="dialog"]');
+    expect(modalWrapper).toBeInTheDocument();
+
+    fireEvent.mouseDown(modalWrapper!);
+
+    expect(parentHandler).toHaveBeenCalled();
   });
 });

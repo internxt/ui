@@ -6,13 +6,7 @@ This repository contains the library of Internxt components, named `@internxt/in
 
 ## Installation
 
-To install the library, you can use npm or yarn:
-
-```bash
-npm install @internxt/internxtui
-```
-
-or
+To install the library, use yarn:
 
 ```bash
 yarn add @internxt/internxtui

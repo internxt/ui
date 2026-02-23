@@ -3,23 +3,29 @@
 exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
 <div>
   <div
-    class="
+    aria-modal="true"
+    class="m-0"
+    role="dialog"
+  >
+    <div
+      class="
               fixed
+              min-h-full
               inset-0
-              z-50
+              z-[9999]
               bg-highlight/40
               transition-opacity
               duration-150
               ease-out
               opacity-0
-              pointer-events-none'}              
+              pointer-events-none           
             "
-  />
-  <div
-    class="
+    />
+    <div
+      class="
               fixed
               inset-0
-              z-50
+              z-[9999]
               flex
               min-h-full
               items-center
@@ -27,13 +33,13 @@ exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
               transition-opacity
               duration-150
               ease-out
+              overflow-y-auto
               opacity-0
               scale-95
-              pointer-events-none
             "
-  >
-    <section
-      class="
+    >
+      <section
+        class="
                 w-full
                 max-w-lg
                 p-5
@@ -47,30 +53,31 @@ exports[`Modal Component > should match snapshot when isOpen is true 1`] = `
                 ease-out
                 opacity-0
                 scale-95
-                pointer-events-none
               "
-      data-testid="ModalContent"
-    >
-      <div
-        class="text-center"
+        data-modal="true"
+        data-testid="ModalContent"
       >
-        <h2
-          class="text-lg font-semibold"
+        <div
+          class="text-center"
         >
-          Title
-        </h2>
-        <p
-          class="mt-2"
-        >
-          Modal Content
-        </p>
-        <button
-          class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Close
-        </button>
-      </div>
-    </section>
+          <h2
+            class="text-lg font-semibold"
+          >
+            Title
+          </h2>
+          <p
+            class="mt-2"
+          >
+            Modal Content
+          </p>
+          <button
+            class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Close
+          </button>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 `;

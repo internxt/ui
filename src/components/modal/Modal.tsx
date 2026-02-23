@@ -1,17 +1,6 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
-/**
- * Modal component for displaying content in an overlay dialog.
- * @param isOpen - Controls the visibility of the modal.
- * @param onClose - Callback function to close the modal.
- * @param children - Content to display inside the modal.
- * @param maxWidth - Maximum width of the modal.
- * @param width - Width of the modal.
- * @param className - Custom classes for the modal panel.
- * @param preventClosing - Prevents closing the modal when clicking outside.
- */
-
-interface ModalProps {
+export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
@@ -19,7 +8,52 @@ interface ModalProps {
   className?: string;
   width?: string;
   preventClosing?: boolean;
+  stopMouseDownPropagation?: boolean;
 }
+
+/**
+ * Modal component
+ *
+ * @param {ModalProps} props - Properties of the Modal component.
+ *
+ * @property {boolean} isOpen
+ * - Controls the visibility of the modal. If `true`, the modal is shown; if `false`, the modal is hidden.
+ *
+ * @property {() => void} onClose
+ * - Callback function that is called when the modal is closed.
+ * This function is triggered by clicking outside the modal or
+ * pressing the 'Escape' key (unless `preventClosing` is `true`).
+ *
+ * @property {ReactNode} children
+ * - The content to be displayed inside the modal.
+ *
+ * @property {string} [maxWidth]
+ * - Optional maximum width for the modal. Defaults to `'max-w-lg'` if not specified.
+ *
+ * @property {string} [className]
+ * - Optional custom class names to apply to the modal content wrapper.
+ *
+ * @property {string} [width]
+ * - Optional width for the modal. Defaults to `'w-full'` if not specified.
+ *
+ * @property {boolean} [preventClosing=false]
+ * - Optional flag to prevent the modal from closing when clicking outside or pressing the 'Escape' key.
+ *
+ * @property {boolean} [stopMouseDownPropagation=false]
+ * - Optional flag to stop event propagation on mousedown events.
+ *
+ * @returns {JSX.Element | null}
+ * - The rendered Modal component, or `null` if `isOpen` is `false`.
+ *
+ * The component uses a series of hooks and effects to manage modal transitions and handle click and key press events.
+ * It supports smooth opacity and scale transitions during opening and closing,
+ * and prevents interaction with the modal's background during the transitions.
+ *
+ * The `preventClosing` prop ensures the modal stays open when interacting outside of the modal or pressing 'Escape'.
+ *
+ * The modal is displayed with a fixed position in the center of the screen, with a backdrop overlay.
+ * The content of the modal is rendered inside a flex container with transition effects to animate its appearance.
+ */
 
 const Modal = ({
   isOpen,
@@ -29,11 +63,26 @@ const Modal = ({
   className,
   width,
   preventClosing = false,
+  stopMouseDownPropagation = false,
 }: ModalProps): JSX.Element | null => {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [showContent, setShowContent] = useState(isOpen);
   const [transitionOpacity, setTransitionOpacity] = useState<string>('opacity-0');
   const [transitionScale, setTransitionScale] = useState<string>('scale-95');
+
+  const closeLastOpenModal = () => {
+    const openModals = document.querySelectorAll('[data-modal]');
+    const lastModal = openModals[openModals.length - 1];
+    if (modalRef.current === lastModal) {
+      onClose();
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (stopMouseDownPropagation) {
+      e.stopPropagation();
+    }
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -56,7 +105,8 @@ const Modal = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node) && !preventClosing) {
-        onClose();
+        event.preventDefault();
+        closeLastOpenModal();
       }
     };
 
@@ -72,7 +122,8 @@ const Modal = ({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && !preventClosing) {
-        onClose();
+        event.preventDefault();
+        closeLastOpenModal();
       }
     };
 
@@ -88,25 +139,26 @@ const Modal = ({
   return (
     <>
       {showContent && (
-        <>
+        <div className="m-0" onMouseDown={handleMouseDown} role="dialog" aria-modal="true">
           <div
             className={`
               fixed
+              min-h-full
               inset-0
-              z-50
+              z-[9999]
               bg-highlight/40
               transition-opacity
               duration-150
               ease-out
               ${transitionOpacity}
-              pointer-events-none'}              
+              pointer-events-none           
             `}
           />
           <div
             className={`
               fixed
               inset-0
-              z-50
+              z-[9999]
               flex
               min-h-full
               items-center
@@ -114,14 +166,15 @@ const Modal = ({
               transition-opacity
               duration-150
               ease-out
+              overflow-y-auto
               ${transitionOpacity}
               ${transitionScale}
-              pointer-events-none
             `}
           >
             <section
               data-testid={'ModalContent'}
               ref={modalRef}
+              data-modal
               className={`
                 ${width ?? 'w-full'}
                 ${maxWidth ?? 'max-w-lg'}
@@ -136,13 +189,12 @@ const Modal = ({
                 ease-out
                 ${transitionOpacity}
                 ${transitionScale}
-                pointer-events-none
               `}
             >
               {children}
             </section>
           </div>
-        </>
+        </div>
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import BaseDialog from '../BaseDialog';
+import { BaseDialog } from '../';
 
 describe('BaseDialog', () => {
   const onCloseMock = vi.fn();

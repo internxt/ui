@@ -3,8 +3,8 @@ import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import ListItem from './ListItem';
 import ListHeader, { HeaderProps } from './ListHeader';
 import useHotkeys from '../../hooks/useHotKeys';
-import SkeletonLoader from '../skeletonLoader/SkeletonLoader';
-import InfiniteScroll from '../infiniteScroll/InfiniteScroll';
+import { SkeletonLoader } from '../skeletonLoader';
+import { InfiniteScroll } from '../infiniteScroll';
 import { MenuItemsType } from '../menu/Menu';
 
 export interface ListProps<T, F> {
@@ -33,6 +33,7 @@ export interface ListProps<T, F> {
   disableItemCompositionStyles?: boolean;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  headerBackgroundColor?: string;
   keyBoardShortcutActions?: {
     onShiftFKeysPressed?: () => void;
     onRKeyPressed?: () => void;
@@ -41,25 +42,95 @@ export interface ListProps<T, F> {
 }
 
 /**
+ * List component
  *
- * Generic arguments:
- * -T: Identifiable entity
- * -F: Orderable fields of the entity T for better typing in callbacks related to ordering
+ * @property {HeaderProps<T, F>[]} header
+ * - Array of headers for the list. Each header defines the properties of the columns displayed.
  *
- * "header" contains header items which can or cannot be orderable
- * "items" is an array of instances of T entity and the source of truth of what is printable on the list component
- * "itemComposition" given an item of type T, return how its printed on the list component
- * "onDoubleClick" triggered when an item is double clicked
- * "onSelectedItemsChanged" triggered when the set of selected items changes
- * "onNextPage" is triggered when the user gets to the end of the current printed items
- * "onOrderByChanged" is triggered when the user changes the way the list is ordered
- * "orderBy" is passed by a component higher in the herarchy
- * which contains the state of what order is currently followed
- * "hasMoreItems" is passed by the component that is the source of truth for the fetching of items
- * "menu" contains the valid of options for an item of type T
+ * @property {string} [checkboxDataCy]
+ * - Optional `data-cy` attribute used for testing checkboxes in the list.
  *
- * This component has no state in it. The state must be kept by an smarter component (higher in the herarchy)
+ * @property {T[]} items
+ * - Array of items to be displayed in the list. Each item corresponds to the data for each row.
+ *
+ * @property {(props: T) => JSX.Element}[] itemComposition
+ * - Array of functions that return JSX elements for rendering each item in the list.
+ *
+ * @property {T[]} selectedItems
+ * - Array of selected items.
+ *
+ * @property {(props: T) => void} [onClick]
+ * - Optional callback triggered when an item is clicked.
+ *
+ * @property {(props: T) => void} [onDoubleClick]
+ * - Optional callback triggered when an item is double-clicked.
+ *
+ * @property {(props: T) => void} [onEnterPressed]
+ * - Optional callback triggered when the Enter key is pressed on an item.
+ *
+ * @property {(changes: { props: T; value: boolean }[]) => void} onSelectedItemsChanged
+ * - Callback triggered when the selection state of the items changes.
+ *
+ * @property {boolean} [isLoading]
+ * - Optional flag indicating if the list is loading. If true, a loading state will be shown.
+ *
+ * @property {boolean} [forceLoading]
+ * - Optional flag to force the loading state, even if no items are loading.
+ *
+ * @property {JSX.Element[]} [skinSkeleton]
+ * - Optional array of skeleton elements to be displayed while the list is loading.
+ *
+ * @property {ReactNode} [emptyState]
+ * - Optional content to display when there are no items in the list and no loading state.
+ *
+ * @property {() => void} [onNextPage]
+ * - Optional callback triggered when the user scrolls to load the next page of items.
+ *
+ * @property {({ field: F; direction: 'ASC' | 'DESC' }) => void} [onOrderByChanged]
+ * - Optional callback triggered when the user changes the sorting order of the list.
+ *
+ * @property {{ field: F; direction: 'ASC' | 'DESC' }} [orderBy]
+ * - Optional object specifying the current sorting state of the list.
+ *
+ * @property {boolean} [hasMoreItems]
+ * - Optional flag indicating if there are more items to load.
+ *
+ * @property {MenuItemsType<T>} [menu]
+ * - Optional menu items to be displayed for each item in the list.
+ *
+ * @property {boolean} [displayMenuDiv]
+ * - Optional flag to control whether the menu is displayed as a separate div.
+ *
+ * @property {string} [className]
+ * - Optional CSS class name to apply additional styles to the list container.
+ *
+ * @property {Array<'selectAll' | 'unselectAll' | 'multiselect' | Array<'delete' & (() => void)>>} [keyboardShortcuts]
+ * - Optional array of keyboard shortcut actions to be handled.
+ *
+ * @property {boolean} [disableKeyboardShortcuts]
+ * - Optional flag to disable keyboard shortcuts for the list.
+ *
+ * @property {boolean} [disableItemCompositionStyles]
+ * - Optional flag to disable custom styles for item composition.
+ *
+ * @property {() => void} [onMouseEnter]
+ * - Optional callback triggered when the mouse enters the list.
+ *
+ * @property {() => void} [onMouseLeave]
+ * - Optional callback triggered when the mouse leaves the list.
+ *
+ * @property {string} [headerBackgroundColor]
+ * - Optional background color for the header.
+ *
+ * @property {
+ *              { onShiftFKeysPressed?: () => void; onRKeyPressed?: () => void; onBackspaceKeyPressed?: () => void }
+ *           } [keyBoardShortcutActions]
+ * - Optional object with custom actions for specific keyboard shortcuts like Shift+F, R, and Backspace.
+ *
+ * @returns {JSX.Element}
+ * - The rendered list component.
  */
+
 const List = <T extends { id: number }, F extends keyof T>({
   header,
   checkboxDataCy,
@@ -84,6 +155,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   disableItemCompositionStyles,
   onMouseEnter,
   onMouseLeave,
+  headerBackgroundColor = 'bg-surface',
   keyBoardShortcutActions,
   disableKeyboardShortcuts,
 }: ListProps<T, F>): JSX.Element => {
@@ -158,6 +230,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   };
 
   const onOrderableColumnClicked = (field: HeaderProps<T, F>) => {
+    onCloseContextMenu();
     if (!field.orderable || !onOrderByChanged) return;
 
     const columnWasAlreadySelected = orderBy?.field === field.name;
@@ -225,33 +298,35 @@ const List = <T extends { id: number }, F extends keyof T>({
   return (
     <div
       id="generic-list-component"
-      className={`relative flex h-full flex-col overflow-x-hidden overflow-y-hidden ${className}`}
+      className={`relative isolate flex h-full flex-col overflow-x-auto overflow-y-hidden ${className}`}
       ref={containerRef}
     >
-      {!isEmptyState ? (
-        <ListHeader
-          selectedItems={selectedItems}
-          onTopSelectionCheckboxClick={onTopSelectionCheckboxClick}
-          items={items}
-          header={header}
-          orderBy={orderBy}
-          onOrderableColumnClicked={onOrderableColumnClicked}
-          menu={menu}
-          displayMenuDiv={displayMenuDiv}
-          isVerticalScrollbarVisible={isVerticalScrollbarVisible}
-          checkboxDataCy={checkboxDataCy}
-        />
-      ) : null}
-
       {/* BODY */}
-      <div id="scrollableList" className="flex h-full flex-col overflow-x-auto overflow-y-auto">
+      <div id="scrollableList" className="flex h-full flex-col min-w-max overflow-x-hidden overflow-y-auto">
+        <div className={`sticky top-0 z-50 ${headerBackgroundColor}`}>
+          {!isEmptyState ? (
+            <ListHeader
+              selectedItems={selectedItems}
+              onTopSelectionCheckboxClick={onTopSelectionCheckboxClick}
+              items={items}
+              header={header}
+              orderBy={orderBy}
+              onOrderableColumnClicked={onOrderableColumnClicked}
+              menu={menu}
+              displayMenuDiv={displayMenuDiv}
+              isVerticalScrollbarVisible={isVerticalScrollbarVisible}
+              checkboxDataCy={checkboxDataCy}
+              onClose={onCloseContextMenu}
+            />
+          ) : null}
+        </div>
         {isEmptyState ? (
           emptyState
         ) : items.length > 0 && !forceLoading ? (
           <InfiniteScroll
             handleNextPage={handleNextPage}
             hasMoreItems={!!hasMoreItems}
-            loader={<></>}
+            loader={loader}
             scrollableTarget="scrollableList"
           >
             {items.map((item, index) => (
@@ -278,12 +353,13 @@ const List = <T extends { id: number }, F extends keyof T>({
             ))}
           </InfiniteScroll>
         ) : (
-          <>{loader}</>
+          <div>{loader}</div>
         )}
 
         {/* Click outside of the list to unselect all items */}
         {items.length > 0 && (
           <div
+            data-testid="outside-click-element"
             className="h-full w-full py-6"
             onClick={unselectAllItems}
             onContextMenu={(e) => {

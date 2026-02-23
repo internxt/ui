@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
-import Breadcrumbs, { BreadcrumbsProps } from '../../../components/breadcrumbs/Breadcrumbs';
-import { BreadcrumbItemData, BreadcrumbsMenuProps } from '../../../components/breadcrumbs/BreadcrumbsItem';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import { Breadcrumbs, BreadcrumbsProps } from '@/components/breadcrumbs';
+import { BreadcrumbItemData, BreadcrumbsMenuProps } from '@/components/breadcrumbs/BreadcrumbsItem';
 import { Dispatch } from 'redux';
-import { DndProvider } from 'react-dnd';
+import { DndProvider, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import React, { useEffect, useRef, useState } from 'react';
 import { CaretDown } from '@phosphor-icons/react';
-import Menu from '../../../components/menu/Menu';
+import { Menu } from '@/components/menu';
 
 const breadcrumbItems: BreadcrumbItemData[] = [
   { uuid: '1', label: 'Home', icon: null, active: true },
@@ -63,6 +63,7 @@ const menuBreadcrumbs = (props: BreadcrumbsMenuProps): JSX.Element => {
           <Menu
             item={{ id: 1, name: 'Sample Item' }}
             handleMenuClose={handleClick}
+            isOpen={false}
             menu={[
               { name: 'Title', isTitle: () => true },
               { separator: true },
@@ -82,7 +83,7 @@ const menuBreadcrumbs = (props: BreadcrumbsMenuProps): JSX.Element => {
   );
 };
 
-const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch> = {
+const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch, unknown> = {
   items: breadcrumbItems,
   namePath: [
     { name: 'Home', uuid: '1' },
@@ -96,6 +97,7 @@ const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch> = {
   acceptedTypes: ['breadcrumb'],
   dispatch: {} as Dispatch,
   itemComponent: () => <ExampleIconBlue />,
+  useDrop: useDrop,
 };
 
 const meta: Meta<typeof Breadcrumbs> = {

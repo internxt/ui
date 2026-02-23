@@ -1,5 +1,5 @@
-import { useState, ReactNode } from 'react';
-import Menu, { MenuItemsType } from '../menu/Menu';
+import { useState, ReactNode, useEffect, useRef } from 'react';
+import { Menu, MenuItemType } from '../';
 
 export type DropdownProps<T> = {
   children: ReactNode | ((obj: { open: boolean }) => JSX.Element);
@@ -8,7 +8,7 @@ export type DropdownProps<T> = {
   menuItems?: ReactNode[];
   classMenuItems: string;
   openDirection: 'left' | 'right';
-  dropdownActionsContext?: MenuItemsType<T>;
+  dropdownActionsContext?: Array<MenuItemType<T>>;
   item?: T;
 };
 
@@ -35,7 +35,7 @@ export type DropdownProps<T> = {
  * @property {'left' | 'right'} openDirection
  * - The direction in which the dropdown menu opens. It can be 'left' or 'right'.
  *
- * @property {MenuItemsType<T>} [dropdownActionsContext]
+ * @property { Array<MenuItemType<T>>} [dropdownActionsContext]
  * - Additional actions that can be passed to the dropdown menu.
  * Used for extending the menu with more options or functionalities.
  *
@@ -43,6 +43,16 @@ export type DropdownProps<T> = {
  * - The current item that may be used within the options or actions of the menu,
  * allowing customization of the dropdown's logic.
  */
+
+const extractPaddingValues = (className: string) => {
+  const pxMatch = className.match(/px-(\d+(\.\d+)?)/);
+  const pyMatch = className.match(/py-(\d+(\.\d+)?)/);
+
+  const px = pxMatch ? pxMatch[1] : undefined;
+  const py = pyMatch ? pyMatch[1] : undefined;
+
+  return { px, py };
+};
 
 const Dropdown = <T,>({
   children,
@@ -52,33 +62,52 @@ const Dropdown = <T,>({
   classMenuItems,
   openDirection,
   dropdownActionsContext,
-  item,
+  item = {} as T,
 }: DropdownProps<T>): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const direction = openDirection === 'left' ? 'origin-top-left' : 'origin-top-right';
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const group1: MenuItemsType<T> = options
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('contextmenu', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('contextmenu', handleClickOutside);
+    };
+  }, []);
+
+  const group1: Array<MenuItemType<T>> = options
     ? options.map((option) => ({
         name: option.text,
         action: () => option.onClick(),
       }))
     : [];
 
-  const group2: MenuItemsType<T> = menuItems
+  const group2: Array<MenuItemType<T>> = menuItems
     ? menuItems.map((menuItem) => ({
         node: menuItem,
       }))
     : [];
 
-  const group3: MenuItemsType<T> = dropdownActionsContext || [];
+  const group3: Array<MenuItemType<T>> = dropdownActionsContext || [];
 
   const allItems = [...group1, ...group2, ...group3];
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
+  const { px, py } = extractPaddingValues(classMenuItems);
+
   return (
-    <div className="relative outline-none">
+    <div className="relative outline-none min-w-breadcrumb" ref={containerRef}>
       <button
         className={`cursor-pointer outline-none ${classButton}`}
         onClick={toggleMenu}
@@ -96,7 +125,7 @@ const Dropdown = <T,>({
         data-testid="menu-dropdown"
       >
         <div className={`absolute ${classMenuItems}`}>
-          <Menu item={item} handleMenuClose={closeMenu} menu={allItems} />
+          <Menu item={item} isOpen={isOpen} handleMenuClose={closeMenu} menu={allItems} paddingX={px} paddingY={py} />
         </div>
       </div>
     </div>

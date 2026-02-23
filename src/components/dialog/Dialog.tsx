@@ -1,8 +1,62 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Button } from '../button/Button';
+import { Button } from '../';
 
-export default function Dialog({
+export interface DialogProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onPrimaryAction: () => void;
+  onSecondaryAction: () => void;
+  title: string;
+  subtitle: string;
+  primaryAction: string | JSX.Element;
+  secondaryAction: string | JSX.Element;
+  primaryActionColor: 'primary' | 'danger';
+  isLoading?: boolean;
+  maxWidth?: 'sm' | 'md' | 'lg';
+}
+
+/**
+ * Dialog component
+ *
+ * @property {boolean} isOpen
+ * - Controls whether the dialog is open or closed. If true, the dialog becomes visible.
+ *
+ * @property {() => void} onClose
+ * - Callback function triggered when the overlay or the close button is clicked. Used to close the dialog.
+ *
+ * @property {() => void} onPrimaryAction
+ * - Callback function triggered when the primary action button is clicked.
+ *
+ * @property {() => void} onSecondaryAction
+ * - Callback function triggered when the secondary action button is clicked.
+ *
+ * @property {string} title
+ * - The title of the dialog, displayed at the top of the dialog box.
+ *
+ * @property {string} subtitle
+ * - A subtitle for the dialog, displayed below the title.
+ *
+ * @property {string | JSX.Element} primaryAction
+ * - The label or content for the primary action button.
+ *
+ * @property {string} secondaryAction
+ * - The label or content for the secondary action button.
+ *
+ * @property {('primary' | 'danger')} primaryActionColor
+ * - Defines the color of the primary action button. Can either be 'primary' or 'danger'.
+ *
+ * @property {boolean} [isLoading]
+ * - Optional flag to indicate if the buttons should show a loading state. Defaults to false.
+ *
+ * @property {'sm' | 'md' | 'lg'} [maxWidth]
+ * - Optional maximum width for the dialog. Can be 'sm', 'md', or 'lg'.
+ *
+ * @returns {JSX.Element}
+ * - The rendered dialog component.
+ */
+
+const Dialog = ({
   isOpen,
   onClose,
   onPrimaryAction,
@@ -13,18 +67,8 @@ export default function Dialog({
   secondaryAction,
   primaryActionColor,
   isLoading,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  onPrimaryAction: () => void;
-  onSecondaryAction: () => void;
-  title: string;
-  subtitle: string;
-  primaryAction: string;
-  secondaryAction: string;
-  primaryActionColor: 'primary' | 'danger';
-  isLoading?: boolean;
-}): JSX.Element {
+  maxWidth = 'sm',
+}: DialogProps): JSX.Element => {
   const [isVisible, setIsVisible] = useState(isOpen);
   const [transitionOpacity, setTransitionOpacity] = useState<string>('opacity-0');
   const [transitionScale, setTransitionScale] = useState<string>('scale-95');
@@ -68,29 +112,19 @@ export default function Dialog({
       {isVisible && (
         <div className={`fixed inset-0 z-50 ${isOpen ? '' : 'pointer-events-none'}`}>
           <div
-            className={`absolute inset-0 bg-gray-100/50 transition-opacity
-             duration-150 dark:bg-black/75
-              ${transitionOpacity}
-            `}
+            className={
+              `absolute inset-0 bg-gray-100/50 transition-opacity duration-150 ` +
+              `dark:bg-black/75 ${transitionOpacity}`
+            }
             onClick={onClose}
             data-testid="dialog-overlay"
           ></div>
 
           <div
-            className={`absolute
-              left-1/2
-              top-1/2
-              w-full
-              max-w-sm
-              -translate-x-1/2
-              -translate-y-1/2
-              transform rounded-2xl
-              bg-surface p-5
-              transition-all
-              duration-150
-              dark:bg-gray-1
-              ${transitionScale} 
-              ${transitionOpacity}`}
+            className={
+              `absolute left-1/2 top-1/2 w-full max-w-${maxWidth} -translate-x-1/2 -translate-y-1/2 transform ` +
+              `rounded-2xl bg-surface p-5 transition-all duration-150 dark:bg-gray-1 ${transitionScale} ${transitionOpacity}`
+            }
           >
             <div className="flex flex-col space-y-2">
               <p className="text-2xl font-medium text-gray-100">{title}</p>
@@ -114,4 +148,6 @@ export default function Dialog({
       )}
     </>
   );
-}
+};
+
+export default Dialog;

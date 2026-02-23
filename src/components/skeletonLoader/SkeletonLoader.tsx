@@ -1,9 +1,9 @@
-interface SkeletonLoaderItemProps {
+export interface SkeletonLoaderItemProps {
   skeletonItem: Array<React.ReactElement> | undefined;
   columns: Array<string>;
 }
 
-interface SkeletonLoaderProps {
+export interface SkeletonLoaderProps {
   skeleton: Array<SkeletonLoaderItemProps>;
 }
 
@@ -11,8 +11,9 @@ export const SkeletonLoaderItem = ({ skeletonItem, columns }: SkeletonLoaderItem
   return (
     <div
       data-testid="skeleton-loader-item"
-      className={'group relative flex h-14 animate-pulse flex-row items-center pl-14 pr-5'}
+      className={'group relative flex h-14 animate-pulse flex-row items-center px-5'}
     >
+      <div className="w-9 shrink-0" />
       {new Array(columns.length).fill(0).map((col, i) => (
         <div
           key={`${col}-${i}`}
@@ -21,6 +22,7 @@ export const SkeletonLoaderItem = ({ skeletonItem, columns }: SkeletonLoaderItem
           {skeletonItem?.[i]}
         </div>
       ))}
+      <div className="flex h-14 w-12 shrink-0 flex-col items-center justify-center border-b border-gray-5" />
     </div>
   );
 };
@@ -29,7 +31,7 @@ export const SkeletonLoaderItem = ({ skeletonItem, columns }: SkeletonLoaderItem
  * SkeletonLoader component to display loading placeholders in list layouts.
  *
  * @param skeleton - Array of skeleton items, {skeletonItem, columns}
- *                 - The params of each sekeletonItem:
+ *                 - The params of each skeletonItem:
  *                            - skeletonItem: - Array of elements representing the loading placeholders.
  *                            - columns: - An array of CSS class names for each column, defining their layout and style.
  *

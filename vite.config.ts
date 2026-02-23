@@ -6,6 +6,7 @@ import svgr from 'vite-plugin-svgr';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import { configDefaults } from 'vitest/config';
 import { peerDependencies } from './package.json';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   test: {
@@ -39,5 +40,5 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [dts(), svgr(), cssInjectedByJsPlugin()],
+  plugins: [dts(), svgr(), cssInjectedByJsPlugin(), tsconfigPaths()],
 });

@@ -1,7 +1,7 @@
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { Button } from '../Button';
+import { Button } from '../';
 
 describe('Button component', () => {
   it('Button onClick should be called correctly', () => {
@@ -10,6 +10,14 @@ describe('Button component', () => {
     const button = screen.getByRole('button');
     button.click();
     expect(buttonClick).toHaveBeenCalledOnce();
+  });
+
+  it('Button onKeyDown should be called correctly', () => {
+    const keydown = vi.fn();
+    render(<Button variant="primary" onKeyDown={keydown} />);
+    const button = screen.getByRole('button');
+    fireEvent.keyDown(button, { key: 'Enter', code: 'Enter' });
+    expect(keydown).toHaveBeenCalledOnce();
   });
 
   it('Primary button should render correctly', () => {
@@ -64,6 +72,26 @@ describe('Button component', () => {
 
   it('Primary submit button should render correctly', () => {
     const button = render(<Button variant="primary" type="submit" />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary button should render correctly', () => {
+    const button = render(<Button variant="tertiary">Tertiary</Button>);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary disabled button should render correctly', () => {
+    const button = render(<Button variant="tertiary" disabled />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary loading button should render correctly', () => {
+    const button = render(<Button variant="tertiary" loading />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Tertiary medium button should render correctly', () => {
+    const button = render(<Button variant="tertiary" size="medium" />);
     expect(button).toMatchSnapshot();
   });
 });

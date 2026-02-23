@@ -1,7 +1,7 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
-import Modal from '../../../components/modal/Modal';
-import { Button } from '../../../components';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
+import { Modal } from '@/components/modal';
+import { Button } from '@/components/button';
 
 const onCloseDecorator: Decorator = (Story, context) => {
   const [{ isOpen }, setArgs] = useArgs();
@@ -58,7 +58,7 @@ export const ModalExample: Story = {
       },
     },
   },
-  render: (args) => (
+  render: (args: any) => (
     <Modal {...args}>
       <div className="text-center">
         <h2 className="text-lg font-semibold">Title</h2>

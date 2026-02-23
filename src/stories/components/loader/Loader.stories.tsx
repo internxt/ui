@@ -1,5 +1,5 @@
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import Loader from '../../../components/loader/Loader';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
+import { Loader } from '@/components/loader';
 
 const overlay: Decorator = (Story) => (
   <div style={{ minHeight: '300px', minWidth: '600px' }}>

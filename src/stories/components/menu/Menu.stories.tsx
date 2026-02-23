@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Meta, StoryObj, Decorator } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
-import Menu, { MenuProps } from '../../../components/menu/Menu';
+import type { Meta, StoryObj, Decorator } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
+import { Menu, MenuProps } from '@/components/menu';
 
 const withCloseHandler: Decorator = (Story, context) => {
   const [, setArgs] = useArgs();
@@ -10,7 +10,7 @@ const withCloseHandler: Decorator = (Story, context) => {
     ...context,
     args: {
       ...context.allArgs,
-      handleMenuClose: () => setArgs({ ...context.args, isOpen: false }),
+      handleMenuClose: () => setArgs({ ...context.args, isOpen: true }),
     },
   });
 };
@@ -59,6 +59,7 @@ const ExampleIconGreen = React.forwardRef<SVGSVGElement, { size?: number | strin
 export const Default: Story = {
   args: {
     item: { id: 1, name: 'Sample Item' },
+    isOpen: true,
     menu: [
       { name: 'Title', isTitle: () => true },
       { separator: true },
@@ -76,6 +77,7 @@ export const Default: Story = {
 export const WithIcons: Story = {
   args: {
     item: { id: 1, name: 'Sample Item' },
+    isOpen: true,
     menu: [
       { name: 'Title', isTitle: () => true },
       { separator: true },

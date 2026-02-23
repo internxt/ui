@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set Git user identity
         run: |
@@ -21,16 +21,9 @@ jobs:
           git config --global user.name "GitHub Actions"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
-
-      - name: Configure npm for GitHub Packages
-        run: |
-          echo "registry=https://registry.yarnpkg.com/" > .npmrc
-          echo "@internxt:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> .npmrc
-          echo "always-auth=true" >> .npmrc
+          node-version: '22.x'
 
       - name: Install dependencies
         run: yarn install

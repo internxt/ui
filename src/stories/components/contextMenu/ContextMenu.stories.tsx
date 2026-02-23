@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
-import type { Decorator, Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
-import ContextMenu from '../../../components/contextMenu/ContextMenu';
-import { Button } from '../../../components';
-import { MenuItemsType } from '../../../components/menu/Menu';
+import type { Decorator, Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
+import { ContextMenu } from '@/components/contextMenu';
+import { MenuItemType } from '@/components/menu';
+import { Button } from '@/components/button';
 
 const Notification = ({ message, onClose }: { message: string; onClose: () => void }) => (
   <div
@@ -23,7 +23,7 @@ const ContextMenuWithNotifications = () => {
 
   const handleNotificationClose = () => setNotification(null);
 
-  const sampleMenu: MenuItemsType<unknown> = [
+  const sampleMenu: Array<MenuItemType<unknown>> = [
     { name: 'Title', action: () => {}, isTitle: () => true },
     { name: 'Option 1', action: (item) => setNotification(`Selected Option 1 for ${item}`) },
     { name: 'Option 2', action: (item) => setNotification(`Selected Option 2 for ${item}`), disabled: () => true },
@@ -62,6 +62,7 @@ const ContextMenuWithNotifications = () => {
           isContextMenuCutOff={false}
           genericEnterKey={() => {}}
           handleMenuClose={() => {}}
+          isOpen={true}
         />
       </div>
     </div>

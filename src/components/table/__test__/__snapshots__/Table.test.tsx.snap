@@ -1,0 +1,136 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Table Component Snapshots > renders a cell with custom props 1`] = `
+<div>
+  <div>
+    <table
+      class="w-full"
+    >
+      <tbody>
+        <tr>
+          <td
+            class="custom-class"
+            data-testid="test-cell"
+          >
+            Custom Cell
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table Component Snapshots > renders a header cell with isHeader set to true 1`] = `
+<div>
+  <div>
+    <table
+      class="w-full"
+    >
+      <thead>
+        <tr>
+          <th>
+            Header Cell
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table Component Snapshots > renders a row with an onClick handler 1`] = `
+<div>
+  <div>
+    <table
+      class="w-full"
+    >
+      <tbody>
+        <tr>
+          <td>
+            Clickable Row Cell
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table Component Snapshots > renders a table with minimal structure 1`] = `
+<div>
+  <div>
+    <table
+      class="w-full"
+    >
+      <thead>
+        <tr>
+          <th>
+            Header
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Cell
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table Component Snapshots > renders the complete table structure 1`] = `
+<div>
+  <div
+    class="custom-table-class"
+  >
+    <table
+      class="w-full"
+    >
+      <thead
+        class="custom-header-class"
+      >
+        <tr
+          class="custom-row-class"
+        >
+          <th
+            class="custom-cell-class"
+          >
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="custom-body-class"
+      >
+        <tr>
+          <td>
+            Cell 1
+          </td>
+          <td>
+            Cell 2
+          </td>
+        </tr>
+        <tr
+          class="another-row-class"
+        >
+          <td
+            class="another-cell-class"
+          >
+            Cell 3
+          </td>
+          <td>
+            Cell 4
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
