@@ -42,7 +42,7 @@ const TextArea = ({
   value = '',
   onChange,
   className,
-  name,,
+  name,
 }: TextAreaComponentProps): JSX.Element => {
   return (
     <textarea
