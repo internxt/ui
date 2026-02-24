@@ -19,7 +19,7 @@ import { useCallback, useState, useRef, useEffect, useReducer } from 'react';
 import { ToolbarButton } from './ToolbarButton';
 import { ToolbarGroup, ToolbarItem } from './ToolbarGroup';
 
-interface ActionBarProps {
+export interface ActionBarProps {
   editor: Editor | null;
   disabled?: boolean;
 }

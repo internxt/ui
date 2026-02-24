@@ -1,4 +1,4 @@
-interface ToolbarButtonProps {
+export interface ToolbarButtonProps {
   onClick: () => void;
   isActive?: boolean;
   disabled?: boolean;

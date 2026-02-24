@@ -8,7 +8,7 @@ export interface ToolbarItem {
   isActive?: boolean;
 }
 
-interface ToolbarGroupProps {
+export interface ToolbarGroupProps {
   items: ToolbarItem[];
   disabled?: boolean;
 }

@@ -10,7 +10,7 @@ import { Button } from '@/components/button';
 import { DefaultAttachmentItem } from './components/DefaultAttachmentItem';
 import { Attachment, Recipient } from './types';
 
-interface ComposeMessageDialogProps {
+export interface ComposeMessageDialogProps {
   isOpen: boolean;
   title: string;
   mailValue: string;

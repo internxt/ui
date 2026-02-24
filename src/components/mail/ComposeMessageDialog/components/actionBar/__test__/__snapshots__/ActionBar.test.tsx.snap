@@ -1,0 +1,2038 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ActionBar component > ActionBar default state should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex w-full flex-row flex-wrap items-center gap-1.5 rounded-lg border border-gray-10 bg-gray-1 p-1"
+      >
+        <div
+          class="relative"
+        >
+          <button
+            class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+            type="button"
+          >
+            <span
+              class="w-16 truncate text-left"
+            >
+              Arial
+            </span>
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="relative"
+        >
+          <button
+            class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+            type="button"
+          >
+            <span
+              class="w-6 text-center"
+            >
+              14
+            </span>
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="relative"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M234.53,139.07a8,8,0,0,0,3.13-13.24L122.17,10.34a8,8,0,0,0-11.31,0L70.25,51,45.65,26.34A8,8,0,0,0,34.34,37.66l24.6,24.6L15,106.17a24,24,0,0,0,0,33.94L99.89,225a24,24,0,0,0,33.94,0l78.49-78.49Zm-32.19-5.24-79.83,79.83a8,8,0,0,1-11.31,0L26.34,128.8a8,8,0,0,1,0-11.31L70.25,73.57l29.12,29.12a28,28,0,1,0,11.31-11.32L81.57,62.26l35-34.95L217.19,128l-11.72,3.9A8.09,8.09,0,0,0,202.34,133.83Zm-86.83-26.31,0,0a13.26,13.26,0,1,1-.05.06S115.51,107.53,115.51,107.52Zm123.15,56a8,8,0,0,0-13.32,0C223.57,166.23,208,190.09,208,208a24,24,0,0,0,48,0C256,190.09,240.43,166.23,238.66,163.56ZM232,216a8,8,0,0,1-8-8c0-6.8,4-16.32,8-24.08,4,7.76,8,17.34,8,24.08A8,8,0,0,1,232,216Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M178.48,115.7A44,44,0,0,0,148,40H80a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM88,56h60a28,28,0,0,1,0,56H88Zm72,136H88V128h72a32,32,0,0,1,0,64Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200,56a8,8,0,0,1-8,8H157.77L115.1,192H144a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16H98.23L140.9,64H112a8,8,0,0,1,0-16h80A8,8,0,0,1,200,56Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200,224a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,224Zm-72-24a64.07,64.07,0,0,0,64-64V56a8,8,0,0,0-16,0v80a48,48,0,0,1-96,0V56a8,8,0,0,0-16,0v80A64.07,64.07,0,0,0,128,200Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H175.93c9.19,7.11,16.07,17.2,16.07,32,0,13.34-7,25.7-19.75,34.79C160.33,211.31,144.61,216,128,216s-32.33-4.69-44.25-13.21C71,193.7,64,181.34,64,168a8,8,0,0,1,16,0c0,17.35,22,32,48,32s48-14.65,48-32c0-14.85-10.54-23.58-38.77-32H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM76.33,104a8,8,0,0,0,7.61-10.49A17.3,17.3,0,0,1,83.11,88c0-18.24,19.3-32,44.89-32,18.84,0,34.16,7.42,41,19.85a8,8,0,0,0,14-7.7C173.33,50.52,152.77,40,128,40,93.29,40,67.11,60.63,67.11,88a33.73,33.73,0,0,0,1.62,10.49A8,8,0,0,0,76.33,104Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM104,72H216a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16ZM216,184H104a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM43.58,55.16,48,52.94V104a8,8,0,0,0,16,0V40a8,8,0,0,0-11.58-7.16l-16,8a8,8,0,0,0,7.16,14.32ZM79.77,156.72a23.73,23.73,0,0,0-9.6-15.95,24.86,24.86,0,0,0-34.11,4.7,23.63,23.63,0,0,0-3.57,6.46,8,8,0,1,0,15,5.47,7.84,7.84,0,0,1,1.18-2.13,8.76,8.76,0,0,1,12-1.59A7.91,7.91,0,0,1,63.93,159a7.64,7.64,0,0,1-1.57,5.78,1,1,0,0,0-.08.11L33.59,203.21A8,8,0,0,0,40,216H72a8,8,0,0,0,0-16H56l19.08-25.53A23.47,23.47,0,0,0,79.77,156.72Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM64,96a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm152,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-24,40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM216,96H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M225,80.4,183.6,39a24,24,0,0,0-33.94,0L31,157.66a24,24,0,0,0,0,33.94l30.06,30.06A8,8,0,0,0,66.74,224H216a8,8,0,0,0,0-16h-84.7L225,114.34A24,24,0,0,0,225,80.4ZM108.68,208H70.05L42.33,180.28a8,8,0,0,1,0-11.31L96,115.31,148.69,168Zm105-105L160,156.69,107.31,104,161,50.34a8,8,0,0,1,11.32,0l41.38,41.38a8,8,0,0,1,0,11.31Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex w-full flex-row flex-wrap items-center gap-1.5 rounded-lg border border-gray-10 bg-gray-1 p-1"
+    >
+      <div
+        class="relative"
+      >
+        <button
+          class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+          type="button"
+        >
+          <span
+            class="w-16 truncate text-left"
+          >
+            Arial
+          </span>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="relative"
+      >
+        <button
+          class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+          type="button"
+        >
+          <span
+            class="w-6 text-center"
+          >
+            14
+          </span>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="relative"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M234.53,139.07a8,8,0,0,0,3.13-13.24L122.17,10.34a8,8,0,0,0-11.31,0L70.25,51,45.65,26.34A8,8,0,0,0,34.34,37.66l24.6,24.6L15,106.17a24,24,0,0,0,0,33.94L99.89,225a24,24,0,0,0,33.94,0l78.49-78.49Zm-32.19-5.24-79.83,79.83a8,8,0,0,1-11.31,0L26.34,128.8a8,8,0,0,1,0-11.31L70.25,73.57l29.12,29.12a28,28,0,1,0,11.31-11.32L81.57,62.26l35-34.95L217.19,128l-11.72,3.9A8.09,8.09,0,0,0,202.34,133.83Zm-86.83-26.31,0,0a13.26,13.26,0,1,1-.05.06S115.51,107.53,115.51,107.52Zm123.15,56a8,8,0,0,0-13.32,0C223.57,166.23,208,190.09,208,208a24,24,0,0,0,48,0C256,190.09,240.43,166.23,238.66,163.56ZM232,216a8,8,0,0,1-8-8c0-6.8,4-16.32,8-24.08,4,7.76,8,17.34,8,24.08A8,8,0,0,1,232,216Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M178.48,115.7A44,44,0,0,0,148,40H80a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM88,56h60a28,28,0,0,1,0,56H88Zm72,136H88V128h72a32,32,0,0,1,0,64Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M200,56a8,8,0,0,1-8,8H157.77L115.1,192H144a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16H98.23L140.9,64H112a8,8,0,0,1,0-16h80A8,8,0,0,1,200,56Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M200,224a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,224Zm-72-24a64.07,64.07,0,0,0,64-64V56a8,8,0,0,0-16,0v80a48,48,0,0,1-96,0V56a8,8,0,0,0-16,0v80A64.07,64.07,0,0,0,128,200Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H175.93c9.19,7.11,16.07,17.2,16.07,32,0,13.34-7,25.7-19.75,34.79C160.33,211.31,144.61,216,128,216s-32.33-4.69-44.25-13.21C71,193.7,64,181.34,64,168a8,8,0,0,1,16,0c0,17.35,22,32,48,32s48-14.65,48-32c0-14.85-10.54-23.58-38.77-32H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM76.33,104a8,8,0,0,0,7.61-10.49A17.3,17.3,0,0,1,83.11,88c0-18.24,19.3-32,44.89-32,18.84,0,34.16,7.42,41,19.85a8,8,0,0,0,14-7.7C173.33,50.52,152.77,40,128,40,93.29,40,67.11,60.63,67.11,88a33.73,33.73,0,0,0,1.62,10.49A8,8,0,0,0,76.33,104Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM104,72H216a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16ZM216,184H104a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM43.58,55.16,48,52.94V104a8,8,0,0,0,16,0V40a8,8,0,0,0-11.58-7.16l-16,8a8,8,0,0,0,7.16,14.32ZM79.77,156.72a23.73,23.73,0,0,0-9.6-15.95,24.86,24.86,0,0,0-34.11,4.7,23.63,23.63,0,0,0-3.57,6.46,8,8,0,1,0,15,5.47,7.84,7.84,0,0,1,1.18-2.13,8.76,8.76,0,0,1,12-1.59A7.91,7.91,0,0,1,63.93,159a7.64,7.64,0,0,1-1.57,5.78,1,1,0,0,0-.08.11L33.59,203.21A8,8,0,0,0,40,216H72a8,8,0,0,0,0-16H56l19.08-25.53A23.47,23.47,0,0,0,79.77,156.72Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM64,96a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm152,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-24,40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM216,96H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M225,80.4,183.6,39a24,24,0,0,0-33.94,0L31,157.66a24,24,0,0,0,0,33.94l30.06,30.06A8,8,0,0,0,66.74,224H216a8,8,0,0,0,0-16h-84.7L225,114.34A24,24,0,0,0,225,80.4ZM108.68,208H70.05L42.33,180.28a8,8,0,0,1,0-11.31L96,115.31,148.69,168Zm105-105L160,156.69,107.31,104,161,50.34a8,8,0,0,1,11.32,0l41.38,41.38a8,8,0,0,1,0,11.31Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <button
+        class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ActionBar component > ActionBar disabled state should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex w-full flex-row flex-wrap items-center gap-1.5 rounded-lg border border-gray-10 bg-gray-1 p-1"
+      >
+        <div
+          class="relative"
+        >
+          <button
+            class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <span
+              class="w-16 truncate text-left"
+            >
+              Arial
+            </span>
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="relative"
+        >
+          <button
+            class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <span
+              class="w-6 text-center"
+            >
+              14
+            </span>
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="relative"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M234.53,139.07a8,8,0,0,0,3.13-13.24L122.17,10.34a8,8,0,0,0-11.31,0L70.25,51,45.65,26.34A8,8,0,0,0,34.34,37.66l24.6,24.6L15,106.17a24,24,0,0,0,0,33.94L99.89,225a24,24,0,0,0,33.94,0l78.49-78.49Zm-32.19-5.24-79.83,79.83a8,8,0,0,1-11.31,0L26.34,128.8a8,8,0,0,1,0-11.31L70.25,73.57l29.12,29.12a28,28,0,1,0,11.31-11.32L81.57,62.26l35-34.95L217.19,128l-11.72,3.9A8.09,8.09,0,0,0,202.34,133.83Zm-86.83-26.31,0,0a13.26,13.26,0,1,1-.05.06S115.51,107.53,115.51,107.52Zm123.15,56a8,8,0,0,0-13.32,0C223.57,166.23,208,190.09,208,208a24,24,0,0,0,48,0C256,190.09,240.43,166.23,238.66,163.56ZM232,216a8,8,0,0,1-8-8c0-6.8,4-16.32,8-24.08,4,7.76,8,17.34,8,24.08A8,8,0,0,1,232,216Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M178.48,115.7A44,44,0,0,0,148,40H80a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM88,56h60a28,28,0,0,1,0,56H88Zm72,136H88V128h72a32,32,0,0,1,0,64Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200,56a8,8,0,0,1-8,8H157.77L115.1,192H144a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16H98.23L140.9,64H112a8,8,0,0,1,0-16h80A8,8,0,0,1,200,56Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200,224a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,224Zm-72-24a64.07,64.07,0,0,0,64-64V56a8,8,0,0,0-16,0v80a48,48,0,0,1-96,0V56a8,8,0,0,0-16,0v80A64.07,64.07,0,0,0,128,200Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H175.93c9.19,7.11,16.07,17.2,16.07,32,0,13.34-7,25.7-19.75,34.79C160.33,211.31,144.61,216,128,216s-32.33-4.69-44.25-13.21C71,193.7,64,181.34,64,168a8,8,0,0,1,16,0c0,17.35,22,32,48,32s48-14.65,48-32c0-14.85-10.54-23.58-38.77-32H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM76.33,104a8,8,0,0,0,7.61-10.49A17.3,17.3,0,0,1,83.11,88c0-18.24,19.3-32,44.89-32,18.84,0,34.16,7.42,41,19.85a8,8,0,0,0,14-7.7C173.33,50.52,152.77,40,128,40,93.29,40,67.11,60.63,67.11,88a33.73,33.73,0,0,0,1.62,10.49A8,8,0,0,0,76.33,104Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM104,72H216a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16ZM216,184H104a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM43.58,55.16,48,52.94V104a8,8,0,0,0,16,0V40a8,8,0,0,0-11.58-7.16l-16,8a8,8,0,0,0,7.16,14.32ZM79.77,156.72a23.73,23.73,0,0,0-9.6-15.95,24.86,24.86,0,0,0-34.11,4.7,23.63,23.63,0,0,0-3.57,6.46,8,8,0,1,0,15,5.47,7.84,7.84,0,0,1,1.18-2.13,8.76,8.76,0,0,1,12-1.59A7.91,7.91,0,0,1,63.93,159a7.64,7.64,0,0,1-1.57,5.78,1,1,0,0,0-.08.11L33.59,203.21A8,8,0,0,0,40,216H72a8,8,0,0,0,0-16H56l19.08-25.53A23.47,23.47,0,0,0,79.77,156.72Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM64,96a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm152,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-24,40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM216,96H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+            disabled=""
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M225,80.4,183.6,39a24,24,0,0,0-33.94,0L31,157.66a24,24,0,0,0,0,33.94l30.06,30.06A8,8,0,0,0,66.74,224H216a8,8,0,0,0,0-16h-84.7L225,114.34A24,24,0,0,0,225,80.4ZM108.68,208H70.05L42.33,180.28a8,8,0,0,1,0-11.31L96,115.31,148.69,168Zm105-105L160,156.69,107.31,104,161,50.34a8,8,0,0,1,11.32,0l41.38,41.38a8,8,0,0,1,0,11.31Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex w-full flex-row flex-wrap items-center gap-1.5 rounded-lg border border-gray-10 bg-gray-1 p-1"
+    >
+      <div
+        class="relative"
+      >
+        <button
+          class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <span
+            class="w-16 truncate text-left"
+          >
+            Arial
+          </span>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="relative"
+      >
+        <button
+          class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <span
+            class="w-6 text-center"
+          >
+            14
+          </span>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="relative"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M234.53,139.07a8,8,0,0,0,3.13-13.24L122.17,10.34a8,8,0,0,0-11.31,0L70.25,51,45.65,26.34A8,8,0,0,0,34.34,37.66l24.6,24.6L15,106.17a24,24,0,0,0,0,33.94L99.89,225a24,24,0,0,0,33.94,0l78.49-78.49Zm-32.19-5.24-79.83,79.83a8,8,0,0,1-11.31,0L26.34,128.8a8,8,0,0,1,0-11.31L70.25,73.57l29.12,29.12a28,28,0,1,0,11.31-11.32L81.57,62.26l35-34.95L217.19,128l-11.72,3.9A8.09,8.09,0,0,0,202.34,133.83Zm-86.83-26.31,0,0a13.26,13.26,0,1,1-.05.06S115.51,107.53,115.51,107.52Zm123.15,56a8,8,0,0,0-13.32,0C223.57,166.23,208,190.09,208,208a24,24,0,0,0,48,0C256,190.09,240.43,166.23,238.66,163.56ZM232,216a8,8,0,0,1-8-8c0-6.8,4-16.32,8-24.08,4,7.76,8,17.34,8,24.08A8,8,0,0,1,232,216Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M178.48,115.7A44,44,0,0,0,148,40H80a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM88,56h60a28,28,0,0,1,0,56H88Zm72,136H88V128h72a32,32,0,0,1,0,64Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M200,56a8,8,0,0,1-8,8H157.77L115.1,192H144a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16H98.23L140.9,64H112a8,8,0,0,1,0-16h80A8,8,0,0,1,200,56Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M200,224a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,224Zm-72-24a64.07,64.07,0,0,0,64-64V56a8,8,0,0,0-16,0v80a48,48,0,0,1-96,0V56a8,8,0,0,0-16,0v80A64.07,64.07,0,0,0,128,200Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H175.93c9.19,7.11,16.07,17.2,16.07,32,0,13.34-7,25.7-19.75,34.79C160.33,211.31,144.61,216,128,216s-32.33-4.69-44.25-13.21C71,193.7,64,181.34,64,168a8,8,0,0,1,16,0c0,17.35,22,32,48,32s48-14.65,48-32c0-14.85-10.54-23.58-38.77-32H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM76.33,104a8,8,0,0,0,7.61-10.49A17.3,17.3,0,0,1,83.11,88c0-18.24,19.3-32,44.89-32,18.84,0,34.16,7.42,41,19.85a8,8,0,0,0,14-7.7C173.33,50.52,152.77,40,128,40,93.29,40,67.11,60.63,67.11,88a33.73,33.73,0,0,0,1.62,10.49A8,8,0,0,0,76.33,104Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM104,72H216a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16ZM216,184H104a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM43.58,55.16,48,52.94V104a8,8,0,0,0,16,0V40a8,8,0,0,0-11.58-7.16l-16,8a8,8,0,0,0,7.16,14.32ZM79.77,156.72a23.73,23.73,0,0,0-9.6-15.95,24.86,24.86,0,0,0-34.11,4.7,23.63,23.63,0,0,0-3.57,6.46,8,8,0,1,0,15,5.47,7.84,7.84,0,0,1,1.18-2.13,8.76,8.76,0,0,1,12-1.59A7.91,7.91,0,0,1,63.93,159a7.64,7.64,0,0,1-1.57,5.78,1,1,0,0,0-.08.11L33.59,203.21A8,8,0,0,0,40,216H72a8,8,0,0,0,0-16H56l19.08-25.53A23.47,23.47,0,0,0,79.77,156.72Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM64,96a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm152,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-24,40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM216,96H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+          disabled=""
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M225,80.4,183.6,39a24,24,0,0,0-33.94,0L31,157.66a24,24,0,0,0,0,33.94l30.06,30.06A8,8,0,0,0,66.74,224H216a8,8,0,0,0,0-16h-84.7L225,114.34A24,24,0,0,0,225,80.4ZM108.68,208H70.05L42.33,180.28a8,8,0,0,1,0-11.31L96,115.31,148.69,168Zm105-105L160,156.69,107.31,104,161,50.34a8,8,0,0,1,11.32,0l41.38,41.38a8,8,0,0,1,0,11.31Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <button
+        class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 opacity-50 cursor-not-allowed"
+        disabled=""
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ActionBar component > ActionBar with active bold should render correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex w-full flex-row flex-wrap items-center gap-1.5 rounded-lg border border-gray-10 bg-gray-1 p-1"
+      >
+        <div
+          class="relative"
+        >
+          <button
+            class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+            type="button"
+          >
+            <span
+              class="w-16 truncate text-left"
+            >
+              Arial
+            </span>
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="relative"
+        >
+          <button
+            class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+            type="button"
+          >
+            <span
+              class="w-6 text-center"
+            >
+              14
+            </span>
+            <svg
+              fill="currentColor"
+              height="12"
+              viewBox="0 0 256 256"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="relative"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M234.53,139.07a8,8,0,0,0,3.13-13.24L122.17,10.34a8,8,0,0,0-11.31,0L70.25,51,45.65,26.34A8,8,0,0,0,34.34,37.66l24.6,24.6L15,106.17a24,24,0,0,0,0,33.94L99.89,225a24,24,0,0,0,33.94,0l78.49-78.49Zm-32.19-5.24-79.83,79.83a8,8,0,0,1-11.31,0L26.34,128.8a8,8,0,0,1,0-11.31L70.25,73.57l29.12,29.12a28,28,0,1,0,11.31-11.32L81.57,62.26l35-34.95L217.19,128l-11.72,3.9A8.09,8.09,0,0,0,202.34,133.83Zm-86.83-26.31,0,0a13.26,13.26,0,1,1-.05.06S115.51,107.53,115.51,107.52Zm123.15,56a8,8,0,0,0-13.32,0C223.57,166.23,208,190.09,208,208a24,24,0,0,0,48,0C256,190.09,240.43,166.23,238.66,163.56ZM232,216a8,8,0,0,1-8-8c0-6.8,4-16.32,8-24.08,4,7.76,8,17.34,8,24.08A8,8,0,0,1,232,216Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors bg-gray-10 text-primary "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M178.48,115.7A44,44,0,0,0,148,40H80a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM88,56h60a28,28,0,0,1,0,56H88Zm72,136H88V128h72a32,32,0,0,1,0,64Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200,56a8,8,0,0,1-8,8H157.77L115.1,192H144a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16H98.23L140.9,64H112a8,8,0,0,1,0-16h80A8,8,0,0,1,200,56Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M200,224a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,224Zm-72-24a64.07,64.07,0,0,0,64-64V56a8,8,0,0,0-16,0v80a48,48,0,0,1-96,0V56a8,8,0,0,0-16,0v80A64.07,64.07,0,0,0,128,200Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H175.93c9.19,7.11,16.07,17.2,16.07,32,0,13.34-7,25.7-19.75,34.79C160.33,211.31,144.61,216,128,216s-32.33-4.69-44.25-13.21C71,193.7,64,181.34,64,168a8,8,0,0,1,16,0c0,17.35,22,32,48,32s48-14.65,48-32c0-14.85-10.54-23.58-38.77-32H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM76.33,104a8,8,0,0,0,7.61-10.49A17.3,17.3,0,0,1,83.11,88c0-18.24,19.3-32,44.89-32,18.84,0,34.16,7.42,41,19.85a8,8,0,0,0,14-7.7C173.33,50.52,152.77,40,128,40,93.29,40,67.11,60.63,67.11,88a33.73,33.73,0,0,0,1.62,10.49A8,8,0,0,0,76.33,104Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM104,72H216a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16ZM216,184H104a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM43.58,55.16,48,52.94V104a8,8,0,0,0,16,0V40a8,8,0,0,0-11.58-7.16l-16,8a8,8,0,0,0,7.16,14.32ZM79.77,156.72a23.73,23.73,0,0,0-9.6-15.95,24.86,24.86,0,0,0-34.11,4.7,23.63,23.63,0,0,0-3.57,6.46,8,8,0,1,0,15,5.47,7.84,7.84,0,0,1,1.18-2.13,8.76,8.76,0,0,1,12-1.59A7.91,7.91,0,0,1,63.93,159a7.64,7.64,0,0,1-1.57,5.78,1,1,0,0,0-.08.11L33.59,203.21A8,8,0,0,0,40,216H72a8,8,0,0,0,0-16H56l19.08-25.53A23.47,23.47,0,0,0,79.77,156.72Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM64,96a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm152,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-24,40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM216,96H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <div
+          class="flex flex-row items-center gap-2"
+        >
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+            type="button"
+          >
+            <svg
+              fill="currentColor"
+              height="20"
+              viewBox="0 0 256 256"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M225,80.4,183.6,39a24,24,0,0,0-33.94,0L31,157.66a24,24,0,0,0,0,33.94l30.06,30.06A8,8,0,0,0,66.74,224H216a8,8,0,0,0,0-16h-84.7L225,114.34A24,24,0,0,0,225,80.4ZM108.68,208H70.05L42.33,180.28a8,8,0,0,1,0-11.31L96,115.31,148.69,168Zm105-105L160,156.69,107.31,104,161,50.34a8,8,0,0,1,11.32,0l41.38,41.38a8,8,0,0,1,0,11.31Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="w-px h-5 bg-gray-10"
+        />
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex w-full flex-row flex-wrap items-center gap-1.5 rounded-lg border border-gray-10 bg-gray-1 p-1"
+    >
+      <div
+        class="relative"
+      >
+        <button
+          class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+          type="button"
+        >
+          <span
+            class="w-16 truncate text-left"
+          >
+            Arial
+          </span>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="relative"
+      >
+        <button
+          class="flex items-center gap-1 px-2 py-1 text-sm text-gray-60 hover:bg-gray-5 rounded "
+          type="button"
+        >
+          <span
+            class="w-6 text-center"
+          >
+            14
+          </span>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 256 256"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="relative"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M234.53,139.07a8,8,0,0,0,3.13-13.24L122.17,10.34a8,8,0,0,0-11.31,0L70.25,51,45.65,26.34A8,8,0,0,0,34.34,37.66l24.6,24.6L15,106.17a24,24,0,0,0,0,33.94L99.89,225a24,24,0,0,0,33.94,0l78.49-78.49Zm-32.19-5.24-79.83,79.83a8,8,0,0,1-11.31,0L26.34,128.8a8,8,0,0,1,0-11.31L70.25,73.57l29.12,29.12a28,28,0,1,0,11.31-11.32L81.57,62.26l35-34.95L217.19,128l-11.72,3.9A8.09,8.09,0,0,0,202.34,133.83Zm-86.83-26.31,0,0a13.26,13.26,0,1,1-.05.06S115.51,107.53,115.51,107.52Zm123.15,56a8,8,0,0,0-13.32,0C223.57,166.23,208,190.09,208,208a24,24,0,0,0,48,0C256,190.09,240.43,166.23,238.66,163.56ZM232,216a8,8,0,0,1-8-8c0-6.8,4-16.32,8-24.08,4,7.76,8,17.34,8,24.08A8,8,0,0,1,232,216Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors bg-gray-10 text-primary "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M178.48,115.7A44,44,0,0,0,148,40H80a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8h80a48,48,0,0,0,18.48-92.3ZM88,56h60a28,28,0,0,1,0,56H88Zm72,136H88V128h72a32,32,0,0,1,0,64Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M200,56a8,8,0,0,1-8,8H157.77L115.1,192H144a8,8,0,0,1,0,16H64a8,8,0,0,1,0-16H98.23L140.9,64H112a8,8,0,0,1,0-16h80A8,8,0,0,1,200,56Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M200,224a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,224Zm-72-24a64.07,64.07,0,0,0,64-64V56a8,8,0,0,0-16,0v80a48,48,0,0,1-96,0V56a8,8,0,0,0-16,0v80A64.07,64.07,0,0,0,128,200Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H175.93c9.19,7.11,16.07,17.2,16.07,32,0,13.34-7,25.7-19.75,34.79C160.33,211.31,144.61,216,128,216s-32.33-4.69-44.25-13.21C71,193.7,64,181.34,64,168a8,8,0,0,1,16,0c0,17.35,22,32,48,32s48-14.65,48-32c0-14.85-10.54-23.58-38.77-32H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM76.33,104a8,8,0,0,0,7.61-10.49A17.3,17.3,0,0,1,83.11,88c0-18.24,19.3-32,44.89-32,18.84,0,34.16,7.42,41,19.85a8,8,0,0,0,14-7.7C173.33,50.52,152.77,40,128,40,93.29,40,67.11,60.63,67.11,88a33.73,33.73,0,0,0,1.62,10.49A8,8,0,0,0,76.33,104Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M80,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H88A8,8,0,0,1,80,64Zm136,56H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,64H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM44,52A12,12,0,1,0,56,64,12,12,0,0,0,44,52Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,116Zm0,64a12,12,0,1,0,12,12A12,12,0,0,0,44,180Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM104,72H216a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16ZM216,184H104a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM43.58,55.16,48,52.94V104a8,8,0,0,0,16,0V40a8,8,0,0,0-11.58-7.16l-16,8a8,8,0,0,0,7.16,14.32ZM79.77,156.72a23.73,23.73,0,0,0-9.6-15.95,24.86,24.86,0,0,0-34.11,4.7,23.63,23.63,0,0,0-3.57,6.46,8,8,0,1,0,15,5.47,7.84,7.84,0,0,1,1.18-2.13,8.76,8.76,0,0,1,12-1.59A7.91,7.91,0,0,1,63.93,159a7.64,7.64,0,0,1-1.57,5.78,1,1,0,0,0-.08.11L33.59,203.21A8,8,0,0,0,40,216H72a8,8,0,0,0,0-16H56l19.08-25.53A23.47,23.47,0,0,0,79.77,156.72Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,48H168a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm176,24H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-48,40H40a8,8,0,0,0,0,16H168a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM64,96a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Zm152,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm-24,40H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64ZM216,96H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Zm0,40H88a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <div
+        class="flex flex-row items-center gap-2"
+      >
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+            />
+          </svg>
+        </button>
+        <button
+          class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 256 256"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M225,80.4,183.6,39a24,24,0,0,0-33.94,0L31,157.66a24,24,0,0,0,0,33.94l30.06,30.06A8,8,0,0,0,66.74,224H216a8,8,0,0,0,0-16h-84.7L225,114.34A24,24,0,0,0,225,80.4ZM108.68,208H70.05L42.33,180.28a8,8,0,0,1,0-11.31L96,115.31,148.69,168Zm105-105L160,156.69,107.31,104,161,50.34a8,8,0,0,1,11.32,0l41.38,41.38a8,8,0,0,1,0,11.31Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-px h-5 bg-gray-10"
+      />
+      <button
+        class="p-1 rounded transition-colors hover:bg-gray-5 text-gray-60 "
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="20"
+          viewBox="0 0 256 256"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
