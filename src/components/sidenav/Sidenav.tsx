@@ -21,7 +21,7 @@ export interface SidenavStorage {
   total: string;
   percentage: number;
   onUpgradeClick: () => void;
-  upgradeLabel: string;
+  upgradeLabel?: string;
 }
 
 export interface SidenavProps {
@@ -103,9 +103,7 @@ export const Sidenav = ({
                   <div
                     className={`flex flex-row px-2.5 py-2 w-full items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}
                   >
-                    <div
-                      className={`flex flex-row gap-3 items-center ${isActive ? 'text-primary' : 'text-gray-60'}`}
-                    >
+                    <div className={`flex flex-row gap-3 items-center ${isActive ? 'text-primary' : 'text-gray-60'}`}>
                       <option.icon size={option.iconSize ?? 20} weight={option.weight ?? 'regular'} />
                       {!isCollapsed && <p>{option.title}</p>}
                     </div>
@@ -129,12 +127,14 @@ export const Sidenav = ({
               <p className="text-gray-60 text-sm">/</p>
               <p className="text-gray-60 text-sm">{storage.total}</p>
             </div>
-            <button
-              className="text-primary text-sm hover:text-primary-dark font-semibold"
-              onClick={storage.onUpgradeClick}
-            >
-              {storage.upgradeLabel}
-            </button>
+            {storage.upgradeLabel && (
+              <button
+                className="text-primary text-sm hover:text-primary-dark font-semibold"
+                onClick={storage.onUpgradeClick}
+              >
+                {storage.upgradeLabel}
+              </button>
+            )}
           </div>
           <div className="flex w-full h-1.5 bg-gray-10 rounded-full">
             <div
