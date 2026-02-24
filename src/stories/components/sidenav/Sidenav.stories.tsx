@@ -23,10 +23,11 @@ const meta: Meta<typeof Sidenav> = {
   argTypes: {
     onOptionClick: { action: 'optionClicked' },
     onMenuClick: { action: 'menuClicked' },
+    onToggleCollapse: { action: 'toggleCollapse' },
   },
   decorators: [
     (Story) => (
-      <div style={{ height: '100vh', width: '256px' }}>
+      <div style={{ height: '100vh' }}>
         <Story />
       </div>
     ),
@@ -85,7 +86,7 @@ const MAIL_OPTIONS = [
 ];
 
 const InteractiveSidenav = (args: SidenavProps) => {
-  const [{ activeOptionId, showSubsections }, setArgs] = useArgs();
+  const [{ activeOptionId, showSubsections, isCollapsed }, setArgs] = useArgs();
 
   const handleOptionClick = (optionId: number, isSubsection: boolean) => {
     if (isSubsection) {
@@ -100,12 +101,20 @@ const InteractiveSidenav = (args: SidenavProps) => {
     }
   };
 
+  const handleToggleCollapse = args.onToggleCollapse
+    ? () => {
+        setArgs({ isCollapsed: !isCollapsed });
+      }
+    : undefined;
+
   return (
     <Sidenav
       {...args}
       activeOptionId={activeOptionId}
       showSubsections={showSubsections}
+      isCollapsed={isCollapsed}
       onOptionClick={handleOptionClick}
+      onToggleCollapse={handleToggleCollapse}
     />
   );
 };
@@ -123,9 +132,15 @@ export const Default: Story = {
         <p>New message</p>
       </Button>
     ),
+    collapsedPrimaryAction: (
+      <Button onClick={() => console.log('New message clicked')}>
+        <NotePencilIcon size={20} />
+      </Button>
+    ),
     options: MAIL_OPTIONS,
     activeOptionId: 0,
     showSubsections: false,
+    isCollapsed: false,
     storage: {
       used: '2.8 GB',
       total: '4 GB',
@@ -133,6 +148,15 @@ export const Default: Story = {
       upgradeLabel: 'Upgrade',
       onUpgradeClick: () => console.log('Upgrade clicked'),
     },
+    onToggleCollapse: () => {},
+  },
+};
+
+export const Collapsed: Story = {
+  render: InteractiveSidenav,
+  args: {
+    ...Default.args,
+    isCollapsed: true,
   },
 };
 
@@ -150,6 +174,7 @@ export const WithoutPrimaryAction: Story = {
   args: {
     ...Default.args,
     primaryAction: undefined,
+    collapsedPrimaryAction: undefined,
   },
 };
 
@@ -188,5 +213,15 @@ export const Minimal: Story = {
     ],
     activeOptionId: 0,
     showSubsections: false,
+    isCollapsed: false,
+    onToggleCollapse: () => {},
+  },
+};
+
+export const WithoutCollapseButton: Story = {
+  render: InteractiveSidenav,
+  args: {
+    ...Default.args,
+    onToggleCollapse: undefined,
   },
 };
