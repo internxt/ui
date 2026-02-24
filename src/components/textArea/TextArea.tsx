@@ -3,6 +3,7 @@ export interface TextAreaComponentProps {
   accentColor?: 'red';
   placeholder?: string;
   value?: string;
+  className?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   name?: string;
 }
@@ -30,6 +31,9 @@ export interface TextAreaComponentProps {
  * @property {string} [name]
  * - Optional name attribute for the text area, typically used for form submissions.
  *
+ * @property {string} [className]
+ * - Optional custom class name for styling the text area.
+ *
  * @returns {JSX.Element}
  * - The rendered TextArea component.
  */
@@ -40,6 +44,7 @@ const TextArea = ({
   placeholder = '',
   value = '',
   onChange,
+  className,
   name,
 }: TextAreaComponentProps): JSX.Element => {
   return (
@@ -49,6 +54,7 @@ const TextArea = ({
       className={`
         w-full h-full py-4 px-3.5 bg-transparent border rounded-md outline-none text-lg font-regular resize-none
         placeholder:text-gray-30
+        ${className}
         ${!disabled ? 'border-gray-20 text-gray-100' : 'border-gray-5 text-gray-40'}
         ${!accentColor && 'border-gray-20 focus:border-primary focus:ring focus:ring-primary/10'}
         ${accentColor === 'red' && 'border-red focus:ring focus:ring-red/10'}
