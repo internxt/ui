@@ -43,6 +43,7 @@ const interactiveDecorator: Decorator = (Story, context) => {
           onAddBccRecipient: (email: string) => addRecipient(setBccRecipients, email),
           onRemoveBccRecipient: (id: string) => removeRecipient(setBccRecipients, id),
           onSubjectChange: setSubject,
+          onPrimaryAction: () => setArgs({ isOpen: false }),
         },
       })}
     </div>
@@ -83,7 +84,6 @@ export const Default: Story = {
     isLoading: false,
     primaryActionColor: 'primary',
     text: defaultText,
-    onPrimaryAction: () => console.log('send'),
     onSecondaryAction: () => console.log('attach'),
   },
 };

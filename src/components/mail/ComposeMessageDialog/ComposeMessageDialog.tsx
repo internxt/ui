@@ -79,7 +79,6 @@ export const ComposeMessageDialog = ({
     if (editor) {
       const html = editor.getHTML();
       onPrimaryAction(html);
-      console.log('Primary action:', html);
     }
   }, [editor, onPrimaryAction]);
 
