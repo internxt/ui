@@ -1,4 +1,4 @@
-import { DotsNineIcon, Lock } from '@phosphor-icons/react';
+import { DotsNineIcon, LockIcon } from '@phosphor-icons/react';
 import { cloneElement, isValidElement } from 'react';
 import { Popover } from '../popover';
 
@@ -64,7 +64,7 @@ export default function SuiteLauncher({
           >
             <div className="flex flex-col items-center w-full rounded-md">
               {suiteApp.isLocked ? (
-                <Lock
+                <LockIcon
                   size={26}
                   weight="regular"
                   className="opacity-50 filter grayscale"
