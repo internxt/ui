@@ -58,7 +58,7 @@ const defaultText = {
 };
 
 const meta: Meta<typeof ComposeMessageDialog> = {
-  title: 'Components(Email)/Compose Message Dialog',
+  title: 'Components - Mail/Compose Message Dialog',
   component: ComposeMessageDialog,
   parameters: {
     layout: 'fullscreen',

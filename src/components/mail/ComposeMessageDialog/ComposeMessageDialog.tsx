@@ -83,8 +83,12 @@ export const ComposeMessageDialog = ({
     }
   }, [editor, onPrimaryAction]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    <div className={`fixed inset-0 z-50 ${isOpen ? '' : 'pointer-events-none'}`}>
+    <div className="fixed inset-0 z-50">
       <div
         className={`absolute inset-0 bg-gray-100/50 transition-opacity
      duration-150 dark:bg-black/75
