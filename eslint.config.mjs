@@ -7,13 +7,13 @@ export default [
   ...eslintConfigInternxt,
   {
     languageOptions: {
-      parser: typescriptParser
+      parser: typescriptParser,
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
       'react/react-in-jsx-scope': 'off',
+      'max-len': 'off',
     },
     ignores: ['dist', 'tmp', 'scripts', 'node_modules', '!.storybook'],
-  }
+  },
 ];
-
