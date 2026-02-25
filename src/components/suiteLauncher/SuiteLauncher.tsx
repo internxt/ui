@@ -1,4 +1,4 @@
-import { DotsNine, Lock } from '@phosphor-icons/react';
+import { DotsNineIcon, Lock } from '@phosphor-icons/react';
 import { cloneElement, isValidElement } from 'react';
 import { Popover } from '../popover';
 
@@ -13,6 +13,7 @@ export interface SuiteLauncherProps {
     isLocked?: boolean;
   }[];
   soonText?: string;
+  align?: 'left' | 'right';
 }
 
 /**
@@ -37,10 +38,11 @@ export default function SuiteLauncher({
   className = '',
   suiteArray,
   soonText,
+  align = 'right',
 }: Readonly<SuiteLauncherProps>): JSX.Element {
   const SuiteButton = (
-    <div className="flex h-10 w-10 items-center justify-center text-black dark:text-white">
-      <DotsNine size={26} className="h-7 w-7" weight="bold" />
+    <div className="flex h-10 w-10 items-center justify-center">
+      <DotsNineIcon size={26} className="h-7 w-7" weight="bold" />
     </div>
   );
 
@@ -54,7 +56,7 @@ export default function SuiteLauncher({
           <div
             role="none"
             className={
-              `flex items-center px-3 py-2 text-gray-80 w-full rounded-md ` +
+              'flex items-center px-3 py-2 text-gray-80 w-full rounded-md ' +
               `${suiteApp.availableSoon ? '' : 'cursor-pointer hover:bg-gray-1 dark:hover:bg-gray-10'}`
             }
             style={{ lineHeight: 1.25 }}
@@ -62,7 +64,12 @@ export default function SuiteLauncher({
           >
             <div className="flex flex-col items-center w-full rounded-md">
               {suiteApp.isLocked ? (
-                <Lock size={26} weight="regular" className='opacity-50 filter grayscale' data-testid="suite-launcher-lock-icon" />
+                <Lock
+                  size={26}
+                  weight="regular"
+                  className="opacity-50 filter grayscale"
+                  data-testid="suite-launcher-lock-icon"
+                />
               ) : isValidElement(suiteApp.icon as JSX.Element) ? (
                 cloneElement(suiteApp.icon as JSX.Element, {
                   size: 26,
@@ -102,6 +109,12 @@ export default function SuiteLauncher({
   );
 
   return (
-    <Popover className={className} childrenButton={SuiteButton} panel={() => panel} data-testid="app-suite-dropdown" />
+    <Popover
+      className={className}
+      childrenButton={SuiteButton}
+      panel={() => panel}
+      align={align}
+      data-testid="app-suite-dropdown"
+    />
   );
 }

@@ -1,5 +1,6 @@
-import { Icon, IconWeight, DotsNineIcon, CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
+import { Icon, IconWeight, CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 import { ReactNode } from 'react';
+import { SuiteLauncher } from '../suiteLauncher';
 
 export interface SidenavOption {
   id: number;
@@ -28,6 +29,18 @@ export interface SidenavStorage {
 export interface SidenavProps {
   header: SidenavHeader;
   primaryAction?: ReactNode;
+  suiteLauncher?: {
+    className?: string;
+    suiteArray: {
+      icon: JSX.Element;
+      title: string;
+      onClick: () => void;
+      isMain?: boolean;
+      availableSoon?: boolean;
+      isLocked?: boolean;
+    }[];
+    soonText: string;
+  };
   collapsedPrimaryAction?: ReactNode;
   options: SidenavOption[];
   activeOptionId: number;
@@ -35,7 +48,6 @@ export interface SidenavProps {
   isCollapsed?: boolean;
   storage?: SidenavStorage;
   onOptionClick: (optionId: number, isSubsection: boolean) => void;
-  onMenuClick: () => void;
   onToggleCollapse?: () => void;
 }
 
@@ -49,6 +61,12 @@ export interface SidenavProps {
  *
  * @property {ReactNode} primaryAction
  * - The primary action displayed at the top of the sidenav.
+ *
+ * @property {SuiteLauncher} suiteLauncher
+ * - The suite launcher displayed at the top of the sidenav.
+ *
+ * @property {ReactNode} menu
+ * - The menu displayed at the top of the sidenav.
  *
  * @property {ReactNode} collapsedPrimaryAction
  * - The primary action displayed when the sidenav is collapsed.
@@ -71,15 +89,13 @@ export interface SidenavProps {
  * @property {(optionId: number, isSubsection: boolean) => void} onOptionClick
  * - A callback function triggered when an option in the sidenav is clicked.
  *
- * @property {() => void} onMenuClick
- * - A callback function triggered when the menu button is clicked.
- *
  * @property {() => void} onToggleCollapse
  * - A callback function triggered when the collapse button is clicked.
  */
 export const Sidenav = ({
   header,
   primaryAction,
+  suiteLauncher,
   collapsedPrimaryAction,
   options,
   activeOptionId,
@@ -87,7 +103,6 @@ export const Sidenav = ({
   isCollapsed = false,
   storage,
   onOptionClick,
-  onMenuClick,
   onToggleCollapse,
 }: SidenavProps) => (
   <div
@@ -109,10 +124,13 @@ export const Sidenav = ({
           <img src={header.logo} width={28} alt={header.title} />
           {!isCollapsed && <p className="text-xl font-medium text-gray-100">{header.title}</p>}
         </button>
-        {!isCollapsed && (
-          <button onClick={onMenuClick}>
-            <DotsNineIcon size={28} className="text-gray-50 active:text-gray-70" />
-          </button>
+        {!isCollapsed && suiteLauncher && (
+          <SuiteLauncher
+            suiteArray={suiteLauncher?.suiteArray}
+            soonText={suiteLauncher?.soonText}
+            className={suiteLauncher?.className}
+            align="left"
+          />
         )}
       </div>
       <div className="flex flex-col gap-4">

@@ -11,7 +11,37 @@ import {
   StarIcon,
   TagIcon,
   NotePencilIcon,
+  HardDrivesIcon,
+  EnvelopeSimpleIcon,
+  ShieldCheckIcon,
+  LockKeyIcon,
 } from '@phosphor-icons/react';
+
+const SUITE_ARRAY = [
+  {
+    icon: <HardDrivesIcon />,
+    title: 'Drive',
+    onClick: () => console.log('Drive clicked'),
+  },
+  {
+    icon: <EnvelopeSimpleIcon />,
+    title: 'Mail',
+    onClick: () => console.log('Mail clicked'),
+    isMain: true,
+  },
+  {
+    icon: <ShieldCheckIcon />,
+    title: 'VPN',
+    onClick: () => console.log('VPN clicked'),
+    availableSoon: true,
+  },
+  {
+    icon: <LockKeyIcon />,
+    title: 'Pass',
+    onClick: () => console.log('Pass clicked'),
+    isLocked: true,
+  },
+];
 
 const meta: Meta<typeof Sidenav> = {
   title: 'Components/Sidenav',
@@ -22,7 +52,6 @@ const meta: Meta<typeof Sidenav> = {
   tags: ['autodocs'],
   argTypes: {
     onOptionClick: { action: 'optionClicked' },
-    onMenuClick: { action: 'menuClicked' },
     onToggleCollapse: { action: 'toggleCollapse' },
   },
   decorators: [
@@ -125,6 +154,7 @@ export const Default: Story = {
     header: {
       logo: 'https://internxt.com/favicon.ico',
       title: 'Mail',
+      onClick: () => console.log('Header clicked'),
     },
     primaryAction: (
       <Button className="flex flex-row items-center w-full gap-2" onClick={() => console.log('New message clicked')}>
@@ -137,6 +167,10 @@ export const Default: Story = {
         <NotePencilIcon size={20} />
       </Button>
     ),
+    suiteLauncher: {
+      suiteArray: SUITE_ARRAY,
+      soonText: 'Soon',
+    },
     options: MAIL_OPTIONS,
     activeOptionId: 0,
     showSubsections: false,
@@ -206,6 +240,7 @@ export const Minimal: Story = {
     header: {
       logo: 'https://internxt.com/favicon.ico',
       title: 'Drive',
+      onClick: () => console.log('Header clicked'),
     },
     options: [
       { id: 0, title: 'All files', icon: FileIcon },
