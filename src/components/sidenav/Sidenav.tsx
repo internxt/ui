@@ -38,6 +38,44 @@ export interface SidenavProps {
   onToggleCollapse?: () => void;
 }
 
+/**
+ * Sidenav component
+ *
+ * A custom sidenav component that provides a sidebar with options for navigation and interaction.
+ *
+ * @property {SidenavHeader} header
+ * - Determines whether to display the header section of the sidenav.
+ *
+ * @property {ReactNode} primaryAction
+ * - The primary action displayed at the top of the sidenav.
+ *
+ * @property {ReactNode} collapsedPrimaryAction
+ * - The primary action displayed when the sidenav is collapsed.
+ *
+ * @property {SidenavOption[]} options
+ * - An array of options to be displayed in the sidenav.
+ *
+ * @property {number} activeOptionId
+ * - The ID of the currently active option in the sidenav.
+ *
+ * @property {boolean} showSubsections
+ * - Determines whether to display the subsections of the sidenav.
+ *
+ * @property {boolean} isCollapsed
+ * - Determines whether the sidenav is collapsed or not.
+ *
+ * @property {SidenavStorage} storage
+ * - The storage information displayed at the bottom of the sidenav.
+ *
+ * @property {(optionId: number, isSubsection: boolean) => void} onOptionClick
+ * - A callback function triggered when an option in the sidenav is clicked.
+ *
+ * @property {() => void} onMenuClick
+ * - A callback function triggered when the menu button is clicked.
+ *
+ * @property {() => void} onToggleCollapse
+ * - A callback function triggered when the collapse button is clicked.
+ */
 export const Sidenav = ({
   header,
   primaryAction,
