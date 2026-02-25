@@ -14,6 +14,7 @@ export interface SidenavOption {
 export interface SidenavHeader {
   logo: string;
   title: string;
+  onClick: () => void;
 }
 
 export interface SidenavStorage {
@@ -104,10 +105,10 @@ export const Sidenav = ({
     )}
     <div className="flex flex-col">
       <div className={`flex flex-row justify-between w-full p-5 ${isCollapsed ? 'px-2 justify-center' : ''}`}>
-        <div className="flex flex-row gap-2 items-center">
+        <button className="flex flex-row gap-2 items-center" onClick={header.onClick}>
           <img src={header.logo} width={28} alt={header.title} />
           {!isCollapsed && <p className="text-xl font-medium text-gray-100">{header.title}</p>}
-        </div>
+        </button>
         {!isCollapsed && (
           <button onClick={onMenuClick}>
             <DotsNineIcon size={28} className="text-gray-50 active:text-gray-70" />
