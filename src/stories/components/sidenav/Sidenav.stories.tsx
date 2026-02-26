@@ -135,6 +135,7 @@ const InteractiveSidenav = (args: SidenavProps) => {
       return;
     }
 
+    // If clicking "Labels" option (index 4), toggle subsections
     if (optionIndex === 4) {
       setArgs({ options: updatedOptions, showSubsections: !showSubsections });
     } else {
@@ -145,6 +146,7 @@ const InteractiveSidenav = (args: SidenavProps) => {
   const handleToggleCollapse = args.onToggleCollapse
     ? () => {
         setArgs({ isCollapsed: !isCollapsed });
+        args.onToggleCollapse?.();
       }
     : undefined;
 
@@ -196,6 +198,7 @@ export const Default: Story = {
       percentage: 70,
       upgradeLabel: 'Upgrade',
       onUpgradeClick: () => console.log('Upgrade clicked'),
+      isLoading: false,
     },
     onToggleCollapse: () => {},
   },
@@ -245,6 +248,7 @@ export const HighStorageUsage: Story = {
       percentage: 95,
       upgradeLabel: 'Upgrade now',
       onUpgradeClick: () => console.log('Upgrade clicked'),
+      isLoading: false,
     },
   },
 };
@@ -284,5 +288,20 @@ export const WithoutCollapseButton: Story = {
   args: {
     ...Default.args,
     onToggleCollapse: undefined,
+  },
+};
+
+export const LoadingStorage: Story = {
+  render: InteractiveSidenav,
+  args: {
+    ...Default.args,
+    storage: {
+      usage: '0 GB',
+      limit: '0 GB',
+      percentage: 0,
+      upgradeLabel: 'Upgrade',
+      onUpgradeClick: () => console.log('Upgrade clicked'),
+      isLoading: true,
+    },
   },
 };

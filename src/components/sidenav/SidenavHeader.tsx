@@ -33,7 +33,7 @@ const SidenavHeader = ({
 }: SidenavHeaderProps): JSX.Element => {
   return (
     <div
-      className={`flex flex-row justify-between w-full py-5 ${className} ${isCollapsed ? 'px-2 justify-center' : 'px-5'}`}
+      className={`flex flex-row justify-between w-full py-5 px-2 ${className} ${isCollapsed ? 'justify-center' : ''}`}
     >
       {isCollapsed ? (
         <div className="relative flex items-center justify-center w-full">

@@ -16,6 +16,7 @@ export interface SidenavStorage {
   percentage: number;
   onUpgradeClick: () => void;
   upgradeLabel?: string;
+  isLoading?: boolean;
 }
 
 export interface SidenavProps {
@@ -105,6 +106,7 @@ const Sidenav = ({
           percentage={storage.percentage}
           onUpgradeClick={storage.onUpgradeClick}
           upgradeLabel={storage.upgradeLabel}
+          isLoading={storage.isLoading}
         />
       )}
     </div>

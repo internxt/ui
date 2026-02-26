@@ -1,41 +1,47 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { Sidenav, SidenavProps, SidenavOption } from '../Sidenav';
+import '@testing-library/jest-dom';
+import Sidenav, { SidenavProps } from '../Sidenav';
+import { SidenavOption } from '../SidenavOptions';
 
 const MockIcon = React.forwardRef<SVGSVGElement, { size?: number | string; weight?: string }>(
   ({ size = 20 }, ref) => <svg ref={ref} data-testid="mock-icon" width={size} height={size} />,
 );
 
 describe('Sidenav Component', () => {
+  const onHeaderClick = vi.fn();
   const onOptionClick = vi.fn();
-  const onMenuClick = vi.fn();
   const onToggleCollapse = vi.fn();
   const onUpgradeClick = vi.fn();
 
   const mockOptions: SidenavOption[] = [
-    { id: 0, title: 'Inbox', icon: MockIcon, notifications: 5 },
-    { id: 1, title: 'Sent', icon: MockIcon },
-    { id: 2, title: 'Drafts', icon: MockIcon, notifications: 2 },
-    { id: 3, title: 'Labels', icon: MockIcon },
-    { id: 4, title: 'Important', icon: MockIcon, subsection: true },
-    { id: 5, title: 'Work', icon: MockIcon, subsection: true },
+    { label: 'Inbox', icon: MockIcon, iconDataCy: 'inbox', isVisible: true, notifications: 5, onClick: onOptionClick },
+    { label: 'Sent', icon: MockIcon, iconDataCy: 'sent', isVisible: true, onClick: onOptionClick },
+    { label: 'Drafts', icon: MockIcon, iconDataCy: 'drafts', isVisible: true, notifications: 2, onClick: onOptionClick },
+    { label: 'Labels', icon: MockIcon, iconDataCy: 'labels', isVisible: true, onClick: onOptionClick },
+    {
+      label: 'Important',
+      icon: MockIcon,
+      iconDataCy: 'important',
+      isVisible: true,
+      subsection: true,
+      onClick: onOptionClick,
+    },
+    { label: 'Work', icon: MockIcon, iconDataCy: 'work', isVisible: true, subsection: true, onClick: onOptionClick },
   ];
 
   const defaultProps: SidenavProps = {
     header: {
       logo: 'https://example.com/logo.png',
       title: 'Mail',
+      onClick: onHeaderClick,
     },
     options: mockOptions,
-    activeOptionId: 0,
     showSubsections: false,
-    onOptionClick,
-    onMenuClick,
   };
 
-  const renderSidenav = (props: Partial<SidenavProps> = {}) =>
-    render(<Sidenav {...defaultProps} {...props} />);
+  const renderSidenav = (props: Partial<SidenavProps> = {}) => render(<Sidenav {...defaultProps} {...props} />);
 
   afterEach(() => {
     vi.clearAllMocks();
@@ -54,11 +60,12 @@ describe('Sidenav Component', () => {
   it('should match snapshot with storage', () => {
     const { container } = renderSidenav({
       storage: {
-        used: '2.8 GB',
-        total: '4 GB',
+        usage: '2.8 GB',
+        limit: '4 GB',
         percentage: 70,
         upgradeLabel: 'Upgrade',
         onUpgradeClick,
+        isLoading: false,
       },
     });
     expect(container).toMatchSnapshot();
@@ -99,23 +106,22 @@ describe('Sidenav Component', () => {
     expect(getByText('2')).toBeInTheDocument();
   });
 
-  it('calls onOptionClick when option is clicked', () => {
+  it('calls onClick when option is clicked', () => {
     const { getByText } = renderSidenav();
     fireEvent.click(getByText('Inbox'));
-    expect(onOptionClick).toHaveBeenCalledWith(0, false);
+    expect(onOptionClick).toHaveBeenCalled();
   });
 
-  it('calls onOptionClick with isSubsection true for subsection items', () => {
+  it('calls onClick for subsection items', () => {
     const { getByText } = renderSidenav({ showSubsections: true });
     fireEvent.click(getByText('Important'));
-    expect(onOptionClick).toHaveBeenCalledWith(4, true);
+    expect(onOptionClick).toHaveBeenCalled();
   });
 
-  it('calls onMenuClick when menu button is clicked', () => {
-    const { container } = renderSidenav();
-    const menuButton = container.querySelector('button:has(svg)');
-    fireEvent.click(menuButton!);
-    expect(onMenuClick).toHaveBeenCalled();
+  it('calls header onClick when logo is clicked', () => {
+    const { getByAltText } = renderSidenav();
+    fireEvent.click(getByAltText('Mail'));
+    expect(onHeaderClick).toHaveBeenCalled();
   });
 
   it('renders primary action when provided', () => {
@@ -128,11 +134,12 @@ describe('Sidenav Component', () => {
   it('renders storage information when provided', () => {
     const { getByText } = renderSidenav({
       storage: {
-        used: '2.8 GB',
-        total: '4 GB',
+        usage: '2.8 GB',
+        limit: '4 GB',
         percentage: 70,
         upgradeLabel: 'Upgrade',
         onUpgradeClick,
+        isLoading: false,
       },
     });
     expect(getByText('2.8 GB')).toBeInTheDocument();
@@ -143,11 +150,12 @@ describe('Sidenav Component', () => {
   it('calls onUpgradeClick when upgrade button is clicked', () => {
     const { getByText } = renderSidenav({
       storage: {
-        used: '2.8 GB',
-        total: '4 GB',
+        usage: '2.8 GB',
+        limit: '4 GB',
         percentage: 70,
         upgradeLabel: 'Upgrade',
         onUpgradeClick,
+        isLoading: false,
       },
     });
     fireEvent.click(getByText('Upgrade'));
@@ -155,9 +163,29 @@ describe('Sidenav Component', () => {
   });
 
   it('applies active styles to selected option', () => {
-    const { getByText } = renderSidenav({ activeOptionId: 0 });
+    const activeOptions = mockOptions.map((opt, idx) => ({ ...opt, isActive: idx === 0 }));
+    const { getByText } = renderSidenav({ options: activeOptions });
     const inboxButton = getByText('Inbox').closest('button');
     expect(inboxButton).toHaveClass('bg-primary/20');
+  });
+
+  it('shows loading skeleton when storage is loading', () => {
+    const { container, queryByText } = renderSidenav({
+      storage: {
+        usage: '2.8 GB',
+        limit: '4 GB',
+        percentage: 70,
+        upgradeLabel: 'Upgrade',
+        onUpgradeClick,
+        isLoading: true,
+      },
+    });
+    // Should show skeleton loaders instead of text
+    expect(queryByText('2.8 GB')).not.toBeInTheDocument();
+    expect(queryByText('4 GB')).not.toBeInTheDocument();
+    // Should have loading skeletons (animated pulse divs)
+    const skeletons = container.querySelectorAll('.animate-pulse');
+    expect(skeletons.length).toBeGreaterThan(0);
   });
 
   describe('Collapsed state', () => {
@@ -181,11 +209,12 @@ describe('Sidenav Component', () => {
       const { queryByText } = renderSidenav({
         isCollapsed: true,
         storage: {
-          used: '2.8 GB',
-          total: '4 GB',
+          usage: '2.8 GB',
+          limit: '4 GB',
           percentage: 70,
           upgradeLabel: 'Upgrade',
           onUpgradeClick,
+          isLoading: false,
         },
       });
       expect(queryByText('2.8 GB')).not.toBeInTheDocument();
@@ -193,13 +222,12 @@ describe('Sidenav Component', () => {
     });
 
     it('hides subsections when collapsed even if showSubsections is true', () => {
-      const { container } = renderSidenav({
+      const { queryByText } = renderSidenav({
         isCollapsed: true,
         showSubsections: true,
       });
-      const buttons = container.querySelectorAll('button');
-      // Should only have non-subsection options (4) + collapse button if provided
-      expect(buttons.length).toBe(4);
+      expect(queryByText('Important')).not.toBeInTheDocument();
+      expect(queryByText('Work')).not.toBeInTheDocument();
     });
 
     it('shows collapsed primary action when collapsed', () => {
@@ -214,28 +242,34 @@ describe('Sidenav Component', () => {
 
     it('adds title attribute to options when collapsed for tooltip', () => {
       const { container } = renderSidenav({ isCollapsed: true });
-      const optionButtons = container.querySelectorAll('button[title]');
+      const optionButtons = container.querySelectorAll('button[title="Inbox"]');
       expect(optionButtons.length).toBeGreaterThan(0);
-      expect(optionButtons[0]).toHaveAttribute('title', 'Inbox');
     });
   });
 
   describe('Collapse toggle button', () => {
     it('does not render collapse button when onToggleCollapse is not provided', () => {
       const { container } = renderSidenav();
-      const collapseButton = container.querySelector('.absolute');
-      expect(collapseButton).not.toBeInTheDocument();
+      // The collapse button is only visible on hover and in certain states
+      const buttons = container.querySelectorAll('button');
+      // Should only have header button + option buttons
+      expect(buttons.length).toBe(5); // 1 header + 4 visible options
     });
 
     it('renders collapse button when onToggleCollapse is provided', () => {
       const { container } = renderSidenav({ onToggleCollapse });
-      const collapseButton = container.querySelector('.absolute');
-      expect(collapseButton).toBeInTheDocument();
+      const buttons = container.querySelectorAll('button');
+      // Should have header button + collapse button + option buttons
+      expect(buttons.length).toBeGreaterThan(5);
     });
 
     it('calls onToggleCollapse when collapse button is clicked', () => {
       const { container } = renderSidenav({ onToggleCollapse });
-      const collapseButton = container.querySelector('.absolute');
+      // Find the collapse button (contains SidebarIcon)
+      const collapseButton = Array.from(container.querySelectorAll('button')).find(
+        (btn) => btn.querySelector('svg') && !btn.querySelector('img'),
+      );
+      expect(collapseButton).toBeDefined();
       fireEvent.click(collapseButton!);
       expect(onToggleCollapse).toHaveBeenCalled();
     });
