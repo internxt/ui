@@ -1,4 +1,3 @@
-import { ComponentType, ReactNode } from 'react';
 import { Icon } from '@phosphor-icons/react';
 import SidenavItem from './SidenavItem';
 
@@ -7,7 +6,6 @@ export interface SidenavOption {
   icon: Icon;
   iconDataCy: string;
   isVisible: boolean;
-  to?: string;
   isActive?: boolean;
   notifications?: number;
   onClick?: () => void;
@@ -18,15 +16,9 @@ interface SidenavOptionsProps {
   options: SidenavOption[];
   isCollapsed: boolean;
   showSubsections?: boolean;
-  LinkComponent?: ComponentType<{ to: string; className?: string; children: ReactNode }>;
 }
 
-const SidenavOptions = ({
-  options,
-  isCollapsed,
-  showSubsections,
-  LinkComponent,
-}: SidenavOptionsProps): JSX.Element => {
+const SidenavOptions = ({ options, isCollapsed, showSubsections }: SidenavOptionsProps): JSX.Element => {
   return (
     <div className="flex flex-col w-full">
       {options
@@ -49,10 +41,8 @@ const SidenavOptions = ({
               isActive={option.isActive}
               notifications={option.notifications}
               onClick={option.onClick}
-              to={option.to}
               isCollapsed={isCollapsed}
               subsection={option.subsection}
-              LinkComponent={LinkComponent}
             />
           );
         })}

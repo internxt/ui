@@ -1,4 +1,4 @@
-import { ComponentType, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import SidenavOptions, { SidenavOption } from './SidenavOptions';
 import SidenavHeader from './SidenavHeader';
 import SidenavStorage from './SidenavStorage';
@@ -40,7 +40,6 @@ export interface SidenavProps {
   isCollapsed?: boolean;
   storage?: SidenavStorage;
   onToggleCollapse?: () => void;
-  LinkComponent?: ComponentType<{ to: string; className?: string; children: ReactNode }>;
 }
 
 /**
@@ -52,12 +51,11 @@ export interface SidenavProps {
  * @property {ReactNode} primaryAction - The primary action displayed at the top of the sidenav
  * @property {object} suiteLauncher - The suite launcher configuration
  * @property {ReactNode} collapsedPrimaryAction - The primary action displayed when the sidenav is collapsed
- * @property {SidenavOption[]} options - An array of options to be displayed in the sidenav
+ * @property {SidenavOption[]} options - An array of options to be displayed in the sidenav. Each option can specify an 'as' prop to use a custom component (e.g., NavLink)
  * @property {boolean} showSubsections - Determines whether to display the subsections of the sidenav
  * @property {boolean} isCollapsed - Determines whether the sidenav is collapsed or not
  * @property {SidenavStorage} storage - The storage information displayed at the bottom of the sidenav
  * @property {() => void} onToggleCollapse - A callback function triggered when the collapse button is clicked
- * @property {ComponentType} LinkComponent - Optional Link component for navigation (e.g., React Router's NavLink or Link)
  */
 const Sidenav = ({
   header,
@@ -69,7 +67,6 @@ const Sidenav = ({
   isCollapsed = false,
   storage,
   onToggleCollapse,
-  LinkComponent,
 }: SidenavProps) => {
   return (
     <div
@@ -90,12 +87,7 @@ const Sidenav = ({
 
         <div className="flex flex-col gap-4">
           {isCollapsed ? collapsedPrimaryAction : primaryAction}
-          <SidenavOptions
-            options={options}
-            isCollapsed={isCollapsed}
-            showSubsections={showSubsections}
-            LinkComponent={LinkComponent}
-          />
+          <SidenavOptions options={options} isCollapsed={isCollapsed} showSubsections={showSubsections} />
         </div>
       </div>
 

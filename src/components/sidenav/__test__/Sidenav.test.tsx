@@ -5,9 +5,9 @@ import '@testing-library/jest-dom';
 import Sidenav, { SidenavProps } from '../Sidenav';
 import { SidenavOption } from '../SidenavOptions';
 
-const MockIcon = React.forwardRef<SVGSVGElement, { size?: number | string; weight?: string }>(
-  ({ size = 20 }, ref) => <svg ref={ref} data-testid="mock-icon" width={size} height={size} />,
-);
+const MockIcon = React.forwardRef<SVGSVGElement, { size?: number | string; weight?: string }>(({ size = 20 }, ref) => (
+  <svg ref={ref} data-testid="mock-icon" width={size} height={size} />
+));
 
 describe('Sidenav Component', () => {
   const onHeaderClick = vi.fn();
@@ -18,7 +18,14 @@ describe('Sidenav Component', () => {
   const mockOptions: SidenavOption[] = [
     { label: 'Inbox', icon: MockIcon, iconDataCy: 'inbox', isVisible: true, notifications: 5, onClick: onOptionClick },
     { label: 'Sent', icon: MockIcon, iconDataCy: 'sent', isVisible: true, onClick: onOptionClick },
-    { label: 'Drafts', icon: MockIcon, iconDataCy: 'drafts', isVisible: true, notifications: 2, onClick: onOptionClick },
+    {
+      label: 'Drafts',
+      icon: MockIcon,
+      iconDataCy: 'drafts',
+      isVisible: true,
+      notifications: 2,
+      onClick: onOptionClick,
+    },
     { label: 'Labels', icon: MockIcon, iconDataCy: 'labels', isVisible: true, onClick: onOptionClick },
     {
       label: 'Important',
@@ -180,10 +187,10 @@ describe('Sidenav Component', () => {
         isLoading: true,
       },
     });
-    // Should show skeleton loaders instead of text
+
     expect(queryByText('2.8 GB')).not.toBeInTheDocument();
     expect(queryByText('4 GB')).not.toBeInTheDocument();
-    // Should have loading skeletons (animated pulse divs)
+
     const skeletons = container.querySelectorAll('.animate-pulse');
     expect(skeletons.length).toBeGreaterThan(0);
   });
@@ -250,22 +257,22 @@ describe('Sidenav Component', () => {
   describe('Collapse toggle button', () => {
     it('does not render collapse button when onToggleCollapse is not provided', () => {
       const { container } = renderSidenav();
-      // The collapse button is only visible on hover and in certain states
+
       const buttons = container.querySelectorAll('button');
-      // Should only have header button + option buttons
-      expect(buttons.length).toBe(5); // 1 header + 4 visible options
+
+      expect(buttons.length).toBe(5);
     });
 
     it('renders collapse button when onToggleCollapse is provided', () => {
       const { container } = renderSidenav({ onToggleCollapse });
       const buttons = container.querySelectorAll('button');
-      // Should have header button + collapse button + option buttons
+
       expect(buttons.length).toBeGreaterThan(5);
     });
 
     it('calls onToggleCollapse when collapse button is clicked', () => {
       const { container } = renderSidenav({ onToggleCollapse });
-      // Find the collapse button (contains SidebarIcon)
+
       const collapseButton = Array.from(container.querySelectorAll('button')).find(
         (btn) => btn.querySelector('svg') && !btn.querySelector('img'),
       );
