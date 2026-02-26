@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useArgs } from 'storybook/preview-api';
-import { Sidenav, SidenavProps } from '@/components/sidenav/Sidenav';
+import { Sidenav, SidenavProps } from '@/components/sidenav';
 import { Button } from '@/components/button';
 import {
   TrayIcon,
@@ -51,7 +51,6 @@ const meta: Meta<typeof Sidenav> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    onOptionClick: { action: 'optionClicked' },
     onToggleCollapse: { action: 'toggleCollapse' },
   },
   decorators: [
@@ -68,65 +67,78 @@ type Story = StoryObj<SidenavProps>;
 
 const MAIL_OPTIONS = [
   {
-    id: 0,
-    title: 'Inbox',
+    label: 'Inbox',
     icon: TrayIcon,
+    iconDataCy: 'sidenav-inbox',
+    isVisible: true,
     notifications: 12,
   },
   {
-    id: 1,
-    title: 'Sent',
+    label: 'Sent',
     icon: PaperPlaneTiltIcon,
+    iconDataCy: 'sidenav-sent',
+    isVisible: true,
   },
   {
-    id: 2,
-    title: 'Drafts',
+    label: 'Drafts',
     icon: FileIcon,
+    iconDataCy: 'sidenav-drafts',
+    isVisible: true,
     notifications: 3,
   },
   {
-    id: 3,
-    title: 'Trash',
+    label: 'Trash',
     icon: TrashIcon,
+    iconDataCy: 'sidenav-trash',
+    isVisible: true,
   },
   {
-    id: 4,
-    title: 'Labels',
+    label: 'Labels',
     icon: CaretDownIcon,
+    iconDataCy: 'sidenav-labels',
+    isVisible: true,
   },
   {
-    id: 5,
-    title: 'Important',
+    label: 'Important',
     icon: StarIcon,
+    iconDataCy: 'sidenav-important',
+    isVisible: true,
     subsection: true,
   },
   {
-    id: 6,
-    title: 'Work',
+    label: 'Work',
     icon: TagIcon,
+    iconDataCy: 'sidenav-work',
+    isVisible: true,
     subsection: true,
   },
   {
-    id: 7,
-    title: 'Personal',
+    label: 'Personal',
     icon: TagIcon,
+    iconDataCy: 'sidenav-personal',
+    isVisible: true,
     subsection: true,
   },
 ];
 
 const InteractiveSidenav = (args: SidenavProps) => {
-  const [{ activeOptionId, showSubsections, isCollapsed }, setArgs] = useArgs();
+  const [{ showSubsections, isCollapsed, options }, setArgs] = useArgs();
 
-  const handleOptionClick = (optionId: number, isSubsection: boolean) => {
+  const handleOptionClick = (optionIndex: number, isSubsection: boolean) => {
+    const updatedOptions = options.map((opt: any, idx: number) => ({
+      ...opt,
+      isActive: idx === optionIndex,
+    }));
+
     if (isSubsection) {
-      setArgs({ activeOptionId: optionId });
+      setArgs({ options: updatedOptions });
       return;
     }
 
-    if (optionId === 4) {
-      setArgs({ activeOptionId: optionId, showSubsections: !showSubsections });
+    if (optionIndex === 4) {
+      setArgs({ options: updatedOptions, showSubsections: !showSubsections });
     } else {
-      setArgs({ activeOptionId: optionId, showSubsections: false });
+      setArgs({ options: updatedOptions, showSubsections: false });
     }
   };
 
@@ -136,13 +148,17 @@ const InteractiveSidenav = (args: SidenavProps) => {
       }
     : undefined;
 
+  const optionsWithHandlers = options.map((option: any, index: number) => ({
+    ...option,
+    onClick: () => handleOptionClick(index, !!option.subsection),
+  }));
+
   return (
     <Sidenav
       {...args}
-      activeOptionId={activeOptionId}
+      options={optionsWithHandlers}
       showSubsections={showSubsections}
       isCollapsed={isCollapsed}
-      onOptionClick={handleOptionClick}
       onToggleCollapse={handleToggleCollapse}
     />
   );
@@ -171,13 +187,12 @@ export const Default: Story = {
       suiteArray: SUITE_ARRAY,
       soonText: 'Soon',
     },
-    options: MAIL_OPTIONS,
-    activeOptionId: 0,
+    options: MAIL_OPTIONS.map((opt, idx) => ({ ...opt, isActive: idx === 0 })),
     showSubsections: false,
     isCollapsed: false,
     storage: {
-      used: '2.8 GB',
-      total: '4 GB',
+      usage: '2.8 GB',
+      limit: '4 GB',
       percentage: 70,
       upgradeLabel: 'Upgrade',
       onUpgradeClick: () => console.log('Upgrade clicked'),
@@ -198,7 +213,7 @@ export const WithSubsectionsExpanded: Story = {
   render: InteractiveSidenav,
   args: {
     ...Default.args,
-    activeOptionId: 4,
+    options: MAIL_OPTIONS.map((opt, idx) => ({ ...opt, isActive: idx === 4 })),
     showSubsections: true,
   },
 };
@@ -225,8 +240,8 @@ export const HighStorageUsage: Story = {
   args: {
     ...Default.args,
     storage: {
-      used: '9.5 GB',
-      total: '10 GB',
+      usage: '9.5 GB',
+      limit: '10 GB',
       percentage: 95,
       upgradeLabel: 'Upgrade now',
       onUpgradeClick: () => console.log('Upgrade clicked'),
@@ -243,10 +258,21 @@ export const Minimal: Story = {
       onClick: () => console.log('Header clicked'),
     },
     options: [
-      { id: 0, title: 'All files', icon: FileIcon },
-      { id: 1, title: 'Trash', icon: TrashIcon },
+      {
+        label: 'All files',
+        icon: FileIcon,
+        iconDataCy: 'sidenav-all-files',
+        isVisible: true,
+        isActive: true,
+      },
+      {
+        label: 'Trash',
+        icon: TrashIcon,
+        iconDataCy: 'sidenav-trash-minimal',
+        isVisible: true,
+        isActive: false,
+      },
     ],
-    activeOptionId: 0,
     showSubsections: false,
     isCollapsed: false,
     onToggleCollapse: () => {},
