@@ -4,6 +4,7 @@ export interface PopoverProps {
     panel: (closePopover: () => void) => ReactNode;
     className?: string;
     classButton?: string;
+    align?: 'left' | 'right';
 }
 /**
  * Popover component
@@ -25,5 +26,5 @@ export interface PopoverProps {
  * @returns {JSX.Element}
  * - The rendered Popover component.
  */
-declare const Popover: ({ childrenButton, panel, className, classButton }: PopoverProps) => JSX.Element;
+declare const Popover: ({ childrenButton, panel, className, classButton, align }: PopoverProps) => JSX.Element;
 export default Popover;

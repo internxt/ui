@@ -36,6 +36,7 @@ export interface ListProps<T, F> {
     disableItemCompositionStyles?: boolean;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
+    headerBackgroundColor?: string;
     keyBoardShortcutActions?: {
         onShiftFKeysPressed?: () => void;
         onRKeyPressed?: () => void;
@@ -120,6 +121,9 @@ export interface ListProps<T, F> {
  * @property {() => void} [onMouseLeave]
  * - Optional callback triggered when the mouse leaves the list.
  *
+ * @property {string} [headerBackgroundColor]
+ * - Optional background color for the header.
+ *
  * @property {
  *              { onShiftFKeysPressed?: () => void; onRKeyPressed?: () => void; onBackspaceKeyPressed?: () => void }
  *           } [keyBoardShortcutActions]
@@ -130,5 +134,5 @@ export interface ListProps<T, F> {
  */
 declare const List: <T extends {
     id: number;
-}, F extends keyof T>({ header, checkboxDataCy, items, itemComposition, selectedItems, onClick, onDoubleClick, onEnterPressed, onSelectedItemsChanged, isLoading, forceLoading, skinSkeleton, emptyState, orderBy, onOrderByChanged, onNextPage, hasMoreItems, menu, displayMenuDiv, className, disableItemCompositionStyles, onMouseEnter, onMouseLeave, keyBoardShortcutActions, disableKeyboardShortcuts, }: ListProps<T, F>) => JSX.Element;
+}, F extends keyof T>({ header, checkboxDataCy, items, itemComposition, selectedItems, onClick, onDoubleClick, onEnterPressed, onSelectedItemsChanged, isLoading, forceLoading, skinSkeleton, emptyState, orderBy, onOrderByChanged, onNextPage, hasMoreItems, menu, displayMenuDiv, className, disableItemCompositionStyles, onMouseEnter, onMouseLeave, headerBackgroundColor, keyBoardShortcutActions, disableKeyboardShortcuts, }: ListProps<T, F>) => JSX.Element;
 export default List;

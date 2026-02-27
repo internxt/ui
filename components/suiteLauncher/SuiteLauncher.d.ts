@@ -9,6 +9,7 @@ export interface SuiteLauncherProps {
         isLocked?: boolean;
     }[];
     soonText?: string;
+    align?: 'left' | 'right';
 }
 /**
  * SuiteLauncher renders a dropdown menu with a list of suite applications.
@@ -28,4 +29,4 @@ export interface SuiteLauncherProps {
  * @returns {JSX.Element}
  * - The rendered suiteLauncher component.
  */
-export default function SuiteLauncher({ className, suiteArray, soonText, }: Readonly<SuiteLauncherProps>): JSX.Element;
+export default function SuiteLauncher({ className, suiteArray, soonText, align, }: Readonly<SuiteLauncherProps>): JSX.Element;

@@ -1,0 +1,14 @@
+import { Meta, StoryObj } from '@storybook/react-vite';
+import { Sidenav, SidenavProps } from '../../../components/sidenav';
+declare const meta: Meta<typeof Sidenav>;
+export default meta;
+type Story = StoryObj<SidenavProps>;
+export declare const Default: Story;
+export declare const Collapsed: Story;
+export declare const WithSubsectionsExpanded: Story;
+export declare const WithoutPrimaryAction: Story;
+export declare const WithoutStorage: Story;
+export declare const HighStorageUsage: Story;
+export declare const Minimal: Story;
+export declare const WithoutCollapseButton: Story;
+export declare const LoadingStorage: Story;
