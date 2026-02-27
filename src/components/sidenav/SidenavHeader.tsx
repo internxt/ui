@@ -45,7 +45,7 @@ const SidenavHeader = ({
                   e.stopPropagation();
                   onToggleCollapse();
                 }}
-                className="hidden group-hover:flex items-center justify-center text-gray-50"
+                className="hidden group-hover:flex items-center justify-center text-gray-80"
               >
                 <SidebarIcon size={28} />
               </button>
@@ -63,14 +63,14 @@ const SidenavHeader = ({
               <SuiteLauncher
                 suiteArray={suiteLauncher?.suiteArray}
                 soonText={suiteLauncher?.soonText}
-                className={suiteLauncher?.className}
+                className={`text-gray-80 ${suiteLauncher?.className}`}
                 align="left"
               />
             )}
             {onToggleCollapse && (
               <button
                 onClick={onToggleCollapse}
-                className="flex items-center justify-center text-gray-50 hover:text-gray-70"
+                className="flex items-center justify-center text-gray-80 hover:text-gray-90"
               >
                 <SidebarIcon size={28} />
               </button>
