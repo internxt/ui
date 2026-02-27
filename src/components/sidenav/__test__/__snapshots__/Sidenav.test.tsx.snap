@@ -176,7 +176,7 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
               width="28"
             />
             <button
-              class="hidden group-hover:flex items-center justify-center text-gray-50"
+              class="hidden group-hover:flex items-center justify-center text-gray-80"
             >
               <svg
                 fill="currentColor"
