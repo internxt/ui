@@ -1,6 +1,7 @@
 import { InfiniteScroll } from '@/components/infiniteScroll';
 import { MessageCheapSkeleton } from './MessageCheapSkeleton';
 import { MessageCheap } from './MessageCheap';
+import { ReactNode } from 'react';
 
 interface TrayListProps {
   mails: {
@@ -19,9 +20,34 @@ interface TrayListProps {
   checked: boolean;
   activeEmail: string;
   hasMoreItems?: boolean;
+  emptyState?: ReactNode;
   onMailSelected: (id: string) => void;
   onLoadMore?: () => void;
 }
+
+/**
+ *
+ * @param {TrayListProps} TrayListProps - Props for the TrayList component
+ * @prop {Array} TrayListProps.mails - An array of email objects
+ *
+ * @prop {string[]} TrayListProps.selectedEmails - An array of selected email IDs
+ *
+ * @prop {boolean} TrayListProps.loading - A boolean indicating loading state
+ *
+ * @prop {boolean} TrayListProps.checked - A boolean indicating whether all emails are checked
+ *
+ * @prop {string} TrayListProps.activeEmail - The ID of the currently active email
+ *
+ * @prop {boolean} TrayListProps.hasMoreItems - A boolean indicating whether there are more items to load
+ *
+ * @prop {ReactNode} TrayListProps.emptyState - A JSX element to display when there are no emails
+ *
+ * @prop {(id: string) => void} TrayListProps.onMailSelected - A function to handle email selection
+ *
+ * @prop {() => void} TrayListProps.onLoadMore - A function to load more emails
+ *
+ * @returns {JSX.Element} The rendered TrayList component
+ */
 
 export const TrayList = ({
   mails,
@@ -30,6 +56,7 @@ export const TrayList = ({
   checked,
   activeEmail,
   hasMoreItems = false,
+  emptyState,
   onMailSelected,
   onLoadMore,
 }: TrayListProps) => {
@@ -53,11 +80,9 @@ export const TrayList = ({
             ))}
           </>
         ) : (
-          <div className="flex flex-col">
+          <>
             {mails.length === 0 ? (
-              <div className="w-full items-center justify-center">
-                <p className="text-gray-60 text-center py-6">No emails</p>
-              </div>
+              <>{emptyState}</>
             ) : (
               <InfiniteScroll
                 handleNextPage={onLoadMore ?? (() => {})}
@@ -77,7 +102,7 @@ export const TrayList = ({
                 ))}
               </InfiniteScroll>
             )}
-          </div>
+          </>
         )}
       </div>
     </div>

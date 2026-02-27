@@ -153,5 +153,6 @@ export const Empty: Story = {
     checked: false,
     activeEmail: '',
     hasMoreItems: false,
+    emptyState: <div className="flex h-screen justify-center items-center">Empty state</div>,
   },
 };
