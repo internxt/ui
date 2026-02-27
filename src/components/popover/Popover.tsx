@@ -6,6 +6,7 @@ export interface PopoverProps {
   panel: (closePopover: () => void) => ReactNode;
   className?: string;
   classButton?: string;
+  align?: 'left' | 'right';
 }
 
 /**
@@ -29,7 +30,7 @@ export interface PopoverProps {
  * - The rendered Popover component.
  */
 
-const Popover = ({ childrenButton, panel, className, classButton }: PopoverProps): JSX.Element => {
+const Popover = ({ childrenButton, panel, className, classButton, align = 'right' }: PopoverProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [showContent, setShowContent] = useState(isOpen);
@@ -87,7 +88,8 @@ const Popover = ({ childrenButton, panel, className, classButton }: PopoverProps
         <div
           ref={panelRef}
           className={
-            'absolute right-0 z-50 mt-1 origin-top-right transform rounded-md border border-gray-10 ' +
+            'absolute z-50 mt-1 transform rounded-md border border-gray-10 ' +
+            `${align === 'left' ? 'left-0 origin-top-left' : 'right-0 origin-top-right'} ` +
             `bg-surface py-1.5 shadow-subtle duration-100 ease-out dark:bg-gray-5 ${transitionOpacity} ${transitionScale}`
           }
         >
