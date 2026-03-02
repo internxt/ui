@@ -30,20 +30,18 @@ const SidenavItem = ({
       } ${subsection ? 'pl-5' : ''}`}
       title={isCollapsed ? label : undefined}
     >
-      <div
-        className={`flex flex-row px-2.5 py-2 w-full items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}
-      >
+      <div className="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]">
         <div className={`flex flex-row gap-3 items-center ${isActive ? 'text-primary' : 'text-gray-80'}`}>
-          <Icon size={20} weight={isActive ? 'fill' : 'regular'} />
-          {!isCollapsed && <p className="font-medium">{label}</p>}
+          <Icon size={20} weight={isActive ? 'fill' : 'regular'} className="flex-shrink-0" />
+          <p className={`font-medium whitespace-nowrap overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>
+            {label}
+          </p>
         </div>
-        {!isCollapsed && notifications && (
-          <div
-            className={`flex rounded-full px-2 py-1 ${isActive ? 'text-white bg-primary' : 'bg-gray-10 text-gray-60'}`}
-          >
-            <p className="text-xs font-medium">{notifications}</p>
-          </div>
-        )}
+        <div
+          className={`flex rounded-full px-2 py-1 transition-opacity duration-300 ${isActive ? 'text-white bg-primary' : 'bg-gray-10 text-gray-60'} ${isCollapsed || !notifications ? 'opacity-0 invisible' : 'opacity-100'}`}
+        >
+          {notifications && <p className="text-xs font-medium">{notifications}</p>}
+        </div>
       </div>
     </button>
   );
