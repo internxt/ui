@@ -1,4 +1,4 @@
-import { SidebarIcon } from '@phosphor-icons/react';
+import { SidebarSimpleIcon } from '@phosphor-icons/react';
 import { SuiteLauncher } from '../suiteLauncher';
 
 interface SidenavHeaderProps {
@@ -35,21 +35,26 @@ const SidenavHeader = ({
     <div className={`flex flex-row justify-between w-full py-5 px-2 ${className}`}>
       <div className="relative flex flex-row gap-2 items-center">
         <button className="flex flex-row gap-2 items-center" onClick={onClick}>
-          <img src={logo} width={28} alt={title} className={`flex-shrink-0 ${isCollapsed ? 'group-hover:hidden' : ''}`} />
-          <p className={`text-xl font-medium text-gray-100 whitespace-nowrap overflow-hidden transition-opacity duration-300 ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>
-            {title}
-          </p>
+          <img
+            src={logo}
+            width={28}
+            alt={title}
+            className={`flex-shrink-0 ${isCollapsed ? 'group-hover:hidden' : ''}`}
+          />
+          {!isCollapsed && <p className="text-xl font-medium text-gray-100 whitespace-nowrap">{title}</p>}
         </button>
         {isCollapsed && onToggleCollapse && (
           <button
             onClick={onToggleCollapse}
             className="hidden group-hover:flex items-center justify-center text-gray-80 absolute left-0"
           >
-            <SidebarIcon size={28} />
+            <SidebarSimpleIcon size={28} />
           </button>
         )}
       </div>
-      <div className={`flex flex-row gap-2 items-center transition-opacity duration-300 ${isCollapsed ? 'opacity-0 invisible' : 'opacity-100'}`}>
+      <div
+        className={`flex z-20 flex-row gap-2 items-center transition-opacity duration-100 ${isCollapsed ? 'opacity-0 invisible' : 'opacity-100'}`}
+      >
         {suiteLauncher && (
           <SuiteLauncher
             suiteArray={suiteLauncher?.suiteArray}
@@ -63,7 +68,7 @@ const SidenavHeader = ({
             onClick={onToggleCollapse}
             className="flex items-center justify-center text-gray-80 hover:text-gray-90"
           >
-            <SidebarIcon size={28} />
+            <SidebarSimpleIcon size={28} />
           </button>
         )}
       </div>

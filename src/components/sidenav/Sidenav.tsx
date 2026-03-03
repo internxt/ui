@@ -70,7 +70,7 @@ const Sidenav = ({
 }: SidenavProps) => {
   return (
     <div
-      className={`relative flex flex-col p-2 h-full justify-between bg-gray-1 border-r border-gray-10 transition-all duration-300 group overflow-hidden ${
+      className={`relative flex flex-col p-2 h-full justify-between bg-gray-1 border-r border-gray-10 transition-all duration-300 group ${
         isCollapsed ? 'w-[60px]' : 'w-64'
       }`}
     >
@@ -85,25 +85,19 @@ const Sidenav = ({
           className={header.className}
         />
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 overflow-hidden">
           <div className="relative">
-            {!isCollapsed && (
-              <div className="transition-opacity duration-300 opacity-100">
-                {primaryAction}
-              </div>
-            )}
-            {isCollapsed && (
-              <div className="transition-opacity duration-300 opacity-100">
-                {collapsedPrimaryAction}
-              </div>
-            )}
+            {!isCollapsed && <div className="transition-opacity duration-300 opacity-100">{primaryAction}</div>}
+            {isCollapsed && <div className="transition-opacity duration-300 opacity-100">{collapsedPrimaryAction}</div>}
           </div>
           <SidenavOptions options={options} isCollapsed={isCollapsed} showSubsections={showSubsections} />
         </div>
       </div>
 
       {storage && (
-        <div className={`transition-opacity duration-300 ${isCollapsed ? 'opacity-0 invisible' : 'opacity-100'}`}>
+        <div
+          className={`transition-all overflow-hidden duration-300 ${isCollapsed ? 'opacity-0 invisible delay-200' : 'opacity-100 delay-0'}`}
+        >
           <SidenavStorage
             usage={storage.usage}
             limit={storage.limit}
