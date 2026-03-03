@@ -38,8 +38,9 @@ const SidenavHeader = ({
           <img
             src={logo}
             width={28}
+            height={28}
             alt={title}
-            className={`flex-shrink-0 ${isCollapsed ? 'group-hover:hidden' : ''}`}
+            className={`flex-shrink-0 min-w-[28px] min-h-[28px] ${isCollapsed ? 'group-hover:hidden' : ''}`}
           />
           {!isCollapsed && <p className="text-xl font-medium text-gray-100 whitespace-nowrap">{title}</p>}
         </button>
