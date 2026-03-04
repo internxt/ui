@@ -9,38 +9,51 @@ exports[`Sidenav Component > should match snapshot 1`] = `
       class="flex flex-col"
     >
       <div
-        class="flex flex-row justify-between w-full py-5 px-2 undefined "
+        class="flex flex-row justify-between w-full py-5 px-2 undefined"
       >
-        <button
-          class="flex flex-row gap-2 items-center"
-        >
-          <img
-            alt="Mail"
-            src="https://example.com/logo.png"
-            width="28"
-          />
-          <p
-            class="text-xl font-medium text-gray-100"
-          >
-            Mail
-          </p>
-        </button>
         <div
-          class="flex flex-row gap-2 items-center"
+          class="relative flex flex-row gap-2 items-center"
+        >
+          <button
+            class="flex flex-row gap-2 items-center"
+          >
+            <img
+              alt="Mail"
+              class="flex-shrink-0 min-w-[28px] min-h-[28px] "
+              height="28"
+              src="https://example.com/logo.png"
+              width="28"
+            />
+            <p
+              class="text-xl font-medium text-gray-100 whitespace-nowrap"
+            >
+              Mail
+            </p>
+          </button>
+        </div>
+        <div
+          class="flex z-20 flex-row gap-2 items-center transition-opacity duration-100 opacity-100"
         />
       </div>
       <div
-        class="flex flex-col gap-4"
+        class="flex flex-col gap-4 overflow-hidden"
       >
+        <div
+          class="relative"
+        >
+          <div
+            class="transition-opacity duration-300 opacity-100"
+          />
+        </div>
         <div
           class="flex flex-col w-full"
         >
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="inbox"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -51,13 +64,13 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Inbox
                 </p>
               </div>
               <div
-                class="flex rounded-full px-2 py-1 bg-gray-10 text-gray-60"
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-100 delay-0"
               >
                 <p
                   class="text-xs font-medium"
@@ -68,11 +81,11 @@ exports[`Sidenav Component > should match snapshot 1`] = `
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="sent"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -83,19 +96,22 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Sent
                 </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="drafts"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -106,13 +122,13 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Drafts
                 </p>
               </div>
               <div
-                class="flex rounded-full px-2 py-1 bg-gray-10 text-gray-60"
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-100 delay-0"
               >
                 <p
                   class="text-xs font-medium"
@@ -123,11 +139,11 @@ exports[`Sidenav Component > should match snapshot 1`] = `
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="labels"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -138,11 +154,14 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Labels
                 </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
         </div>
@@ -155,57 +174,84 @@ exports[`Sidenav Component > should match snapshot 1`] = `
 exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
 <div>
   <div
-    class="relative flex flex-col p-2 h-full justify-between bg-gray-1 border-r border-gray-10 transition-all duration-300 group w-16"
+    class="relative flex flex-col p-2 h-full justify-between bg-gray-1 border-r border-gray-10 transition-all duration-300 group w-[60px]"
   >
     <div
       class="flex flex-col"
     >
       <div
-        class="flex flex-row justify-between w-full py-5 px-2 undefined justify-center"
+        class="flex flex-row justify-between w-full py-5 px-2 undefined"
       >
         <div
-          class="relative flex items-center justify-center w-full"
+          class="relative flex flex-row gap-2 items-center"
         >
           <button
             class="flex flex-row gap-2 items-center"
           >
             <img
               alt="Mail"
-              class="group-hover:hidden"
+              class="flex-shrink-0 min-w-[28px] min-h-[28px] group-hover:hidden"
+              height="28"
               src="https://example.com/logo.png"
               width="28"
             />
-            <button
-              class="hidden group-hover:flex items-center justify-center text-gray-80"
+          </button>
+          <button
+            class="hidden group-hover:flex items-center justify-center text-gray-80 absolute left-0"
+          >
+            <svg
+              fill="currentColor"
+              height="28"
+              viewBox="0 0 256 256"
+              width="28"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="currentColor"
-                height="28"
-                viewBox="0 0 256 256"
-                width="28"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,152H56a8,8,0,0,0,0-16H40V120H56a8,8,0,0,0,0-16H40V88H56a8,8,0,0,0,0-16H40V56H80V200H40Zm176,48H96V56H216V200Z"
-                />
-              </svg>
-            </button>
+              <path
+                d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H80V200H40ZM216,200H96V56H216V200Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex z-20 flex-row gap-2 items-center transition-opacity duration-100 opacity-0 invisible"
+        >
+          <button
+            class="flex items-center justify-center text-gray-80 hover:text-gray-90"
+          >
+            <svg
+              fill="currentColor"
+              height="28"
+              viewBox="0 0 256 256"
+              width="28"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H80V200H40ZM216,200H96V56H216V200Z"
+              />
+            </svg>
           </button>
         </div>
       </div>
       <div
-        class="flex flex-col gap-4"
+        class="flex flex-col gap-4 overflow-hidden"
       >
+        <div
+          class="relative"
+        >
+          <div
+            class="transition-opacity duration-300 opacity-100"
+          />
+        </div>
         <div
           class="flex flex-col w-full"
         >
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="inbox"
             title="Inbox"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-center"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -215,16 +261,30 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                   height="20"
                   width="20"
                 />
+                <p
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-0 delay-200"
+                >
+                  Inbox
+                </p>
+              </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              >
+                <p
+                  class="text-xs font-medium"
+                >
+                  5
+                </p>
               </div>
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="sent"
             title="Sent"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-center"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -234,16 +294,24 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                   height="20"
                   width="20"
                 />
+                <p
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-0 delay-200"
+                >
+                  Sent
+                </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="drafts"
             title="Drafts"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-center"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -253,16 +321,30 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                   height="20"
                   width="20"
                 />
+                <p
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-0 delay-200"
+                >
+                  Drafts
+                </p>
+              </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              >
+                <p
+                  class="text-xs font-medium"
+                >
+                  2
+                </p>
               </div>
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="labels"
             title="Labels"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-center"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -272,7 +354,15 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                   height="20"
                   width="20"
                 />
+                <p
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-0 delay-200"
+                >
+                  Labels
+                </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
         </div>
@@ -291,43 +381,57 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
       class="flex flex-col"
     >
       <div
-        class="flex flex-row justify-between w-full py-5 px-2 undefined "
+        class="flex flex-row justify-between w-full py-5 px-2 undefined"
       >
-        <button
-          class="flex flex-row gap-2 items-center"
-        >
-          <img
-            alt="Mail"
-            src="https://example.com/logo.png"
-            width="28"
-          />
-          <p
-            class="text-xl font-medium text-gray-100"
-          >
-            Mail
-          </p>
-        </button>
         <div
-          class="flex flex-row gap-2 items-center"
+          class="relative flex flex-row gap-2 items-center"
+        >
+          <button
+            class="flex flex-row gap-2 items-center"
+          >
+            <img
+              alt="Mail"
+              class="flex-shrink-0 min-w-[28px] min-h-[28px] "
+              height="28"
+              src="https://example.com/logo.png"
+              width="28"
+            />
+            <p
+              class="text-xl font-medium text-gray-100 whitespace-nowrap"
+            >
+              Mail
+            </p>
+          </button>
+        </div>
+        <div
+          class="flex z-20 flex-row gap-2 items-center transition-opacity duration-100 opacity-100"
         />
       </div>
       <div
-        class="flex flex-col gap-4"
+        class="flex flex-col gap-4 overflow-hidden"
       >
-        <button
-          data-testid="primary-action"
+        <div
+          class="relative"
         >
-          New message
-        </button>
+          <div
+            class="transition-opacity duration-300 opacity-100"
+          >
+            <button
+              data-testid="primary-action"
+            >
+              New message
+            </button>
+          </div>
+        </div>
         <div
           class="flex flex-col w-full"
         >
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="inbox"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -338,13 +442,13 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Inbox
                 </p>
               </div>
               <div
-                class="flex rounded-full px-2 py-1 bg-gray-10 text-gray-60"
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-100 delay-0"
               >
                 <p
                   class="text-xs font-medium"
@@ -355,11 +459,11 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="sent"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -370,19 +474,22 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Sent
                 </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="drafts"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -393,13 +500,13 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Drafts
                 </p>
               </div>
               <div
-                class="flex rounded-full px-2 py-1 bg-gray-10 text-gray-60"
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-100 delay-0"
               >
                 <p
                   class="text-xs font-medium"
@@ -410,11 +517,11 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="labels"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -425,11 +532,14 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Labels
                 </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
         </div>
@@ -448,38 +558,51 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
       class="flex flex-col"
     >
       <div
-        class="flex flex-row justify-between w-full py-5 px-2 undefined "
+        class="flex flex-row justify-between w-full py-5 px-2 undefined"
       >
-        <button
-          class="flex flex-row gap-2 items-center"
-        >
-          <img
-            alt="Mail"
-            src="https://example.com/logo.png"
-            width="28"
-          />
-          <p
-            class="text-xl font-medium text-gray-100"
-          >
-            Mail
-          </p>
-        </button>
         <div
-          class="flex flex-row gap-2 items-center"
+          class="relative flex flex-row gap-2 items-center"
+        >
+          <button
+            class="flex flex-row gap-2 items-center"
+          >
+            <img
+              alt="Mail"
+              class="flex-shrink-0 min-w-[28px] min-h-[28px] "
+              height="28"
+              src="https://example.com/logo.png"
+              width="28"
+            />
+            <p
+              class="text-xl font-medium text-gray-100 whitespace-nowrap"
+            >
+              Mail
+            </p>
+          </button>
+        </div>
+        <div
+          class="flex z-20 flex-row gap-2 items-center transition-opacity duration-100 opacity-100"
         />
       </div>
       <div
-        class="flex flex-col gap-4"
+        class="flex flex-col gap-4 overflow-hidden"
       >
+        <div
+          class="relative"
+        >
+          <div
+            class="transition-opacity duration-300 opacity-100"
+          />
+        </div>
         <div
           class="flex flex-col w-full"
         >
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="inbox"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -490,13 +613,13 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Inbox
                 </p>
               </div>
               <div
-                class="flex rounded-full px-2 py-1 bg-gray-10 text-gray-60"
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-100 delay-0"
               >
                 <p
                   class="text-xs font-medium"
@@ -507,11 +630,11 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="sent"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -522,19 +645,22 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Sent
                 </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="drafts"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -545,13 +671,13 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Drafts
                 </p>
               </div>
               <div
-                class="flex rounded-full px-2 py-1 bg-gray-10 text-gray-60"
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-100 delay-0"
               >
                 <p
                   class="text-xs font-medium"
@@ -562,11 +688,11 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
             </div>
           </button>
           <button
-            class="flex w-full flex-col focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
             data-cy="labels"
           >
             <div
-              class="flex flex-row px-2.5 py-2 w-full items-center justify-between"
+              class="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]"
             >
               <div
                 class="flex flex-row gap-3 items-center text-gray-80"
@@ -577,54 +703,61 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                   width="20"
                 />
                 <p
-                  class="font-medium"
+                  class="font-medium whitespace-nowrap overflow-hidden transition-all duration-300 opacity-100 delay-0"
                 >
                   Labels
                 </p>
               </div>
+              <div
+                class="flex rounded-full px-2 py-1 transition-all duration-300 bg-gray-10 text-gray-60 opacity-0 invisible delay-300"
+              />
             </div>
           </button>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-col w-full gap-2.5 px-2 pb-5"
+      class="transition-all overflow-hidden duration-300 opacity-100 delay-0"
     >
       <div
-        class="flex flex-row w-full justify-between"
+        class="flex flex-col w-full gap-2.5 px-2 pb-5"
       >
         <div
-          class="flex flex-row items-center gap-2"
+          class="flex flex-row w-full justify-between"
         >
-          <p
-            class="text-gray-60 text-sm font-semibold"
+          <div
+            class="flex flex-row items-center gap-2"
           >
-            2.8 GB
-          </p>
-          <p
-            class="text-gray-60 text-sm"
+            <p
+              class="text-gray-60 text-sm font-semibold"
+            >
+              2.8 GB
+            </p>
+            <p
+              class="text-gray-60 text-sm"
+            >
+              /
+            </p>
+            <p
+              class="text-gray-60 text-sm"
+            >
+              4 GB
+            </p>
+          </div>
+          <button
+            class="text-primary text-sm hover:text-primary-dark font-semibold"
           >
-            /
-          </p>
-          <p
-            class="text-gray-60 text-sm"
-          >
-            4 GB
-          </p>
+            Upgrade
+          </button>
         </div>
-        <button
-          class="text-primary text-sm hover:text-primary-dark font-semibold"
-        >
-          Upgrade
-        </button>
-      </div>
-      <div
-        class="flex w-full h-1.5 bg-gray-10 rounded-full"
-      >
         <div
-          class="bg-gray-60 rounded-full"
-          style="width: 70%;"
-        />
+          class="flex w-full h-1.5 bg-gray-10 rounded-full"
+        >
+          <div
+            class="bg-gray-60 rounded-full"
+            style="width: 70%;"
+          />
+        </div>
       </div>
     </div>
   </div>
