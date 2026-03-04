@@ -202,18 +202,22 @@ describe('Sidenav Component', () => {
     });
 
     it('hides option titles when collapsed', () => {
-      const { queryByText } = renderSidenav({ isCollapsed: true });
-      expect(queryByText('Inbox')).not.toBeInTheDocument();
-      expect(queryByText('Sent')).not.toBeInTheDocument();
+      const { getByText } = renderSidenav({ isCollapsed: true });
+      const inboxText = getByText('Inbox');
+      const sentText = getByText('Sent');
+      expect(inboxText).toHaveClass('opacity-0');
+      expect(sentText).toHaveClass('opacity-0');
     });
 
     it('hides notifications when collapsed', () => {
-      const { queryByText } = renderSidenav({ isCollapsed: true });
-      expect(queryByText('5')).not.toBeInTheDocument();
+      const { getByText } = renderSidenav({ isCollapsed: true });
+      const notificationBadge = getByText('5').closest('div');
+      expect(notificationBadge).toHaveClass('opacity-0');
+      expect(notificationBadge).toHaveClass('invisible');
     });
 
     it('hides storage when collapsed', () => {
-      const { queryByText } = renderSidenav({
+      const { getByText } = renderSidenav({
         isCollapsed: true,
         storage: {
           usage: '2.8 GB',
@@ -224,8 +228,10 @@ describe('Sidenav Component', () => {
           isLoading: false,
         },
       });
-      expect(queryByText('2.8 GB')).not.toBeInTheDocument();
-      expect(queryByText('Upgrade')).not.toBeInTheDocument();
+      const usageText = getByText('2.8 GB');
+      const storageContainer = usageText.closest('div')?.parentElement?.parentElement?.parentElement;
+      expect(storageContainer).toHaveClass('opacity-0');
+      expect(storageContainer).toHaveClass('invisible');
     });
 
     it('hides subsections when collapsed even if showSubsections is true', () => {
