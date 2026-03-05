@@ -29,10 +29,9 @@ describe('Tooltip', () => {
   });
 
   it('shows the tooltip on mouse enter', async () => {
-    const { getByText } = renderLoader();
+    const { getByText, getByTestId } = renderLoader();
 
-    const trigger = getByText('Hover me');
-    fireEvent.mouseEnter(trigger);
+    fireEvent.mouseEnter(getByTestId('tooltip-container'));
 
     await waitFor(() => {
       expect(getByText('Tooltip Title')).toBeVisible();
@@ -40,122 +39,110 @@ describe('Tooltip', () => {
   });
 
   it('hides the tooltip on mouse leave without delay', async () => {
-    const { getByText, queryByText } = renderLoader();
+    const { getByTestId, getByRole } = renderLoader();
 
-    const trigger = getByText('Hover me');
-    fireEvent.mouseEnter(trigger);
-    fireEvent.mouseLeave(trigger);
-
-    const element = queryByText('Tooltip Title')?.parentElement?.parentElement;
+    const container = getByTestId('tooltip-container');
+    fireEvent.mouseEnter(container);
+    fireEvent.mouseLeave(container);
 
     await waitFor(() => {
-      expect(element).toHaveClass('opacity-0');
+      expect(getByRole('tooltip', { hidden: true })).toHaveClass('opacity-0');
     });
   });
 
-  it('applies delay before hiding tooltip when delayInMs is set', async () => {
-    const { getByText, queryByText } = renderLoader({ delayInMs: 100 });
+  it('applies delay before hiding tooltip when delayHideInMs is set', async () => {
+    const { getByTestId, getByRole } = renderLoader({ delayHideInMs: 100 });
 
-    const trigger = getByText('Hover me');
-    fireEvent.mouseEnter(trigger);
-    fireEvent.mouseLeave(trigger);
+    const container = getByTestId('tooltip-container');
+    fireEvent.mouseEnter(container);
+    fireEvent.mouseLeave(container);
 
-    const element = queryByText('Tooltip Title')?.parentElement?.parentElement;
+    const tooltip = getByRole('tooltip');
 
     await waitFor(() => {
-      expect(element).toHaveClass('opacity-100');
+      expect(tooltip).toHaveClass('opacity-100');
     });
 
     await waitFor(
       () => {
-        expect(element).toHaveClass('opacity-0');
+        expect(tooltip).toHaveClass('opacity-0');
       },
       { timeout: 300 },
     );
   });
 
   it('renders subtitle if provided', () => {
-    const { getByText } = renderLoader({ subtitle: 'Tooltip Subtitle' });
+    const { getByText, getByTestId } = renderLoader({ subtitle: 'Tooltip Subtitle' });
 
-    fireEvent.mouseEnter(getByText('Hover me'));
+    fireEvent.mouseEnter(getByTestId('tooltip-container'));
 
     expect(getByText('Tooltip Subtitle')).toBeVisible();
   });
 
   it('renders the arrow by default', () => {
-    const { getByText, getByTestId } = renderLoader();
+    const { getByTestId } = renderLoader();
 
-    fireEvent.mouseEnter(getByText('Hover me'));
-    const arrow = getByTestId('tooltip-arrow');
+    fireEvent.mouseEnter(getByTestId('tooltip-container'));
 
-    expect(arrow).toBeInTheDocument();
+    expect(getByTestId('tooltip-arrow')).toBeInTheDocument();
   });
 
   it('does not render the arrow if `arrow` is false', () => {
-    const { getByText, queryByTestId } = renderLoader({ arrow: false });
+    const { getByTestId, queryByTestId } = renderLoader({ arrow: false });
 
-    fireEvent.mouseEnter(getByText('Hover me'));
-    const arrow = queryByTestId('tooltip-arrow');
+    fireEvent.mouseEnter(getByTestId('tooltip-container'));
 
-    expect(arrow).not.toBeInTheDocument();
+    expect(queryByTestId('tooltip-arrow')).not.toBeInTheDocument();
   });
 
   it('applies the correct position when popsFrom is top', () => {
-    const { getByText } = renderLoader();
+    const { getByRole } = renderLoader();
 
-    fireEvent.mouseEnter(getByText('Hover me'));
-
-    const tooltip = getByText('Tooltip Title').parentElement?.parentElement;
+    const tooltip = getByRole('tooltip', { hidden: true });
 
     expect(tooltip).toHaveClass('bottom-full');
   });
 
   it('applies the correct position when popsFrom is bottom', () => {
-    const { getByText } = renderLoader({ popsFrom: 'bottom' });
+    const { getByRole } = renderLoader({ popsFrom: 'bottom' });
 
-    fireEvent.mouseEnter(getByText('Hover me'));
-
-    const tooltip = getByText('Tooltip Title').parentElement?.parentElement;
+    const tooltip = getByRole('tooltip', { hidden: true });
 
     expect(tooltip).toHaveClass('top-full');
   });
 
   it('applies the correct position when popsFrom is left', () => {
-    const { getByText } = renderLoader({ popsFrom: 'left' });
+    const { getByRole } = renderLoader({ popsFrom: 'left' });
 
-    fireEvent.mouseEnter(getByText('Hover me'));
-
-    const tooltip = getByText('Tooltip Title').parentElement?.parentElement;
+    const tooltip = getByRole('tooltip', { hidden: true });
 
     expect(tooltip).toHaveClass('right-full');
   });
 
   it('applies the correct position when popsFrom is right', () => {
-    const { getByText } = renderLoader({ popsFrom: 'right' });
+    const { getByRole } = renderLoader({ popsFrom: 'right' });
 
-    fireEvent.mouseEnter(getByText('Hover me'));
-
-    const tooltip = getByText('Tooltip Title').parentElement?.parentElement;
+    const tooltip = getByRole('tooltip', { hidden: true });
 
     expect(tooltip).toHaveClass('left-full');
   });
 
   it('applies custom className if provided', () => {
-    const { getByText } = renderLoader({ className: 'custom-class' });
+    const { getByTestId } = renderLoader({ className: 'custom-class' });
 
-    const container = getByText('Hover me').parentElement;
-
-    expect(container).toHaveClass('custom-class');
+    expect(getByTestId('tooltip-container')).toHaveClass('custom-class');
   });
 
   it('should clear the timeout on mouse enter', () => {
     const clearTimeoutMock = vi.fn();
     global.clearTimeout = clearTimeoutMock;
 
-    const { getByText } = renderLoader({ delayInMs: 100 });
-    fireEvent.mouseLeave(getByText('Hover me'));
-    fireEvent.mouseEnter(getByText('Hover me'));
+    const { getByTestId } = renderLoader({ delayHideInMs: 100 });
+    const container = getByTestId('tooltip-container');
+    fireEvent.mouseLeave(container);
+    fireEvent.mouseEnter(container);
 
     expect(clearTimeoutMock).toHaveBeenCalled();
   });
+
 });

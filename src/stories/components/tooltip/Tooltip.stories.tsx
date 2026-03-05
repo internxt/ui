@@ -13,7 +13,7 @@ const meta: Meta<typeof Tooltip> = {
     subtitle: 'Optional subtitle',
     popsFrom: 'top',
     arrow: true,
-    delayInMs: 300,
+    delayHideInMs: 300,
   },
   tags: ['autodocs'],
 };
