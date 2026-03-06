@@ -1,14 +1,22 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useId, useRef, useState } from 'react';
 
-export interface TooltipProps {
+type TooltipContentProps =
+  | { content: ReactNode; title?: never; subtitle?: never }
+  | { content?: never; title: string; subtitle?: string };
+
+type TooltipBaseProps = {
   children: ReactNode;
-  title: string;
-  subtitle?: string;
   popsFrom: 'right' | 'left' | 'top' | 'bottom';
   className?: string;
-  delayInMs?: number;
+  delayHideInMs?: number;
+  delayShowInMs?: number;
   arrow?: boolean;
-}
+  tooltipClassName?: string;
+  titleClassName?: string;
+  animation?: 'scale' | 'fade' | 'none';
+};
+
+export type TooltipProps = TooltipBaseProps & TooltipContentProps;
 
 /**
  * Tooltip component
@@ -16,8 +24,11 @@ export interface TooltipProps {
  * @property {ReactNode} children
  * - The content that triggers the tooltip when hovered over.
  *
- * @property {string} title
- * - The main text displayed inside the tooltip. This is required.
+ * @property {string} [title]
+ * - The main text displayed inside the tooltip.
+ *
+ * @property {ReactNode} [content]
+ * - Custom content to render inside the tooltip bubble. When provided, `title` and `subtitle` are ignored.
  *
  * @property {string} [subtitle]
  * - An optional subtitle displayed below the main title inside the tooltip.
@@ -32,105 +43,181 @@ export interface TooltipProps {
  * @property {string} [className]
  * - Additional CSS classes to style the tooltip container. Use to override default styles.
  *
- * @property {number} [delayInMs]
+ * @property {number} [delayHideInMs]
  * - The delay (in milliseconds) before hiding the tooltip after the mouse leaves the trigger element.
  *   - If not provided, the tooltip hides immediately.
+ *
+ * @property {number} [delayShowInMs]
+ * - The delay (in milliseconds) before showing the tooltip after the mouse enters the trigger element.
+ *   - If not provided, the tooltip shows immediately.
  *
  * @property {boolean} [arrow=true]
  * - Whether to display the arrow pointing to the trigger element.
  *   - Default is true.
  *
+ * @property {string} [tooltipClassName]
+ * - Additional CSS classes to style the tooltip bubble (background, padding, border-radius).
+ *
+ * @property {string} [titleClassName]
+ * - Additional CSS classes to style the title text.
+ *
+ * @property {'scale' | 'fade' | 'none'} [animation='scale']
+ * - The animation style used when showing/hiding the tooltip.
+ *   - "scale": Scale and fade transition (default).
+ *   - "fade": Opacity-only transition.
+ *   - "none": No animation, instant show/hide.
+ *
  * @returns {JSX.Element}
  * - A tooltip component that shows additional information when hovering over its children.
  */
+
+const POSITION_CONFIG = {
+  right: {
+    tooltip: 'left-full top-1/2 -translate-y-1/2 ml-1.5',
+    triangle: 'flex-row-reverse',
+    clip: 'polygon(100% 0%, 100% 100%, 0% 50%)',
+    arrowSize: 'h-4 w-1.5',
+  },
+  left: {
+    tooltip: 'right-full top-1/2 -translate-y-1/2 mr-1.5',
+    triangle: 'flex-row',
+    clip: 'polygon(0% 0%, 0% 100%, 100% 50%)',
+    arrowSize: 'h-4 w-1.5',
+  },
+  top: {
+    tooltip: 'bottom-full left-1/2 -translate-x-1/2 mb-1.5 origin-bottom',
+    triangle: 'flex-col',
+    clip: 'polygon(0% 0%, 100% 0%, 50% 100%)',
+    arrowSize: 'h-1.5 w-4',
+  },
+  bottom: {
+    tooltip: 'top-full left-1/2 -translate-x-1/2 mt-1.5',
+    triangle: 'flex-col-reverse',
+    clip: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+    arrowSize: 'h-1.5 w-4',
+  },
+} as const;
+
+const clearTimeoutRef = (ref: React.MutableRefObject<ReturnType<typeof setTimeout> | null>) => {
+  if (ref.current !== null) {
+    clearTimeout(ref.current);
+    ref.current = null;
+  }
+};
 
 const Tooltip = ({
   children,
   title,
   subtitle,
+  content,
   popsFrom,
   className,
-  delayInMs,
+  delayHideInMs,
+  delayShowInMs,
   arrow = true,
+  tooltipClassName,
+  titleClassName,
+  animation = 'scale',
 }: TooltipProps): JSX.Element => {
   const [visible, setVisible] = useState(false);
+  const tooltipId = useId();
 
-  const timeoutRef = useRef<null | number>(null);
+  const hideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const showTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  function show() {
-    setVisible(true);
-  }
+  const setVisibility = useCallback(
+    (value: boolean, delay?: number) => {
+      clearTimeoutRef(hideTimeoutRef);
+      clearTimeoutRef(showTimeoutRef);
 
-  function hide() {
-    setVisible(false);
-  }
+      if (delay === undefined) {
+        setVisible(value);
+        return;
+      }
 
-  function handleMouseEnter() {
-    if (timeoutRef.current !== null) {
-      clearTimeout(timeoutRef.current);
-    }
-    show();
-  }
-  function handleMouseLeave() {
-    if (delayInMs) {
-      timeoutRef.current = setTimeout(() => {
-        timeoutRef.current = null;
-        hide();
-      }, delayInMs) as unknown as number;
-    } else {
-      hide();
-    }
-  }
+      const ref = value ? showTimeoutRef : hideTimeoutRef;
+      ref.current = setTimeout(() => {
+        ref.current = null;
+        setVisible(value);
+      }, delay);
+    },
+    [],
+  );
 
-  let tooltipPosition = '';
-  let trianglePosition = '';
-  let triangle = '';
+  const show = useCallback(() => setVisibility(true, delayShowInMs), [setVisibility, delayShowInMs]);
+  const hide = useCallback(() => setVisibility(false, delayHideInMs), [setVisibility, delayHideInMs]);
 
-  switch (popsFrom) {
-    case 'right':
-      tooltipPosition = 'left-full top-1/2 -translate-y-1/2 ml-1.5';
-      trianglePosition = 'flex-row-reverse';
-      triangle = 'polygon(100% 0%, 100% 100%, 0% 50%)';
-      break;
-    case 'left':
-      tooltipPosition = 'right-full top-1/2 -translate-y-1/2 mr-1.5';
-      trianglePosition = 'flex-row';
-      triangle = 'polygon(0% 0%, 0% 100%, 100% 50%)';
-      break;
-    case 'top':
-      tooltipPosition = 'bottom-full left-1/2 -translate-x-1/2 mb-1.5 origin-bottom';
-      trianglePosition = 'flex-col';
-      triangle = 'polygon(0% 0%, 100% 0%, 50% 100%)';
-      break;
-    case 'bottom':
-      tooltipPosition = 'top-full left-1/2 -translate-x-1/2 mt-1.5';
-      trianglePosition = 'flex-col-reverse';
-      triangle = 'polygon(50% 0%, 0% 100%, 100% 100%)';
-      break;
-  }
+  useEffect(() => {
+    return () => {
+      clearTimeoutRef(hideTimeoutRef);
+      clearTimeoutRef(showTimeoutRef);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setVisible(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [visible]);
+
+  const ANIMATION_CLASSES = {
+    none: visible ? 'opacity-100' : 'invisible opacity-0',
+    fade: `transition-opacity duration-200 ${visible ? 'opacity-100' : 'opacity-0'}`,
+    scale: `transition-all duration-150 ${visible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`,
+  };
+
+  const animationClass = ANIMATION_CLASSES[animation];
+
+  const { tooltip: tooltipPosition, triangle: trianglePosition, clip, arrowSize } = POSITION_CONFIG[popsFrom];
+
+  const isInteractive = delayHideInMs !== undefined;
 
   return (
     <div
-      className={`relative w-max ${className}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{ lineHeight: 0 }}
+      data-testid="tooltip-container"
+      className={`relative flex w-max items-center ${className ?? ''}`}
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onFocus={show}
+      onBlur={hide}
+      aria-describedby={visible ? tooltipId : undefined}
     >
       <div
-        className={`pointer-events-none absolute ${tooltipPosition} flex items-center ${trianglePosition} drop-shadow-tooltip transition-all duration-150 ${
-          visible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
-        }`}
+        role="tooltip"
+        id={tooltipId}
+        aria-hidden={!visible}
+        className={[
+          `absolute ${isInteractive ? '' : 'pointer-events-none'}`,
+          tooltipPosition,
+          'flex items-center',
+          trianglePosition,
+          'drop-shadow-tooltip',
+          animationClass,
+        ].join(' ')}
+        onMouseEnter={isInteractive ? show : undefined}
+        onMouseLeave={isInteractive ? hide : undefined}
       >
-        <div className="w-max rounded-lg bg-gray-90 px-4 py-1.5 text-center dark:bg-gray-5">
-          <p className="text-base text-white">{title}</p>
-          {subtitle && <p className="-mt-1 text-sm text-gray-40">{subtitle}</p>}
+        <div
+          className={tooltipClassName ?? 'w-max rounded-lg bg-gray-90 px-4 py-1.5 text-center dark:bg-gray-10'}
+        >
+          {content ?? (
+            <>
+              <span className={titleClassName ?? 'text-base text-white'}>{title}</span>
+              {subtitle && <p className="-mt-1 text-sm text-gray-40">{subtitle}</p>}
+            </>
+          )}
         </div>
         {arrow && (
           <div
-            className={`bg-gray-90 dark:bg-gray-5 ${
-              popsFrom === 'bottom' || popsFrom === 'top' ? 'h-1.5 w-4' : 'h-4 w-1.5'
-            }`}
-            style={{ clipPath: triangle, marginTop: popsFrom === 'top' ? '-1px' : undefined }}
+            className={`bg-gray-90 dark:bg-gray-10 ${arrowSize}`}
+            style={{ clipPath: clip, marginTop: popsFrom === 'top' ? '-1px' : undefined }}
             data-testid="tooltip-arrow"
           />
         )}
