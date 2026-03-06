@@ -14,23 +14,26 @@ exports[`Copyable Component > should match snapshot 1`] = `
           Text to copy
         </p>
         <div
-          class="relative w-max ml-6"
-          style="line-height: 0;"
+          class="relative flex w-max items-center ml-6"
+          data-testid="tooltip-container"
         >
           <div
-            class="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-1.5 flex items-center flex-col-reverse drop-shadow-tooltip transition-all duration-150 scale-50 opacity-0"
+            aria-hidden="true"
+            class="absolute pointer-events-none top-full left-1/2 -translate-x-1/2 mt-1.5 flex items-center flex-col-reverse drop-shadow-tooltip transition-all duration-150 scale-50 opacity-0"
+            id=":r0:"
+            role="tooltip"
           >
             <div
-              class="w-max rounded-lg bg-gray-90 px-4 py-1.5 text-center dark:bg-gray-5"
+              class="w-max rounded-lg bg-gray-90 px-4 py-1.5 text-center dark:bg-gray-10"
             >
-              <p
+              <span
                 class="text-base text-white"
               >
                 Copy to clipboard
-              </p>
+              </span>
             </div>
             <div
-              class="bg-gray-90 dark:bg-gray-5 h-1.5 w-4"
+              class="bg-gray-90 dark:bg-gray-10 h-1.5 w-4"
               data-testid="tooltip-arrow"
               style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"
             />
@@ -63,23 +66,26 @@ exports[`Copyable Component > should match snapshot 1`] = `
         Text to copy
       </p>
       <div
-        class="relative w-max ml-6"
-        style="line-height: 0;"
+        class="relative flex w-max items-center ml-6"
+        data-testid="tooltip-container"
       >
         <div
-          class="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-1.5 flex items-center flex-col-reverse drop-shadow-tooltip transition-all duration-150 scale-50 opacity-0"
+          aria-hidden="true"
+          class="absolute pointer-events-none top-full left-1/2 -translate-x-1/2 mt-1.5 flex items-center flex-col-reverse drop-shadow-tooltip transition-all duration-150 scale-50 opacity-0"
+          id=":r0:"
+          role="tooltip"
         >
           <div
-            class="w-max rounded-lg bg-gray-90 px-4 py-1.5 text-center dark:bg-gray-5"
+            class="w-max rounded-lg bg-gray-90 px-4 py-1.5 text-center dark:bg-gray-10"
           >
-            <p
+            <span
               class="text-base text-white"
             >
               Copy to clipboard
-            </p>
+            </span>
           </div>
           <div
-            class="bg-gray-90 dark:bg-gray-5 h-1.5 w-4"
+            class="bg-gray-90 dark:bg-gray-10 h-1.5 w-4"
             data-testid="tooltip-arrow"
             style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"
           />
