@@ -1,0 +1,11 @@
+import { Meta, StoryObj } from '@storybook/react-vite';
+import { default as MessageCheap } from '../../../../../components/mail/cheaps/MessageCheap';
+declare const meta: Meta<typeof MessageCheap>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const Active: Story;
+export declare const Read: Story;
+export declare const Unread: Story;
+export declare const LongContent: Story;
+export declare const WithAvatar: Story;

@@ -1,0 +1,12 @@
+import { Meta, StoryObj } from '@storybook/react-vite';
+import { default as TrayList } from '../../../../components/mail/tray/TrayList';
+declare const meta: Meta<typeof TrayList>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const WithActiveEmail: Story;
+export declare const WithSelectedEmails: Story;
+export declare const AllSelected: Story;
+export declare const WithInfiniteScroll: Story;
+export declare const Loading: Story;
+export declare const Empty: Story;
