@@ -3,14 +3,14 @@ import SidenavOptions, { SidenavOption } from './SidenavOptions';
 import SidenavHeader from './SidenavHeader';
 import SidenavStorage from './SidenavStorage';
 
-export interface SidenavHeader {
+export interface SidenavHeaderProps {
   logo: string;
   title: string;
   onClick: () => void;
   className?: string;
 }
 
-export interface SidenavStorage {
+export interface SidenavStorageProps {
   usage: string;
   limit: string;
   percentage: number;
@@ -20,7 +20,7 @@ export interface SidenavStorage {
 }
 
 export interface SidenavProps {
-  header: SidenavHeader;
+  header: SidenavHeaderProps;
   primaryAction?: ReactNode;
   suiteLauncher?: {
     className?: string;
@@ -38,7 +38,7 @@ export interface SidenavProps {
   options: SidenavOption[];
   showSubsections?: boolean;
   isCollapsed?: boolean;
-  storage?: SidenavStorage;
+  storage?: SidenavStorageProps;
   onToggleCollapse?: () => void;
 }
 

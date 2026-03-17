@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { MessageCheap } from '../MessageCheap';
+import MessageCheap from '../../cheaps/MessageCheap';
 
 const mockEmail = {
   id: '1',

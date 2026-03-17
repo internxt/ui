@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { MessageCheap } from '../../../../../components/mail/tray/MessageCheap';
+import MessageCheap from '../../../../../components/mail/cheaps/MessageCheap';
 
 const mockEmail = {
   id: '1',

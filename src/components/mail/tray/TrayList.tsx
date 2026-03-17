@@ -1,9 +1,9 @@
 import { InfiniteScroll } from '@/components/infiniteScroll';
-import { MessageCheapSkeleton } from './MessageCheapSkeleton';
-import { MessageCheap } from './MessageCheap';
+import MessageCheapSkeleton from '../cheaps/MessageCheapSkeleton';
+import MessageCheap from '../cheaps/MessageCheap';
 import { ReactNode } from 'react';
 
-interface TrayListProps {
+export interface TrayListProps {
   mails: {
     id: string;
     from: {
@@ -17,11 +17,11 @@ interface TrayListProps {
   }[];
   selectedEmails?: string[];
   loading: boolean;
-  checked: boolean;
-  activeEmail: string;
+  checked?: boolean;
+  activeEmail?: string;
   hasMoreItems?: boolean;
   emptyState?: ReactNode;
-  onMailSelected: (id: string) => void;
+  onMailSelected?: (id: string) => void;
   onLoadMore?: () => void;
 }
 
@@ -49,7 +49,7 @@ interface TrayListProps {
  * @returns {JSX.Element} The rendered TrayList component
  */
 
-export const TrayList = ({
+const TrayList = ({
   mails,
   selectedEmails = [],
   loading,
@@ -57,8 +57,8 @@ export const TrayList = ({
   activeEmail,
   hasMoreItems = false,
   emptyState,
-  onMailSelected,
-  onLoadMore,
+  onMailSelected = () => {},
+  onLoadMore = () => {},
 }: TrayListProps) => {
   const loader = (
     <div className="flex flex-col">
@@ -69,8 +69,8 @@ export const TrayList = ({
   );
 
   return (
-    <div className="flex flex-col w-[400px] min-w-[200px] max-w-[400px] h-screen">
-      <div id="tray-scroll-container" className="overflow-y-auto w-full">
+    <div className="flex flex-col w-[400px] min-w-[200px] max-w-[400px] h-full">
+      <div id="tray-scroll-container" className="overflow-y-auto w-full h-full min-h-0">
         {loading ? (
           <>
             {new Array(8).fill(0).map((_, index) => (
@@ -85,7 +85,7 @@ export const TrayList = ({
               <>{emptyState}</>
             ) : (
               <InfiniteScroll
-                handleNextPage={onLoadMore ?? (() => {})}
+                handleNextPage={onLoadMore}
                 hasMoreItems={hasMoreItems}
                 loader={loader}
                 scrollableTarget="tray-scroll-container"
@@ -108,3 +108,5 @@ export const TrayList = ({
     </div>
   );
 };
+
+export default TrayList;

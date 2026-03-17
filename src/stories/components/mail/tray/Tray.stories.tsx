@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { TrayList } from '../../../../components/mail/tray/TrayList';
+import TrayList from '../../../../components/mail/tray/TrayList';
 
 const mockMails = [
   {

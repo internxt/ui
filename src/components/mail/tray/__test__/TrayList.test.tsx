@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, afterEach, beforeAll, afterAll } from 'vitest';
-import { TrayList } from '../TrayList';
+import TrayList from '../TrayList';
 
 const mockMails = [
   {
@@ -151,7 +151,7 @@ describe('TrayList', () => {
     expect(mainContainer.className).toContain('w-[400px]');
     expect(mainContainer.className).toContain('min-w-[200px]');
     expect(mainContainer.className).toContain('max-w-[400px]');
-    expect(mainContainer.className).toContain('h-screen');
+    expect(mainContainer.className).toContain('h-full');
   });
 
   it('should have scrollable container with correct id', () => {

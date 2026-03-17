@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { MessageCheapSkeleton } from '../MessageCheapSkeleton';
+import MessageCheapSkeleton from '../../cheaps/MessageCheapSkeleton';
 
 describe('MessageCheapSkeleton', () => {
   it('should match snapshot', () => {

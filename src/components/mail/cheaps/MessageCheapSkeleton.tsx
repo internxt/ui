@@ -1,4 +1,4 @@
-export const MessageCheapSkeleton = () => (
+const MessageCheapSkeleton = () => (
   <div className={'flex flex-col text-left gap-2 w-full py-3 px-5 border-b border-gray-5'}>
     <div className="flex flex-row w-full gap-2">
       {/* Avatar */}
@@ -17,3 +17,5 @@ export const MessageCheapSkeleton = () => (
     </div>
   </div>
 );
+
+export default MessageCheapSkeleton;

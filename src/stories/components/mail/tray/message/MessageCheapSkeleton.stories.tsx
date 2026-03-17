@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MessageCheapSkeleton } from '../../../../../components/mail/tray/MessageCheapSkeleton';
+import MessageCheapSkeleton from '../../../../../components/mail/cheaps/MessageCheapSkeleton';
 
 const meta: Meta<typeof MessageCheapSkeleton> = {
   title: 'Mail/MessageCheapSkeleton',

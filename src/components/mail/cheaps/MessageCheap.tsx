@@ -1,6 +1,6 @@
 import { Avatar } from '@/components/avatar';
 
-interface MessageCheapProps {
+export interface MessageCheapProps {
   email: {
     id: string;
     from: {
@@ -17,7 +17,7 @@ interface MessageCheapProps {
   onClick: (id: string) => void;
 }
 
-export const MessageCheap = ({ email, active, selected, onClick }: MessageCheapProps) => {
+const MessageCheap = ({ email, active, selected, onClick }: MessageCheapProps) => {
   const isHighlighted = active || selected;
 
   return (
@@ -46,3 +46,5 @@ export const MessageCheap = ({ email, active, selected, onClick }: MessageCheapP
     </button>
   );
 };
+
+export default MessageCheap;
