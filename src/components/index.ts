@@ -28,3 +28,4 @@ export * from './table/Table';
 export * from './textArea';
 export * from './tooltip';
 export * from './sidenav';
+export * from './mail';
