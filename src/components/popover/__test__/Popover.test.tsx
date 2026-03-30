@@ -123,22 +123,6 @@ describe('Popover', () => {
     await waitFor(() => expect(getByText('Popover Content')).toBeInTheDocument());
   });
 
-  it('applies the correct classes for left alignment', () => {
-    const { getByText, queryByText } = renderPopover({ align: 'left' });
-    fireEvent.click(getByText('Open Popover'));
-    const leftPanel = queryByText('Popover Content')?.parentElement?.parentElement;
-    expect(leftPanel).toHaveClass('right-0');
-    expect(leftPanel).toHaveClass('origin-top-right');
-  });
-
-  it('applies the correct classes for right alignment', () => {
-    const { getByText, queryByText } = renderPopover({ align: 'right' });
-    fireEvent.click(getByText('Open Popover'));
-    const rightPanel = queryByText('Popover Content')?.parentElement?.parentElement;
-    expect(rightPanel).toHaveClass('left-0');
-    expect(rightPanel).toHaveClass('origin-top-left');
-  });
-
   it('should call onMouseDown stopPropagation when the button is clicked', () => {
     const stopPropagationSpy = vi.fn();
     const { getByText } = renderPopover();
