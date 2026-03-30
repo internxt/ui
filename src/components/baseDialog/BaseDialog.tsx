@@ -79,17 +79,15 @@ const BaseDialog = ({
   return (
     <div
       data-test={dataTest}
-      className={`${isOpen ? 'flex' : 'hidden'} ${
-        classes || ''
-      } absolute bottom-0 left-0 right-0 top-0 z-50 bg-black/40`}
+      className={`${isOpen ? 'flex' : 'hidden'} ${classes || ''
+        } absolute bottom-0 left-0 right-0 top-0 z-50 bg-black/40`}
     >
       <div
         className={`${panelClasses || ''} absolute left-1/2 top-1/2 flex w-104 -translate-x-1/2
-        -translate-y-1/2 flex-col overflow-hidden  ${dialogRounded ? 'rounded-2xl' : 'rounded-lg pt-8'} text-gray-100 ${
-          bgColor || 'bg-surface'
-        }`}
+        -translate-y-1/2 flex-col overflow-hidden  ${dialogRounded ? 'rounded-2xl' : 'rounded-lg pt-8'} text-gray-100 ${bgColor || 'bg-surface'
+          }`}
       >
-        <div className={`${subTitle ? 'justify-between bg-gray-1 p-5' : ''} flex flex-row items-start`}>
+        <div className={`${subTitle ? 'justify-between bg-gray-1' : ''} p-5 flex flex-row items-start`}>
           {title ? (
             <div className="relative flex max-w-full flex-1 flex-col truncate">
               <span className={`${titleClasses || ''} truncate text-xl`} title={title}>
