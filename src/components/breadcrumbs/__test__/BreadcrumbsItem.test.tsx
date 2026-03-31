@@ -129,4 +129,16 @@ describe('BreadcrumbsItem Component', () => {
     const { getByTestId } = renderBreadcrumbsItem({ itemComponent: ItemComponentMock });
     expect(getByTestId('custom-icon')).toBeInTheDocument();
   });
+
+  it('applies first path styling when isFirstPath is true', () => {
+    const firstPathItem = { ...breadcrumbItem, isFirstPath: true };
+    const { getByText } = renderBreadcrumbsItem({ item: firstPathItem, totalBreadcrumbsLength: 1 });
+    expect(getByText('Item 1').parentElement).toHaveClass('shrink-0 pr-1');
+  });
+
+  it('renders gracefully when label is not provided', () => {
+    const noLabelItem = { ...breadcrumbItem, label: '' };
+    const { container } = renderBreadcrumbsItem({ item: noLabelItem });
+    expect(container).toBeInTheDocument();
+  });
 });
