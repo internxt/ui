@@ -287,4 +287,45 @@ describe('Sidenav Component', () => {
       expect(onToggleCollapse).toHaveBeenCalled();
     });
   });
+
+  it('renders storage without upgradeLabel', () => {
+    const { queryByText } = renderSidenav({
+      storage: {
+        usage: '1 GB',
+        limit: '5 GB',
+        percentage: 20,
+        onUpgradeClick: vi.fn(),
+        isLoading: false,
+      },
+    });
+    expect(queryByText('1 GB')).toBeInTheDocument();
+    expect(queryByText('Upgrade')).not.toBeInTheDocument();
+  });
+
+  it('renders storage with default isLoading (shows skeleton)', () => {
+    const { container, queryByText } = renderSidenav({
+      storage: {
+        usage: '1 GB',
+        limit: '5 GB',
+        percentage: 20,
+        onUpgradeClick: vi.fn(),
+      },
+    });
+    expect(queryByText('1 GB')).not.toBeInTheDocument();
+    const skeletons = container.querySelectorAll('.animate-pulse');
+    expect(skeletons.length).toBeGreaterThan(0);
+  });
+
+  it('renders header with suiteLauncher', () => {
+    const MockIcon = React.forwardRef<SVGSVGElement, { size?: number | string }>(({ size = 20 }, ref) => (
+      <svg ref={ref} width={size} height={size} />
+    ));
+    const { getByTestId } = renderSidenav({
+      suiteLauncher: {
+        suiteArray: [{ icon: <MockIcon />, title: 'Drive', onClick: vi.fn() }],
+        soonText: 'Soon',
+      },
+    });
+    expect(getByTestId('popover-button')).toBeInTheDocument();
+  });
 });
