@@ -182,4 +182,18 @@ describe('TrayList', () => {
 
     expect(screen.getByText('John Doe')).toBeInTheDocument();
   });
+
+  it('should render without onLoadMore and onMailSelected (using defaults)', () => {
+    render(<TrayList mails={mockMails} loading={false} />);
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
+  });
+
+  it('calls default onMailSelected and onLoadMore functions safely', () => {
+    const { getAllByRole } = render(
+      <TrayList mails={mockMails} loading={false} />
+    );
+    
+    const emailButtons = getAllByRole('button');
+    expect(() => fireEvent.click(emailButtons[0])).not.toThrow();
+  });
 });

@@ -134,4 +134,54 @@ describe('CircleButton component', () => {
     const button = render(<CircleButton variant="warning" dropdown={dropdown} />);
     expect(button).toMatchSnapshot();
   });
+
+  it('should close dropdown when toggle is clicked while open', () => {
+    const TestComponent = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <CircleButton
+          dropdown={<div>Dropdown Content</div>}
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)}
+          handleOpen={() => setIsOpen(true)}
+        />
+      );
+    };
+    render(<TestComponent />);
+    const toggleButton = screen.getAllByRole('button')[1];
+
+    fireEvent.click(toggleButton);
+    expect(screen.getByText('Dropdown Content')).toBeInTheDocument();
+
+    fireEvent.click(toggleButton);
+    expect(screen.queryByText('Dropdown Content')).not.toBeInTheDocument();
+  });
+
+  it('should render indicator without className correctly', () => {
+    const indicator = { icon: <span data-testid="indicator-icon" /> };
+    render(<CircleButton indicator={indicator} />);
+    expect(screen.getByTestId('indicator-icon')).toBeInTheDocument();
+  });
+
+  it('should not close dropdown when clicking inside the circle button while open', () => {
+    const TestComponent = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <CircleButton
+          dropdown={<div>Dropdown Content</div>}
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)}
+          handleOpen={() => setIsOpen(true)}
+        />
+      );
+    };
+    render(<TestComponent />);
+    const [mainButton, toggleButton] = screen.getAllByRole('button');
+
+    fireEvent.click(toggleButton);
+    expect(screen.getByText('Dropdown Content')).toBeInTheDocument();
+
+    fireEvent.click(mainButton);
+    expect(screen.getByText('Dropdown Content')).toBeInTheDocument();
+  });
 });

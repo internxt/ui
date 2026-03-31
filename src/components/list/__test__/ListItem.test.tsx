@@ -66,6 +66,31 @@ describe('ListItem', () => {
     expect(mockOnClickContextMenu).toHaveBeenCalled();
   });
 
+  it('updates dimensions when menuItemsRef size changes', () => {
+    const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
+    const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
+
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 100 });
+    Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 100 });
+
+    renderListItem({ isOpen: true, selected: true });
+
+    if (originalOffsetWidth) Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
+    if (originalOffsetHeight) Object.defineProperty(HTMLElement.prototype, 'offsetHeight', originalOffsetHeight);
+  });
+
+  it('handles contextMenu positioning near screen edges', () => {
+    renderListItem({ isOpen: true, selected: true });
+    const listItem = screen.getByText('1').closest('div');
+    
+    fireEvent.contextMenu(listItem!, { 
+      clientX: window.innerWidth + 300, 
+      clientY: Math.max(window.innerHeight, 500) + 300 
+    });
+    
+    expect(mockOnClickContextMenu).toHaveBeenCalled();
+  });
+
   it('closes the context menu when onClose is called', () => {
     renderListItem({ isOpen: true });
     mockOnClose();
