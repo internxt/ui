@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 const meta = {
-  title: 'Components/CircleButton',
+  title: 'Input/CircleButton',
   component: CircleButton,
   parameters: {
     layout: 'centered',

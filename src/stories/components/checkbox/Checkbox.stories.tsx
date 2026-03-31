@@ -15,7 +15,7 @@ const onClick: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Checkbox',
+  title: 'Input/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

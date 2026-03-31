@@ -24,7 +24,7 @@ const onCloseDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Components/Dialog',
+  title: 'Overlay/Dialog',
   component: Dialog,
   decorators: [onCloseDecorator],
   tags: ['autodocs'],

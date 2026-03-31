@@ -4,7 +4,7 @@ import { Button } from '@/components/button';
 import { UserCircle } from '@phosphor-icons/react';
 
 const meta: Meta<typeof Popover> = {
-  title: 'Components/Popover',
+  title: 'Overlay/Popover',
   component: Popover,
   parameters: {
     layout: 'centered',

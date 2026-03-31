@@ -16,7 +16,7 @@ const onClick: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof RadioButton> = {
-  title: 'Components/Radio Button',
+  title: 'Input/Radio Button',
   component: RadioButton,
   parameters: {
     layout: 'centered',

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Table, TableHeader, TableRow, TableCell, TableBody } from '../../../components/table/Table';
+import { Table, TableHeader, TableRow, TableCell, TableBody } from '../../../components/data-display/table/Table';
 
 interface ActivityRow {
   date: string;
@@ -38,7 +38,7 @@ const mockData: ActivityRow[] = [
 ];
 
 const meta: Meta = {
-  title: 'Components/Table',
+  title: 'Data Display/Table',
   component: Table,
 };
 

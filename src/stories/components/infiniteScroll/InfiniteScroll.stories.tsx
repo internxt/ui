@@ -3,7 +3,7 @@ import { InfiniteScroll } from '@/components/infiniteScroll';
 import { useState } from 'react';
 
 const meta: Meta<typeof InfiniteScroll> = {
-  title: 'Components/InfiniteScroll',
+  title: 'Layout/InfiniteScroll',
   component: InfiniteScroll,
   parameters: {
     layout: 'centered',

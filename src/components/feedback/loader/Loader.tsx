@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Loader.css';
+import '../../../styles/Loader.css';
 
 export interface LoaderProps {
   classNameContainer?: string;

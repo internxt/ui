@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import '../../styles/RangeSlider.css';
+import '../../../styles/RangeSlider.css';
 
 export interface RangeSliderProps {
   value: number;

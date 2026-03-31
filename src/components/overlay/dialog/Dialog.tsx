@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Button } from '../';
+import { Button } from '../../input/button';
 
 export interface DialogProps {
   isOpen: boolean;

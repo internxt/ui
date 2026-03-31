@@ -16,7 +16,7 @@ const withCloseHandler: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof Menu> = {
-  title: 'Components/Menu',
+  title: 'Navigation/Menu',
   component: Menu,
   parameters: {
     layout: 'centered',

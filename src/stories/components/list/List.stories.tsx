@@ -65,7 +65,7 @@ const ListWrapper = (props: ListWrapperProps) => {
 };
 
 const meta: Meta<typeof List<DriveItemData, 'name' | 'power' | 'type'>> = {
-  title: 'Components/List',
+  title: 'Data Display/List',
   component: List,
   parameters: {
     layout: 'fullscreen',

@@ -1,5 +1,5 @@
 import { useState, ReactNode, useEffect, useRef } from 'react';
-import { Menu, MenuItemType } from '../';
+import { Menu, MenuItemType } from '../menu';
 
 export type DropdownProps<T> = {
   children: ReactNode | ((obj: { open: boolean }) => JSX.Element);

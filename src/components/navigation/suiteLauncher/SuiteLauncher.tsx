@@ -1,6 +1,6 @@
 import { DotsNineIcon, LockIcon } from '@phosphor-icons/react';
 import { cloneElement, isValidElement } from 'react';
-import { Popover } from '../popover';
+import { Popover } from '../../overlay/popover';
 
 export interface SuiteLauncherProps {
   className?: string;

@@ -1,6 +1,6 @@
 import { Copy } from '@phosphor-icons/react';
 import { useState } from 'react';
-import Tooltip from '../tooltip/Tooltip';
+import Tooltip from '../../overlay/tooltip/Tooltip';
 
 export interface CopyableProps {
   className?: string;

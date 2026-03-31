@@ -1,6 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
-import Check from '../../assets/icons/check.svg?react';
-import Minus from '../../assets/icons/minus.svg?react';
+import Check from '../../../assets/icons/check.svg?react';
+import Minus from '../../../assets/icons/minus.svg?react';
 
 export interface CheckboxProps {
   id?: string;

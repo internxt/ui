@@ -101,7 +101,7 @@ const defaultBreadcrumbsProps: BreadcrumbsProps<Dispatch, unknown> = {
 };
 
 const meta: Meta<typeof Breadcrumbs> = {
-  title: 'Components/Breadcrumbs',
+  title: 'Navigation/Breadcrumbs',
   component: Breadcrumbs,
   parameters: {
     layout: 'centered',

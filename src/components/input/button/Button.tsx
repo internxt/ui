@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Loader from '../loader/Loader';
+import Loader from '../../feedback/loader/Loader';
 
 export interface ButtonProps {
   id?: string;

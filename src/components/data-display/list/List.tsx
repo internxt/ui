@@ -2,10 +2,10 @@ import _ from 'lodash';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import ListItem from './ListItem';
 import ListHeader, { HeaderProps } from './ListHeader';
-import useHotkeys from '../../hooks/useHotKeys';
-import { SkeletonLoader } from '../skeletonLoader';
-import { InfiniteScroll } from '../infiniteScroll';
-import { MenuItemsType } from '../menu/Menu';
+import useHotkeys from '../../../hooks/useHotKeys';
+import { SkeletonLoader } from '../../feedback/skeletonLoader';
+import { InfiniteScroll } from '../../layout/infiniteScroll';
+import { MenuItemsType } from '../../navigation/menu/Menu';
 
 export interface ListProps<T, F> {
   header: HeaderProps<T, F>[];

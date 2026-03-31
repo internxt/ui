@@ -89,7 +89,7 @@ const onOpenDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof ContextMenuWithNotifications> = {
-  title: 'Components/ContextMenu',
+  title: 'Overlay/ContextMenu',
   component: ContextMenuWithNotifications,
   decorators: [onOpenDecorator],
   tags: ['autodocs'],

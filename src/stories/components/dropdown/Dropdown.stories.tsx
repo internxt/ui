@@ -3,7 +3,7 @@ import { Dropdown, DropdownProps } from '@/components/dropdown';
 import { DotsThree } from '@phosphor-icons/react';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Components/Dropdown',
+  title: 'Navigation/Dropdown',
   component: Dropdown,
   parameters: {
     layout: 'centered',

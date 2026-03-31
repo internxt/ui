@@ -26,7 +26,7 @@ const baseModalStyles = {
 };
 
 const meta: Meta<typeof TransparentModal> = {
-  title: 'Components/TransparentModal',
+  title: 'Overlay/TransparentModal',
   component: TransparentModal,
   decorators: [onCloseDecorator],
   tags: ['autodocs'],

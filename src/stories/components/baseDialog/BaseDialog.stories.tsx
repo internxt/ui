@@ -9,7 +9,7 @@ const overlay: Decorator = (Story) => (
 );
 
 const meta: Meta<typeof BaseDialog> = {
-  title: 'Components/BaseDialog',
+  title: 'Overlay/BaseDialog',
   component: BaseDialog,
   parameters: {
     layout: 'centered',

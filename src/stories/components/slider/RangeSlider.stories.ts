@@ -15,7 +15,7 @@ const onChangeDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof RangeSlider> = {
-  title: 'Components/RangeSlider',
+  title: 'Input/RangeSlider',
   component: RangeSlider,
   parameters: {
     layout: 'centered',

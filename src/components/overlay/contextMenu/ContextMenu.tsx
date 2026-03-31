@@ -1,4 +1,4 @@
-import Menu, { MenuItemsType } from '../menu/Menu';
+import Menu, { MenuItemsType } from '../../navigation/menu/Menu';
 
 const MENU_BUTTON_HEIGHT = 40;
 

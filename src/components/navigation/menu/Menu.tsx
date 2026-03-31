@@ -1,5 +1,5 @@
 import { isValidElement, ReactNode, useEffect, useState } from 'react';
-import useHotkeys from '../../hooks/useHotKeys';
+import useHotkeys from '../../../hooks/useHotKeys';
 
 export type MenuItemType<T> =
   | { separator: true }

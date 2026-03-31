@@ -1,9 +1,9 @@
 import { LegacyRef, useEffect, useRef, useState } from 'react';
 import { DotsThree } from '@phosphor-icons/react';
-import ContextMenu from '../contextMenu/ContextMenu';
-import useHotkeys from '../../hooks/useHotKeys';
-import Checkbox from '../checkbox/Checkbox';
-import { MenuItemsType } from '../menu/Menu';
+import ContextMenu from '../../overlay/contextMenu/ContextMenu';
+import useHotkeys from '../../../hooks/useHotKeys';
+import Checkbox from '../../input/checkbox/Checkbox';
+import { MenuItemsType } from '../../navigation/menu/Menu';
 
 interface ListItemProps<T> {
   item: T;

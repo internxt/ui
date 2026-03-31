@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite';
 import { Copyable } from '@/components/copyable';
 
 const meta: Meta<typeof Copyable> = {
-  title: 'Components/Copyable',
+  title: 'Input/Copyable',
   component: Copyable,
   parameters: {
     layout: 'centered',

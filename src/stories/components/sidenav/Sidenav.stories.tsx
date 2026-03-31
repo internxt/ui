@@ -44,7 +44,7 @@ const SUITE_ARRAY = [
 ];
 
 const meta: Meta<typeof Sidenav> = {
-  title: 'Components/Sidenav',
+  title: 'Navigation/Sidenav',
   component: Sidenav,
   parameters: {
     layout: 'fullscreen',

@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUp } from '@phosphor-icons/react';
-import Checkbox from '../checkbox/Checkbox';
-import { MenuItemsType } from '../menu/Menu';
+import Checkbox from '../../input/checkbox/Checkbox';
+import { MenuItemsType } from '../../navigation/menu/Menu';
 
 export type HeaderProps<T, F> = {
   label: string;
