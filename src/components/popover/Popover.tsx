@@ -10,6 +10,10 @@ export interface PopoverProps {
   direction?: 'up' | 'down';
 }
 
+const originMap: Record<'up' | 'down', Record<'left' | 'right', string>> = {
+  up: { left: 'origin-bottom-right', right: 'origin-bottom-left' },
+  down: { left: 'origin-top-right', right: 'origin-top-left' },
+};
 /**
  * Popover component
  *
@@ -99,7 +103,7 @@ const Popover = ({ childrenButton, panel, className, classButton, align = 'right
             'absolute z-50 transform rounded-md border border-gray-10 ' +
             `${direction === 'up' ? 'bottom-full mb-1' : 'mt-1'} ` +
             `${align === 'left' ? 'right-0' : 'left-0'} ` +
-            `${direction === 'up' ? (align === 'left' ? 'origin-bottom-right' : 'origin-bottom-left') : (align === 'left' ? 'origin-top-right' : 'origin-top-left')} ` +
+            `${originMap[direction][align]} ` +
             `bg-surface py-1.5 shadow-subtle duration-100 ease-out dark:bg-gray-5 ${transitionOpacity} ${transitionScale}`
           }
         >
