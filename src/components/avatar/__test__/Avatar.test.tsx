@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Avatar } from '../';
+import DefaultAvatar from '../components/DefaultAvatar';
+import PictureAvatar from '../components/PictureAvatar';
 
 const FULL_NAME = 'My Internxt';
 const IMAGE_SRC = 'https://internxt.com/favicon.ico';
@@ -8,6 +10,16 @@ const IMAGE_SRC = 'https://internxt.com/favicon.ico';
 describe('Avatar component', () => {
   it('Avatar with full name (first letters) should render correctly', () => {
     const avatarComponent = render(<Avatar diameter={80} fullName={FULL_NAME} />);
+    expect(avatarComponent).toMatchSnapshot();
+  });
+
+  it('Avatar with single word name should render correctly', () => {
+    const avatarComponent = render(<Avatar diameter={80} fullName="Javi" />);
+    expect(avatarComponent).toMatchSnapshot();
+  });
+
+  it('Avatar with empty spaces name should return empty content', () => {
+    const avatarComponent = render(<Avatar diameter={80} fullName="   " />);
     expect(avatarComponent).toMatchSnapshot();
   });
 
@@ -45,6 +57,16 @@ describe('Avatar component', () => {
   });
   it('XL Avatar should render correctly', () => {
     const avatarComponent = render(<Avatar fullName={FULL_NAME} size="xl" src={IMAGE_SRC} />);
+    expect(avatarComponent).toMatchSnapshot();
+  });
+
+  it('DefaultAvatar handles default parameters', () => {
+    const avatarComponent = render(<DefaultAvatar fullName="John Doe" diameter={80} />);
+    expect(avatarComponent).toMatchSnapshot();
+  });
+
+  it('PictureAvatar handles default parameters', () => {
+    const avatarComponent = render(<PictureAvatar src={IMAGE_SRC} diameter={80} />);
     expect(avatarComponent).toMatchSnapshot();
   });
 });

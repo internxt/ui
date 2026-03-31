@@ -51,6 +51,27 @@ describe('Dialog', () => {
     expect(defaultProps.onClose).toHaveBeenCalled();
   });
 
+  it('does not call onClose when pressing other keys', () => {
+    renderDialog();
+    fireEvent.keyDown(window, { key: 'Enter' });
+    expect(defaultProps.onClose).not.toHaveBeenCalled();
+  });
+
+  it('handles timeouts correctly on active transition states', () => {
+    vi.useFakeTimers();
+    const { rerender } = renderDialog({ isOpen: false });
+
+    vi.runAllTimers();
+
+    rerender(<Dialog {...defaultProps} isOpen={true} />);
+    vi.runAllTimers();
+
+    rerender(<Dialog {...defaultProps} isOpen={false} />);
+    vi.runAllTimers();
+
+    vi.useRealTimers();
+  });
+
   it('calls onPrimaryAction when clicking the primary button', () => {
     const { getByText } = renderDialog();
     fireEvent.click(getByText(defaultProps.primaryAction));

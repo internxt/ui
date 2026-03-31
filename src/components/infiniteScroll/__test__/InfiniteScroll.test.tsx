@@ -76,6 +76,27 @@ describe('InfiniteScroll Component', () => {
     await waitFor(() => expect(screen.queryByTestId('loader')).not.toBeInTheDocument());
   });
 
+  it('does not show loader when isIntersecting is true but hasMoreItems is false', async () => {
+    vi.stubGlobal(
+      'IntersectionObserver',
+      vi.fn((callback) => ({
+        observe: () => {
+          callback([{ isIntersecting: true }]);
+        },
+        unobserve: vi.fn(),
+        disconnect: vi.fn(),
+      })),
+    );
+
+    render(
+      <InfiniteScroll handleNextPage={handleNextPage} hasMoreItems={false} loader={loader}>
+        <div>Item 1</div>
+      </InfiniteScroll>
+    );
+
+    await waitFor(() => expect(screen.queryByTestId('loader')).not.toBeInTheDocument());
+  });
+
   it('should call handleNextPage when scrolled to the bottom', async () => {
     renderInfiniteScroll();
 

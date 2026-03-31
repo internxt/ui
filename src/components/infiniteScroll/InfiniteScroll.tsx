@@ -66,8 +66,6 @@ const InfiniteScroll = ({
           if (hasMoreItems) {
             handleNextPage();
             setShowLoader(true);
-          } else {
-            setShowLoader(false);
           }
         }
       },
