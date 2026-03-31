@@ -21,7 +21,7 @@ export interface TrayListProps {
   activeEmail?: string;
   hasMoreItems?: boolean;
   emptyState?: ReactNode;
-  onMailSelected?: (id: string) => void;
+  onMailSelected?: (id: string, isRead?: boolean) => void;
   onLoadMore?: () => void;
 }
 

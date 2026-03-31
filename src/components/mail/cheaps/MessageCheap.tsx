@@ -14,7 +14,7 @@ export interface MessageCheapProps {
   };
   active?: boolean;
   selected?: boolean;
-  onClick: (id: string) => void;
+  onClick: (id: string, isRead?: boolean) => void;
 }
 
 const MessageCheap = ({ email, active, selected, onClick }: MessageCheapProps) => {
@@ -22,7 +22,7 @@ const MessageCheap = ({ email, active, selected, onClick }: MessageCheapProps) =
 
   return (
     <button
-      onClick={() => onClick(email.id)}
+      onClick={() => onClick(email.id, email.read)}
       className={`flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 ${isHighlighted ? 'bg-primary/10' : ''}`}
     >
       <div className="flex flex-row w-full gap-2">
