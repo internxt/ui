@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Dialog } from '../../../components/dialog';
+import { Dialog } from '../../../components/overlay/dialog';
 declare const meta: Meta<typeof Dialog>;
 export default meta;
 type Story = StoryObj<typeof meta>;

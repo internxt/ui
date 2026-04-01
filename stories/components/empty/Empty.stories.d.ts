@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Empty } from '../../../components/empty';
+import { Empty } from '../../../components/feedback/empty';
 declare const meta: Meta<typeof Empty>;
 export default meta;
 type Story = StoryObj<typeof Empty>;

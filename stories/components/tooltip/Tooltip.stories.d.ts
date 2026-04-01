@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Tooltip } from '../../../components/tooltip';
+import { Tooltip } from '../../../components/overlay/tooltip';
 declare const meta: Meta<typeof Tooltip>;
 export default meta;
 type Story = StoryObj<typeof Tooltip>;

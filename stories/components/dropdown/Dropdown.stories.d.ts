@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Dropdown } from '../../../components/dropdown';
+import { Dropdown } from '../../../components/navigation/dropdown';
 declare const meta: Meta<typeof Dropdown>;
 export default meta;
 type Story = StoryObj<typeof meta>;

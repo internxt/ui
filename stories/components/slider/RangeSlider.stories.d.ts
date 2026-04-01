@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { RangeSlider } from '../../../components/slider';
+import { RangeSlider } from '../../../components/input/slider';
 declare const meta: Meta<typeof RangeSlider>;
 export default meta;
 type Story = StoryObj<typeof RangeSlider>;

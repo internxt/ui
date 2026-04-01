@@ -1,7 +1,7 @@
 import { StoryObj } from '@storybook/react-vite';
 declare const meta: {
     title: string;
-    component: ({ children, variant, active, onClick, onClickToggleButton, className, dropdown, indicator, isOpen, handleOpen, handleClose, }: import('../../../components/buttonCircle').CircleButtonProps) => JSX.Element;
+    component: ({ children, variant, active, onClick, onClickToggleButton, className, dropdown, indicator, isOpen, handleOpen, handleClose, }: import('../../../components/input/buttonCircle').CircleButtonProps) => JSX.Element;
     parameters: {
         layout: string;
         backgrounds: {

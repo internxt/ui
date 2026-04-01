@@ -1,4 +1,4 @@
-import { Button } from '../../../components/button';
+import { Button } from '../../../components/input/button';
 import { Meta, StoryObj } from '@storybook/react-vite';
 declare const meta: Meta<typeof Button>;
 export default meta;

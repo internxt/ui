@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Sidenav, SidenavProps } from '../../../components/sidenav';
+import { Sidenav, SidenavProps } from '../../../components/navigation/sidenav';
 declare const meta: Meta<typeof Sidenav>;
 export default meta;
 type Story = StoryObj<SidenavProps>;

@@ -1,4 +1,4 @@
-import { TransparentModal } from '../../../components/modalTransparent';
+import { TransparentModal } from '../../../components/overlay/modalTransparent';
 import { Meta, StoryObj } from '@storybook/react-vite';
 declare const meta: Meta<typeof TransparentModal>;
 export default meta;

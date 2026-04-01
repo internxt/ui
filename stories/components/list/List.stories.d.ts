@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { List } from '../../../components/list';
+import { List } from '../../../components/data-display/list';
 type DriveItemData = {
     id: number;
     name: string;

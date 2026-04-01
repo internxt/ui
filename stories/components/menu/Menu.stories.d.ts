@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Menu, MenuProps } from '../../../components/menu';
+import { Menu, MenuProps } from '../../../components/navigation/menu';
 declare const meta: Meta<typeof Menu>;
 export default meta;
 type Story = StoryObj<MenuProps<unknown>>;

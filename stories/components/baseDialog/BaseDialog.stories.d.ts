@@ -1,4 +1,4 @@
-import { BaseDialog } from '../../../components/baseDialog';
+import { BaseDialog } from '../../../components/overlay/baseDialog';
 import { Meta, StoryObj } from '@storybook/react-vite';
 declare const meta: Meta<typeof BaseDialog>;
 export default meta;

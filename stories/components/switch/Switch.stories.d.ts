@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { SwitchComponent } from '../../../components/switch';
+import { SwitchComponent } from '../../../components/input/switch';
 declare const meta: Meta<typeof SwitchComponent>;
 export default meta;
 type Story = StoryObj<typeof meta>;
