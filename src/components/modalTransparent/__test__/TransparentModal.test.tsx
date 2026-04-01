@@ -130,4 +130,11 @@ describe('TransparentModal Component', () => {
     const container = document.querySelector('.fixed.inset-0.z-50');
     expect(container).toHaveClass('pointer-events-none');
   });
+
+  it('should not call onClose when clicking inside the modal content', () => {
+    renderTransparentModal();
+    const modalContent = screen.getByText('Modal Content');
+    fireEvent.mouseDown(modalContent);
+    expect(onCloseMock).not.toHaveBeenCalled();
+  });
 });

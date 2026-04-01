@@ -151,4 +151,12 @@ describe('Popover', () => {
     fireEvent.mouseDown(button);
     expect(stopPropagationSpy).toHaveBeenCalled();
   });
+
+  it('aligns panel to the left when align is left', async () => {
+    const { getByText, container } = renderPopover({ align: 'left' });
+    fireEvent.click(getByText('Open Popover'));
+    await waitFor(() => expect(getByText('Popover Content')).toBeInTheDocument());
+    const panel = container.querySelector('.left-0.origin-top-left');
+    expect(panel).toBeInTheDocument();
+  });
 });

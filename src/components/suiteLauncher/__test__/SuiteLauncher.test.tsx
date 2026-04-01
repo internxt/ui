@@ -59,4 +59,27 @@ describe('SuiteLauncher', () => {
     fireEvent.click(screen.getByText('App 3'));
     expect(onClick3).toHaveBeenCalled();
   });
+
+  it('shows default "Soon" text when soonText is not provided', () => {
+    const suiteArray = [
+      { icon: <span />, title: 'App Soon', onClick: vi.fn(), availableSoon: true },
+    ];
+    render(<SuiteLauncher suiteArray={suiteArray} />);
+    fireEvent.click(screen.getByTestId('popover-button'));
+    expect(screen.getByText('Soon')).toBeInTheDocument();
+  });
+
+  it('renders non-JSX icon as-is when it is not a valid React element', () => {
+    const suiteArray = [
+      { icon: 'not-an-element' as any, title: 'App Raw', onClick: vi.fn() },
+    ];
+    render(<SuiteLauncher suiteArray={suiteArray} />);
+    fireEvent.click(screen.getByTestId('popover-button'));
+    expect(screen.getByText('App Raw')).toBeInTheDocument();
+  });
+
+  it('renders with align left', () => {
+    render(<SuiteLauncher suiteArray={[]} align="left" />);
+    expect(screen.getByTestId('popover-button')).toBeInTheDocument();
+  });
 });
