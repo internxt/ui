@@ -85,13 +85,29 @@ describe('Breadcrumbs Component', () => {
     expect(separators).toHaveLength(3);
   });
 
-  it('opens the dropdown menu when clicked', async () => {
-    const { getByRole, getByText } = renderBreadcrumbs();
+  it('renders a dropdown menu with functionally hidden items for lists larger than 3 components', async () => {
+    const fiveItemsProps = {
+      ...mockProps,
+      items: [
+        ...mockProps.items,
+        { uuid: '5', label: 'Details', icon: null, active: true },
+      ],
+    };
+
+    const { getByRole, getByText } = render(
+      <DndProvider backend={HTML5Backend}>
+        <Breadcrumbs {...fiveItemsProps} />
+      </DndProvider>
+    );
+
     const dropdownButton = getByRole('button');
     await act(async () => {
       userEvent.click(dropdownButton);
     });
-    const hiddenItem = getByText('Subcategory');
-    expect(hiddenItem).toBeInTheDocument();
+
+    const hiddenItemCategory = getByText('Category');
+    const hiddenItemSubcategory = getByText('Subcategory');
+    expect(hiddenItemCategory).toBeInTheDocument();
+    expect(hiddenItemSubcategory).toBeInTheDocument();
   });
 });

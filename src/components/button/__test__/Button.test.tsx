@@ -20,6 +20,13 @@ describe('Button component', () => {
     expect(keydown).toHaveBeenCalledOnce();
   });
 
+  it('Button should handle default onClick and onKeyDown without crashing', () => {
+    const { getByRole } = render(<Button />);
+    const button = getByRole('button');
+    fireEvent.click(button);
+    fireEvent.keyDown(button, { key: 'Enter', code: 'Enter' });
+  });
+
   it('Primary button should render correctly', () => {
     const button = render(<Button variant="primary">Primary</Button>);
     expect(button).toMatchSnapshot();
@@ -92,6 +99,33 @@ describe('Button component', () => {
 
   it('Tertiary medium button should render correctly', () => {
     const button = render(<Button variant="tertiary" size="medium" />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Destructive loading button should render correctly', () => {
+    const button = render(<Button variant="destructive" loading />);
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Button with id, dataTest, autofocus, buttonDataCy and buttonChildrenDataCy renders correctly', () => {
+    const button = render(
+      <Button
+        variant="primary"
+        id="btn-id"
+        dataTest="btn-test"
+        autofocus
+        buttonDataCy="btn-cy"
+        buttonChildrenDataCy="btn-children-cy"
+      >
+        With Props
+      </Button>,
+    );
+    expect(button).toMatchSnapshot();
+  });
+
+  it('Button with unknown variant should render default styles', () => {
+    // @ts-expect-error testing invalid variant
+    const button = render(<Button variant="unknown">Unknown</Button>);
     expect(button).toMatchSnapshot();
   });
 });
