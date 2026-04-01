@@ -7,8 +7,13 @@ export interface PopoverProps {
   className?: string;
   classButton?: string;
   align?: 'left' | 'right';
+  direction?: 'up' | 'down';
 }
 
+const originMap: Record<'up' | 'down', Record<'left' | 'right', string>> = {
+  up: { left: 'origin-bottom-right', right: 'origin-bottom-left' },
+  down: { left: 'origin-top-right', right: 'origin-top-left' },
+};
 /**
  * Popover component
  *
@@ -25,12 +30,19 @@ export interface PopoverProps {
  *
  * @property {string} [classButton]
  * - Custom classes for the trigger button.
- *
+ * 
+ * @property {'left' | 'right'} [align='right']
+ * - The alignment of the popover panel relative to the trigger button.
+ * 
+ * @property {'up' | 'down'} [direction='down']
+ * - The direction of the popover panel relative to the trigger button.
+ * 
  * @returns {JSX.Element}
  * - The rendered Popover component.
+ * 
  */
 
-const Popover = ({ childrenButton, panel, className, classButton, align = 'right' }: PopoverProps): JSX.Element => {
+const Popover = ({ childrenButton, panel, className, classButton, align = 'right', direction = 'down' }: PopoverProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [showContent, setShowContent] = useState(isOpen);
@@ -88,8 +100,10 @@ const Popover = ({ childrenButton, panel, className, classButton, align = 'right
         <div
           ref={panelRef}
           className={
-            'absolute z-50 mt-1 transform rounded-md border border-gray-10 ' +
-            `${align === 'left' ? 'left-0 origin-top-left' : 'right-0 origin-top-right'} ` +
+            'absolute z-50 transform rounded-md border border-gray-10 ' +
+            `${direction === 'up' ? 'bottom-full mb-1' : 'mt-1'} ` +
+            `${align === 'left' ? 'right-0' : 'left-0'} ` +
+            `${originMap[direction][align]} ` +
             `bg-surface py-1.5 shadow-subtle duration-100 ease-out dark:bg-gray-5 ${transitionOpacity} ${transitionScale}`
           }
         >
