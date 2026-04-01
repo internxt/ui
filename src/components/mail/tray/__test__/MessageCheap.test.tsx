@@ -46,7 +46,7 @@ describe('MessageCheap', () => {
     fireEvent.click(button);
 
     expect(mockOnClick).toHaveBeenCalledTimes(1);
-    expect(mockOnClick).toHaveBeenCalledWith('1');
+    expect(mockOnClick).toHaveBeenCalledWith('1', false);
   });
 
   it('should show unread indicator for unread emails', () => {

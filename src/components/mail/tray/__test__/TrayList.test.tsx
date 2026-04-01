@@ -116,7 +116,7 @@ describe('TrayList', () => {
     fireEvent.click(emailButtons[0]);
 
     expect(mockOnMailSelected).toHaveBeenCalledTimes(1);
-    expect(mockOnMailSelected).toHaveBeenCalledWith('1');
+    expect(mockOnMailSelected).toHaveBeenCalledWith('1', false);
   });
 
   it('should highlight active email', () => {
