@@ -24,7 +24,7 @@ const onCloseDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof Modal> = {
-  title: 'Components/Modal',
+  title: 'Overlay/Modal',
   component: Modal,
   decorators: [onCloseDecorator],
   tags: ['autodocs'],

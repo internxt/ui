@@ -15,7 +15,7 @@ const onChange: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof TextArea> = {
-  title: 'Components/TextArea',
+  title: 'Input/TextArea',
   component: TextArea,
   parameters: {
     layout: 'centered',

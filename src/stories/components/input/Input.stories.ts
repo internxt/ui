@@ -23,7 +23,7 @@ const onChange: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Input',
+  title: 'Input/Input',
   component: Input,
   parameters: {
     layout: 'centered',

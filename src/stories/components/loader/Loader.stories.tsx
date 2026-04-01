@@ -8,7 +8,7 @@ const overlay: Decorator = (Story) => (
 );
 
 const meta: Meta<typeof Loader> = {
-  title: 'Components/Loader',
+  title: 'Feedback/Loader',
   component: Loader,
   parameters: {
     layout: 'fullscreen',

@@ -1,32 +1,44 @@
-export * from './avatar';
-export * from './baseDialog';
-export * from './breadcrumbs';
-export * from './button';
-export * from './buttonCircle';
-export * from './card';
-export * from './checkbox';
-export * from './contextMenu';
-export * from './copyable';
-export * from './dialog';
-export * from './dropdown';
-export * from './empty';
-export * from './header';
-export * from './infiniteScroll';
-export * from './input';
-export * from './list';
-export * from './loader';
-export * from './menu';
-export * from './modal';
-export * from './modalTransparent';
-export * from './popover';
-export * from './radioButton';
-export * from './skeletonLoader';
-export * from './slider';
-export * from './suiteLauncher';
-export * from './switch';
-export * from './table/Table';
-export * from './textArea';
-export * from './tooltip';
-export * from './sidenav';
+// data-display
+export * from './data-display/avatar';
+export * from './data-display/card';
+export * from './data-display/list';
+export * from './data-display/table/Table';
+
+// feedback
+export * from './feedback/empty';
+export * from './feedback/loader';
+export * from './feedback/skeletonLoader';
+
+// input
+export * from './input/button';
+export * from './input/buttonCircle';
+export * from './input/checkbox';
+export * from './input/copyable';
+export * from './input/input';
+export * from './input/radioButton';
+export * from './input/slider';
+export * from './input/switch';
+export * from './input/textArea';
+
+// layout
+export * from './layout/header';
+export * from './layout/infiniteScroll';
+
+// navigation
+export * from './navigation/breadcrumbs';
+export * from './navigation/dropdown';
+export * from './navigation/menu';
+export * from './navigation/sidenav';
+export * from './navigation/suiteLauncher';
+
+// overlay
+export * from './overlay/baseDialog';
+export * from './overlay/contextMenu';
+export * from './overlay/dialog';
+export * from './overlay/modal';
+export * from './overlay/modalTransparent';
+export * from './overlay/popover';
+export * from './overlay/tooltip';
+
+// mail
 export * from './mail';
-export * from './grid';

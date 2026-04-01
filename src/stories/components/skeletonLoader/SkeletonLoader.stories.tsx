@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SkeletonLoader } from '@/components/skeletonLoader';
 
 const meta: Meta<typeof SkeletonLoader> = {
-  title: 'Components/SkeletonLoader',
+  title: 'Feedback/SkeletonLoader',
   component: SkeletonLoader,
   parameters: {
     layout: 'centered',
