@@ -12,7 +12,7 @@ export interface MessageCheapProps {
     };
     active?: boolean;
     selected?: boolean;
-    onClick: (id: string) => void;
+    onClick: (id: string, isRead?: boolean) => void;
 }
 declare const MessageCheap: ({ email, active, selected, onClick }: MessageCheapProps) => import("react/jsx-runtime").JSX.Element;
 export default MessageCheap;
