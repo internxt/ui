@@ -85,4 +85,43 @@ describe('ListHeader', () => {
 
     expect(mockOnOrderableColumnClicked).not.toHaveBeenCalled();
   });
+
+  it('renders ArrowDown when orderBy direction is DESC', () => {
+    const { container } = renderListHeader({
+      orderBy: { field: 'id', direction: 'DESC' },
+    });
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+
+  it('renders ArrowUp when orderBy direction is ASC', () => {
+    const { container } = renderListHeader({
+      orderBy: { field: 'id', direction: 'ASC' },
+    });
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+
+  it('renders columns with buttonDataCy and textDataCy attributes', () => {
+    const { container } = render(
+      <ListHeader
+        selectedItems={[]}
+        items={[{ id: 1, name: 'name1' }]}
+        header={[
+          {
+            label: 'With Data Cy',
+            width: '100px',
+            name: 'id',
+            orderable: true,
+            defaultDirection: 'ASC',
+            buttonDataCy: 'btn-data-cy',
+            textDataCy: 'text-data-cy',
+          },
+        ]}
+        isVerticalScrollbarVisible={false}
+        onTopSelectionCheckboxClick={mockOnTopSelectionCheckboxClick}
+        onOrderableColumnClicked={mockOnOrderableColumnClicked}
+      />,
+    );
+    expect(container.querySelector('[data-cy="btn-data-cy"]')).toBeInTheDocument();
+    expect(container.querySelector('[data-cy="text-data-cy"]')).toBeInTheDocument();
+  });
 });

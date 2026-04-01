@@ -96,4 +96,22 @@ describe('ContextMenu Component', () => {
     if (menuItem && 'action' in menuItem) expect(menuItem?.action).toHaveBeenCalledWith(props.item);
     expect(props.handleMenuClose).toHaveBeenCalled();
   });
+
+  it('positions menu at bottom when isContextMenuCutOff is true and not from right click', () => {
+    const { container } = render(
+      <ContextMenu {...props} openedFromRightClick={false} isContextMenuCutOff={true} />,
+    );
+    const outerDiv = container.firstChild as HTMLElement;
+    expect(outerDiv.style.bottom).toBe('40px');
+    expect(outerDiv.style.top).toBe('');
+  });
+
+  it('positions menu at top when isContextMenuCutOff is false and not from right click', () => {
+    const { container } = render(
+      <ContextMenu {...props} openedFromRightClick={false} isContextMenuCutOff={false} />,
+    );
+    const outerDiv = container.firstChild as HTMLElement;
+    expect(outerDiv.style.top).toBe('40px');
+    expect(outerDiv.style.bottom).toBe('');
+  });
 });

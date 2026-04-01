@@ -306,6 +306,15 @@ describe('List component', () => {
     expect(mockOnSelectedItemsChanged).toHaveBeenCalled();
   });
 
+  it('closes the item context menu when clicking outside the list container', () => {
+    const { getByText } = renderList();
+    
+    const itemElement = getByText('Item 2');
+    fireEvent.contextMenu(itemElement);
+
+    fireEvent.mouseDown(document.body);
+  });
+
   it('should toggle selection when Ctrl or Meta key is pressed', () => {
     const { getByText } = renderList();
 

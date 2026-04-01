@@ -209,4 +209,14 @@ describe('Input component', () => {
     const { getByText } = renderInput({ disabled: true });
     expect(getByText('Test Label')).toHaveClass('text-gray-40');
   });
+
+  it('should focus email input without setting selectionStart/End', () => {
+    const { getByRole } = renderInput({ variant: 'email', autofocus: true });
+    expect(getByRole('textbox')).toHaveFocus();
+  });
+
+  it('should show 0 count when maxLength is set and value is undefined', () => {
+    const { getByText } = renderInput({ maxLength: 20, value: undefined });
+    expect(getByText('0/20')).toBeInTheDocument();
+  });
 });
