@@ -126,4 +126,99 @@ describe('Menu Component', () => {
 
     expect(option1).toHaveClass('bg-gray-5');
   });
+
+  it('triggers onClick on node item when Enter is pressed', () => {
+    const nodeClick = vi.fn();
+    const menuWithNode: Array<MenuItemType<{ id: number; name: string }>> = [
+      { node: <button onClick={nodeClick}>Node Item</button> },
+    ];
+    render(<Menu {...defaultProps} menu={menuWithNode} />);
+    fireEvent.keyDown(document, { key: 'ArrowDown' });
+    fireEvent.keyDown(document, { key: 'Enter' });
+    expect(nodeClick).toHaveBeenCalled();
+  });
+
+  it('handles node item without onClick on Enter press without errors', () => {
+    const menuWithNode: Array<MenuItemType<{ id: number; name: string }>> = [
+      { node: <span>No Click Node</span> },
+    ];
+    render(<Menu {...defaultProps} menu={menuWithNode} />);
+    fireEvent.keyDown(document, { key: 'ArrowDown' });
+    fireEvent.keyDown(document, { key: 'Enter' });
+    expect(handleMenuClose).toHaveBeenCalled();
+  });
+
+  it('calls onClick handler on item click when defined', () => {
+    const onClickHandler = vi.fn();
+    const menuWithOnClick: Array<MenuItemType<{ id: number; name: string }>> = [
+      { name: 'Clickable', onClick: onClickHandler },
+    ];
+    const { getByText } = render(<Menu {...defaultProps} menu={menuWithOnClick} />);
+    fireEvent.click(getByText('Clickable'));
+    expect(onClickHandler).toHaveBeenCalled();
+  });
+
+  it('renders keyboard shortcut icon when provided', () => {
+    const menuWithShortcutIcon: Array<MenuItemType<{ id: number; name: string }>> = [
+      {
+        name: 'With Icon Shortcut',
+        action: vi.fn(),
+        keyboardShortcutOptions: {
+          keyboardShortcutIcon: MockIcon,
+          keyboardShortcutText: 'Ctrl+S',
+        },
+      },
+    ];
+    const { getByText, getAllByTestId } = render(<Menu {...defaultProps} menu={menuWithShortcutIcon} />);
+    expect(getByText('Ctrl+S')).toBeInTheDocument();
+    expect(getAllByTestId('mock-icon').length).toBeGreaterThan(0);
+  });
+
+  it('renders keyboard shortcut options without text', () => {
+    const menuWithIconOnly: Array<MenuItemType<{ id: number; name: string }>> = [
+      {
+        name: 'Icon Only Shortcut',
+        action: vi.fn(),
+        keyboardShortcutOptions: {
+          keyboardShortcutIcon: MockIcon,
+        },
+      },
+    ];
+    const { getByText } = render(<Menu {...defaultProps} menu={menuWithIconOnly} />);
+    expect(getByText('Icon Only Shortcut')).toBeInTheDocument();
+  });
+
+  it('handles Enter with no selection and no genericEnterKey without errors', () => {
+    const menuWithItem: Array<MenuItemType<{ id: number; name: string }>> = [
+      { name: 'Item', action: vi.fn() },
+    ];
+    render(
+      <Menu
+        item={{ id: 1, name: 'Sample' }}
+        menu={menuWithItem}
+        isOpen={true}
+        handleMenuClose={handleMenuClose}
+      />,
+    );
+    fireEvent.keyDown(document, { key: 'Enter' });
+    expect(handleMenuClose).toHaveBeenCalled();
+  });
+
+  it('returns null from ArrowUp when all items are unclickable', () => {
+    const allDisabledMenu: Array<MenuItemType<{ id: number; name: string }>> = [
+      { separator: true },
+      { name: 'Disabled', disabled: () => true },
+    ];
+    render(<Menu {...defaultProps} menu={allDisabledMenu} />);
+    fireEvent.keyDown(document, { key: 'ArrowUp' });
+  });
+
+  it('returns null from ArrowDown when all items are unclickable', () => {
+    const allDisabledMenu: Array<MenuItemType<{ id: number; name: string }>> = [
+      { separator: true },
+      { name: 'Disabled', disabled: () => true },
+    ];
+    render(<Menu {...defaultProps} menu={allDisabledMenu} />);
+    fireEvent.keyDown(document, { key: 'ArrowDown' });
+  });
 });
