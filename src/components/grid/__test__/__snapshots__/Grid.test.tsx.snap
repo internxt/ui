@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Grid component > should match snapshot 1`] = `
+<div>
+  <div
+    class="grid min-w-full auto-rows-min grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 "
+  >
+    Snapshot Test
+  </div>
+</div>
+`;
