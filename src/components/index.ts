@@ -23,6 +23,7 @@ export * from './input/textArea';
 // layout
 export * from './layout/header';
 export * from './layout/infiniteScroll';
+export * from './layout/grid';
 
 // navigation
 export * from './navigation/breadcrumbs';

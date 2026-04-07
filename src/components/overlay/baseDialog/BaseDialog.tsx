@@ -89,7 +89,7 @@ const BaseDialog = ({
           bgColor || 'bg-surface'
         }`}
       >
-        <div className={`${subTitle ? 'justify-between bg-gray-1 p-5' : ''} flex flex-row items-start`}>
+        <div className={`${subTitle ? 'justify-between bg-gray-1' : ''} p-5 flex flex-row items-start`}>
           {title ? (
             <div className="relative flex max-w-full flex-1 flex-col truncate">
               <span className={`${titleClasses || ''} truncate text-xl`} title={title}>
