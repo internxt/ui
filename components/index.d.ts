@@ -16,6 +16,7 @@ export * from './input/switch';
 export * from './input/textArea';
 export * from './layout/header';
 export * from './layout/infiniteScroll';
+export * from './layout/grid';
 export * from './navigation/breadcrumbs';
 export * from './navigation/dropdown';
 export * from './navigation/menu';
