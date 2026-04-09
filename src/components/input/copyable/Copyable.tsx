@@ -51,7 +51,7 @@ const Copyable = ({
       <p className={`${classText}`}>{text}</p>
       <Tooltip
         className="ml-6"
-        popsFrom="top"
+        popsFrom="bottom"
         title={justCopied ? copiedText : copyToClipboardText}
         delayInMs={justCopied ? 500 : undefined}
       >
