@@ -39,6 +39,7 @@ export interface SidenavProps {
   showSubsections?: boolean;
   isCollapsed?: boolean;
   storage?: SidenavStorageProps;
+  notification?: ReactNode;
   onToggleCollapse?: () => void;
 }
 
@@ -55,6 +56,7 @@ export interface SidenavProps {
  * @property {boolean} showSubsections - Determines whether to display the subsections of the sidenav
  * @property {boolean} isCollapsed - Determines whether the sidenav is collapsed or not
  * @property {SidenavStorage} storage - The storage information displayed at the bottom of the sidenav
+ * @property {ReactNode} notification - Optional notification node rendered above the storage section (hidden when collapsed)
  * @property {() => void} onToggleCollapse - A callback function triggered when the collapse button is clicked
  */
 const Sidenav = ({
@@ -66,6 +68,7 @@ const Sidenav = ({
   showSubsections,
   isCollapsed = false,
   storage,
+  notification,
   onToggleCollapse,
 }: SidenavProps) => {
   return (
@@ -94,18 +97,21 @@ const Sidenav = ({
         </div>
       </div>
 
-      {storage && (
+      {(notification || storage) && (
         <div
-          className={`transition-all overflow-hidden duration-300 ${isCollapsed ? 'opacity-0 invisible delay-200' : 'opacity-100 delay-0'}`}
+          className={`flex flex-col transition-all overflow-hidden duration-300 ${isCollapsed ? 'opacity-0 invisible delay-200' : 'opacity-100 delay-0'}`}
         >
-          <SidenavStorage
-            usage={storage.usage}
-            limit={storage.limit}
-            percentage={storage.percentage}
-            onUpgradeClick={storage.onUpgradeClick}
-            upgradeLabel={storage.upgradeLabel}
-            isLoading={storage.isLoading}
-          />
+          {notification && <div className="px-2 pb-2">{notification}</div>}
+          {storage && (
+            <SidenavStorage
+              usage={storage.usage}
+              limit={storage.limit}
+              percentage={storage.percentage}
+              onUpgradeClick={storage.onUpgradeClick}
+              upgradeLabel={storage.upgradeLabel}
+              isLoading={storage.isLoading}
+            />
+          )}
         </div>
       )}
     </div>
