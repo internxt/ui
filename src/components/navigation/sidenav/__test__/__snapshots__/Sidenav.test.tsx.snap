@@ -717,7 +717,7 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
       </div>
     </div>
     <div
-      class="transition-all overflow-hidden duration-300 opacity-100 delay-0"
+      class="flex flex-col transition-all overflow-hidden duration-300 opacity-100 delay-0"
     >
       <div
         class="flex flex-col w-full gap-2.5 px-2 pb-5"
