@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
+import { WarningIcon } from '@phosphor-icons/react';
 import SidenavOptions, { SidenavOption } from './SidenavOptions';
 import SidenavHeader from './SidenavHeader';
 import SidenavStorage from './SidenavStorage';
@@ -39,7 +40,12 @@ export interface SidenavProps {
   showSubsections?: boolean;
   isCollapsed?: boolean;
   storage?: SidenavStorageProps;
-  notification?: ReactNode;
+  notification?: {
+    message: string;
+    actionLabel: string;
+    onAction: () => void;
+    type?: 'warning';
+  };
   onToggleCollapse?: () => void;
 }
 
@@ -56,7 +62,7 @@ export interface SidenavProps {
  * @property {boolean} showSubsections - Determines whether to display the subsections of the sidenav
  * @property {boolean} isCollapsed - Determines whether the sidenav is collapsed or not
  * @property {SidenavStorage} storage - The storage information displayed at the bottom of the sidenav
- * @property {ReactNode} notification - Optional notification node rendered above the storage section (hidden when collapsed)
+ * @property {object} notification - Optional structured notification rendered above the storage section (hidden when collapsed). Accepts message, actionLabel, onAction, and an optional type ('warning').
  * @property {() => void} onToggleCollapse - A callback function triggered when the collapse button is clicked
  */
 const Sidenav = ({
@@ -71,6 +77,21 @@ const Sidenav = ({
   notification,
   onToggleCollapse,
 }: SidenavProps) => {
+  const [showContent, setShowContent] = useState(!isCollapsed);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (isCollapsed) {
+      setShowContent(false);
+    } else {
+      timerRef.current = setTimeout(() => setShowContent(true), 300);
+    }
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [isCollapsed]);
+
   return (
     <div
       className={`relative flex flex-col p-2 h-full justify-between bg-gray-1 border-r border-gray-10 transition-all duration-300 group ${
@@ -97,11 +118,25 @@ const Sidenav = ({
         </div>
       </div>
 
-      {(notification || storage) && (
-        <div
-          className={`flex flex-col transition-all overflow-hidden duration-300 ${isCollapsed ? 'opacity-0 invisible delay-200' : 'opacity-100 delay-0'}`}
-        >
-          {notification && <div className="px-2 pb-2">{notification}</div>}
+      {(notification || storage) && showContent && (
+        <div className="flex flex-col">
+          {notification && (
+            <div className="px-2 pb-2">
+              <div className="flex gap-1.5 items-start p-3 rounded-lg bg-yellow/10 border border-yellow/20">
+                <WarningIcon className="size-5 shrink-0 text-yellow-dark" weight="fill" />
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <p className="text-xs leading-tight text-gray-100">{notification.message}</p>
+                  <button
+                    type="button"
+                    onClick={notification.onAction}
+                    className="self-start text-xs font-medium text-primary hover:underline"
+                  >
+                    {notification.actionLabel}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
           {storage && (
             <SidenavStorage
               usage={storage.usage}
