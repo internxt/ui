@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import Sidenav, { SidenavProps } from '../Sidenav';
@@ -217,7 +217,7 @@ describe('Sidenav Component', () => {
     });
 
     it('hides storage when collapsed', () => {
-      const { getByText } = renderSidenav({
+      const { queryByText } = renderSidenav({
         isCollapsed: true,
         storage: {
           usage: '2.8 GB',
@@ -228,10 +228,8 @@ describe('Sidenav Component', () => {
           isLoading: false,
         },
       });
-      const usageText = getByText('2.8 GB');
-      const storageContainer = usageText.closest('div')?.parentElement?.parentElement?.parentElement;
-      expect(storageContainer).toHaveClass('opacity-0');
-      expect(storageContainer).toHaveClass('invisible');
+      expect(queryByText('2.8 GB')).not.toBeInTheDocument();
+      expect(queryByText('4 GB')).not.toBeInTheDocument();
     });
 
     it('hides subsections when collapsed even if showSubsections is true', () => {
@@ -257,6 +255,64 @@ describe('Sidenav Component', () => {
       const { container } = renderSidenav({ isCollapsed: true });
       const optionButtons = container.querySelectorAll('button[title="Inbox"]');
       expect(optionButtons.length).toBeGreaterThan(0);
+    });
+  });
+
+  describe('Notification', () => {
+    const onAction = vi.fn();
+    const notification = {
+      message: 'Your account will be deleted in 14 days.',
+      actionLabel: 'Upgrade plan',
+      onAction,
+    };
+
+    it('should match snapshot with notification', () => {
+      const { container } = renderSidenav({ notification });
+      expect(container).toMatchSnapshot();
+    });
+
+    it('renders notification message and action label', () => {
+      const { getByText } = renderSidenav({ notification });
+      expect(getByText('Your account will be deleted in 14 days.')).toBeInTheDocument();
+      expect(getByText('Upgrade plan')).toBeInTheDocument();
+    });
+
+    it('calls onAction when action button is clicked', () => {
+      const { getByText } = renderSidenav({ notification });
+      fireEvent.click(getByText('Upgrade plan'));
+      expect(onAction).toHaveBeenCalledOnce();
+    });
+
+    it('does not render notification when isCollapsed is true', () => {
+      const { queryByText } = renderSidenav({ notification, isCollapsed: true });
+      expect(queryByText('Your account will be deleted in 14 days.')).not.toBeInTheDocument();
+    });
+
+    it('hides notification immediately when sidenav collapses', () => {
+      vi.useFakeTimers();
+      const { getByText, queryByText, rerender } = renderSidenav({ notification, isCollapsed: false });
+      expect(getByText('Your account will be deleted in 14 days.')).toBeInTheDocument();
+
+      rerender(<Sidenav {...defaultProps} notification={notification} isCollapsed={true} />);
+      expect(queryByText('Your account will be deleted in 14 days.')).not.toBeInTheDocument();
+
+      vi.useRealTimers();
+    });
+
+    it('shows notification after 300ms when sidenav expands', () => {
+      vi.useFakeTimers();
+      const { getByText, queryByText, rerender } = renderSidenav({ notification, isCollapsed: true });
+      expect(queryByText('Your account will be deleted in 14 days.')).not.toBeInTheDocument();
+
+      rerender(<Sidenav {...defaultProps} notification={notification} isCollapsed={false} />);
+      expect(queryByText('Your account will be deleted in 14 days.')).not.toBeInTheDocument();
+
+      act(() => {
+        vi.advanceTimersByTime(300);
+      });
+      expect(getByText('Your account will be deleted in 14 days.')).toBeInTheDocument();
+
+      vi.useRealTimers();
     });
   });
 
