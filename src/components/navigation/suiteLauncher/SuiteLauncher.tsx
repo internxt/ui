@@ -47,7 +47,7 @@ export default function SuiteLauncher({
   );
 
   const panel = (
-    <div className="w-64 flex flex-wrap p-2" data-testid="suite-launcher-panel">
+    <div className="w-64 flex flex-wrap p-4" data-testid="suite-launcher-panel">
       {suiteArray.map((suiteApp, idx) => (
         <div
           key={idx}
@@ -74,7 +74,7 @@ export default function SuiteLauncher({
                 cloneElement(suiteApp.icon as JSX.Element, {
                   size: 26,
                   className:
-                    `${suiteApp.icon.props?.className ?? ''} ${suiteApp.isMain ? 'text-primary' : ''} ` +
+                    `${suiteApp.icon.props?.className ?? ''} ${suiteApp.isMain ? 'text-primary' : 'text-gray-55'} ` +
                     `${suiteApp.availableSoon || suiteApp.isLocked ? 'opacity-50 filter grayscale' : ''}`,
                   weight: suiteApp.isMain ? 'fill' : 'regular',
                 })
@@ -84,7 +84,7 @@ export default function SuiteLauncher({
 
               <div className="mt-1 flex items-center">
                 <span
-                  className={`text-xs ${suiteApp.isMain ? 'text-primary font-medium' : 'text-gray-60'}`}
+                  className={`text-xs font-medium whitespace-nowrap ${suiteApp.isMain ? 'text-primary' : 'text-gray-55'}`}
                   style={{ lineHeight: 1, opacity: suiteApp.availableSoon || suiteApp.isLocked ? 0.5 : 1 }}
                 >
                   {suiteApp.title}
@@ -93,7 +93,7 @@ export default function SuiteLauncher({
                 {suiteApp.availableSoon && (
                   <div className="flex rounded-sm px-1 ml-1 py-0.5 bg-purple-1 dark:bg-purple-10 items-center">
                     <span
-                      className="font-medium dark:font-normal text-purple-10 dark:text-purple-1"
+                      className="font-medium text-purple-10 dark:text-purple-1"
                       style={{ lineHeight: 1, fontSize: 'xx-small' }}
                     >
                       {soonText ?? 'Soon'}
