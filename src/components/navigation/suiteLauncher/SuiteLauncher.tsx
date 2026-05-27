@@ -56,7 +56,7 @@ export default function SuiteLauncher({
           <div
             role="none"
             className={
-              'flex items-center px-3 py-2 text-gray-80 w-full rounded-md ' +
+              'flex items-center p-4 text-gray-80 w-full rounded-md ' +
               `${suiteApp.availableSoon ? '' : 'cursor-pointer hover:bg-gray-1 dark:hover:bg-gray-10'}`
             }
             style={{ lineHeight: 1.25 }}
