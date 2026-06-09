@@ -56,7 +56,7 @@ export default function SuiteLauncher({
           <div
             role="none"
             className={
-              'flex items-center p-4 text-gray-55 w-full rounded-md ' +
+              'flex items-center p-4 text-gray-80 w-full rounded-md ' +
               `${suiteApp.availableSoon ? '' : 'cursor-pointer hover:bg-gray-1 dark:hover:bg-gray-10'}`
             }
             style={{ lineHeight: 1.25 }}
@@ -74,7 +74,7 @@ export default function SuiteLauncher({
                 cloneElement(suiteApp.icon as JSX.Element, {
                   size: 26,
                   className:
-                    `${suiteApp.icon.props?.className ?? ''} ${suiteApp.isMain ? 'text-primary' : 'text-gray-55'} ` +
+                    `${suiteApp.icon.props?.className ?? ''} ${suiteApp.isMain ? 'text-primary' : 'text-gray-80'} ` +
                     `${suiteApp.availableSoon || suiteApp.isLocked ? 'opacity-50 filter grayscale' : ''}`,
                   weight: suiteApp.isMain ? 'fill' : 'regular',
                 })
@@ -84,7 +84,7 @@ export default function SuiteLauncher({
 
               <div className="mt-1 flex items-center">
                 <span
-                  className={`text-xs font-medium whitespace-nowrap ${suiteApp.isMain ? 'text-primary' : 'text-gray-55'}`}
+                  className={`text-xs font-medium whitespace-nowrap ${suiteApp.isMain ? 'text-primary' : 'text-gray-80'}`}
                   style={{ lineHeight: 1, opacity: suiteApp.availableSoon || suiteApp.isLocked ? 0.5 : 1 }}
                 >
                   {suiteApp.title}
