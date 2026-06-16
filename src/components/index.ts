@@ -8,6 +8,7 @@ export * from './data-display/table/Table';
 export * from './feedback/empty';
 export * from './feedback/loader';
 export * from './feedback/skeletonLoader';
+export * from './feedback/notifications/usageBanner';
 
 // input
 export * from './input/button';
