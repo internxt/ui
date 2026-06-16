@@ -30,6 +30,6 @@ jobs:
         run: yarn build
 
       - name: Publish to GitHub
-        run: npm publish --scope=@internxt --access public
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
