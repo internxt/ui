@@ -57,14 +57,6 @@ const defaultProps = {
 const selectedAllItemsMock = [
   {
     props: {
-      age: 25,
-      id: 1,
-      name: 'Item 1',
-    },
-    value: true,
-  },
-  {
-    props: {
       age: 30,
       id: 2,
       name: 'Item 2',

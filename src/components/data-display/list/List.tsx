@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import ListItem from './ListItem';
 import ListHeader, { HeaderProps } from './ListHeader';
@@ -214,7 +213,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   };
 
   const selectAllItems = () => {
-    const notSelectedItems = _.difference(items, selectedItems);
+    const notSelectedItems = items.filter((item) => !selectedItems.some((s) => s.id === item.id));
     const changesToMake = notSelectedItems.map((item) => ({ props: item, value: true }));
     onSelectedItemsChanged(changesToMake);
   };
