@@ -1,6 +1,7 @@
 import { CloudWarningIcon, XIcon } from '@phosphor-icons/react';
 import React, { ReactNode } from 'react';
 import { Button } from '../../../input/button';
+import Skeleton from '../../skeleton/Skeleton';
 
 export interface UsageWarningBannerProps {
   title: string;
@@ -53,11 +54,7 @@ const UsageWarningBanner: React.FC<UsageWarningBannerProps> = ({
           <div className={`${barClassName} h-full rounded-full`} style={{ width: `${percentage}%` }} />
         </div>
         {isLoading ? (
-          <div className="flex flex-row items-center gap-2">
-            <div className="h-3 w-8 rounded-lg bg-gray-5 animate-pulse" />
-            <div className="h-3 w-2 rounded-lg bg-gray-5 animate-pulse" />
-            <div className="h-3 w-8 rounded-lg bg-gray-5 animate-pulse" />
-          </div>
+          <Skeleton />
         ) : (
           <span className="flex flex-row gap-1">
             <p className="text-gray-60 text-xs">{usage}</p>

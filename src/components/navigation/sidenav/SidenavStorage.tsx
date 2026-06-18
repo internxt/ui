@@ -1,3 +1,4 @@
+import Skeleton from '../../feedback/skeleton/Skeleton';
 import { SidenavStorageProps } from './Sidenav';
 
 const SidenavStorage = ({
@@ -16,11 +17,7 @@ const SidenavStorage = ({
     <div className="flex flex-row w-full justify-between">
       <div className="flex flex-row items-center gap-2">
         {isLoading ? (
-          <div className="flex flex-row items-center gap-2">
-            <div className="h-3 w-8 rounded-lg bg-gray-5 animate-pulse" />
-            <div className="h-3 w-2 rounded-lg bg-gray-5 animate-pulse" />
-            <div className="h-3 w-8 rounded-lg bg-gray-5 animate-pulse" />
-          </div>
+          <Skeleton />
         ) : (
           <>
             <p className="text-gray-60 text-sm font-semibold">{usage}</p>

@@ -7,6 +7,7 @@ export * from './data-display/table/Table';
 // feedback
 export * from './feedback/empty';
 export * from './feedback/loader';
+export * from './feedback/skeleton';
 export * from './feedback/skeletonLoader';
 export * from './feedback/notifications/usageBanner';
 
