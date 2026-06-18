@@ -1,6 +1,8 @@
 @import url('tailwindcss');
 
 @theme {
+  --color-alert: rgb(var(--color-alert-rgb));
+  --color-alert-dark: rgb(var(--color-alert-dark-rgb));
   --color-surface: rgb(var(--color-surface-rgb));
   --color-highlight: rgb(var(--color-highlight-rgb));
   --color-primary: rgb(var(--color-primary-rgb));
@@ -8,8 +10,10 @@
   --color-red: rgb(var(--color-red-rgb));
   --color-red-dark: rgb(var(--color-red-dark-rgb));
   --color-orange: rgb(var(--color-orange-rgb));
+  --color-orange-60: rgb(var(--color-orange-60-rgb));
   --color-orange-dark: rgb(var(--color-orange-dark-rgb));
   --color-yellow: rgb(var(--color-yellow-rgb));
+  --color-yellow-60: rgb(var(--color-yellow-60-rgb));
   --color-yellow-dark: rgb(var(--color-yellow-dark-rgb));
   --color-green: rgb(var(--color-green-rgb));
   --color-green-dark: rgb(var(--color-green-dark-rgb));
@@ -24,12 +28,15 @@
   --color-gray-30: rgb(var(--color-gray-30-rgb));
   --color-gray-40: rgb(var(--color-gray-40-rgb));
   --color-gray-50: rgb(var(--color-gray-50-rgb));
+  --color-gray-52: rgb(var(--color-gray-52-rgb));
+  --color-gray-53: rgb(var(--color-gray-53-rgb));
   --color-gray-55: rgb(var(--color-gray-55-rgb));
   --color-gray-60: rgb(var(--color-gray-60-rgb));
   --color-gray-70: rgb(var(--color-gray-70-rgb));
   --color-gray-80: rgb(var(--color-gray-80-rgb));
   --color-gray-90: rgb(var(--color-gray-90-rgb));
   --color-gray-100: rgb(var(--color-gray-100-rgb));
+  --color-danger: rgb(var(--color-danger-rgb));
 }
 
 button {
@@ -45,8 +52,10 @@ button {
     --color-red-rgb: 255 13 0;
     --color-red-dark-rgb: 230 11 0;
     --color-orange-rgb: 255 149 0;
+    --color-orange-60-rgb: 229 134 0;
     --color-orange-dark-rgb: 230 134 0;
     --color-yellow-rgb: 255 204 0;
+    --color-yellow-60-rgb: 229 183 0;
     --color-yellow-dark-rgb: 230 184 0;
     --color-green-rgb: 50 195 86;
     --color-green-dark-rgb: 45 174 77;
@@ -63,12 +72,17 @@ button {
     --color-gray-30-rgb: 199 199 205;
     --color-gray-40-rgb: 174 174 179;
     --color-gray-50-rgb: 142 142 148;
+    --color-gray-52-rgb: 124 124 126;
+    --color-gray-53-rgb: 124 124 124;
     --color-gray-55-rgb: 115 115 115;
     --color-gray-60-rgb: 99 99 103;
     --color-gray-70-rgb: 72 72 75;
     --color-gray-80-rgb: 58 58 59;
     --color-gray-90-rgb: 44 44 48;
     --color-gray-100-rgb: 24 24 27;
+    --color-alert-rgb: 255 249 229;
+    --color-alert-dark-rgb: 255 244 204;
+    --color-danger-rgb: 229 11 0;
   }
 
   :root.dark {
@@ -79,8 +93,10 @@ button {
     --color-red-rgb: 255 61 51;
     --color-red-dark-rgb: 255 36 26;
     --color-orange-rgb: 255 164 36;
+    --color-orange-60-rgb: 229 147 32;
     --color-orange-dark-rgb: 255 153 10;
     --color-yellow-rgb: 255 214 51;
+    --color-yellow-60-rgb: 229 192 45;
     --color-yellow-dark-rgb: 255 209 26;
     --color-green-rgb: 72 208 106;
     --color-green-dark-rgb: 52 203 90;
@@ -97,12 +113,18 @@ button {
     --color-gray-30-rgb: 99 99 103;
     --color-gray-40-rgb: 142 142 148;
     --color-gray-50-rgb: 174 174 179;
+    --color-gray-52-rgb: 224 224 226;
+    --color-gray-53-rgb: 199 199 201;
     --color-gray-55-rgb: 115 115 115;
     --color-gray-60-rgb: 199 199 205;
     --color-gray-70-rgb: 209 209 215;
     --color-gray-80-rgb: 229 229 235;
     --color-gray-90-rgb: 243 243 248;
     --color-gray-100-rgb: 249 249 252;
+    --color-alert-rgb: 76 64 15;
+    --color-alert-dark-rgb: 127 107 25;
+    --color-danger-rgb: 229 54 45;
+
   }
 }
 
@@ -115,8 +137,10 @@ button {
     --color-red-rgb: 255 61 51;
     --color-red-dark-rgb: 255 36 26;
     --color-orange-rgb: 255 164 36;
+    --color-orange-60-rgb: 229 147 32;
     --color-orange-dark-rgb: 255 153 10;
     --color-yellow-rgb: 255 214 51;
+    --color-yellow-60-rgb: 229 192 45;
     --color-yellow-dark-rgb: 255 209 26;
     --color-green-rgb: 72 208 106;
     --color-green-dark-rgb: 52 203 90;
@@ -133,12 +157,17 @@ button {
     --color-gray-30-rgb: 99 99 103;
     --color-gray-40-rgb: 142 142 148;
     --color-gray-50-rgb: 174 174 179;
+    --color-gray-52-rgb: 224 224 226;
+    --color-gray-53-rgb: 199 199 201;
     --color-gray-55-rgb: 115 115 115;
     --color-gray-60-rgb: 199 199 205;
     --color-gray-70-rgb: 209 209 215;
     --color-gray-80-rgb: 229 229 235;
     --color-gray-90-rgb: 243 243 248;
     --color-gray-100-rgb: 249 249 252;
+    --color-alert-rgb: 76 64 15;
+    --color-alert-dark-rgb: 127 107 25;
+    --color-danger-rgb: 229 54 45;
   }
 
   :root:not(.dark) {
@@ -149,8 +178,10 @@ button {
     --color-red-rgb: 255 13 0;
     --color-red-dark-rgb: 230 11 0;
     --color-orange-rgb: 255 149 0;
+    --color-orange-60-rgb: 229 134 0;
     --color-orange-dark-rgb: 230 134 0;
     --color-yellow-rgb: 255 204 0;
+    --color-yellow-60-rgb: 229 183 0;
     --color-yellow-dark-rgb: 230 184 0;
     --color-green-rgb: 50 195 86;
     --color-green-dark-rgb: 45 174 77;
@@ -167,11 +198,16 @@ button {
     --color-gray-30-rgb: 199 199 205;
     --color-gray-40-rgb: 174 174 179;
     --color-gray-50-rgb: 142 142 148;
+    --color-gray-52-rgb: 124 124 126;
+    --color-gray-53-rgb: 124 124 124;
     --color-gray-55-rgb: 115 115 115;
     --color-gray-60-rgb: 99 99 103;
     --color-gray-70-rgb: 72 72 75;
     --color-gray-80-rgb: 58 58 59;
     --color-gray-90-rgb: 44 44 48;
     --color-gray-100-rgb: 24 24 27;
+    --color-alert-rgb: 255 249 229;
+    --color-alert-dark-rgb: 255 244 204;
+    --color-danger-rgb: 229 11 0;
   }
 }
