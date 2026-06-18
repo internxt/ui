@@ -1,4 +1,5 @@
 import { CloudWarningIcon } from '@phosphor-icons/react';
+import { getStorageLevel, StorageLevel } from '../../../utils/storage';
 interface SidenavStorageProps {
   usage: string;
   limit: string;
@@ -9,20 +10,11 @@ interface SidenavStorageProps {
   advertisementMessage?: string;
 }
 
-type StorageLevel = 'normal' | 'low warning' | 'middle warning' | 'high warning';
-
-const getStorageLevel = (percentage: number): StorageLevel => {
-  if (percentage >= 95) return 'high warning';
-  if (percentage >= 80) return 'middle warning';
-  if (percentage >= 60) return 'low warning';
-  return 'normal';
-};
-
 const STORAGE_LEVEL_STYLES: Record<StorageLevel, { bar: string; container: string }> = {
   normal: { bar: 'bg-gray-60', container: '' },
-  'low warning': { bar: 'bg-yellow-60', container: '' },
-  'middle warning': { bar: 'bg-orange-60', container: '' },
-  'high warning': { bar: 'bg-danger', container: 'bg-alert rounded-xl border border-alert-dark p-3 gap-2' },
+  'lowWarning': { bar: 'bg-yellow-60', container: '' },
+  'middleWarning': { bar: 'bg-orange-60', container: '' },
+  'highWarning': { bar: 'bg-danger', container: 'bg-alert rounded-xl border border-alert-dark p-3 gap-2' },
 };
 
 const SidenavStorage = ({
@@ -37,16 +29,18 @@ const SidenavStorage = ({
 
   const level = getStorageLevel(percentage);
   const styles = STORAGE_LEVEL_STYLES[level];
-  const showWarning = level === 'middle warning' || level === 'high warning';
+  const showWarning = level === 'middleWarning' || level === 'highWarning';
+  const shouldAdvertiseUser = advertisementMessage && showWarning;
+
 
   return (
     
     <div className={`flex flex-col w-full gap-2.5 p-3  ${styles.container}`}>
-      {showWarning && advertisementMessage && (
+      {shouldAdvertiseUser && (
         <div className="flex flex-row gap-0.5 items-center">
           <CloudWarningIcon
             className="size-5 inline-block text-yellow-60 mr-1"
-            weight={level === 'high warning' ? 'fill' : 'regular'}
+            weight={level === 'highWarning' ? 'fill' : 'regular'}
           />
           <p className="text-sm font-semibold">{advertisementMessage}</p>
         </div>

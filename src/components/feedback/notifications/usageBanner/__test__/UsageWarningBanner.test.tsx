@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { UsageWarningBanner, UsageWarningBannerProps } from '../';
-import { getStorageLevel } from '../UsageWarningBanner';
+import { getStorageLevel } from '../utils';
 
 const renderBanner = (overrides: Partial<UsageWarningBannerProps> = {}) => {
   const props: UsageWarningBannerProps = {
@@ -91,17 +91,22 @@ describe('UsageWarningBanner', () => {
 
 describe('getStorageLevel', () => {
   it('flags critical usage from ninety-five percent upwards', () => {
-    expect(getStorageLevel(95)).toBe('high warning');
-    expect(getStorageLevel(100)).toBe('high warning');
+    expect(getStorageLevel(95)).toBe('highWarning');
+    expect(getStorageLevel(100)).toBe('highWarning');
   });
 
   it('flags near-full usage between eighty and ninety-five percent', () => {
-    expect(getStorageLevel(80)).toBe('middle warning');
-    expect(getStorageLevel(94)).toBe('middle warning');
+    expect(getStorageLevel(80)).toBe('middleWarning');
+    expect(getStorageLevel(94)).toBe('middleWarning');
   });
 
-  it('keeps usage below eighty percent as a low warning', () => {
-    expect(getStorageLevel(0)).toBe('low warning');
-    expect(getStorageLevel(79)).toBe('low warning');
+  it('flags moderate usage between sixty and eighty percent as a low warning', () => {
+    expect(getStorageLevel(60)).toBe('lowWarning');
+    expect(getStorageLevel(79)).toBe('lowWarning');
+  });
+
+  it('keeps usage below sixty percent as normal', () => {
+    expect(getStorageLevel(0)).toBe('normal');
+    expect(getStorageLevel(59)).toBe('normal');
   });
 });

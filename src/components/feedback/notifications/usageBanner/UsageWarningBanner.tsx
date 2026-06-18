@@ -1,6 +1,7 @@
 import { CloudWarningIcon, XIcon } from '@phosphor-icons/react';
 import React from 'react';
 import { Button } from '../../../input/button';
+import { getStorageLevel, renderWithBold, STORAGE_LEVEL_STYLES } from './utils';
 
 export interface UsageWarningBannerProps {
   usage: string;
@@ -16,29 +17,6 @@ export interface UsageWarningBannerProps {
   isLoading?: boolean;
   darkMode?: boolean;
 }
-
-export type StorageLevel = 'low warning' | 'middle warning' | 'high warning';
-
-export const getStorageLevel = (percentage: number): StorageLevel => {
-  if (percentage >= 95) return 'high warning';
-  if (percentage >= 80) return 'middle warning';
-  return 'low warning';
-};
-
-const STORAGE_LEVEL_STYLES: Record<StorageLevel, { bar: string }> = {
-  'low warning': { bar: 'bg-yellow-60' },
-  'middle warning': { bar: 'bg-orange-60' },
-  'high warning': { bar: 'bg-danger' },
-};
-
-
-const renderWithBold = (text: string): React.ReactNode =>
-  text.split(/(\*\*[^*]+\*\*)/g).map((segment, index) => {
-    if (segment.startsWith('**') && segment.endsWith('**')) {
-      return <strong key={index}>{segment.slice(2, -2)}</strong>;
-    }
-    return <React.Fragment key={index}>{segment}</React.Fragment>;
-  });
 
 const UsageWarningBanner: React.FC<UsageWarningBannerProps> = ({
   usage,
