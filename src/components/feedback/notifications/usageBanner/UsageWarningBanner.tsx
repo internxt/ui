@@ -10,15 +10,16 @@ export interface UsageWarningBannerProps {
   descriptionLabelLine1: string;
   descriptionLabelLine2: string;
   upgradeLabel: string;
+  closeButtonLabel?: string;
   onUpgradeClick: () => void;
   onCloseButtonClick: () => void;
   isLoading?: boolean;
   darkMode?: boolean;
 }
 
-type StorageLevel = 'low warning' | 'middle warning' | 'high warning';
+export type StorageLevel = 'low warning' | 'middle warning' | 'high warning';
 
-const getStorageLevel = (percentage: number): StorageLevel => {
+export const getStorageLevel = (percentage: number): StorageLevel => {
   if (percentage >= 95) return 'high warning';
   if (percentage >= 80) return 'middle warning';
   return 'low warning';
@@ -47,6 +48,7 @@ const UsageWarningBanner: React.FC<UsageWarningBannerProps> = ({
   descriptionLabelLine1,
   descriptionLabelLine2,
   upgradeLabel,
+  closeButtonLabel = 'Close',
   onUpgradeClick,
   onCloseButtonClick,
   isLoading = true,
@@ -62,7 +64,14 @@ const UsageWarningBanner: React.FC<UsageWarningBannerProps> = ({
             <CloudWarningIcon weight="fill" className="size-5 text-yellow-60" />
             <p className="text-sm font-semibold text-gray-80">{titleLabel}</p>
           </span>
-          <XIcon className="size-5 text-gray-53 cursor-pointer" onClick={onCloseButtonClick} />
+          <button
+            type="button"
+            aria-label={closeButtonLabel}
+            onClick={onCloseButtonClick}
+            className="flex items-center justify-center"
+          >
+            <XIcon className="size-5 text-gray-53 cursor-pointer" />
+          </button>
         </div>
         <span>
           <p className="text-xs font-medium text-gray-52">{renderWithBold(descriptionLabelLine1)}</p>
