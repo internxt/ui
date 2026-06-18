@@ -20,6 +20,7 @@ const meta: Meta<typeof UsageWarningBanner> = {
   args: {
     onUpgradeClick: fn(),
     onCloseButtonClick: fn(),
+    closeButtonLabel: 'Close',
   },
 };
 
@@ -31,9 +32,16 @@ export const Default: Story = {
     usage: '600MB',
     limit: '1GB',
     percentage: 60,
-    titleLabel: 'Get more space for your files',
-    descriptionLabelLine1: 'Unlock additional storage with an exclusive 85% discount on your upgrade',
-    descriptionLabelLine2: 'Access advanced features like file version history, Rclone, NAS support, premium support, and more',
+    barClassName: 'bg-yellow-60',
+    title: 'Get more space for your files',
+    description: (
+      <>
+        <p>
+          Unlock additional storage with an exclusive <strong>85% discount</strong> on your upgrade
+        </p>
+        <p>Access advanced features like file version history, Rclone, NAS support, premium support, and more</p>
+      </>
+    ),
     upgradeLabel: 'Get offer',
     isLoading: false,
   },
@@ -45,9 +53,19 @@ export const LowUsage: Story = {
     usage: '800MB',
     limit: '1GB',
     percentage: 80,
-    titleLabel: 'Your storage is filling up',
-    descriptionLabelLine1: 'Upgrade today with an exclusive 85% discount and keep uploading without interruptions',
-    descriptionLabelLine2: 'Get more storage plus advanced features like file version history, NAS support, Rclone integration, and premium support',
+    barClassName: 'bg-orange-60',
+    title: 'Your storage is filling up',
+    description: (
+      <>
+        <p>
+          Upgrade today with an exclusive <strong>85% discount</strong> and keep uploading without interruptions
+        </p>
+        <p>
+          Get more storage plus advanced features like file version history, NAS support, Rclone integration, and
+          premium support
+        </p>
+      </>
+    ),
   },
 };
 
@@ -57,9 +75,17 @@ export const AlmostFull: Story = {
     usage: '950MB',
     limit: '1GB',
     percentage: 95,
-    titleLabel: 'Your storage is almost full',
-    descriptionLabelLine1: 'You may soon be unable to upload new files',
-    descriptionLabelLine2: 'Upgrade now with an exclusive 85% discount to continue storing and syncing your files without limits'
+    barClassName: 'bg-danger',
+    title: 'Your storage is almost full',
+    description: (
+      <>
+        <p>You may soon be unable to upload new files</p>
+        <p>
+          Upgrade now with an exclusive <strong>85% discount</strong> to continue storing and syncing your files
+          without limits
+        </p>
+      </>
+    ),
   },
 };
 

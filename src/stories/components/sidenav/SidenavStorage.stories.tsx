@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { CloudWarningIcon } from '@phosphor-icons/react';
 import { SidenavStorage, SidenavStorageProps } from '@/components/sidenav';
 
 const meta: Meta<typeof SidenavStorage> = {
@@ -51,6 +52,14 @@ export const HighUsage: Story = {
     limit: '10 GB',
     percentage: 95,
     upgradeLabel: 'Upgrade now',
+    barClassName: 'bg-danger',
+    containerClassName: 'bg-alert rounded-xl border border-alert-dark gap-2',
+    advertisement: (
+      <div className="flex flex-row gap-0.5 items-center">
+        <CloudWarningIcon weight="fill" className="size-5 inline-block text-yellow-60 mr-1" />
+        <p className="text-sm font-semibold">Buy space 85% off</p>
+      </div>
+    ),
   },
 };
 

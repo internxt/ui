@@ -2,16 +2,14 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { UsageWarningBanner, UsageWarningBannerProps } from '../';
-import { getStorageLevel } from '../utils';
 
 const renderBanner = (overrides: Partial<UsageWarningBannerProps> = {}) => {
   const props: UsageWarningBannerProps = {
+    title: 'Storage almost full',
+    description: 'You are running out of space',
     usage: '10 GB',
     limit: '20 GB',
     percentage: 50,
-    titleLabel: 'Storage almost full',
-    descriptionLabelLine1: 'You are running out of space',
-    descriptionLabelLine2: 'Upgrade to keep saving files',
     upgradeLabel: 'Upgrade now',
     closeButtonLabel: 'Close',
     onUpgradeClick: vi.fn(),
@@ -24,33 +22,27 @@ const renderBanner = (overrides: Partial<UsageWarningBannerProps> = {}) => {
 };
 
 describe('UsageWarningBanner', () => {
-  it('warns with a danger-coloured bar when storage is critically full', () => {
-    const { container } = renderBanner({ percentage: 96 });
+  it('colours the progress bar with the style chosen by the consumer', () => {
+    const { container } = renderBanner({ barClassName: 'bg-danger' });
 
     expect(container.querySelector('.bg-danger')).toBeTruthy();
   });
 
-  it('warns with an orange bar when storage is nearly full', () => {
-    const { container } = renderBanner({ percentage: 85 });
-
-    expect(container.querySelector('.bg-orange-60')).toBeTruthy();
-  });
-
-  it('warns with a yellow bar when storage still has room', () => {
-    const { container } = renderBanner({ percentage: 40 });
-
-    expect(container.querySelector('.bg-yellow-60')).toBeTruthy();
-  });
-
   it('fills the bar in proportion to the storage used', () => {
-    const { container } = renderBanner({ percentage: 73 });
+    const { container } = renderBanner({ barClassName: 'bg-yellow-60', percentage: 73 });
 
     const bar = container.querySelector<HTMLElement>('.bg-yellow-60');
     expect(bar?.style.width).toBe('73%');
   });
 
-  it('emphasises the portions of the description wrapped in double asterisks', () => {
-    renderBanner({ descriptionLabelLine1: 'You have used **90%** of your storage' });
+  it('renders the rich description provided by the consumer', () => {
+    renderBanner({
+      description: (
+        <p>
+          You have used <strong>90%</strong> of your storage
+        </p>
+      ),
+    });
 
     expect(screen.getByText('90%').tagName).toBe('STRONG');
   });
@@ -86,27 +78,5 @@ describe('UsageWarningBanner', () => {
     screen.getByRole('button', { name: 'Close' }).click();
 
     expect(onCloseButtonClick).toHaveBeenCalledOnce();
-  });
-});
-
-describe('getStorageLevel', () => {
-  it('flags critical usage from ninety-five percent upwards', () => {
-    expect(getStorageLevel(95)).toBe('highWarning');
-    expect(getStorageLevel(100)).toBe('highWarning');
-  });
-
-  it('flags near-full usage between eighty and ninety-five percent', () => {
-    expect(getStorageLevel(80)).toBe('middleWarning');
-    expect(getStorageLevel(94)).toBe('middleWarning');
-  });
-
-  it('flags moderate usage between sixty and eighty percent as a low warning', () => {
-    expect(getStorageLevel(60)).toBe('lowWarning');
-    expect(getStorageLevel(79)).toBe('lowWarning');
-  });
-
-  it('keeps usage below sixty percent as normal', () => {
-    expect(getStorageLevel(0)).toBe('normal');
-    expect(getStorageLevel(59)).toBe('normal');
   });
 });
