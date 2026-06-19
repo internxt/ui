@@ -18,6 +18,9 @@ export interface SidenavStorageProps {
   onUpgradeClick: () => void;
   upgradeLabel?: string;
   isLoading?: boolean;
+  barClassName?: string;
+  containerClassName?: string;
+  advertisement?: ReactNode;
 }
 
 export interface SidenavProps {
@@ -145,6 +148,9 @@ const Sidenav = ({
               onUpgradeClick={storage.onUpgradeClick}
               upgradeLabel={storage.upgradeLabel}
               isLoading={storage.isLoading}
+              barClassName={storage.barClassName}
+              containerClassName={storage.containerClassName}
+              advertisement={storage.advertisement}
             />
           )}
         </div>
