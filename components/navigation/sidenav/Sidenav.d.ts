@@ -13,6 +13,9 @@ export interface SidenavStorageProps {
     onUpgradeClick: () => void;
     upgradeLabel?: string;
     isLoading?: boolean;
+    barClassName?: string;
+    containerClassName?: string;
+    advertisement?: ReactNode;
 }
 export interface SidenavProps {
     header: SidenavHeaderProps;
@@ -34,6 +37,12 @@ export interface SidenavProps {
     showSubsections?: boolean;
     isCollapsed?: boolean;
     storage?: SidenavStorageProps;
+    notification?: {
+        message: string;
+        actionLabel: string;
+        onAction: () => void;
+        type?: 'warning';
+    };
     onToggleCollapse?: () => void;
 }
 /**
@@ -49,7 +58,8 @@ export interface SidenavProps {
  * @property {boolean} showSubsections - Determines whether to display the subsections of the sidenav
  * @property {boolean} isCollapsed - Determines whether the sidenav is collapsed or not
  * @property {SidenavStorage} storage - The storage information displayed at the bottom of the sidenav
+ * @property {object} notification - Optional structured notification rendered above the storage section (hidden when collapsed). Accepts message, actionLabel, onAction, and an optional type ('warning').
  * @property {() => void} onToggleCollapse - A callback function triggered when the collapse button is clicked
  */
-declare const Sidenav: ({ header, primaryAction, suiteLauncher, collapsedPrimaryAction, options, showSubsections, isCollapsed, storage, onToggleCollapse, }: SidenavProps) => import("react/jsx-runtime").JSX.Element;
+declare const Sidenav: ({ header, primaryAction, suiteLauncher, collapsedPrimaryAction, options, showSubsections, isCollapsed, storage, notification, onToggleCollapse, }: SidenavProps) => import("react/jsx-runtime").JSX.Element;
 export default Sidenav;
