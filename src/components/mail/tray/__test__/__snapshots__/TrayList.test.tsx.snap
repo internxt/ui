@@ -17,17 +17,41 @@ exports[`TrayList > should match snapshot 1`] = `
               class="flex items-center w-full flex-col"
             >
               <button
-                class="flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
+                class="group flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
               >
                 <div
                   class="flex flex-row w-full gap-2"
                 >
-                  <img
-                    class=" shrink-0 select-none rounded-full object-cover"
-                    draggable="false"
-                    src="https://example.com/avatar1.jpg"
-                    style="width: 28px; height: 28px;"
-                  />
+                  <div
+                    class="relative h-7 w-7 flex-shrink-0"
+                  >
+                    <div
+                      class="absolute inset-0 flex items-center justify-center transition-opacity opacity-100 group-hover:opacity-0"
+                    >
+                      <img
+                        class=" shrink-0 select-none rounded-full object-cover"
+                        draggable="false"
+                        src="https://example.com/avatar1.jpg"
+                        style="width: 28px; height: 28px;"
+                      />
+                    </div>
+                    <div
+                      class="absolute z-30 inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100"
+                    >
+                      <label
+                        class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+                      >
+                        <div
+                          class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+                        />
+                        <input
+                          class="base-checkbox h-0 w-0 appearance-none opacity-0"
+                          readonly=""
+                          type="checkbox"
+                        />
+                      </label>
+                    </div>
+                  </div>
                   <div
                     class="flex flex-col w-full"
                   >
@@ -72,17 +96,41 @@ exports[`TrayList > should match snapshot 1`] = `
               class="flex items-center w-full flex-col"
             >
               <button
-                class="flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
+                class="group flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
               >
                 <div
                   class="flex flex-row w-full gap-2"
                 >
-                  <img
-                    class=" shrink-0 select-none rounded-full object-cover"
-                    draggable="false"
-                    src="https://example.com/avatar2.jpg"
-                    style="width: 28px; height: 28px;"
-                  />
+                  <div
+                    class="relative h-7 w-7 flex-shrink-0"
+                  >
+                    <div
+                      class="absolute inset-0 flex items-center justify-center transition-opacity opacity-100 group-hover:opacity-0"
+                    >
+                      <img
+                        class=" shrink-0 select-none rounded-full object-cover"
+                        draggable="false"
+                        src="https://example.com/avatar2.jpg"
+                        style="width: 28px; height: 28px;"
+                      />
+                    </div>
+                    <div
+                      class="absolute z-30 inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100"
+                    >
+                      <label
+                        class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+                      >
+                        <div
+                          class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+                        />
+                        <input
+                          class="base-checkbox h-0 w-0 appearance-none opacity-0"
+                          readonly=""
+                          type="checkbox"
+                        />
+                      </label>
+                    </div>
+                  </div>
                   <div
                     class="flex flex-col w-full"
                   >
@@ -138,17 +186,41 @@ exports[`TrayList > should match snapshot 1`] = `
             class="flex items-center w-full flex-col"
           >
             <button
-              class="flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
+              class="group flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
             >
               <div
                 class="flex flex-row w-full gap-2"
               >
-                <img
-                  class=" shrink-0 select-none rounded-full object-cover"
-                  draggable="false"
-                  src="https://example.com/avatar1.jpg"
-                  style="width: 28px; height: 28px;"
-                />
+                <div
+                  class="relative h-7 w-7 flex-shrink-0"
+                >
+                  <div
+                    class="absolute inset-0 flex items-center justify-center transition-opacity opacity-100 group-hover:opacity-0"
+                  >
+                    <img
+                      class=" shrink-0 select-none rounded-full object-cover"
+                      draggable="false"
+                      src="https://example.com/avatar1.jpg"
+                      style="width: 28px; height: 28px;"
+                    />
+                  </div>
+                  <div
+                    class="absolute z-30 inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100"
+                  >
+                    <label
+                      class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+                    >
+                      <div
+                        class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+                      />
+                      <input
+                        class="base-checkbox h-0 w-0 appearance-none opacity-0"
+                        readonly=""
+                        type="checkbox"
+                      />
+                    </label>
+                  </div>
+                </div>
                 <div
                   class="flex flex-col w-full"
                 >
@@ -193,17 +265,41 @@ exports[`TrayList > should match snapshot 1`] = `
             class="flex items-center w-full flex-col"
           >
             <button
-              class="flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
+              class="group flex flex-col border-b border-gray-10 text-left gap-2 w-full py-3 px-5 "
             >
               <div
                 class="flex flex-row w-full gap-2"
               >
-                <img
-                  class=" shrink-0 select-none rounded-full object-cover"
-                  draggable="false"
-                  src="https://example.com/avatar2.jpg"
-                  style="width: 28px; height: 28px;"
-                />
+                <div
+                  class="relative h-7 w-7 flex-shrink-0"
+                >
+                  <div
+                    class="absolute inset-0 flex items-center justify-center transition-opacity opacity-100 group-hover:opacity-0"
+                  >
+                    <img
+                      class=" shrink-0 select-none rounded-full object-cover"
+                      draggable="false"
+                      src="https://example.com/avatar2.jpg"
+                      style="width: 28px; height: 28px;"
+                    />
+                  </div>
+                  <div
+                    class="absolute z-30 inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100"
+                  >
+                    <label
+                      class="relative h-5 w-5 rounded focus-within:outline-primary undefined"
+                    >
+                      <div
+                        class="relative flex h-5 w-5 cursor-pointer flex-col items-center justify-center rounded border text-white border-gray-30 hover:border-gray-40"
+                      />
+                      <input
+                        class="base-checkbox h-0 w-0 appearance-none opacity-0"
+                        readonly=""
+                        type="checkbox"
+                      />
+                    </label>
+                  </div>
+                </div>
                 <div
                   class="flex flex-col w-full"
                 >

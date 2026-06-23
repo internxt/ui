@@ -91,4 +91,25 @@ describe('MessageCheap', () => {
     const avatarContainer = screen.getByText('John Doe').closest('.flex.flex-row');
     expect(avatarContainer).toBeInTheDocument();
   });
+
+  it('should call onSelect with email id when checkbox is clicked', () => {
+    const mockOnSelect = vi.fn();
+    const { container } = render(<MessageCheap email={mockEmail} onClick={mockOnClick} onSelect={mockOnSelect} />);
+
+    const checkboxLabel = container.querySelector('label');
+    expect(checkboxLabel).toBeInTheDocument();
+    if (checkboxLabel) fireEvent.click(checkboxLabel);
+
+    expect(mockOnSelect).toHaveBeenCalledWith('1');
+  });
+
+  it('should not call onClick when checkbox is clicked', () => {
+    const mockOnSelect = vi.fn();
+    const { container } = render(<MessageCheap email={mockEmail} onClick={mockOnClick} onSelect={mockOnSelect} />);
+
+    const checkboxLabel = container.querySelector('label');
+    if (checkboxLabel) fireEvent.click(checkboxLabel);
+
+    expect(mockOnClick).not.toHaveBeenCalled();
+  });
 });
