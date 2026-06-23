@@ -22,6 +22,7 @@ export interface TrayListProps {
   hasMoreItems?: boolean;
   emptyState?: ReactNode;
   onMailSelected?: (id: string, isRead?: boolean) => void;
+  onMailChecked?: (id: string) => void;
   onLoadMore?: () => void;
 }
 
@@ -58,6 +59,7 @@ const TrayList = ({
   hasMoreItems = false,
   emptyState,
   onMailSelected = () => {},
+  onMailChecked,
   onLoadMore = () => {},
 }: TrayListProps) => {
   const loader = (
@@ -97,6 +99,7 @@ const TrayList = ({
                       active={activeEmail === email.id}
                       selected={checked || selectedEmails.includes(email.id)}
                       onClick={onMailSelected}
+                      onSelect={onMailChecked}
                     />
                   </div>
                 ))}
