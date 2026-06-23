@@ -30,7 +30,7 @@ const SidenavItem = ({
       } ${subsection ? 'pl-5' : ''}`}
       title={isCollapsed ? label : undefined}
     >
-      <div className="flex flex-row px-2.5 py-2 w-full items-center justify-between min-h-[36px]">
+      <div className="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9">
         <div className={`flex flex-row gap-3 items-center ${isActive ? 'text-primary' : 'text-gray-80'}`}>
           <Icon size={20} weight={isActive ? 'fill' : 'regular'} className="flex-shrink-0" />
           <p
@@ -39,11 +39,14 @@ const SidenavItem = ({
             {label}
           </p>
         </div>
-        <div
-          className={`flex rounded-full px-2 py-1 transition-all duration-300 ${isActive ? 'text-white bg-primary' : 'bg-gray-10 text-gray-60'} ${isCollapsed || !notifications ? 'opacity-0 invisible delay-300' : 'opacity-100 delay-0'}`}
-        >
-          {notifications && <p className="text-xs font-medium">{notifications}</p>}
-        </div>
+
+        {!!notifications && (
+          <div
+            className={`flex rounded-full px-2 py-1 ${isActive ? 'text-white bg-primary' : 'bg-gray-10 text-gray-60'} ${isCollapsed ? 'opacity-0 invisible delay-300' : 'opacity-100 delay-0'}`}
+          >
+            {<p className="text-xs font-medium">{notifications}</p>}
+          </div>
+        )}
       </div>
     </button>
   );
