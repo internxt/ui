@@ -5,7 +5,7 @@ export interface TrayListProps {
         from: {
             name: string;
             avatar: string;
-        };
+        }[];
         subject: string;
         createdAt: string;
         body: string;
@@ -18,6 +18,7 @@ export interface TrayListProps {
     hasMoreItems?: boolean;
     emptyState?: ReactNode;
     onMailSelected?: (id: string, isRead?: boolean) => void;
+    onMailChecked?: (id: string) => void;
     onLoadMore?: () => void;
 }
 /**
@@ -43,5 +44,5 @@ export interface TrayListProps {
  *
  * @returns {JSX.Element} The rendered TrayList component
  */
-declare const TrayList: ({ mails, selectedEmails, loading, checked, activeEmail, hasMoreItems, emptyState, onMailSelected, onLoadMore, }: TrayListProps) => import("react/jsx-runtime").JSX.Element;
+declare const TrayList: ({ mails, selectedEmails, loading, checked, activeEmail, hasMoreItems, emptyState, onMailSelected, onMailChecked, onLoadMore, }: TrayListProps) => import("react/jsx-runtime").JSX.Element;
 export default TrayList;
