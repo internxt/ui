@@ -5,7 +5,7 @@ import TrayList from '../../../../components/mail/tray/TrayList';
 const mockMails = [
   {
     id: '1',
-    from: { name: 'John Doe', avatar: '' },
+    from: [{ name: 'John Doe', avatar: '' }],
     subject: 'Meeting tomorrow',
     createdAt: '10:30 AM',
     body: 'Hi, just a reminder about our meeting tomorrow at 3pm.',
@@ -13,7 +13,7 @@ const mockMails = [
   },
   {
     id: '2',
-    from: { name: 'Jane Smith', avatar: '' },
+    from: [{ name: 'Jane Smith', avatar: '' }],
     subject: 'Project update',
     createdAt: '9:15 AM',
     body: 'The project is progressing well. Here are the latest updates...',
@@ -21,7 +21,7 @@ const mockMails = [
   },
   {
     id: '3',
-    from: { name: 'Mike Johnson', avatar: '' },
+    from: [{ name: 'Mike Johnson', avatar: '' }],
     subject: 'Invoice #1234',
     createdAt: 'Yesterday',
     body: 'Please find attached the invoice for last month services.',
@@ -29,7 +29,7 @@ const mockMails = [
   },
   {
     id: '4',
-    from: { name: 'Sarah Wilson', avatar: '' },
+    from: [{ name: 'Sarah Wilson', avatar: '' }],
     subject: 'Welcome to the team!',
     createdAt: 'Yesterday',
     body: 'We are excited to have you on board. Let me know if you need anything.',
@@ -37,7 +37,7 @@ const mockMails = [
   },
   {
     id: '5',
-    from: { name: 'Tech Support', avatar: '' },
+    from: [{ name: 'Tech Support', avatar: '' }],
     subject: 'Your ticket has been resolved',
     createdAt: 'Feb 20',
     body: 'Your support ticket #5678 has been resolved. Please let us know if you have any questions.',

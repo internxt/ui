@@ -7,10 +7,12 @@ import TrayList from '../TrayList';
 const mockMails = [
   {
     id: '1',
-    from: {
-      name: 'John Doe',
-      avatar: 'https://example.com/avatar1.jpg',
-    },
+    from: [
+      {
+        name: 'John Doe',
+        avatar: 'https://example.com/avatar1.jpg',
+      },
+    ],
     subject: 'Test Subject 1',
     createdAt: '2024-01-15',
     body: 'This is test email 1',
@@ -18,10 +20,12 @@ const mockMails = [
   },
   {
     id: '2',
-    from: {
-      name: 'Jane Smith',
-      avatar: 'https://example.com/avatar2.jpg',
-    },
+    from: [
+      {
+        name: 'Jane Smith',
+        avatar: 'https://example.com/avatar2.jpg',
+      },
+    ],
     subject: 'Test Subject 2',
     createdAt: '2024-01-16',
     body: 'This is test email 2',
