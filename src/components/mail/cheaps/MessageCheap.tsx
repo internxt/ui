@@ -15,12 +15,15 @@ export interface MessageCheapProps {
   };
   active?: boolean;
   selected?: boolean;
+  participants?: string[];
   onClick: (id: string, isRead?: boolean) => void;
   onSelect?: (id: string) => void;
 }
 
-const MessageCheap = ({ email, active, selected, onClick, onSelect }: MessageCheapProps) => {
+const MessageCheap = ({ email, active, selected, participants, onClick, onSelect }: MessageCheapProps) => {
   const isHighlighted = active || selected;
+  const isConversation = (participants?.length ?? 0) > 1;
+  const displayName = isConversation ? participants!.join(' & ') : email.from.name;
 
   const handleSelect: React.MouseEventHandler = (e) => {
     e.stopPropagation();
@@ -39,7 +42,13 @@ const MessageCheap = ({ email, active, selected, onClick, onSelect }: MessageChe
               selected ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
             }`}
           >
-            <Avatar fullName={email.from.name} src={email.from.avatar} size={'xxs'} />
+            {isConversation ? (
+              <div className="h-7 w-7 rounded-full bg-gray-10 flex items-center justify-center text-gray-80 text-sm font-semibold">
+                {participants!.length}
+              </div>
+            ) : (
+              <Avatar fullName={email.from.name} src={email.from.avatar} size={'xxs'} />
+            )}
           </div>
           <div
             className={`absolute z-30 inset-0 flex items-center justify-center transition-opacity ${
@@ -53,7 +62,7 @@ const MessageCheap = ({ email, active, selected, onClick, onSelect }: MessageChe
           <div className={`flex flex-row w-full justify-between ${isHighlighted ? 'text-primary' : ''}`}>
             <div className="flex flex-row gap-1 w-full max-w-[150px] items-center">
               {!email.read && <div className="h-2 w-2 rounded-full bg-primary" />}
-              <p className="font-semibold truncate">{email.from.name}</p>
+              <p className="font-semibold truncate">{displayName}</p>
             </div>
             <div>
               <p className={`text-sm font-medium ${isHighlighted ? 'text-primary' : 'text-gray-50'}`}>

@@ -112,4 +112,23 @@ describe('MessageCheap', () => {
 
     expect(mockOnClick).not.toHaveBeenCalled();
   });
+
+  it('should render participants count badge when there is a conversation', () => {
+    render(<MessageCheap email={mockEmail} onClick={mockOnClick} participants={['Bea Donell', 'John Appleseed']} />);
+
+    expect(screen.getByText('2')).toBeInTheDocument();
+  });
+
+  it('should render joined participant names when there is a conversation', () => {
+    render(<MessageCheap email={mockEmail} onClick={mockOnClick} participants={['Bea Donell', 'John Appleseed']} />);
+
+    expect(screen.getByText('Bea Donell & John Appleseed')).toBeInTheDocument();
+  });
+
+  it('should render single sender name when participants has 0 or 1 entries', () => {
+    render(<MessageCheap email={mockEmail} onClick={mockOnClick} participants={['John Doe']} />);
+
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
+    expect(screen.queryByText('1')).not.toBeInTheDocument();
+  });
 });

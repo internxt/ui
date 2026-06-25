@@ -9,7 +9,7 @@ export interface TrayListProps {
     from: {
       name: string;
       avatar: string;
-    };
+    }[];
     subject: string;
     createdAt: string;
     body: string;
@@ -95,7 +95,8 @@ const TrayList = ({
                 {mails.map((email) => (
                   <div key={email.id} className="flex items-center w-full flex-col">
                     <MessageCheap
-                      email={email}
+                      email={{ ...email, from: email.from[0] }}
+                      participants={email.from.map((f) => f.name)}
                       active={activeEmail === email.id}
                       selected={checked || selectedEmails.includes(email.id)}
                       onClick={onMailSelected}
