@@ -53,16 +53,16 @@ exports[`TrayList > should match snapshot 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col w-full"
+                    class="flex flex-col w-full min-w-0"
                   >
                     <div
-                      class="flex flex-row w-full justify-between "
+                      class="flex flex-row w-full justify-between gap-3 "
                     >
                       <div
-                        class="flex flex-row gap-1 w-full max-w-[150px] items-center"
+                        class="flex flex-row gap-1 min-w-0 flex-1 items-center"
                       >
                         <div
-                          class="h-2 w-2 rounded-full bg-primary"
+                          class="h-2 w-2 rounded-full bg-primary flex-shrink-0"
                         />
                         <p
                           class="font-semibold truncate"
@@ -70,9 +70,11 @@ exports[`TrayList > should match snapshot 1`] = `
                           John Doe
                         </p>
                       </div>
-                      <div>
+                      <div
+                        class="flex-shrink-0"
+                      >
                         <p
-                          class="text-sm font-medium text-gray-50"
+                          class="text-sm font-medium whitespace-nowrap text-gray-50"
                         >
                           2024-01-15
                         </p>
@@ -84,7 +86,7 @@ exports[`TrayList > should match snapshot 1`] = `
                       Test Subject 1
                     </p>
                     <p
-                      class="text-sm text-gray-50"
+                      class="text-sm line-clamp-2 text-gray-50"
                     >
                       This is test email 1
                     </p>
@@ -132,13 +134,13 @@ exports[`TrayList > should match snapshot 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col w-full"
+                    class="flex flex-col w-full min-w-0"
                   >
                     <div
-                      class="flex flex-row w-full justify-between "
+                      class="flex flex-row w-full justify-between gap-3 "
                     >
                       <div
-                        class="flex flex-row gap-1 w-full max-w-[150px] items-center"
+                        class="flex flex-row gap-1 min-w-0 flex-1 items-center"
                       >
                         <p
                           class="font-semibold truncate"
@@ -146,9 +148,11 @@ exports[`TrayList > should match snapshot 1`] = `
                           Jane Smith
                         </p>
                       </div>
-                      <div>
+                      <div
+                        class="flex-shrink-0"
+                      >
                         <p
-                          class="text-sm font-medium text-gray-50"
+                          class="text-sm font-medium whitespace-nowrap text-gray-50"
                         >
                           2024-01-16
                         </p>
@@ -160,7 +164,7 @@ exports[`TrayList > should match snapshot 1`] = `
                       Test Subject 2
                     </p>
                     <p
-                      class="text-sm text-gray-50"
+                      class="text-sm line-clamp-2 text-gray-50"
                     >
                       This is test email 2
                     </p>
@@ -222,16 +226,16 @@ exports[`TrayList > should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex flex-col w-full"
+                  class="flex flex-col w-full min-w-0"
                 >
                   <div
-                    class="flex flex-row w-full justify-between "
+                    class="flex flex-row w-full justify-between gap-3 "
                   >
                     <div
-                      class="flex flex-row gap-1 w-full max-w-[150px] items-center"
+                      class="flex flex-row gap-1 min-w-0 flex-1 items-center"
                     >
                       <div
-                        class="h-2 w-2 rounded-full bg-primary"
+                        class="h-2 w-2 rounded-full bg-primary flex-shrink-0"
                       />
                       <p
                         class="font-semibold truncate"
@@ -239,9 +243,11 @@ exports[`TrayList > should match snapshot 1`] = `
                         John Doe
                       </p>
                     </div>
-                    <div>
+                    <div
+                      class="flex-shrink-0"
+                    >
                       <p
-                        class="text-sm font-medium text-gray-50"
+                        class="text-sm font-medium whitespace-nowrap text-gray-50"
                       >
                         2024-01-15
                       </p>
@@ -253,7 +259,7 @@ exports[`TrayList > should match snapshot 1`] = `
                     Test Subject 1
                   </p>
                   <p
-                    class="text-sm text-gray-50"
+                    class="text-sm line-clamp-2 text-gray-50"
                   >
                     This is test email 1
                   </p>
@@ -301,13 +307,13 @@ exports[`TrayList > should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex flex-col w-full"
+                  class="flex flex-col w-full min-w-0"
                 >
                   <div
-                    class="flex flex-row w-full justify-between "
+                    class="flex flex-row w-full justify-between gap-3 "
                   >
                     <div
-                      class="flex flex-row gap-1 w-full max-w-[150px] items-center"
+                      class="flex flex-row gap-1 min-w-0 flex-1 items-center"
                     >
                       <p
                         class="font-semibold truncate"
@@ -315,9 +321,11 @@ exports[`TrayList > should match snapshot 1`] = `
                         Jane Smith
                       </p>
                     </div>
-                    <div>
+                    <div
+                      class="flex-shrink-0"
+                    >
                       <p
-                        class="text-sm font-medium text-gray-50"
+                        class="text-sm font-medium whitespace-nowrap text-gray-50"
                       >
                         2024-01-16
                       </p>
@@ -329,7 +337,7 @@ exports[`TrayList > should match snapshot 1`] = `
                     Test Subject 2
                   </p>
                   <p
-                    class="text-sm text-gray-50"
+                    class="text-sm line-clamp-2 text-gray-50"
                   >
                     This is test email 2
                   </p>

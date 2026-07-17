@@ -58,20 +58,20 @@ const MessageCheap = ({ email, active, selected, participants, onClick, onSelect
             <Checkbox checked={selected} onClick={handleSelect} />
           </div>
         </div>
-        <div className="flex flex-col w-full">
-          <div className={`flex flex-row w-full justify-between ${isHighlighted ? 'text-primary' : ''}`}>
-            <div className="flex flex-row gap-1 w-full max-w-[150px] items-center">
-              {!email.read && <div className="h-2 w-2 rounded-full bg-primary" />}
+        <div className="flex flex-col w-full min-w-0">
+          <div className={`flex flex-row w-full justify-between gap-3 ${isHighlighted ? 'text-primary' : ''}`}>
+            <div className="flex flex-row gap-1 min-w-0 flex-1 items-center">
+              {!email.read && <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />}
               <p className="font-semibold truncate">{displayName}</p>
             </div>
-            <div>
-              <p className={`text-sm font-medium ${isHighlighted ? 'text-primary' : 'text-gray-50'}`}>
+            <div className="flex-shrink-0">
+              <p className={`text-sm font-medium whitespace-nowrap ${isHighlighted ? 'text-primary' : 'text-gray-50'}`}>
                 {email.createdAt}
               </p>
             </div>
           </div>
           <p className={`text-sm font-semibold ${isHighlighted ? 'text-primary' : ''}`}>{email.subject}</p>
-          <p className={`text-sm ${isHighlighted ? 'text-primary/80' : 'text-gray-50'}`}>{email.body}</p>
+          <p className={`text-sm line-clamp-2 ${isHighlighted ? 'text-primary/80' : 'text-gray-50'}`}>{email.body}</p>
         </div>
       </div>
     </button>
