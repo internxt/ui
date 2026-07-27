@@ -48,9 +48,11 @@ exports[`Sidenav Component > Notification > should match snapshot with notificat
         <div
           class="flex flex-col w-full"
         >
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="inbox"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -79,10 +81,12 @@ exports[`Sidenav Component > Notification > should match snapshot with notificat
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="sent"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -102,10 +106,12 @@ exports[`Sidenav Component > Notification > should match snapshot with notificat
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="drafts"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -134,10 +140,12 @@ exports[`Sidenav Component > Notification > should match snapshot with notificat
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="labels"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -157,7 +165,7 @@ exports[`Sidenav Component > Notification > should match snapshot with notificat
                 </p>
               </div>
             </div>
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -252,9 +260,11 @@ exports[`Sidenav Component > should match snapshot 1`] = `
         <div
           class="flex flex-col w-full"
         >
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="inbox"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -283,10 +293,12 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="sent"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -306,10 +318,12 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="drafts"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -338,10 +352,12 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="labels"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -361,7 +377,7 @@ exports[`Sidenav Component > should match snapshot 1`] = `
                 </p>
               </div>
             </div>
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -443,9 +459,11 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
         <div
           class="flex flex-col w-full"
         >
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="inbox"
+            role="button"
+            tabindex="0"
             title="Inbox"
           >
             <div
@@ -475,10 +493,12 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="sent"
+            role="button"
+            tabindex="0"
             title="Sent"
           >
             <div
@@ -499,10 +519,12 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="drafts"
+            role="button"
+            tabindex="0"
             title="Drafts"
           >
             <div
@@ -532,10 +554,12 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="labels"
+            role="button"
+            tabindex="0"
             title="Labels"
           >
             <div
@@ -556,7 +580,7 @@ exports[`Sidenav Component > should match snapshot when collapsed 1`] = `
                 </p>
               </div>
             </div>
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -618,9 +642,11 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
         <div
           class="flex flex-col w-full"
         >
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="inbox"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -649,10 +675,12 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="sent"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -672,10 +700,12 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="drafts"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -704,10 +734,12 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="labels"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -727,7 +759,7 @@ exports[`Sidenav Component > should match snapshot with primary action 1`] = `
                 </p>
               </div>
             </div>
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -783,9 +815,11 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
         <div
           class="flex flex-col w-full"
         >
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="inbox"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -814,10 +848,12 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="sent"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -837,10 +873,12 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="drafts"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -869,10 +907,12 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                 </p>
               </div>
             </div>
-          </button>
-          <button
-            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg hover:bg-gray-5 "
+          </div>
+          <div
+            class="flex w-full flex-col overflow-hidden focus-visible:bg-gray-10 rounded-lg cursor-pointer hover:bg-gray-5 "
             data-cy="labels"
+            role="button"
+            tabindex="0"
           >
             <div
               class="flex flex-row px-2.5 py-2 w-full items-center justify-between h-9"
@@ -892,7 +932,7 @@ exports[`Sidenav Component > should match snapshot with storage 1`] = `
                 </p>
               </div>
             </div>
-          </button>
+          </div>
         </div>
       </div>
     </div>

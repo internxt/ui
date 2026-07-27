@@ -9,6 +9,7 @@ export interface SidenavOption {
   isActive?: boolean;
   notifications?: number;
   onClick?: () => void;
+  onRefresh?: () => void | Promise<void>;
   subsection?: boolean;
 }
 
@@ -41,6 +42,7 @@ const SidenavOptions = ({ options, isCollapsed, showSubsections }: SidenavOption
               isActive={option.isActive}
               notifications={option.notifications}
               onClick={option.onClick}
+              onRefresh={option.onRefresh}
               isCollapsed={isCollapsed}
               subsection={option.subsection}
             />
