@@ -172,7 +172,7 @@ describe('Sidenav Component', () => {
   it('applies active styles to selected option', () => {
     const activeOptions = mockOptions.map((opt, idx) => ({ ...opt, isActive: idx === 0 }));
     const { getByText } = renderSidenav({ options: activeOptions });
-    const inboxButton = getByText('Inbox').closest('button');
+    const inboxButton = getByText('Inbox').closest('[role="button"]');
     expect(inboxButton).toHaveClass('bg-primary/20');
   });
 
@@ -253,7 +253,7 @@ describe('Sidenav Component', () => {
 
     it('adds title attribute to options when collapsed for tooltip', () => {
       const { container } = renderSidenav({ isCollapsed: true });
-      const optionButtons = container.querySelectorAll('button[title="Inbox"]');
+      const optionButtons = container.querySelectorAll('[role="button"][title="Inbox"]');
       expect(optionButtons.length).toBeGreaterThan(0);
     });
   });
@@ -320,14 +320,14 @@ describe('Sidenav Component', () => {
     it('does not render collapse button when onToggleCollapse is not provided', () => {
       const { container } = renderSidenav();
 
-      const buttons = container.querySelectorAll('button');
+      const buttons = container.querySelectorAll('[role="button"], button');
 
       expect(buttons.length).toBe(5);
     });
 
     it('renders collapse button when onToggleCollapse is provided', () => {
       const { container } = renderSidenav({ onToggleCollapse });
-      const buttons = container.querySelectorAll('button');
+      const buttons = container.querySelectorAll('[role="button"], button');
 
       expect(buttons.length).toBeGreaterThan(5);
     });
