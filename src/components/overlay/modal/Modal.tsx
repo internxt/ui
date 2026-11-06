@@ -104,7 +104,10 @@ const Modal = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node) && !preventClosing) {
+      const modal = modalRef.current;
+      const isClickOutsideModal = !!modal && !event.composedPath().includes(modal);
+
+      if (isClickOutsideModal && !preventClosing) {
         event.preventDefault();
         closeLastOpenModal();
       }

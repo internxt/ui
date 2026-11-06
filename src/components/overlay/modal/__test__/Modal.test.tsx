@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, afterEach, expect, vi } from 'vitest';
+import { flushSync } from 'react-dom';
+import { describe, it, afterEach, beforeEach, expect, vi } from 'vitest';
 import { Modal } from '../';
+import { Input } from '../../../input/input';
 import { afterAll, beforeAll } from 'vitest';
 
 describe('Modal Component', () => {
@@ -99,6 +101,43 @@ describe('Modal Component', () => {
     fireEvent.mouseDown(document.body);
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
+  });
+
+  describe('when the clicked element is detached by a re-render before the document listener runs', () => {
+    const flushPendingRender = () => flushSync(() => {});
+
+    beforeEach(() => {
+      document.body.addEventListener('mousedown', flushPendingRender);
+    });
+
+    afterEach(() => {
+      document.body.removeEventListener('mousedown', flushPendingRender);
+    });
+
+    it('should not call onClose when toggling the password visibility of an input inside the modal', () => {
+      render(
+        <Modal isOpen={true} onClose={onCloseMock}>
+          <Input variant="password" placeholder="Password" />
+        </Modal>,
+      );
+      const passwordInput = screen.getByPlaceholderText('Password');
+      fireEvent.focus(passwordInput);
+      const eyeIcon = screen.getByRole('button').querySelector('svg') as SVGElement;
+
+      fireEvent.mouseDown(eyeIcon);
+
+      expect(eyeIcon.isConnected).toBe(false);
+      expect(passwordInput).toHaveAttribute('type', 'text');
+      expect(onCloseMock).not.toHaveBeenCalled();
+    });
+
+    it('should still call onClose when the mousedown happens outside the modal', () => {
+      renderModal();
+
+      fireEvent.mouseDown(document.body);
+
+      expect(onCloseMock).toHaveBeenCalledTimes(1);
+    });
   });
 
   it('should not call onClose when click outside if preventClosing is true', () => {
