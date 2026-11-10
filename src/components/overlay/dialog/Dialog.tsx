@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Button } from '../../input/button';
+import { createPortal } from 'react-dom';
 
 export interface DialogProps {
   isOpen: boolean;
@@ -110,41 +111,45 @@ const Dialog = ({
   return (
     <>
       {isVisible && (
-        <div className={`fixed inset-0 z-50 ${isOpen ? '' : 'pointer-events-none'}`}>
-          <div
-            className={
-              `absolute inset-0 bg-gray-100/50 transition-opacity duration-150 ` +
-              `dark:bg-black/75 ${transitionOpacity}`
-            }
-            onClick={onClose}
-            data-testid="dialog-overlay"
-          ></div>
+        createPortal(
+          <div className={`fixed inset-0 z-[9999] ${isOpen ? '' : 'pointer-events-none'}`}
+            onMouseDown={(event) => event.stopPropagation()}>
+            <div
+              className={
+                `absolute inset-0 bg-gray-100/50 transition-opacity duration-150 ` +
+                `dark:bg-black/75 ${transitionOpacity}`
+              }
+              onClick={onClose}
+              data-testid="dialog-overlay"
+            ></div>
 
-          <div
-            className={
-              `absolute left-1/2 top-1/2 w-full max-w-${maxWidth} -translate-x-1/2 -translate-y-1/2 transform ` +
-              `rounded-2xl bg-surface p-5 transition-all duration-150 dark:bg-gray-1 ${transitionScale} ${transitionOpacity}`
-            }
-          >
-            <div className="flex flex-col space-y-2">
-              <p className="text-2xl font-medium text-gray-100">{title}</p>
-              <p className="text-gray-60">{subtitle}</p>
-            </div>
+            <div
+              className={
+                `absolute left-1/2 top-1/2 w-full max-w-${maxWidth} -translate-x-1/2 -translate-y-1/2 transform ` +
+                `rounded-2xl bg-surface p-5 transition-all duration-150 dark:bg-gray-1 ${transitionScale} ${transitionOpacity}`
+              }
+            >
+              <div className="flex flex-col space-y-2">
+                <p className="text-2xl font-medium text-gray-100">{title}</p>
+                <p className="text-gray-60">{subtitle}</p>
+              </div>
 
-            <div className="mt-5 flex justify-end space-x-2">
-              <Button variant="secondary" onClick={onSecondaryAction} disabled={isLoading}>
-                {secondaryAction}
-              </Button>
-              <Button
-                onClick={onPrimaryAction}
-                loading={isLoading}
-                variant={primaryActionColor === 'primary' ? 'primary' : 'destructive'}
-              >
-                {primaryAction}
-              </Button>
+              <div className="mt-5 flex justify-end space-x-2">
+                <Button variant="secondary" onClick={onSecondaryAction} disabled={isLoading}>
+                  {secondaryAction}
+                </Button>
+                <Button
+                  onClick={onPrimaryAction}
+                  loading={isLoading}
+                  variant={primaryActionColor === 'primary' ? 'primary' : 'destructive'}
+                >
+                  {primaryAction}
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
+          </div>,
+          document.body,
+        )
       )}
     </>
   );
