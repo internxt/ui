@@ -17,8 +17,7 @@ const mockEmail = {
 
 const mockOnClick = vi.fn();
 
-const renderMessageCheap = (props = {}) =>
-  render(<MessageCheap email={mockEmail} onClick={mockOnClick} {...props} />);
+const renderMessageCheap = (props = {}) => render(<MessageCheap email={mockEmail} onClick={mockOnClick} {...props} />);
 
 describe('MessageCheap', () => {
   afterEach(() => {

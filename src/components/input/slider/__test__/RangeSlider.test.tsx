@@ -5,7 +5,7 @@ import { RangeSlider } from '../';
 
 describe('RangeSlider component', () => {
   it('should match snapshot', () => {
-    const loader = render(<RangeSlider value={50} max={100} onChange={() => { }} />);
+    const loader = render(<RangeSlider value={50} max={100} onChange={() => {}} />);
     expect(loader).toMatchSnapshot();
   });
 

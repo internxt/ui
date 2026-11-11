@@ -15,7 +15,7 @@ describe('Grid component', () => {
       <Grid>
         <div>Item 1</div>
         <div>Item 2</div>
-      </Grid>
+      </Grid>,
     );
     expect(getByText('Item 1')).toBeInTheDocument();
     expect(getByText('Item 2')).toBeInTheDocument();
@@ -40,7 +40,11 @@ describe('Grid component', () => {
   });
 
   it('should assign id and data-cy correctly', () => {
-    const { container } = render(<Grid id="grid-id" dataCy="grid-data-cy">Test</Grid>);
+    const { container } = render(
+      <Grid id="grid-id" dataCy="grid-data-cy">
+        Test
+      </Grid>,
+    );
     const gridDiv = container.firstChild as HTMLElement;
 
     expect(gridDiv).toHaveAttribute('id', 'grid-id');

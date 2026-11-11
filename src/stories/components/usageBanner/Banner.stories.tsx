@@ -81,8 +81,8 @@ export const AlmostFull: Story = {
       <>
         <p>You may soon be unable to upload new files</p>
         <p>
-          Upgrade now with an exclusive <strong>85% discount</strong> to continue storing and syncing your files
-          without limits
+          Upgrade now with an exclusive <strong>85% discount</strong> to continue storing and syncing your files without
+          limits
         </p>
       </>
     ),

@@ -24,8 +24,8 @@ describe('Dialog', () => {
   });
 
   it('should match snapshot', () => {
-    const { container } = renderDialog();
-    expect(container).toMatchSnapshot();
+    const { baseElement } = renderDialog();
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('renders dialog content when open', () => {

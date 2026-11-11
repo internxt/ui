@@ -110,10 +110,12 @@ const Dialog = ({
 
   return (
     <>
-      {isVisible && (
+      {isVisible &&
         createPortal(
-          <div className={`fixed inset-0 z-[9999] ${isOpen ? '' : 'pointer-events-none'}`}
-            onMouseDown={(event) => event.stopPropagation()}>
+          <div
+            className={`fixed inset-0 z-[9999] ${isOpen ? '' : 'pointer-events-none'}`}
+            onMouseDown={(event) => event.stopPropagation()}
+          >
             <div
               className={
                 `absolute inset-0 bg-gray-100/50 transition-opacity duration-150 ` +
@@ -149,8 +151,7 @@ const Dialog = ({
             </div>
           </div>,
           document.body,
-        )
-      )}
+        )}
     </>
   );
 };
