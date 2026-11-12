@@ -7,6 +7,7 @@ export interface SidenavOption {
     isActive?: boolean;
     notifications?: number;
     onClick?: () => void;
+    onRefresh?: () => void | Promise<void>;
     subsection?: boolean;
 }
 interface SidenavOptionsProps {
