@@ -348,3 +348,61 @@ describe('List component', () => {
     expect(mockOnEnterPressed).toHaveBeenCalledWith(items[0]);
   });
 });
+
+describe('List component with getItemId', () => {
+  type UuidItem = { id?: number; uuid: string; name: string; age: number };
+
+  const uuidHeader: HeaderProps<UuidItem, keyof UuidItem>[] = [
+    { label: 'Name', width: '100px', name: 'name', orderable: true, defaultDirection: 'ASC' },
+  ];
+  const uuidItems: UuidItem[] = [
+    { id: 0, uuid: 'uuid-1', name: 'File 1', age: 25 },
+    { id: 0, uuid: 'uuid-2', name: 'File 2', age: 30 },
+    { uuid: 'uuid-3', name: 'File 3', age: 35 },
+  ];
+
+  const renderUuidList = (selected: UuidItem[]) =>
+    render(
+      <List<UuidItem, keyof UuidItem>
+        header={uuidHeader}
+        items={uuidItems}
+        selectedItems={selected}
+        itemComposition={[(props) => <div>{props.name}</div>]}
+        menu={menu}
+        onSelectedItemsChanged={mockOnSelectedItemsChanged}
+        getItemId={(item) => item.uuid}
+      />,
+    );
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should select all not selected items by uuid when ids collide or are missing', () => {
+    const { container } = renderUuidList([uuidItems[0]]);
+
+    fireEvent.keyDown(container, { key: 'a', ctrlKey: true });
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalledWith([
+      { props: uuidItems[1], value: true },
+      { props: uuidItems[2], value: true },
+    ]);
+  });
+
+  it('should toggle selection by uuid when Ctrl key is pressed', () => {
+    const { getByText } = renderUuidList([uuidItems[0]]);
+
+    fireEvent.click(getByText('File 2'), { ctrlKey: true });
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalledWith([{ props: uuidItems[1], value: true }]);
+  });
+
+  it('should open context menu only for the right clicked item', () => {
+    const { getByText, getAllByText } = renderUuidList([uuidItems[1]]);
+
+    fireEvent.contextMenu(getByText('File 2'));
+
+    expect(mockOnSelectedItemsChanged).not.toHaveBeenCalled();
+    expect(getAllByText('Option 1')).toHaveLength(1);
+  });
+});

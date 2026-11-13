@@ -26,7 +26,7 @@ interface ListItemProps<T> {
 }
 const TOP_MIN_HEIGHT = 500;
 
-const ListItem = <T extends { id: number }>({
+const ListItem = <T extends { id?: number | string }>({
   item,
   listIndex,
   itemComposition,

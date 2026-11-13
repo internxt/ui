@@ -33,6 +33,7 @@ export interface ListProps<T, F> {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   headerBackgroundColor?: string;
+  getItemId?: (item: T) => string | number;
   keyBoardShortcutActions?: {
     onShiftFKeysPressed?: () => void;
     onRKeyPressed?: () => void;
@@ -121,6 +122,10 @@ export interface ListProps<T, F> {
  * @property {string} [headerBackgroundColor]
  * - Optional background color for the header.
  *
+ * @property {(item: T) => string | number} [getItemId]
+ * - Optional function returning the unique identity of an item (used for selection, context menu and React keys).
+ *   Defaults to `item.id`.
+ *
  * @property {
  *              { onShiftFKeysPressed?: () => void; onRKeyPressed?: () => void; onBackspaceKeyPressed?: () => void }
  *           } [keyBoardShortcutActions]
@@ -130,7 +135,7 @@ export interface ListProps<T, F> {
  * - The rendered list component.
  */
 
-const List = <T extends { id: number }, F extends keyof T>({
+const List = <T extends { id?: number | string }, F extends keyof T>({
   header,
   checkboxDataCy,
   items,
@@ -157,15 +162,18 @@ const List = <T extends { id: number }, F extends keyof T>({
   headerBackgroundColor = 'bg-surface',
   keyBoardShortcutActions,
   disableKeyboardShortcuts,
+  getItemId,
 }: ListProps<T, F>): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const getKey = getItemId ?? ((item: T) => item.id as string | number);
   const isItemSelected = (item: T) => {
-    return selectedItems.some((i) => item.id === i.id);
+    const key = getKey(item);
+    return selectedItems.some((i) => getKey(i) === key);
   };
   const container = document.getElementById('scrollableList');
   const isVerticalScrollbarVisible = container && container.scrollHeight > container.clientHeight;
   const isEmptyState = !hasMoreItems && items.length === 0 && !isLoading;
-  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<number | null>(null);
+  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<string | number | null>(null);
 
   const skeletonData = new Array(25).fill(0).map(() => ({
     skeletonItem: skinSkeleton,
@@ -213,7 +221,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   };
 
   const selectAllItems = () => {
-    const notSelectedItems = items.filter((item) => !selectedItems.some((s) => s.id === item.id));
+    const notSelectedItems = items.filter((item) => !selectedItems.some((s) => getKey(s) === getKey(item)));
     const changesToMake = notSelectedItems.map((item) => ({ props: item, value: true }));
     onSelectedItemsChanged(changesToMake);
   };
@@ -278,7 +286,7 @@ const List = <T extends { id: number }, F extends keyof T>({
     if (!isItemSelected(props)) {
       unselectAllItemsAndSelectOne(props);
     }
-    setIdItemContextMenuOpen(props.id);
+    setIdItemContextMenuOpen(getKey(props));
   };
 
   const onCloseContextMenu = () => {
@@ -288,7 +296,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   const handleThreeDotsButtonClick = (e: React.MouseEvent<HTMLButtonElement>, item: T) => {
     e.stopPropagation();
 
-    setIdItemContextMenuOpen((prevId) => (prevId ? null : item.id));
+    setIdItemContextMenuOpen((prevId) => (prevId !== null ? null : getKey(item)));
     if (!isItemSelected(item)) {
       unselectAllItemsAndSelectOne(item);
     }
@@ -330,10 +338,10 @@ const List = <T extends { id: number }, F extends keyof T>({
           >
             {items.map((item, index) => (
               <ListItem<T>
-                key={item.id}
+                key={getKey(item)}
                 item={item}
                 listIndex={index}
-                isOpen={idItemContextMenuOpen === item.id}
+                isOpen={idItemContextMenuOpen === getKey(item)}
                 onClose={onCloseContextMenu}
                 itemComposition={itemComposition}
                 selected={isItemSelected(item)}
