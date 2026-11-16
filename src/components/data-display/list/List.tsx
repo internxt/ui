@@ -9,7 +9,7 @@ import { MenuItemsType } from '../../navigation/menu/Menu';
 type ItemId = string | number;
 type GetItemId<T> = (item: T) => ItemId;
 
-// getItemId is optional only when T guarantees an id. [T] avoids TS narrowing T inside the component
+// getItemId is optional only when T guarantees an id. [T] prevents distribution over unions, so every member must have id
 type GetItemIdProp<T> = [T] extends [{ id: ItemId }] ? { getItemId?: GetItemId<T> } : { getItemId: GetItemId<T> };
 
 interface BaseListProps<T, F> {
@@ -142,7 +142,7 @@ export type ListProps<T, F> = BaseListProps<T, F> & GetItemIdProp<T>;
  * - The rendered list component.
  */
 
-const List = <T extends { id?: ItemId }, F extends keyof T>({
+const List = <T, F extends keyof T>({
   header,
   checkboxDataCy,
   items,
@@ -172,7 +172,7 @@ const List = <T extends { id?: ItemId }, F extends keyof T>({
   getItemId,
 }: ListProps<T, F>): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const getKey: GetItemId<T> = getItemId ?? ((item: T) => item.id as ItemId);
+  const getKey: GetItemId<T> = getItemId ?? ((item: T) => (item as { id: ItemId }).id);
   const isItemSelected = (item: T) => {
     const key = getKey(item);
     return selectedItems.some((i) => getKey(i) === key);
@@ -303,7 +303,7 @@ const List = <T extends { id?: ItemId }, F extends keyof T>({
   const handleThreeDotsButtonClick = (e: React.MouseEvent<HTMLButtonElement>, item: T) => {
     e.stopPropagation();
 
-    setIdItemContextMenuOpen((prevId) => (prevId !== null ? null : getKey(item)));
+    setIdItemContextMenuOpen((prevId) => (prevId ? null : getKey(item)));
     if (!isItemSelected(item)) {
       unselectAllItemsAndSelectOne(item);
     }

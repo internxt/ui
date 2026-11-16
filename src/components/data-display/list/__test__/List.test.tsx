@@ -350,7 +350,7 @@ describe('List component', () => {
 });
 
 describe('List component with getItemId', () => {
-  type UuidItem = { id?: number; uuid: string; name: string; age: number };
+  type UuidItem = { uuid: string; name: string; age: number };
 
   const uuidHeader: HeaderProps<UuidItem, keyof UuidItem>[] = [
     { label: 'Name', width: '100px', name: 'name', orderable: true, defaultDirection: 'ASC' },
