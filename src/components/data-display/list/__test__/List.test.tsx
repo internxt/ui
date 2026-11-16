@@ -405,4 +405,48 @@ describe('List component with getItemId', () => {
     expect(mockOnSelectedItemsChanged).not.toHaveBeenCalled();
     expect(getAllByText('Option 1')).toHaveLength(1);
   });
+
+  it('should toggle context menu of the item when three dots button is clicked twice', () => {
+    const { getAllByRole, getAllByText, queryByText } = renderUuidList([uuidItems[1]]);
+    const dotsButtons = getAllByRole('button').slice(-uuidItems.length);
+
+    fireEvent.click(dotsButtons[1]);
+    expect(getAllByText('Option 1')).toHaveLength(1);
+
+    fireEvent.click(dotsButtons[1]);
+    expect(queryByText('Option 1')).toBeNull();
+  });
+});
+
+describe('List component with default item id', () => {
+  type StringIdItem = { id: string; name: string };
+
+  const stringIdHeader: HeaderProps<StringIdItem, keyof StringIdItem>[] = [
+    { label: 'Name', width: '100px', name: 'name', orderable: true, defaultDirection: 'ASC' },
+  ];
+  const stringIdItems: StringIdItem[] = [
+    { id: 'id-1', name: 'File 1' },
+    { id: 'id-2', name: 'File 2' },
+  ];
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should use item id as default identity when getItemId is not provided', () => {
+    const { container } = render(
+      <List<StringIdItem, keyof StringIdItem>
+        header={stringIdHeader}
+        items={stringIdItems}
+        selectedItems={[stringIdItems[0]]}
+        itemComposition={[(props) => <div>{props.name}</div>]}
+        menu={menu}
+        onSelectedItemsChanged={mockOnSelectedItemsChanged}
+      />,
+    );
+
+    fireEvent.keyDown(container, { key: 'a', ctrlKey: true });
+
+    expect(mockOnSelectedItemsChanged).toHaveBeenCalledWith([{ props: stringIdItems[1], value: true }]);
+  });
 });
