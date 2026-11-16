@@ -6,7 +6,13 @@ import { SkeletonLoader } from '../../feedback/skeletonLoader';
 import { InfiniteScroll } from '../../layout/infiniteScroll';
 import { MenuItemsType } from '../../navigation/menu/Menu';
 
-export interface ListProps<T, F> {
+type ItemId = string | number;
+type GetItemId<T> = (item: T) => ItemId;
+
+// getItemId is optional only when T guarantees an id. [T] avoids TS narrowing T inside the component
+type GetItemIdProp<T> = [T] extends [{ id: ItemId }] ? { getItemId?: GetItemId<T> } : { getItemId: GetItemId<T> };
+
+interface BaseListProps<T, F> {
   header: HeaderProps<T, F>[];
   checkboxDataCy?: string;
   items: T[];
@@ -33,13 +39,14 @@ export interface ListProps<T, F> {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   headerBackgroundColor?: string;
-  getItemId?: (item: T) => string | number;
   keyBoardShortcutActions?: {
     onShiftFKeysPressed?: () => void;
     onRKeyPressed?: () => void;
     onBackspaceKeyPressed?: () => void;
   };
 }
+
+export type ListProps<T, F> = BaseListProps<T, F> & GetItemIdProp<T>;
 
 /**
  * List component
@@ -123,8 +130,8 @@ export interface ListProps<T, F> {
  * - Optional background color for the header.
  *
  * @property {(item: T) => string | number} [getItemId]
- * - Optional function returning the unique identity of an item (used for selection, context menu and React keys).
- *   Defaults to `item.id`.
+ * - Function returning the unique identity of an item (used for selection, context menu and React keys).
+ *   Optional when `T` has a required `id`, in which case it defaults to `item.id`. Required otherwise.
  *
  * @property {
  *              { onShiftFKeysPressed?: () => void; onRKeyPressed?: () => void; onBackspaceKeyPressed?: () => void }
@@ -135,7 +142,7 @@ export interface ListProps<T, F> {
  * - The rendered list component.
  */
 
-const List = <T extends { id?: number | string }, F extends keyof T>({
+const List = <T extends { id?: ItemId }, F extends keyof T>({
   header,
   checkboxDataCy,
   items,
@@ -165,7 +172,7 @@ const List = <T extends { id?: number | string }, F extends keyof T>({
   getItemId,
 }: ListProps<T, F>): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const getKey = getItemId ?? ((item: T) => item.id as string | number);
+  const getKey: GetItemId<T> = getItemId ?? ((item: T) => item.id as ItemId);
   const isItemSelected = (item: T) => {
     const key = getKey(item);
     return selectedItems.some((i) => getKey(i) === key);
@@ -173,7 +180,7 @@ const List = <T extends { id?: number | string }, F extends keyof T>({
   const container = document.getElementById('scrollableList');
   const isVerticalScrollbarVisible = container && container.scrollHeight > container.clientHeight;
   const isEmptyState = !hasMoreItems && items.length === 0 && !isLoading;
-  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<string | number | null>(null);
+  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<ItemId | null>(null);
 
   const skeletonData = new Array(25).fill(0).map(() => ({
     skeletonItem: skinSkeleton,
