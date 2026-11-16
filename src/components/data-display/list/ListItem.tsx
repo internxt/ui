@@ -123,7 +123,9 @@ const ListItem = <T,>({
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     onClick?.(event);
-    openedFromRightClick && handleMenuClose();
+    if (openedFromRightClick) {
+      handleMenuClose();
+    }
   };
 
   const handleMenuClose = () => {
