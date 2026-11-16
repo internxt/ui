@@ -356,8 +356,8 @@ describe('List component with getItemId', () => {
     { label: 'Name', width: '100px', name: 'name', orderable: true, defaultDirection: 'ASC' },
   ];
   const uuidItems: UuidItem[] = [
-    { id: 0, uuid: 'uuid-1', name: 'File 1', age: 25 },
-    { id: 0, uuid: 'uuid-2', name: 'File 2', age: 30 },
+    { uuid: 'uuid-1', name: 'File 1', age: 25 },
+    { uuid: 'uuid-2', name: 'File 2', age: 30 },
     { uuid: 'uuid-3', name: 'File 3', age: 35 },
   ];
 
@@ -378,7 +378,7 @@ describe('List component with getItemId', () => {
     vi.clearAllMocks();
   });
 
-  it('should select all not selected items by uuid when ids collide or are missing', () => {
+  it('should select all not selected items by uuid when ids are missing', () => {
     const { container } = renderUuidList([uuidItems[0]]);
 
     fireEvent.keyDown(container, { key: 'a', ctrlKey: true });
