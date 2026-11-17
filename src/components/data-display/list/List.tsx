@@ -6,7 +6,13 @@ import { SkeletonLoader } from '../../feedback/skeletonLoader';
 import { InfiniteScroll } from '../../layout/infiniteScroll';
 import { MenuItemsType } from '../../navigation/menu/Menu';
 
-export interface ListProps<T, F> {
+type ItemId = string | number;
+type GetItemId<T> = (item: T) => ItemId;
+
+// getItemId is optional only when T guarantees an id. [T] prevents distribution over unions, so every member must have id
+type GetItemIdProp<T> = [T] extends [{ id: ItemId }] ? { getItemId?: GetItemId<T> } : { getItemId: GetItemId<T> };
+
+interface BaseListProps<T, F> {
   header: HeaderProps<T, F>[];
   checkboxDataCy?: string;
   items: T[];
@@ -39,6 +45,8 @@ export interface ListProps<T, F> {
     onBackspaceKeyPressed?: () => void;
   };
 }
+
+export type ListProps<T, F> = BaseListProps<T, F> & GetItemIdProp<T>;
 
 /**
  * List component
@@ -121,6 +129,10 @@ export interface ListProps<T, F> {
  * @property {string} [headerBackgroundColor]
  * - Optional background color for the header.
  *
+ * @property {(item: T) => string | number} [getItemId]
+ * - Function returning the unique identity of an item (used for selection, context menu and React keys).
+ *   Optional when `T` has a required `id`, in which case it defaults to `item.id`. Required otherwise.
+ *
  * @property {
  *              { onShiftFKeysPressed?: () => void; onRKeyPressed?: () => void; onBackspaceKeyPressed?: () => void }
  *           } [keyBoardShortcutActions]
@@ -130,7 +142,7 @@ export interface ListProps<T, F> {
  * - The rendered list component.
  */
 
-const List = <T extends { id: number }, F extends keyof T>({
+const List = <T, F extends keyof T>({
   header,
   checkboxDataCy,
   items,
@@ -157,15 +169,18 @@ const List = <T extends { id: number }, F extends keyof T>({
   headerBackgroundColor = 'bg-surface',
   keyBoardShortcutActions,
   disableKeyboardShortcuts,
+  getItemId,
 }: ListProps<T, F>): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const getKey: GetItemId<T> = getItemId ?? ((item: T) => (item as { id: ItemId }).id);
   const isItemSelected = (item: T) => {
-    return selectedItems.some((i) => item.id === i.id);
+    const key = getKey(item);
+    return selectedItems.some((i) => getKey(i) === key);
   };
   const container = document.getElementById('scrollableList');
   const isVerticalScrollbarVisible = container && container.scrollHeight > container.clientHeight;
   const isEmptyState = !hasMoreItems && items.length === 0 && !isLoading;
-  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<number | null>(null);
+  const [idItemContextMenuOpen, setIdItemContextMenuOpen] = useState<ItemId | null>(null);
 
   const skeletonData = new Array(25).fill(0).map(() => ({
     skeletonItem: skinSkeleton,
@@ -213,7 +228,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   };
 
   const selectAllItems = () => {
-    const notSelectedItems = items.filter((item) => !selectedItems.some((s) => s.id === item.id));
+    const notSelectedItems = items.filter((item) => !selectedItems.some((s) => getKey(s) === getKey(item)));
     const changesToMake = notSelectedItems.map((item) => ({ props: item, value: true }));
     onSelectedItemsChanged(changesToMake);
   };
@@ -278,7 +293,7 @@ const List = <T extends { id: number }, F extends keyof T>({
     if (!isItemSelected(props)) {
       unselectAllItemsAndSelectOne(props);
     }
-    setIdItemContextMenuOpen(props.id);
+    setIdItemContextMenuOpen(getKey(props));
   };
 
   const onCloseContextMenu = () => {
@@ -288,7 +303,7 @@ const List = <T extends { id: number }, F extends keyof T>({
   const handleThreeDotsButtonClick = (e: React.MouseEvent<HTMLButtonElement>, item: T) => {
     e.stopPropagation();
 
-    setIdItemContextMenuOpen((prevId) => (prevId ? null : item.id));
+    setIdItemContextMenuOpen((prevId) => (prevId ? null : getKey(item)));
     if (!isItemSelected(item)) {
       unselectAllItemsAndSelectOne(item);
     }
@@ -330,10 +345,10 @@ const List = <T extends { id: number }, F extends keyof T>({
           >
             {items.map((item, index) => (
               <ListItem<T>
-                key={item.id}
+                key={getKey(item)}
                 item={item}
                 listIndex={index}
-                isOpen={idItemContextMenuOpen === item.id}
+                isOpen={idItemContextMenuOpen === getKey(item)}
                 onClose={onCloseContextMenu}
                 itemComposition={itemComposition}
                 selected={isItemSelected(item)}

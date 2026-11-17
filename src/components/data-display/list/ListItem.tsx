@@ -26,7 +26,7 @@ interface ListItemProps<T> {
 }
 const TOP_MIN_HEIGHT = 500;
 
-const ListItem = <T extends { id: number }>({
+const ListItem = <T,>({
   item,
   listIndex,
   itemComposition,
@@ -123,7 +123,9 @@ const ListItem = <T extends { id: number }>({
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     onClick?.(event);
-    openedFromRightClick && handleMenuClose();
+    if (openedFromRightClick) {
+      handleMenuClose();
+    }
   };
 
   const handleMenuClose = () => {
