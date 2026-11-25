@@ -55,7 +55,7 @@ const Copyable = ({
         title={justCopied ? copiedText : copyToClipboardText}
         delayInMs={justCopied ? 500 : undefined}
       >
-        <button disabled={justCopied} onClick={onCopy}>
+        <button type="button" disabled={justCopied} onClick={onCopy}>
           <Copy className="shrink-0 text-gray-50 hover:text-gray-60" size={24} />
         </button>
       </Tooltip>
